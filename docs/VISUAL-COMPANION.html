@@ -1,0 +1,1567 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>5分リーディングドリル Visual Companion</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23176B87'/%3E%3Cpath d='M9 8h14v3H9V8Zm0 6h14v3H9v-3Zm0 6h9v3H9v-3Z' fill='white'/%3E%3C/svg%3E">
+    <style>
+      :root {
+        --background: #f7f8fa;
+        --surface: #ffffff;
+        --surface-subtle: #f1f4f8;
+        --text-primary: #111827;
+        --text-secondary: #4b5563;
+        --text-muted: #6b7280;
+        --border: #d8dee8;
+        --border-strong: #aeb7c6;
+        --primary: #176b87;
+        --primary-hover: #0f556e;
+        --primary-soft: #e4f3f7;
+        --success: #168a4a;
+        --success-soft: #e6f6ec;
+        --warning: #b7791f;
+        --warning-soft: #fff4d8;
+        --danger: #c2413a;
+        --danger-soft: #fce8e7;
+        --focus: #2563eb;
+        --shadow-panel: 0 8px 24px rgba(17, 24, 39, 0.06);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--background);
+        color: var(--text-primary);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        min-height: 100vh;
+      }
+
+      .hero {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+        gap: 32px;
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 40px 0 32px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-size: 34px;
+        line-height: 1.18;
+        letter-spacing: 0;
+      }
+
+      .hero p {
+        margin: 16px 0 0;
+        color: var(--text-secondary);
+        font-size: 16px;
+        max-width: 680px;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .meta-chip {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 6px 10px;
+        background: var(--surface);
+        color: var(--text-secondary);
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .product-visual {
+        border: 0;
+        border-radius: 8px;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      .product-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .visual-phone {
+        position: absolute;
+        left: 32px;
+        bottom: 24px;
+        width: 124px;
+        height: 220px;
+        border: 8px solid #17202b;
+        border-radius: 22px;
+        background: var(--surface);
+        box-shadow: 0 18px 38px rgba(17, 24, 39, 0.16);
+        padding: 12px 10px;
+      }
+
+      .visual-line {
+        height: 9px;
+        border-radius: 999px;
+        background: var(--surface-subtle);
+        margin-bottom: 8px;
+      }
+
+      .visual-line.short {
+        width: 54%;
+      }
+
+      .visual-line.primary {
+        background: var(--primary-soft);
+      }
+
+      .visual-bars {
+        display: grid;
+        gap: 7px;
+        margin-top: 14px;
+      }
+
+      .visual-bar {
+        height: 10px;
+        border-radius: 999px;
+        background: var(--surface-subtle);
+        overflow: hidden;
+      }
+
+      .visual-bar span {
+        display: block;
+        height: 100%;
+        background: var(--primary);
+      }
+
+      .visual-calendar {
+        position: absolute;
+        right: 42px;
+        bottom: 30px;
+        width: 142px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.92);
+        padding: 12px;
+      }
+
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 4px;
+      }
+
+      .calendar-dot {
+        aspect-ratio: 1;
+        border-radius: 4px;
+        background: var(--surface-subtle);
+      }
+
+      .calendar-dot.done {
+        background: var(--success);
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid var(--border);
+        background: rgba(247, 248, 250, 0.94);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav-inner {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 10px 0;
+      }
+
+      .nav a {
+        flex: 0 0 auto;
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-size: 13px;
+        font-weight: 700;
+        padding: 8px 10px;
+        border-radius: 6px;
+      }
+
+      .nav a:hover {
+        background: var(--primary-soft);
+        color: var(--primary);
+      }
+
+      main {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 32px 0 56px;
+      }
+
+      .section-title {
+        margin: 0 0 16px;
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .screen-card {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow-panel);
+        overflow: hidden;
+      }
+
+      .screen-info {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .screen-info h2 {
+        margin: 0;
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      .screen-info p {
+        margin: 4px 0 0;
+        color: var(--text-secondary);
+        font-size: 13px;
+        line-height: 18px;
+      }
+
+      .screen-number {
+        color: var(--text-muted);
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .mock-area {
+        display: grid;
+        place-items: center;
+        min-height: 720px;
+        padding: 22px;
+        background:
+          linear-gradient(90deg, rgba(216, 222, 232, 0.34) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(216, 222, 232, 0.34) 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+
+      .phone {
+        width: min(360px, 100%);
+        min-height: 660px;
+        border: 10px solid #17202b;
+        border-radius: 28px;
+        background: var(--background);
+        box-shadow: 0 22px 42px rgba(17, 24, 39, 0.18);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .phone.desktop-sample {
+        width: min(760px, 100%);
+        border-width: 8px;
+        border-radius: 18px;
+      }
+
+      .status-bar {
+        height: 28px;
+        background: var(--surface);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 18px;
+        color: var(--text-muted);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .app-header {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 14px 16px;
+      }
+
+      .app-header.compact {
+        padding-bottom: 10px;
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .app-title {
+        margin: 0;
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      .app-subtitle {
+        margin: 3px 0 0;
+        color: var(--text-secondary);
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      .icon-button {
+        width: 36px;
+        height: 36px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        color: var(--text-secondary);
+        display: grid;
+        place-items: center;
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .content {
+        flex: 1;
+        padding: 16px;
+        overflow: hidden;
+      }
+
+      .content.scroll {
+        overflow: visible;
+      }
+
+      .stack {
+        display: grid;
+        gap: 12px;
+      }
+
+      .panel {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 14px;
+      }
+
+      .panel.soft {
+        background: var(--primary-soft);
+        border-color: #b9dfe9;
+      }
+
+      .panel.warning {
+        background: var(--warning-soft);
+        border-color: #f2d58b;
+      }
+
+      .panel.danger {
+        background: var(--danger-soft);
+        border-color: #f4b7b3;
+      }
+
+      .panel.success {
+        background: var(--success-soft);
+        border-color: #a8dcb9;
+      }
+
+      .panel-title {
+        margin: 0;
+        font-size: 15px;
+        line-height: 21px;
+      }
+
+      .panel-meta {
+        margin: 4px 0 0;
+        color: var(--text-secondary);
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .metric {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 12px;
+      }
+
+      .metric-value {
+        display: block;
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 800;
+      }
+
+      .metric-label {
+        color: var(--text-secondary);
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 600;
+      }
+
+      .primary-button,
+      .secondary-button,
+      .danger-button {
+        min-height: 44px;
+        border-radius: 6px;
+        padding: 0 14px;
+        font-size: 14px;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        border: 1px solid transparent;
+      }
+
+      .primary-button {
+        background: var(--primary);
+        color: #ffffff;
+      }
+
+      .secondary-button {
+        background: var(--surface);
+        color: var(--text-primary);
+        border-color: var(--border);
+      }
+
+      .danger-button {
+        background: var(--danger);
+        color: #ffffff;
+      }
+
+      .button-row {
+        display: flex;
+        gap: 8px;
+      }
+
+      .button-row > * {
+        flex: 1;
+      }
+
+      .part-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .part-row {
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: center;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 12px;
+      }
+
+      .part-mark {
+        width: 44px;
+        height: 44px;
+        border-radius: 6px;
+        background: var(--primary-soft);
+        color: var(--primary);
+        display: grid;
+        place-items: center;
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .part-title {
+        display: block;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 20px;
+      }
+
+      .part-meta {
+        color: var(--text-secondary);
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      .score-pill {
+        border-radius: 999px;
+        background: var(--surface-subtle);
+        color: var(--text-secondary);
+        padding: 5px 8px;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .filter-row {
+        display: flex;
+        gap: 8px;
+        overflow: hidden;
+      }
+
+      .filter-chip {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        padding: 7px 9px;
+        color: var(--text-secondary);
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .filter-chip.active {
+        color: var(--primary);
+        background: var(--primary-soft);
+        border-color: #b9dfe9;
+      }
+
+      .progress-line {
+        height: 8px;
+        border-radius: 999px;
+        background: var(--surface-subtle);
+        overflow: hidden;
+      }
+
+      .progress-line span {
+        display: block;
+        height: 100%;
+        background: var(--primary);
+      }
+
+      .question-text {
+        margin: 0;
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 600;
+      }
+
+      .prompt {
+        margin: 10px 0 0;
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 22px;
+      }
+
+      .choice-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .choice {
+        min-height: 52px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        padding: 10px 12px;
+      }
+
+      .choice.selected {
+        border-color: var(--primary);
+        background: var(--primary-soft);
+      }
+
+      .choice.correct {
+        border-color: #8fd1a5;
+        background: var(--success-soft);
+      }
+
+      .choice.wrong {
+        border-color: #edaaa5;
+        background: var(--danger-soft);
+      }
+
+      .choice-id {
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        background: var(--surface-subtle);
+        display: grid;
+        place-items: center;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .choice span:last-child {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .bottom-action {
+        border-top: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.94);
+        padding: 12px 16px 16px;
+      }
+
+      .bottom-tabs {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        border-top: 1px solid var(--border);
+        background: var(--surface);
+      }
+
+      .tab {
+        min-height: 54px;
+        display: grid;
+        place-items: center;
+        gap: 2px;
+        color: var(--text-muted);
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .tab.active {
+        color: var(--primary);
+        background: var(--primary-soft);
+      }
+
+      .tab-icon {
+        font-size: 17px;
+        line-height: 1;
+      }
+
+      .passage {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 14px;
+      }
+
+      .passage h3 {
+        margin: 0 0 10px;
+        font-size: 15px;
+        line-height: 22px;
+      }
+
+      .passage p {
+        margin: 0;
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 24px;
+      }
+
+      .result-mark {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .result-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: #ffffff;
+        font-size: 22px;
+        font-weight: 900;
+      }
+
+      .result-icon.success {
+        background: var(--success);
+      }
+
+      .result-icon.danger {
+        background: var(--danger);
+      }
+
+      .explanation {
+        border-left: 4px solid var(--primary);
+        padding-left: 12px;
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 24px;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .tag {
+        border-radius: 4px;
+        background: var(--surface-subtle);
+        color: var(--text-secondary);
+        padding: 4px 7px;
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .score-hero {
+        text-align: center;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 22px 14px;
+      }
+
+      .score-hero strong {
+        display: block;
+        font-size: 40px;
+        line-height: 48px;
+      }
+
+      .review-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: center;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 12px;
+      }
+
+      .review-date {
+        color: var(--warning);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .bar-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .bar-item {
+        display: grid;
+        gap: 5px;
+      }
+
+      .bar-label {
+        display: flex;
+        justify-content: space-between;
+        color: var(--text-secondary);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .week-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 6px;
+        align-items: end;
+        min-height: 100px;
+      }
+
+      .day-bar {
+        min-height: 18px;
+        border-radius: 4px 4px 0 0;
+        background: var(--primary);
+      }
+
+      .settings-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        border-bottom: 1px solid var(--border);
+        padding: 12px 0;
+      }
+
+      .settings-row:last-child {
+        border-bottom: 0;
+      }
+
+      .empty-visual,
+      .error-visual {
+        height: 142px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .empty-phone {
+        width: 82px;
+        height: 118px;
+        border: 7px solid #17202b;
+        border-radius: 16px;
+        background: var(--surface);
+        padding: 12px 9px;
+      }
+
+      .empty-phone .visual-line {
+        height: 7px;
+      }
+
+      .error-symbol {
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        background: var(--danger-soft);
+        color: var(--danger);
+        display: grid;
+        place-items: center;
+        font-size: 34px;
+        font-weight: 900;
+      }
+
+      .desktop-layout {
+        display: grid;
+        grid-template-columns: 168px minmax(0, 1fr);
+        min-height: 520px;
+        background: var(--background);
+      }
+
+      .side-nav {
+        border-right: 1px solid var(--border);
+        background: var(--surface);
+        padding: 18px 12px;
+      }
+
+      .side-logo {
+        font-size: 15px;
+        font-weight: 900;
+        margin-bottom: 18px;
+      }
+
+      .side-item {
+        border-radius: 6px;
+        padding: 9px 10px;
+        color: var(--text-secondary);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .side-item.active {
+        background: var(--primary-soft);
+        color: var(--primary);
+      }
+
+      .desktop-main {
+        padding: 20px;
+      }
+
+      .desktop-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .desktop-two {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .imagegen-note {
+        margin-top: 32px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 18px;
+      }
+
+      .imagegen-note h2 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .imagegen-note p {
+        margin: 0;
+        color: var(--text-secondary);
+        font-size: 13px;
+      }
+
+      @media (max-width: 980px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .hero-inner,
+        main,
+        .nav-inner {
+          width: min(100% - 24px, 1180px);
+        }
+
+        .hero h1 {
+          font-size: 28px;
+          line-height: 36px;
+        }
+
+        .mock-area {
+          padding: 14px;
+          min-height: 700px;
+        }
+
+        .screen-info {
+          display: block;
+        }
+
+        .phone.desktop-sample {
+          width: min(340px, 100%);
+          border-width: 10px;
+          border-radius: 28px;
+        }
+
+        .desktop-layout {
+          grid-template-columns: 88px minmax(0, 1fr);
+          min-height: 620px;
+        }
+
+        .side-nav {
+          padding: 14px 8px;
+        }
+
+        .side-logo {
+          font-size: 12px;
+          margin-bottom: 12px;
+        }
+
+        .side-item {
+          font-size: 11px;
+          padding: 7px 6px;
+        }
+
+        .desktop-main {
+          padding: 12px;
+        }
+
+        .desktop-main .header-top {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .desktop-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 8px;
+        }
+
+        .desktop-two {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .product-visual {
+          min-height: 0;
+        }
+
+        .visual-phone {
+          left: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-inner">
+          <div>
+            <h1>5分リーディングドリル Visual Companion</h1>
+            <p>Phase 1 の全画面を網羅した、業務ツール風の静的ビジュアルプロトタイプ。スマートフォン縦持ちでの演習、復習、進捗確認を中心に設計する。</p>
+            <div class="meta-row" aria-label="プロトタイプ条件">
+              <span class="meta-chip">Version 0.1.0</span>
+              <span class="meta-chip">日本語のみ</span>
+              <span class="meta-chip">Reading 特化</span>
+              <span class="meta-chip">静的サイト前提</span>
+            </div>
+          </div>
+          <div class="product-visual" aria-label="生成ビジュアルをもとにしたプロダクトモック">
+            <img class="product-image" src="assets/reading-dashboard-visual.png" alt="スマートフォンとタブレットで Reading 演習、進捗、復習予定を示す補助ビジュアル">
+          </div>
+        </div>
+      </header>
+
+      <nav class="nav" aria-label="画面一覧">
+        <div class="nav-inner">
+          <a href="#screen-home">ホーム</a>
+          <a href="#screen-part">Part選択</a>
+          <a href="#screen-quick">演習中</a>
+          <a href="#screen-part5">Part 5</a>
+          <a href="#screen-passage">Part 6/7</a>
+          <a href="#screen-explain">解説</a>
+          <a href="#screen-result">結果</a>
+          <a href="#screen-review">復習</a>
+          <a href="#screen-progress">進捗</a>
+          <a href="#screen-settings">設定</a>
+          <a href="#screen-empty">初回</a>
+          <a href="#screen-error">エラー</a>
+        </div>
+      </nav>
+
+      <main>
+        <h2 class="section-title">Phase 1 画面ギャラリー</h2>
+        <div class="gallery">
+          <article class="screen-card" id="screen-home">
+            <div class="screen-info">
+              <div>
+                <h2>ホーム / ダッシュボード</h2>
+                <p>今日の学習状況、復習期限、次の演習導線をまとめる。</p>
+              </div>
+              <span class="screen-number">01</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone desktop-sample">
+                <div class="desktop-layout">
+                  <aside class="side-nav">
+                    <div class="side-logo">5分ドリル</div>
+                    <div class="side-item active">ホーム</div>
+                    <div class="side-item">演習</div>
+                    <div class="side-item">復習</div>
+                    <div class="side-item">進捗</div>
+                    <div class="side-item">設定</div>
+                  </aside>
+                  <section class="desktop-main">
+                    <div class="header-top">
+                      <div>
+                        <h3 class="app-title">今日の学習</h3>
+                        <p class="app-subtitle">Reading の短時間演習を続ける</p>
+                      </div>
+                      <a class="primary-button" href="#screen-quick">5問クイック</a>
+                    </div>
+                    <div class="desktop-grid" style="margin-top: 16px">
+                      <div class="metric"><span class="metric-value">5</span><span class="metric-label">今日の完了</span></div>
+                      <div class="metric"><span class="metric-value">72%</span><span class="metric-label">全体正答率</span></div>
+                      <div class="metric"><span class="metric-value">8日</span><span class="metric-label">連続学習</span></div>
+                      <div class="metric"><span class="metric-value">12</span><span class="metric-label">復習期限</span></div>
+                    </div>
+                    <div class="desktop-two">
+                      <div class="panel">
+                        <h4 class="panel-title">Part 別成績</h4>
+                        <div class="bar-list" style="margin-top: 12px">
+                          <div class="bar-item"><div class="bar-label"><span>Part 5</span><span>78%</span></div><div class="progress-line"><span style="width: 78%"></span></div></div>
+                          <div class="bar-item"><div class="bar-label"><span>Part 6</span><span>64%</span></div><div class="progress-line"><span style="width: 64%"></span></div></div>
+                          <div class="bar-item"><div class="bar-label"><span>Part 7</span><span>58%</span></div><div class="progress-line"><span style="width: 58%"></span></div></div>
+                        </div>
+                      </div>
+                      <div class="panel warning">
+                        <h4 class="panel-title">復習期限</h4>
+                        <p class="panel-meta">今日の復習対象が12問あります。</p>
+                        <div style="margin-top: 16px"><a class="secondary-button" href="#screen-review">復習を開く</a></div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-part">
+            <div class="screen-info">
+              <div>
+                <h2>Part 選択 / 演習開始</h2>
+                <p>Part、難易度、タグを選び、短時間セッションを開始する。</p>
+              </div>
+              <span class="screen-number">02</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>14:22</span><span>100%</span></div>
+                <header class="app-header">
+                  <div class="header-top">
+                    <div>
+                      <h3 class="app-title">演習を選ぶ</h3>
+                      <p class="app-subtitle">Reading Part 5 / 6 / 7</p>
+                    </div>
+                    <button class="icon-button" aria-label="戻る">←</button>
+                  </div>
+                </header>
+                <div class="content stack">
+                  <div class="filter-row">
+                    <span class="filter-chip active">おすすめ</span>
+                    <span class="filter-chip">標準</span>
+                    <span class="filter-chip">難しめ</span>
+                  </div>
+                  <div class="part-list">
+                    <div class="part-row">
+                      <span class="part-mark">P5</span>
+                      <span><strong class="part-title">短文穴埋め</strong><span class="part-meta">5問 / 約4分</span></span>
+                      <span class="score-pill">78%</span>
+                    </div>
+                    <div class="part-row">
+                      <span class="part-mark">P6</span>
+                      <span><strong class="part-title">文章穴埋め</strong><span class="part-meta">1セット / 約5分</span></span>
+                      <span class="score-pill">64%</span>
+                    </div>
+                    <div class="part-row">
+                      <span class="part-mark">P7</span>
+                      <span><strong class="part-title">長文読解</strong><span class="part-meta">1セット / 約5分</span></span>
+                      <span class="score-pill">58%</span>
+                    </div>
+                  </div>
+                  <div class="panel soft">
+                    <h4 class="panel-title">おすすめ</h4>
+                    <p class="panel-meta">Part 7 の正答率が低下しています。短い読解セットから始めます。</p>
+                  </div>
+                </div>
+                <div class="bottom-action">
+                  <a class="primary-button" href="#screen-quick">この条件で開始</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-quick">
+            <div class="screen-info">
+              <div>
+                <h2>クイック演習中</h2>
+                <p>5問単位のセッションを、片手操作で進める。</p>
+              </div>
+              <span class="screen-number">03</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>14:25</span><span>98%</span></div>
+                <header class="app-header compact">
+                  <div class="header-top">
+                    <div>
+                      <h3 class="app-title">5問クイック</h3>
+                      <p class="app-subtitle">Part 5  2/5  残り約3分</p>
+                    </div>
+                    <button class="icon-button" aria-label="中断">×</button>
+                  </div>
+                  <div class="progress-line" style="margin-top: 12px"><span style="width: 40%"></span></div>
+                </header>
+                <div class="content stack">
+                  <div class="panel">
+                    <div class="tag-row"><span class="tag">語彙</span><span class="tag">medium</span></div>
+                    <p class="question-text" style="margin-top: 12px">The updated report will be sent to all department heads _____ Friday morning.</p>
+                    <p class="prompt">空所に入る最も適切な語句を選んでください。</p>
+                  </div>
+                  <div class="choice-list">
+                    <div class="choice"><span class="choice-id">A</span><span>by</span></div>
+                    <div class="choice selected"><span class="choice-id">B</span><span>for</span></div>
+                    <div class="choice"><span class="choice-id">C</span><span>to</span></div>
+                    <div class="choice"><span class="choice-id">D</span><span>with</span></div>
+                  </div>
+                </div>
+                <div class="bottom-action">
+                  <a class="primary-button" href="#screen-explain">回答する</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-part5">
+            <div class="screen-info">
+              <div>
+                <h2>Part 5 問題画面</h2>
+                <p>短文穴埋めを読みやすい文字サイズで表示する。</p>
+              </div>
+              <span class="screen-number">04</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>14:27</span><span>97%</span></div>
+                <header class="app-header compact">
+                  <div class="header-top">
+                    <div>
+                      <h3 class="app-title">Part 5</h3>
+                      <p class="app-subtitle">短文穴埋め  1/5</p>
+                    </div>
+                    <span class="score-pill">easy</span>
+                  </div>
+                </header>
+                <div class="content stack">
+                  <div class="panel">
+                    <div class="tag-row"><span class="tag">品詞</span><span class="tag">副詞</span></div>
+                    <p class="question-text" style="margin-top: 14px">The manager spoke _____ about the new safety procedures during the morning meeting.</p>
+                    <p class="prompt">文法的に最も自然な選択肢を選んでください。</p>
+                  </div>
+                  <div class="choice-list">
+                    <div class="choice"><span class="choice-id">A</span><span>clear</span></div>
+                    <div class="choice"><span class="choice-id">B</span><span>clearly</span></div>
+                    <div class="choice"><span class="choice-id">C</span><span>clearness</span></div>
+                    <div class="choice"><span class="choice-id">D</span><span>cleared</span></div>
+                  </div>
+                </div>
+                <div class="bottom-action">
+                  <a class="primary-button" href="#screen-explain">回答する</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-passage">
+            <div class="screen-info">
+              <div>
+                <h2>Part 6 / Part 7 パッセージ問題画面</h2>
+                <p>長文と設問を縦に積み、スマホで自然に読める構成にする。</p>
+              </div>
+              <span class="screen-number">05</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>14:31</span><span>95%</span></div>
+                <header class="app-header compact">
+                  <div class="header-top">
+                    <div>
+                      <h3 class="app-title">Part 7</h3>
+                      <p class="app-subtitle">読解セット  1/3</p>
+                    </div>
+                    <span class="score-pill">medium</span>
+                  </div>
+                </header>
+                <div class="content stack scroll">
+                  <div class="passage">
+                    <h3>Notice to Building Tenants</h3>
+                    <p>Beginning next Monday, maintenance work will take place in the main lobby between 8:00 a.m. and 11:00 a.m. Visitors should use the side entrance during this period. Security staff will be available to assist guests.</p>
+                  </div>
+                  <div class="panel">
+                    <div class="tag-row"><span class="tag">通知</span><span class="tag">推測</span></div>
+                    <p class="question-text" style="margin-top: 12px">What should visitors do next Monday morning?</p>
+                  </div>
+                  <div class="choice-list">
+                    <div class="choice"><span class="choice-id">A</span><span>Enter through another door</span></div>
+                    <div class="choice selected"><span class="choice-id">B</span><span>Wait in the main lobby</span></div>
+                    <div class="choice"><span class="choice-id">C</span><span>Call the maintenance team</span></div>
+                    <div class="choice"><span class="choice-id">D</span><span>Reschedule all meetings</span></div>
+                  </div>
+                </div>
+                <div class="bottom-action">
+                  <a class="primary-button" href="#screen-explain">回答する</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-explain">
+            <div class="screen-info">
+              <div>
+                <h2>解答・解説画面</h2>
+                <p>正誤、正解、根拠、復習予定を同じ画面で確認する。</p>
+              </div>
+              <span class="screen-number">06</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>14:33</span><span>94%</span></div>
+                <header class="app-header">
+                  <h3 class="app-title">解説</h3>
+                  <p class="app-subtitle">Part 5  2/5</p>
+                </header>
+                <div class="content stack">
+                  <div class="panel danger">
+                    <div class="result-mark">
+                      <span class="result-icon danger">×</span>
+                      <div>
+                        <h4 class="panel-title">不正解</h4>
+                        <p class="panel-meta">復習予定に追加しました。</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="choice-list">
+                    <div class="choice correct"><span class="choice-id">A</span><span>by</span></div>
+                    <div class="choice wrong"><span class="choice-id">B</span><span>for</span></div>
+                  </div>
+                  <div class="panel">
+                    <h4 class="panel-title">解説</h4>
+                    <p class="explanation">期限や完了時点を表す場合は <strong>by Friday morning</strong> が自然です。for は期間や目的を表すため、この文脈には合いません。</p>
+                    <div class="tag-row" style="margin-top: 12px"><span class="tag">前置詞</span><span class="tag">期限表現</span></div>
+                  </div>
+                </div>
+                <div class="bottom-action">
+                  <a class="primary-button" href="#screen-quick">次の問題へ</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-result">
+            <div class="screen-info">
+              <div>
+                <h2>セッション結果画面</h2>
+                <p>短時間学習の成果と次アクションを表示する。</p>
+              </div>
+              <span class="screen-number">07</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>14:38</span><span>92%</span></div>
+                <header class="app-header">
+                  <h3 class="app-title">セッション結果</h3>
+                  <p class="app-subtitle">Part 5  5問完了</p>
+                </header>
+                <div class="content stack">
+                  <div class="score-hero">
+                    <strong>4 / 5</strong>
+                    <span class="metric-label">正答率 80%  所要時間 4分12秒</span>
+                  </div>
+                  <div class="metric-grid">
+                    <div class="metric"><span class="metric-value">1</span><span class="metric-label">復習追加</span></div>
+                    <div class="metric"><span class="metric-value">9日</span><span class="metric-label">連続学習</span></div>
+                  </div>
+                  <div class="panel">
+                    <h4 class="panel-title">誤答</h4>
+                    <p class="panel-meta">前置詞の期限表現を復習予定に入れました。</p>
+                  </div>
+                </div>
+                <div class="bottom-action">
+                  <div class="button-row">
+                    <a class="secondary-button" href="#screen-review">復習</a>
+                    <a class="primary-button" href="#screen-quick">もう1セット</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-review">
+            <div class="screen-info">
+              <div>
+                <h2>復習画面</h2>
+                <p>簡易 SRS の期限到来問題を優先して出題する。</p>
+              </div>
+              <span class="screen-number">08</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>07:48</span><span>100%</span></div>
+                <header class="app-header">
+                  <h3 class="app-title">復習</h3>
+                  <p class="app-subtitle">今日の期限 12問</p>
+                </header>
+                <div class="content stack">
+                  <div class="panel warning">
+                    <h4 class="panel-title">今日の復習</h4>
+                    <p class="panel-meta">期限が近い問題から出題します。</p>
+                  </div>
+                  <div class="review-row">
+                    <div><strong class="part-title">Part 7 通知文</strong><span class="part-meta">推測 / medium</span></div>
+                    <span class="review-date">今日</span>
+                  </div>
+                  <div class="review-row">
+                    <div><strong class="part-title">Part 5 前置詞</strong><span class="part-meta">期限表現 / easy</span></div>
+                    <span class="review-date">今日</span>
+                  </div>
+                  <div class="review-row">
+                    <div><strong class="part-title">Part 6 文挿入</strong><span class="part-meta">文脈 / hard</span></div>
+                    <span class="review-date">明日</span>
+                  </div>
+                </div>
+                <div class="bottom-action">
+                  <a class="primary-button" href="#screen-quick">復習を開始</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-progress">
+            <div class="screen-info">
+              <div>
+                <h2>進捗分析画面</h2>
+                <p>Part 別、タグ別、直近7日の学習傾向を確認する。</p>
+              </div>
+              <span class="screen-number">09</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>21:06</span><span>83%</span></div>
+                <header class="app-header">
+                  <h3 class="app-title">進捗</h3>
+                  <p class="app-subtitle">Reading の弱点を確認</p>
+                </header>
+                <div class="content stack">
+                  <div class="metric-grid">
+                    <div class="metric"><span class="metric-value">72%</span><span class="metric-label">全体正答率</span></div>
+                    <div class="metric"><span class="metric-value">148</span><span class="metric-label">回答数</span></div>
+                  </div>
+                  <div class="panel">
+                    <h4 class="panel-title">Part 別</h4>
+                    <div class="bar-list" style="margin-top: 12px">
+                      <div class="bar-item"><div class="bar-label"><span>Part 5</span><span>78%</span></div><div class="progress-line"><span style="width: 78%"></span></div></div>
+                      <div class="bar-item"><div class="bar-label"><span>Part 6</span><span>64%</span></div><div class="progress-line"><span style="width: 64%"></span></div></div>
+                      <div class="bar-item"><div class="bar-label"><span>Part 7</span><span>58%</span></div><div class="progress-line"><span style="width: 58%"></span></div></div>
+                    </div>
+                  </div>
+                  <div class="panel">
+                    <h4 class="panel-title">直近7日</h4>
+                    <div class="week-grid" aria-label="直近7日の学習量">
+                      <span class="day-bar" style="height: 36px"></span><span class="day-bar" style="height: 64px"></span><span class="day-bar" style="height: 42px"></span><span class="day-bar" style="height: 74px"></span><span class="day-bar" style="height: 52px"></span><span class="day-bar" style="height: 82px"></span><span class="day-bar" style="height: 58px"></span>
+                    </div>
+                  </div>
+                </div>
+                <nav class="bottom-tabs" aria-label="下部ナビ">
+                  <span class="tab"><span class="tab-icon">⌂</span>ホーム</span>
+                  <span class="tab"><span class="tab-icon">□</span>演習</span>
+                  <span class="tab"><span class="tab-icon">↻</span>復習</span>
+                  <span class="tab active"><span class="tab-icon">▥</span>進捗</span>
+                  <span class="tab"><span class="tab-icon">⚙</span>設定</span>
+                </nav>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-settings">
+            <div class="screen-info">
+              <div>
+                <h2>設定 / データ管理画面</h2>
+                <p>端末内保存、バージョン、データリセットを扱う。</p>
+              </div>
+              <span class="screen-number">10</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>09:12</span><span>100%</span></div>
+                <header class="app-header">
+                  <h3 class="app-title">設定</h3>
+                  <p class="app-subtitle">データはこの端末内に保存</p>
+                </header>
+                <div class="content stack">
+                  <div class="panel">
+                    <div class="settings-row"><span class="part-title">バージョン</span><span class="part-meta">0.1.0</span></div>
+                    <div class="settings-row"><span class="part-title">表示言語</span><span class="part-meta">日本語</span></div>
+                    <div class="settings-row"><span class="part-title">保存先</span><span class="part-meta">localStorage</span></div>
+                  </div>
+                  <div class="panel">
+                    <h4 class="panel-title">商標と問題方針</h4>
+                    <p class="panel-meta">本アプリは ETS と提携していません。問題はオリジナル問題のみを扱います。</p>
+                  </div>
+                  <div class="panel danger">
+                    <h4 class="panel-title">進捗データを削除</h4>
+                    <p class="panel-meta">この端末に保存された回答履歴と復習予定を削除します。</p>
+                    <div style="margin-top: 12px"><a class="danger-button" href="#screen-empty">データリセット</a></div>
+                  </div>
+                </div>
+                <nav class="bottom-tabs" aria-label="下部ナビ">
+                  <span class="tab"><span class="tab-icon">⌂</span>ホーム</span>
+                  <span class="tab"><span class="tab-icon">□</span>演習</span>
+                  <span class="tab"><span class="tab-icon">↻</span>復習</span>
+                  <span class="tab"><span class="tab-icon">▥</span>進捗</span>
+                  <span class="tab active"><span class="tab-icon">⚙</span>設定</span>
+                </nav>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-empty">
+            <div class="screen-info">
+              <div>
+                <h2>初回利用 / 空状態</h2>
+                <p>進捗がない状態で、最短の開始導線を出す。</p>
+              </div>
+              <span class="screen-number">11</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>08:03</span><span>100%</span></div>
+                <header class="app-header">
+                  <h3 class="app-title">5分ドリル</h3>
+                  <p class="app-subtitle">Reading を短時間で始める</p>
+                </header>
+                <div class="content stack">
+                  <div class="empty-visual" aria-label="初回利用のビジュアル">
+                    <div class="empty-phone">
+                      <div class="visual-line primary"></div>
+                      <div class="visual-line"></div>
+                      <div class="visual-line short"></div>
+                      <div class="visual-bar" style="margin-top: 10px"><span style="width: 70%"></span></div>
+                    </div>
+                  </div>
+                  <div class="panel soft">
+                    <h4 class="panel-title">最初の5問を始める</h4>
+                    <p class="panel-meta">回答履歴と復習予定は、この端末内だけに保存されます。</p>
+                  </div>
+                </div>
+                <div class="bottom-action">
+                  <div class="button-row">
+                    <a class="secondary-button" href="#screen-part">Partを選ぶ</a>
+                    <a class="primary-button" href="#screen-quick">開始</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="screen-card" id="screen-error">
+            <div class="screen-info">
+              <div>
+                <h2>エラー / 保存失敗状態</h2>
+                <p>保存不可やデータ破損時に、再試行と初期化を提示する。</p>
+              </div>
+              <span class="screen-number">12</span>
+            </div>
+            <div class="mock-area">
+              <div class="phone">
+                <div class="status-bar"><span>10:41</span><span>76%</span></div>
+                <header class="app-header">
+                  <h3 class="app-title">保存できません</h3>
+                  <p class="app-subtitle">端末内データの確認が必要です</p>
+                </header>
+                <div class="content stack">
+                  <div class="error-visual" aria-label="エラー状態のビジュアル">
+                    <div class="error-symbol">!</div>
+                  </div>
+                  <div class="panel danger">
+                    <h4 class="panel-title">進捗データの保存に失敗しました</h4>
+                    <p class="panel-meta">ブラウザの保存領域が利用できないか、データ形式が壊れている可能性があります。</p>
+                  </div>
+                  <div class="panel">
+                    <h4 class="panel-title">現在の回答</h4>
+                    <p class="panel-meta">この画面を閉じる前に、再試行または初期化を選んでください。</p>
+                  </div>
+                </div>
+                <div class="bottom-action">
+                  <div class="button-row">
+                    <a class="secondary-button" href="#screen-error">再試行</a>
+                    <a class="danger-button" href="#screen-empty">初期化</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <section class="imagegen-note" aria-label="画像生成メモ">
+          <h2>Image-gen 使用メモ</h2>
+          <p>補助ビジュアルのコンセプト生成に image-gen をシングルスレッドで使用し、上部のプロダクトモックを `docs/assets/reading-dashboard-visual.png` として HTML に組み込んでいる。重要な UI テキスト、ボタン、問題文、ナビゲーションは実装指針として再利用しやすいよう HTML/CSS で表現している。</p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
