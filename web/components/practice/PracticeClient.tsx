@@ -307,7 +307,12 @@ export function PracticeClient() {
         const { [srsResult.questionId]: _removed, ...restSrs } = nextProgress.srs;
         nextProgress = { ...nextProgress, srs: restSrs };
       } else {
-        reviewScheduledCount += 1;
+        // 既に SRS 登録済みの問題は「追加」ではなく再スケジュールのため、
+        // 新規に復習予定へ登録される問題のみをカウントする。
+        if (!(answer.questionId in nextProgress.srs)) {
+          reviewScheduledCount += 1;
+        }
+
         nextProgress = {
           ...nextProgress,
           srs: {

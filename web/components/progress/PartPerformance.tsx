@@ -5,12 +5,19 @@ type PartPerformanceProps = {
 };
 
 export function PartPerformance({ statistics }: PartPerformanceProps) {
-  const lowestAccuracy = Math.min(...statistics.map((statistic) => statistic.accuracy));
+  // 未回答（answered === 0）の Part は accuracy が 0 となり「最も苦手」と誤判定されるため、
+  // 回答実績のある Part のみを最低正答率の比較対象にする。
+  const answeredStatistics = statistics.filter((statistic) => statistic.answered > 0);
+  const lowestAccuracy =
+    answeredStatistics.length > 0
+      ? Math.min(...answeredStatistics.map((statistic) => statistic.accuracy))
+      : Number.NaN;
 
   return (
     <div className="grid gap-3">
       {statistics.map((statistic) => {
-        const highlighted = statistic.accuracy === lowestAccuracy;
+        const highlighted =
+          statistic.answered > 0 && statistic.accuracy === lowestAccuracy;
 
         return (
           <a
