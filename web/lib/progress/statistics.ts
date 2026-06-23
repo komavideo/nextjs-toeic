@@ -68,7 +68,10 @@ export function calculateTagWeaknessStatistics(
 }
 
 function toDateKey(date: Date): string {
-  return date.toISOString().slice(0, 10);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 export function calculateRecentDailyAnswerCounts(
@@ -78,13 +81,13 @@ export function calculateRecentDailyAnswerCounts(
   const counts = new Map<string, number>();
 
   for (const answer of answers) {
-    const dateKey = answer.answeredAt.slice(0, 10);
+    const dateKey = toDateKey(new Date(answer.answeredAt));
     counts.set(dateKey, (counts.get(dateKey) ?? 0) + 1);
   }
 
   return Array.from({ length: 7 }, (_, index) => {
-    const date = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
-    date.setUTCDate(date.getUTCDate() - (6 - index));
+    const date = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    date.setDate(date.getDate() - (6 - index));
     const dateKey = toDateKey(date);
 
     return {

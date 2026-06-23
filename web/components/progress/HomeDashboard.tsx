@@ -38,6 +38,13 @@ function getRecommendedPart(
   )[0].part;
 }
 
+function toDateKey(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 export function HomeDashboard() {
   const [progressState, setProgressState] = useState<ProgressState | null>(null);
   const [loadError, setLoadError] = useState<LoadError | null>(null);
@@ -88,9 +95,9 @@ export function HomeDashboard() {
     progressState.totalAnswered === 0
       ? 0
       : Math.round((progressState.totalCorrect / progressState.totalAnswered) * 100);
-  const today = new Date().toISOString().slice(0, 10);
+  const today = toDateKey(new Date());
   const todayCount = progressState.answers.filter((answer) =>
-    answer.answeredAt.startsWith(today),
+    toDateKey(new Date(answer.answeredAt)) === today,
   ).length;
 
   return (

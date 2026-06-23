@@ -1,3 +1,6 @@
+"use client";
+
+import { useMemo } from "react";
 import { Panel } from "@/components/shared/Panel";
 import { flattenQuestionBankEntries } from "@/lib/question-bank/flatten";
 import { getAllQuestionBankEntries } from "@/lib/question-bank";
@@ -9,14 +12,31 @@ type ReviewListProps = {
 };
 
 export function ReviewList({ dueItems, answers }: ReviewListProps) {
-  const questionMap = new Map(
-    flattenQuestionBankEntries(getAllQuestionBankEntries()).map((question) => [
-      question.questionId,
-      question,
-    ]),
+  const questionMap = useMemo(
+    () =>
+      new Map(
+        flattenQuestionBankEntries(getAllQuestionBankEntries()).map((question) => [
+          question.questionId,
+          question,
+        ]),
+      ),
+    [],
   );
-  const sortedItems = [...dueItems].sort((left, right) =>
-    left.dueDate.localeCompare(right.dueDate),
+  const latestAnswerMap = useMemo(() => {
+    const answerMap = new Map<string, AnswerResult>();
+
+    for (const answer of answers) {
+      answerMap.set(answer.questionId, answer);
+    }
+
+    return answerMap;
+  }, [answers]);
+  const sortedItems = useMemo(
+    () =>
+      [...dueItems].sort((left, right) =>
+        left.dueDate.localeCompare(right.dueDate),
+      ),
+    [dueItems],
   );
 
   return (
@@ -24,9 +44,7 @@ export function ReviewList({ dueItems, answers }: ReviewListProps) {
       <div className="grid gap-3">
         {sortedItems.map((item) => {
           const question = questionMap.get(item.questionId);
-          const latestAnswer = [...answers]
-            .reverse()
-            .find((answer) => answer.questionId === item.questionId);
+          const latestAnswer = latestAnswerMap.get(item.questionId);
 
           return (
             <div

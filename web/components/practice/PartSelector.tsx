@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Button } from "@/components/shared/Button";
 import { Panel } from "@/components/shared/Panel";
+import { getAvailableTagsByPart } from "@/lib/question-bank/sessionQueue";
 import type { Difficulty, ToeicReadingPart } from "@/types/question";
 
 type PartSelectorProps = {
@@ -43,7 +44,6 @@ const partOptions: Array<{
 ];
 
 const difficultyOptions: Difficulty[] = ["easy", "medium", "hard"];
-const tagOptions = ["word-form", "deadline", "notice", "event"];
 
 export function PartSelector({
   initialPart = "part5",
@@ -55,6 +55,15 @@ export function PartSelector({
   const [selectedDifficulty, setSelectedDifficulty] =
     useState<Difficulty | undefined>(initialDifficulty);
   const [selectedTag, setSelectedTag] = useState<string | undefined>(initialTag);
+  const tagOptions = useMemo(() => {
+    const tags = getAvailableTagsByPart(selectedPart);
+
+    if (selectedTag && !tags.includes(selectedTag)) {
+      return [selectedTag, ...tags];
+    }
+
+    return tags;
+  }, [selectedPart, selectedTag]);
 
   return (
     <section className="mx-auto max-w-[720px]">
@@ -78,7 +87,16 @@ export function PartSelector({
                   : "border-[var(--border)] hover:bg-[var(--surface-subtle)]",
               ].join(" ")}
               key={option.part}
-              onClick={() => setSelectedPart(option.part)}
+              onClick={() => {
+                setSelectedPart(option.part);
+
+                if (
+                  selectedTag &&
+                  !getAvailableTagsByPart(option.part).includes(selectedTag)
+                ) {
+                  setSelectedTag(undefined);
+                }
+              }}
               type="button"
             >
               <div className="flex items-start justify-between gap-3">

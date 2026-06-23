@@ -6,6 +6,7 @@ import { Modal } from "@/components/shared/Modal";
 import { recordAnswer } from "@/lib/progress/recordAnswer";
 import { gradeQuestion } from "@/lib/question-bank/grade";
 import {
+  findFirstPartByTag,
   createPartSessionQueue,
   createQuickSessionQueue,
   createReviewSessionQueue,
@@ -79,18 +80,34 @@ function createReviewSession(progressState: ProgressState): ActivePracticeSessio
   };
 }
 
-function createRestartedSession(
+function createRestartedSessionState(
   condition: PracticeSessionCondition,
-): ActivePracticeSession {
-  if (condition.kind === "part") {
-    return createPartSession({
-      part: condition.part ?? "part5",
-      difficulty: condition.difficulty,
-      tag: condition.tag,
-    });
+): PracticeState {
+  if (condition.kind === "review") {
+    const progressResult = loadProgressState();
+
+    if (!progressResult.ok) {
+      return {
+        screen: "error",
+        message: "復習データを読み込めませんでした。",
+        storageUnavailable: progressResult.reason === "unavailable",
+      };
+    }
+
+    return createRunnableSessionState(createReviewSession(progressResult.state));
   }
 
-  return createSession(condition.part ?? "part5");
+  if (condition.kind === "part") {
+    return createRunnableSessionState(
+      createPartSession({
+        part: condition.part ?? "part5",
+        difficulty: condition.difficulty,
+        tag: condition.tag,
+      }),
+    );
+  }
+
+  return createRunnableSessionState(createSession(condition.part ?? "part5"));
 }
 
 function createSelectStateFromCondition(
@@ -117,11 +134,14 @@ function createRunnableSessionState(
 function createSelectStateFromSearchParams(
   searchParams: URLSearchParams,
 ): SelectPracticeState {
+  const tag = searchParams.get("tag") ?? undefined;
+
   return {
     screen: "select",
-    initialPart: toPart(searchParams.get("part")),
+    initialPart:
+      toPart(searchParams.get("part")) ?? (tag ? findFirstPartByTag(tag) : undefined),
     initialDifficulty: toDifficulty(searchParams.get("difficulty")),
-    initialTag: searchParams.get("tag") ?? undefined,
+    initialTag: tag,
   };
 }
 
@@ -479,7 +499,7 @@ export function PracticeClient() {
         answers={state.session.answers}
         elapsedMs={state.elapsedMs}
         onRestart={() =>
-          setState(createRunnableSessionState(createRestartedSession(state.session.condition)))
+          setState(createRestartedSessionState(state.session.condition))
         }
         reviewScheduledCount={state.reviewScheduledCount}
         totalAnswered={state.totalAnswered}

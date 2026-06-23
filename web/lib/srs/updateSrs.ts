@@ -13,11 +13,31 @@ export type UpdateSrsResult =
 
 const intervalSteps = [1, 3, 7, 14, 30] as const;
 
+function toDateKey(value: string): string {
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return value.slice(0, 10);
+  }
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 function addDaysToDateKey(dateTime: string, days: number): string {
-  const dateKey = dateTime.slice(0, 10);
-  const date = new Date(`${dateKey}T00:00:00.000Z`);
-  date.setUTCDate(date.getUTCDate() + days);
-  return date.toISOString().slice(0, 10);
+  const dateKey = toDateKey(dateTime);
+  const [year, month, day] = dateKey.split("-").map(Number);
+
+  if ([year, month, day].some(Number.isNaN)) {
+    return dateKey;
+  }
+
+  const date = new Date(year, month - 1, day);
+  date.setDate(date.getDate() + days);
+
+  return toDateKey(date.toISOString());
 }
 
 function nextIntervalDays(currentState?: SrsState): SrsState["intervalDays"] {

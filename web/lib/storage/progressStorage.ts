@@ -24,6 +24,18 @@ const validParts = new Set(["part5", "part6", "part7"]);
 const validChoiceIds = new Set(["A", "B", "C", "D"]);
 const validIntervals = new Set([1, 3, 7, 14, 30]);
 
+function getLocalStorage(): Storage | undefined {
+  if (typeof window === "undefined") {
+    return undefined;
+  }
+
+  try {
+    return window.localStorage;
+  } catch {
+    return undefined;
+  }
+}
+
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
 }
@@ -92,14 +104,16 @@ function isProgressState(value: unknown): value is ProgressState {
 }
 
 export function loadProgressState(): LoadProgressResult {
-  if (typeof window === "undefined" || !window.localStorage) {
+  const storage = getLocalStorage();
+
+  if (!storage) {
     return { ok: false, reason: "unavailable" };
   }
 
   let rawValue: string | null;
 
   try {
-    rawValue = window.localStorage.getItem(progressStorageKey);
+    rawValue = storage.getItem(progressStorageKey);
   } catch {
     return { ok: false, reason: "unavailable" };
   }
@@ -122,12 +136,14 @@ export function loadProgressState(): LoadProgressResult {
 }
 
 export function saveProgressState(state: ProgressState): SaveProgressResult {
-  if (typeof window === "undefined" || !window.localStorage) {
+  const storage = getLocalStorage();
+
+  if (!storage) {
     return { ok: false, reason: "unavailable" };
   }
 
   try {
-    window.localStorage.setItem(progressStorageKey, JSON.stringify(state));
+    storage.setItem(progressStorageKey, JSON.stringify(state));
     return { ok: true };
   } catch {
     return { ok: false, reason: "write-failed" };
@@ -135,12 +151,14 @@ export function saveProgressState(state: ProgressState): SaveProgressResult {
 }
 
 export function clearProgressState(): ClearProgressResult {
-  if (typeof window === "undefined" || !window.localStorage) {
+  const storage = getLocalStorage();
+
+  if (!storage) {
     return { ok: false, reason: "unavailable" };
   }
 
   try {
-    window.localStorage.removeItem(progressStorageKey);
+    storage.removeItem(progressStorageKey);
     return { ok: true };
   } catch {
     return { ok: false, reason: "remove-failed" };

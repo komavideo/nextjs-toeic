@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm validate:data && next build",
+    "test": "node --no-warnings --test --experimental-strip-types lib/progress/recordAnswer.test.ts lib/question-bank/grade.test.ts lib/srs/updateSrs.test.ts",
     "validate:data": "node scripts/validate-question-data.mjs"
   },
   "dependencies": {
