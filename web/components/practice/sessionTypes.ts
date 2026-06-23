@@ -19,6 +19,7 @@ export type ActivePracticeSession = {
   queue: FlatQuestion[];
   currentIndex: number;
   startedAt: string;
+  questionStartedAt: string;
   answers: AnswerResult[];
   selectedChoiceId?: ChoiceId;
 };

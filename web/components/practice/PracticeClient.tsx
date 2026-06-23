@@ -44,12 +44,15 @@ function toDifficulty(value: string | null): Difficulty | undefined {
 }
 
 function createSession(part: ToeicReadingPart): ActivePracticeSession {
+  const startedAt = new Date().toISOString();
+
   return {
     id: `session-${Date.now()}`,
     condition: { kind: "quick", part },
     queue: createQuickSessionQueue(part),
     currentIndex: 0,
-    startedAt: new Date().toISOString(),
+    startedAt,
+    questionStartedAt: startedAt,
     answers: [],
   };
 }
@@ -59,23 +62,29 @@ function createPartSession(condition: {
   difficulty?: Difficulty;
   tag?: string;
 }): ActivePracticeSession {
+  const startedAt = new Date().toISOString();
+
   return {
     id: `session-${Date.now()}`,
     condition: { kind: "part", ...condition },
     queue: createPartSessionQueue(condition),
     currentIndex: 0,
-    startedAt: new Date().toISOString(),
+    startedAt,
+    questionStartedAt: startedAt,
     answers: [],
   };
 }
 
 function createReviewSession(progressState: ProgressState): ActivePracticeSession {
+  const startedAt = new Date().toISOString();
+
   return {
     id: `session-${Date.now()}`,
     condition: { kind: "review" },
     queue: createReviewSessionQueue(progressState),
     currentIndex: 0,
-    startedAt: new Date().toISOString(),
+    startedAt,
+    questionStartedAt: startedAt,
     answers: [],
   };
 }
@@ -255,7 +264,8 @@ export function PracticeClient() {
 
     const answeredAt = new Date().toISOString();
     const elapsedMs = Math.max(
-      new Date(answeredAt).getTime() - new Date(session.startedAt).getTime(),
+      new Date(answeredAt).getTime() -
+        new Date(session.questionStartedAt).getTime(),
       0,
     );
     const answer = gradeQuestion(
@@ -378,6 +388,7 @@ export function PracticeClient() {
           ...session,
           currentIndex: nextIndex,
           selectedChoiceId: undefined,
+          questionStartedAt: new Date().toISOString(),
         },
       });
       return;
