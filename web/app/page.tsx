@@ -1,7 +1,5 @@
+import { HomeDashboard } from "@/components/progress/HomeDashboard";
+
 export default function Home() {
-  return (
-    <main>
-      <h1>5分リーディングドリル</h1>
-    </main>
-  );
+  return <HomeDashboard />;
 }

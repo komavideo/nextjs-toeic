@@ -1,7 +1,5 @@
+import { ProgressClient } from "@/components/progress/ProgressClient";
+
 export default function ProgressPage() {
-  return (
-    <main>
-      <h1>進捗</h1>
-    </main>
-  );
+  return <ProgressClient />;
 }
