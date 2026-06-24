@@ -1,9 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/shared/Button";
 import { Panel } from "@/components/shared/Panel";
 import { getAvailableTagsByPart } from "@/lib/question-bank/sessionQueue";
+import { calculatePartStatistics } from "@/lib/progress/statistics";
+import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { Difficulty, ToeicReadingPart } from "@/types/question";
 
 type PartSelectorProps = {
@@ -44,6 +46,30 @@ const partOptions: Array<{
 ];
 
 const difficultyOptions: Difficulty[] = ["easy", "medium", "hard"];
+const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
+const initialPartAccuracies: Record<ToeicReadingPart, number> = {
+  part5: 0,
+  part6: 0,
+  part7: 0,
+};
+
+function getRecommendedPart(
+  statistics: ReturnType<typeof calculatePartStatistics>,
+): ToeicReadingPart {
+  const answeredStatistics = statistics.filter(
+    (statistic) => statistic.answered > 0,
+  );
+
+  if (answeredStatistics.length === 0) {
+    return "part5";
+  }
+
+  return [...answeredStatistics].sort(
+    (left, right) =>
+      left.accuracy - right.accuracy ||
+      partOrder.indexOf(left.part) - partOrder.indexOf(right.part),
+  )[0].part;
+}
 
 export function PartSelector({
   initialPart = "part5",
@@ -55,6 +81,9 @@ export function PartSelector({
   const [selectedDifficulty, setSelectedDifficulty] =
     useState<Difficulty | undefined>(initialDifficulty);
   const [selectedTag, setSelectedTag] = useState<string | undefined>(initialTag);
+  const [partAccuracies, setPartAccuracies] = useState(initialPartAccuracies);
+  const [recommendedPart, setRecommendedPart] =
+    useState<ToeicReadingPart>("part5");
   const tagOptions = useMemo(() => {
     const tags = getAvailableTagsByPart(selectedPart);
 
@@ -64,6 +93,26 @@ export function PartSelector({
 
     return tags;
   }, [selectedPart, selectedTag]);
+
+  useEffect(() => {
+    const result = loadProgressState();
+
+    if (!result.ok) {
+      return;
+    }
+
+    const statistics = calculatePartStatistics(result.state.answers);
+    setPartAccuracies(
+      statistics.reduce<Record<ToeicReadingPart, number>>(
+        (accuracies, statistic) => ({
+          ...accuracies,
+          [statistic.part]: statistic.accuracy,
+        }),
+        initialPartAccuracies,
+      ),
+    );
+    setRecommendedPart(getRecommendedPart(statistics));
+  }, []);
 
   return (
     <section className="mx-auto max-w-[720px]">
@@ -76,7 +125,7 @@ export function PartSelector({
       <div className="mt-6 grid gap-3">
         {partOptions.map((option) => {
           const selected = selectedPart === option.part;
-          const recommended = option.part === "part5";
+          const recommended = option.part === recommendedPart;
 
           return (
             <button
@@ -114,7 +163,7 @@ export function PartSelector({
               </div>
               <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold text-[var(--text-muted)]">
                 <span>{option.duration}</span>
-                <span>正答率 0%</span>
+                <span>正答率 {partAccuracies[option.part]}%</span>
               </div>
             </button>
           );

@@ -96,10 +96,8 @@ function validateQuestionItem(item, errors, filePath, entryId, questionId) {
   }
 }
 
-function validateEntries(entries, filePath) {
+function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds) {
   const errors = [];
-  const seenEntryIds = new Set();
-  const seenQuestionIds = new Set();
   let flatQuestionCount = 0;
 
   if (!Array.isArray(entries)) {
@@ -193,12 +191,14 @@ function validateEntries(entries, filePath) {
 }
 
 const allErrors = [];
+const seenEntryIds = new Set();
+const seenQuestionIds = new Set();
 let totalFlatQuestionCount = 0;
 
 for (const filePath of files) {
   try {
     const json = JSON.parse(await readFile(new URL(`../${filePath}`, import.meta.url), "utf8"));
-    const result = validateEntries(json, filePath);
+    const result = validateEntries(json, filePath, seenEntryIds, seenQuestionIds);
     allErrors.push(...result.errors);
     totalFlatQuestionCount += result.flatQuestionCount;
   } catch (error) {
