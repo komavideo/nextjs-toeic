@@ -280,6 +280,88 @@
 | part5 | p5-generated-214 | p5-generated-214 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
 | part5 | p5-generated-215 | p5-generated-215 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
 
+### Part 6 レビュー記録
+
+- 対象範囲: `web/data/part6.json` の全 21 セット / 42 設問（`p6-sample-set-001`、`p6-generated-set-001`〜`p6-generated-set-020`）
+- レビュー日: 2026-06-24
+- レビュアー: Codex
+- レビュー結果: 42 設問はレビュー完了、要修正 0 件、保留 0 件
+- Issue #21 確認結果: 全セットの本文、設問、選択肢、正解参照、解説、難易度、タグ、著作権・商標リスクを確認し、本文または文脈から正解を一意に説明できることを確認した。
+- 注意事項: `p6-generated-set-001`〜`p6-generated-set-020` は同じメモ構造、同じ 2 設問構成、正解位置 A/B の反復がある。現行 Issue では本文と設問の対応、正解根拠、解説、タグ、権利リスクが受け入れ条件を満たすためレビュー完了とし、設問バリエーションの拡充は将来の改善候補として扱う。
+
+#### Part 6 セット単位レビュー
+
+| Part | entryId | レビュー日 | レビュアー | 本文・設問対応 | 正解根拠 | 解説 | 難易度 | タグ | 著作権・商標リスク | 総合判定 | 修正内容/保留理由 | 再レビュー日 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| part6 | p6-sample-set-001 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-001 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-002 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-003 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-004 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-005 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-006 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-007 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-008 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-009 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-010 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-011 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-012 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-013 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-014 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-015 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-016 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-017 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-018 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-019 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-020 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+
+#### Part 6 設問単位レビュー
+
+| Part | entryId | questionId | レビュー日 | レビュアー | 問題本文 | 選択肢 | 正解参照 | 解説 | 難易度 | タグ | 著作権・商標リスク | 総合判定 | 修正内容/保留理由 | 再レビュー日 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| part6 | p6-sample-set-001 | p6-sample-001 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-sample-set-001 | p6-sample-002 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-001 | p6-generated-q-001-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-001 | p6-generated-q-001-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-002 | p6-generated-q-002-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-002 | p6-generated-q-002-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-003 | p6-generated-q-003-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-003 | p6-generated-q-003-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-004 | p6-generated-q-004-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-004 | p6-generated-q-004-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-005 | p6-generated-q-005-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-005 | p6-generated-q-005-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-006 | p6-generated-q-006-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-006 | p6-generated-q-006-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-007 | p6-generated-q-007-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-007 | p6-generated-q-007-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-008 | p6-generated-q-008-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-008 | p6-generated-q-008-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-009 | p6-generated-q-009-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-009 | p6-generated-q-009-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-010 | p6-generated-q-010-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-010 | p6-generated-q-010-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-011 | p6-generated-q-011-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-011 | p6-generated-q-011-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-012 | p6-generated-q-012-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-012 | p6-generated-q-012-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-013 | p6-generated-q-013-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-013 | p6-generated-q-013-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-014 | p6-generated-q-014-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-014 | p6-generated-q-014-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-015 | p6-generated-q-015-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-015 | p6-generated-q-015-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-016 | p6-generated-q-016-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-016 | p6-generated-q-016-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-017 | p6-generated-q-017-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-017 | p6-generated-q-017-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-018 | p6-generated-q-018-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-018 | p6-generated-q-018-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-019 | p6-generated-q-019-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-019 | p6-generated-q-019-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-020 | p6-generated-q-020-01 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part6 | p6-generated-set-020 | p6-generated-q-020-02 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+
 ### コピー用テンプレート
 
 | Part | entryId | questionId | レビュー日 | レビュアー | 問題本文 | 選択肢 | 正解参照 | 解説 | 難易度 | タグ | 著作権・商標リスク | 総合判定 | 修正内容/保留理由 | 再レビュー日 |

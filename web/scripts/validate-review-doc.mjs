@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 
 const reviewDocPath = new URL("../../docs/QUESTION_REVIEW.md", import.meta.url);
 const part5DataPath = new URL("../data/part5.json", import.meta.url);
+const part6DataPath = new URL("../data/part6.json", import.meta.url);
 
 const requiredSections = [
   "# 問題レビュー基準と記録フォーマット",
@@ -38,6 +39,29 @@ const reviewResultColumns = [
   "問題本文",
   "選択肢",
   "正解参照",
+  "解説",
+  "難易度",
+  "タグ",
+  "著作権・商標リスク",
+];
+const requiredPart6SetColumns = [
+  "Part",
+  "entryId",
+  "レビュー日",
+  "レビュアー",
+  "本文・設問対応",
+  "正解根拠",
+  "解説",
+  "難易度",
+  "タグ",
+  "著作権・商標リスク",
+  "総合判定",
+  "修正内容/保留理由",
+  "再レビュー日",
+];
+const part6SetReviewResultColumns = [
+  "本文・設問対応",
+  "正解根拠",
   "解説",
   "難易度",
   "タグ",
@@ -205,7 +229,162 @@ function collectPart5ReviewItems(content, part5Entries) {
   return missingItems;
 }
 
-function collectMissingItems(content, part5Entries) {
+function collectPart6SetReviewItems(content, part6Entries) {
+  const missingItems = [];
+  const part6Ids = new Set(part6Entries.map((entry) => entry.id));
+  const part6ReviewContent = getSectionContent(content, "### Part 6 レビュー記録");
+  const reviewRows = getAllTableRows(part6ReviewContent, requiredPart6SetColumns);
+  const reviewedPart6Ids = new Set();
+  const incompleteReviewIds = new Set();
+
+  if (!part6ReviewContent) {
+    return ["Part 6 レビュー記録セクションがありません。"];
+  }
+
+  for (const row of reviewRows) {
+    if (row.Part !== "part6" || !row.entryId) {
+      continue;
+    }
+
+    if (!part6Ids.has(row.entryId)) {
+      missingItems.push(`Part 6 セットレビュー記録の entryId がデータに存在しません: ${row.entryId}`);
+      continue;
+    }
+
+    const invalidReviewColumns = part6SetReviewResultColumns.filter(
+      (column) => !requiredReviewValues.includes(row[column]),
+    );
+
+    for (const column of invalidReviewColumns) {
+      missingItems.push(`Part 6 セットレビュー記録の ${column} が OK/NG/NA ではありません: ${row.entryId}`);
+    }
+
+    if (!requiredFinalStatuses.includes(row["総合判定"])) {
+      missingItems.push(`Part 6 セットレビュー記録の総合判定が不正です: ${row.entryId}`);
+      continue;
+    }
+
+    if (row["総合判定"] === "レビュー完了" && part6SetReviewResultColumns.some((column) => row[column] === "NG")) {
+      missingItems.push(`Part 6 セットレビュー記録で NG を含むセットがレビュー完了になっています: ${row.entryId}`);
+      continue;
+    }
+
+    if (row["総合判定"] === "レビュー完了") {
+      reviewedPart6Ids.add(row.entryId);
+    } else if (row["総合判定"] === "要修正" || row["総合判定"] === "保留") {
+      // リリース条件「要修正 または 保留 のセットが残っていない」を機械的に保証する。
+      incompleteReviewIds.add(row.entryId);
+    }
+  }
+
+  if (incompleteReviewIds.size > 0) {
+    missingItems.push(
+      `Part 6 セットに未完了（要修正/保留）の総合判定が残っています: ${[...incompleteReviewIds].join(", ")}`,
+    );
+  }
+
+  const missingReviewedEntries = part6Entries
+    .filter((entry) => entry.reviewed === true && !reviewedPart6Ids.has(entry.id))
+    .map((entry) => entry.id);
+
+  if (missingReviewedEntries.length > 0) {
+    missingItems.push(
+      `Part 6 セットの reviewed: true に対応するレビュー完了記録が不足しています: ${missingReviewedEntries.join(", ")}`,
+    );
+  }
+
+  return missingItems;
+}
+
+function collectPart6ReviewItems(content, part6Entries) {
+  const missingItems = [];
+  const part6QuestionIdsByEntryId = new Map(
+    part6Entries.map((entry) => [
+      entry.id,
+      new Set(Array.isArray(entry.questions) ? entry.questions.map((question) => question.id) : []),
+    ]),
+  );
+  const part6ReviewContent = getSectionContent(content, "### Part 6 レビュー記録");
+  const reviewRows = getAllTableRows(part6ReviewContent, requiredColumns);
+  const reviewedPart6QuestionKeys = new Set();
+  const incompleteReviewKeys = new Set();
+
+  if (!part6ReviewContent) {
+    return ["Part 6 レビュー記録セクションがありません。"];
+  }
+
+  for (const row of reviewRows) {
+    if (row.Part !== "part6" || !row.entryId || !row.questionId) {
+      continue;
+    }
+
+    const questionIds = part6QuestionIdsByEntryId.get(row.entryId);
+    const reviewKey = `${row.entryId} / ${row.questionId}`;
+
+    if (!questionIds) {
+      missingItems.push(`Part 6 レビュー記録の entryId がデータに存在しません: ${row.entryId}`);
+      continue;
+    }
+
+    if (!questionIds.has(row.questionId)) {
+      missingItems.push(`Part 6 レビュー記録の questionId が entryId 配下に存在しません: ${reviewKey}`);
+      continue;
+    }
+
+    const invalidReviewColumns = reviewResultColumns.filter(
+      (column) => !requiredReviewValues.includes(row[column]),
+    );
+
+    for (const column of invalidReviewColumns) {
+      missingItems.push(`Part 6 レビュー記録の ${column} が OK/NG/NA ではありません: ${reviewKey}`);
+    }
+
+    if (!requiredFinalStatuses.includes(row["総合判定"])) {
+      missingItems.push(`Part 6 レビュー記録の総合判定が不正です: ${reviewKey}`);
+      continue;
+    }
+
+    if (row["総合判定"] === "レビュー完了" && reviewResultColumns.some((column) => row[column] === "NG")) {
+      missingItems.push(`Part 6 レビュー記録で NG を含む設問がレビュー完了になっています: ${reviewKey}`);
+      continue;
+    }
+
+    if (row["総合判定"] === "レビュー完了") {
+      reviewedPart6QuestionKeys.add(reviewKey);
+    } else if (row["総合判定"] === "要修正" || row["総合判定"] === "保留") {
+      // リリース条件「要修正 または 保留 の設問が残っていない」を機械的に保証する。
+      incompleteReviewKeys.add(reviewKey);
+    }
+  }
+
+  if (incompleteReviewKeys.size > 0) {
+    missingItems.push(
+      `Part 6 に未完了（要修正/保留）の総合判定が残っています: ${[...incompleteReviewKeys].join(", ")}`,
+    );
+  }
+
+  const missingReviewedQuestions = part6Entries
+    .flatMap((entry) => {
+      if (!Array.isArray(entry.questions)) {
+        return [];
+      }
+
+      return entry.questions
+        .filter((question) => question.reviewed === true)
+        .map((question) => `${entry.id} / ${question.id}`);
+    })
+    .filter((reviewKey) => !reviewedPart6QuestionKeys.has(reviewKey));
+
+  if (missingReviewedQuestions.length > 0) {
+    missingItems.push(
+      `Part 6 の reviewed: true に対応するレビュー完了記録が不足しています: ${missingReviewedQuestions.join(", ")}`,
+    );
+  }
+
+  return missingItems;
+}
+
+function collectMissingItems(content, part5Entries, part6Entries) {
   const missingItems = [];
 
   for (const section of requiredSections) {
@@ -239,6 +418,8 @@ function collectMissingItems(content, part5Entries) {
   }
 
   missingItems.push(...collectPart5ReviewItems(content, part5Entries));
+  missingItems.push(...collectPart6SetReviewItems(content, part6Entries));
+  missingItems.push(...collectPart6ReviewItems(content, part6Entries));
 
   return missingItems;
 }
@@ -247,7 +428,8 @@ async function runValidation() {
   try {
     const content = await readFile(reviewDocPath, "utf8");
     const part5Entries = JSON.parse(await readFile(part5DataPath, "utf8"));
-    const missingItems = collectMissingItems(content, part5Entries);
+    const part6Entries = JSON.parse(await readFile(part6DataPath, "utf8"));
+    const missingItems = collectMissingItems(content, part5Entries, part6Entries);
 
     if (missingItems.length > 0) {
       for (const item of missingItems) {
@@ -283,6 +465,38 @@ function createPart5ReviewSection(rows) {
   return `### Part 5 レビュー記録\n\n${header}\n${separator}\n${body}\n`;
 }
 
+// 自己テスト用に Part 6 レビュー記録セクション（見出し＋表）を組み立てる。
+function createPart6ReviewSection(rows) {
+  const header =
+    "| Part | entryId | questionId | レビュー日 | レビュアー | 問題本文 | 選択肢 | 正解参照 | 解説 | 難易度 | タグ | 著作権・商標リスク | 総合判定 | 修正内容/保留理由 | 再レビュー日 |";
+  const separator =
+    "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |";
+  const body = rows
+    .map((row) => {
+      const reviewCells = reviewResultColumns.map((column) => row[column] ?? "OK").join(" | ");
+      return `| part6 | ${row.entryId} | ${row.questionId} | 2026-06-24 | Tester | ${reviewCells} | ${row.status} | なし |  |`;
+    })
+    .join("\n");
+
+  return `### Part 6 レビュー記録\n\n${header}\n${separator}\n${body}\n`;
+}
+
+// 自己テスト用に Part 6 セット単位レビュー記録セクション（見出し＋表）を組み立てる。
+function createPart6SetReviewSection(rows) {
+  const header =
+    "| Part | entryId | レビュー日 | レビュアー | 本文・設問対応 | 正解根拠 | 解説 | 難易度 | タグ | 著作権・商標リスク | 総合判定 | 修正内容/保留理由 | 再レビュー日 |";
+  const separator =
+    "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |";
+  const body = rows
+    .map((row) => {
+      const reviewCells = part6SetReviewResultColumns.map((column) => row[column] ?? "OK").join(" | ");
+      return `| part6 | ${row.entryId} | 2026-06-24 | Tester | ${reviewCells} | ${row.status} | なし |  |`;
+    })
+    .join("\n");
+
+  return `### Part 6 レビュー記録\n\n${header}\n${separator}\n${body}\n`;
+}
+
 function assertReviewItems(items, expectedFragment) {
   assert(
     items.some((item) => item.includes(expectedFragment)),
@@ -292,6 +506,13 @@ function assertReviewItems(items, expectedFragment) {
 
 function runSelfTests() {
   const validEntries = [{ id: "p5-001", reviewed: true }];
+  const validPart6Entries = [
+    {
+      id: "p6-set-001",
+      reviewed: true,
+      questions: [{ id: "p6-q1", reviewed: true }],
+    },
+  ];
 
   // 正常系: reviewed: true の設問にレビュー完了記録がそろっていればエラー 0 件。
   assert.deepEqual(
@@ -374,6 +595,70 @@ function runSelfTests() {
       validEntries,
     ),
     "NG を含む設問がレビュー完了になっています",
+  );
+
+  // Part 6 セット正常系: reviewed: true のセットにレビュー完了記録がそろっていればエラー 0 件。
+  assert.deepEqual(
+    collectPart6SetReviewItems(
+      createPart6SetReviewSection([{ entryId: "p6-set-001", status: "レビュー完了" }]),
+      validPart6Entries,
+    ),
+    [],
+    "Part 6 セット正常系のレビュー記録でエラーが発生しました。",
+  );
+
+  // Part 6 セットの reviewed: true に対応するレビュー完了記録が不足している。
+  assertReviewItems(
+    collectPart6SetReviewItems(
+      createPart6SetReviewSection([{ entryId: "p6-set-001", status: "保留" }]),
+      validPart6Entries,
+    ),
+    "Part 6 セットの reviewed: true に対応するレビュー完了記録が不足しています",
+  );
+
+  // Part 6 セットレビュー観点の不正値。
+  assertReviewItems(
+    collectPart6SetReviewItems(
+      createPart6SetReviewSection([
+        { entryId: "p6-set-001", status: "レビュー完了", "本文・設問対応": "未確認" },
+      ]),
+      validPart6Entries,
+    ),
+    "本文・設問対応 が OK/NG/NA ではありません",
+  );
+
+  // Part 6 正常系: reviewed: true の設問にレビュー完了記録がそろっていればエラー 0 件。
+  assert.deepEqual(
+    collectPart6ReviewItems(
+      createPart6ReviewSection([{ entryId: "p6-set-001", questionId: "p6-q1", status: "レビュー完了" }]),
+      validPart6Entries,
+    ),
+    [],
+    "Part 6 正常系のレビュー記録でエラーが発生しました。",
+  );
+
+  // Part 6 セクション欠如。
+  assertReviewItems(
+    collectPart6ReviewItems("### 別のセクション\n", validPart6Entries),
+    "Part 6 レビュー記録セクションがありません。",
+  );
+
+  // Part 6 の questionId が entryId 配下に存在しない。
+  assertReviewItems(
+    collectPart6ReviewItems(
+      createPart6ReviewSection([{ entryId: "p6-set-001", questionId: "p6-q2", status: "レビュー完了" }]),
+      validPart6Entries,
+    ),
+    "questionId が entryId 配下に存在しません",
+  );
+
+  // Part 6 の reviewed: true に対応するレビュー完了記録が不足している。
+  assertReviewItems(
+    collectPart6ReviewItems(
+      createPart6ReviewSection([{ entryId: "p6-set-001", questionId: "p6-q1", status: "保留" }]),
+      validPart6Entries,
+    ),
+    "reviewed: true に対応するレビュー完了記録が不足しています",
   );
 
   console.log("レビュー文書検証の自己テストに成功しました。");
