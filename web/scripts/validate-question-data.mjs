@@ -1,3 +1,4 @@
+import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
 const files = ["data/part5.json", "data/part6.json", "data/part7.json"];
@@ -8,6 +9,10 @@ const minimumFlatQuestionCount = 300;
 
 function isRecord(value) {
   return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function isNonEmptyString(value) {
+  return typeof value === "string" && value.trim().length > 0;
 }
 
 function formatContext(error) {
@@ -22,13 +27,19 @@ function addError(errors, filePath, entryId, questionId, reason) {
 function validateQuestionItem(item, errors, filePath, entryId, questionId) {
   const id = typeof item.id === "string" ? item.id : questionId;
   const choices = item.choices;
+  const hasValidCorrectChoiceId =
+    typeof item.correctChoiceId === "string" && validChoiceIds.includes(item.correctChoiceId);
 
-  if (typeof item.id !== "string" || item.id.length === 0) {
+  if (!isNonEmptyString(item.id)) {
     addError(errors, filePath, entryId, questionId, "設問 ID が空または文字列ではありません。");
   }
 
-  if (typeof item.prompt !== "string" || item.prompt.length === 0) {
+  if (!isNonEmptyString(item.prompt)) {
     addError(errors, filePath, entryId, id, "設問文が空または文字列ではありません。");
+  }
+
+  if (!hasValidCorrectChoiceId) {
+    addError(errors, filePath, entryId, id, "correctChoiceId が A-D ではありません。");
   }
 
   if (!Array.isArray(choices) || choices.length !== 4) {
@@ -42,8 +53,9 @@ function validateQuestionItem(item, errors, filePath, entryId, questionId) {
       .filter(isRecord)
       .map((choice) => choice.text)
       .filter((text) => typeof text === "string");
+    const normalizedChoiceTexts = choiceTexts.map((text) => text.trim());
 
-    if (new Set(choiceTexts).size !== choiceTexts.length) {
+    if (new Set(normalizedChoiceTexts).size !== normalizedChoiceTexts.length) {
       addError(errors, filePath, entryId, id, "選択肢本文が重複しています。");
     }
 
@@ -63,14 +75,12 @@ function validateQuestionItem(item, errors, filePath, entryId, questionId) {
         addError(errors, filePath, entryId, id, "選択肢 ID が A-D ではありません。");
       }
 
-      if (typeof choice.text !== "string" || choice.text.length === 0) {
+      if (!isNonEmptyString(choice.text)) {
         addError(errors, filePath, entryId, id, "選択肢本文が空または文字列ではありません。");
       }
     }
 
-    if (typeof item.correctChoiceId !== "string" || !validChoiceIds.includes(item.correctChoiceId)) {
-      addError(errors, filePath, entryId, id, "correctChoiceId が A-D ではありません。");
-    } else if (!choiceIds.includes(item.correctChoiceId)) {
+    if (hasValidCorrectChoiceId && !choiceIds.includes(item.correctChoiceId)) {
       addError(errors, filePath, entryId, id, "correctChoiceId が存在する選択肢を参照していません。");
     }
   }
@@ -82,12 +92,12 @@ function validateQuestionItem(item, errors, filePath, entryId, questionId) {
   if (
     !Array.isArray(item.tags) ||
     item.tags.length === 0 ||
-    item.tags.some((tag) => typeof tag !== "string" || tag.length === 0)
+    item.tags.some((tag) => !isNonEmptyString(tag))
   ) {
     addError(errors, filePath, entryId, id, "タグが空、または文字列配列ではありません。");
   }
 
-  if (typeof item.explanation !== "string" || item.explanation.trim().length === 0) {
+  if (!isNonEmptyString(item.explanation)) {
     addError(errors, filePath, entryId, id, "解説が空または文字列ではありません。");
   }
 
@@ -115,7 +125,7 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenP
 
     const entryId = typeof entry.id === "string" ? entry.id : "unknown";
 
-    if (typeof entry.id !== "string" || entry.id.length === 0) {
+    if (!isNonEmptyString(entry.id)) {
       addError(errors, filePath, undefined, undefined, "エントリ ID が空または文字列ではありません。");
     } else if (seenEntryIds.has(entry.id)) {
       addError(errors, filePath, entryId, undefined, "エントリ ID が重複しています。");
@@ -132,7 +142,7 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenP
       flatQuestionCount += 1;
       validateQuestionItem(entry, errors, filePath, entryId, entryId);
 
-      if (typeof entry.sentence !== "string" || entry.sentence.length === 0) {
+      if (!isNonEmptyString(entry.sentence)) {
         addError(errors, filePath, entryId, entryId, "Part 5 の sentence が空または文字列ではありません。");
       } else if (Array.isArray(entry.choices)) {
         // ID が異なっても英文と選択肢が同一の設問（内容重複）を検出する。
@@ -141,15 +151,22 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenP
           entry.sentence.trim(),
           entry.choices
             .filter(isRecord)
-            .map((choice) => (typeof choice.text === "string" ? choice.text : ""))
+            .map((choice) => (typeof choice.text === "string" ? choice.text.trim() : ""))
             .slice()
             .sort(),
         ]);
 
         if (seenPart5Content.has(contentKey)) {
-          addError(errors, filePath, entryId, entryId, "Part 5 の設問内容（英文と選択肢）が他の設問と重複しています。");
+          const duplicatedEntryId = seenPart5Content.get(contentKey);
+          addError(
+            errors,
+            filePath,
+            entryId,
+            entryId,
+            `Part 5 の設問内容（英文と選択肢）が ${duplicatedEntryId} と重複しています。`,
+          );
         } else {
-          seenPart5Content.add(contentKey);
+          seenPart5Content.set(contentKey, entryId);
         }
       }
 
@@ -161,7 +178,7 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenP
       continue;
     }
 
-    if (typeof entry.passage !== "string" || entry.passage.length === 0) {
+    if (!isNonEmptyString(entry.passage)) {
       addError(errors, filePath, entryId, undefined, "パッセージ本文が空または文字列ではありません。");
     }
 
@@ -172,7 +189,7 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenP
     if (
       !Array.isArray(entry.tags) ||
       entry.tags.length === 0 ||
-      entry.tags.some((tag) => typeof tag !== "string" || tag.length === 0)
+      entry.tags.some((tag) => !isNonEmptyString(tag))
     ) {
       addError(errors, filePath, entryId, undefined, "セットタグが空、または文字列配列ではありません。");
     }
@@ -209,38 +226,133 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenP
   return { errors, flatQuestionCount };
 }
 
-const allErrors = [];
-const seenEntryIds = new Set();
-const seenQuestionIds = new Set();
-const seenPart5Content = new Set();
-let totalFlatQuestionCount = 0;
+function createValidPart5Question(overrides = {}) {
+  return {
+    id: "p5-fixture-001",
+    part: "part5",
+    sentence: "The manager reviewed the contract _____ sending it to the client.",
+    prompt: "空所に入る最も適切な語句を選んでください。",
+    choices: [
+      { id: "A", text: "before" },
+      { id: "B", text: "beneath" },
+      { id: "C", text: "beside" },
+      { id: "D", text: "between" },
+    ],
+    correctChoiceId: "A",
+    explanation: "before は「〜する前に」という意味で文脈に合います。",
+    difficulty: "easy",
+    tags: ["conjunction"],
+    reviewed: true,
+    ...overrides,
+  };
+}
 
-for (const filePath of files) {
-  try {
-    const json = JSON.parse(await readFile(new URL(`../${filePath}`, import.meta.url), "utf8"));
-    const result = validateEntries(json, filePath, seenEntryIds, seenQuestionIds, seenPart5Content);
-    allErrors.push(...result.errors);
-    totalFlatQuestionCount += result.flatQuestionCount;
-  } catch (error) {
+function validateFixture(entries) {
+  return validateEntries(entries, "fixture.json", new Set(), new Set(), new Map()).errors;
+}
+
+function assertHasError(errors, reason) {
+  assert(
+    errors.some((error) => error.reason === reason),
+    `想定した検証エラーが見つかりません: ${reason}`,
+  );
+}
+
+function runSelfTests() {
+  assertHasError(
+    validateFixture([createValidPart5Question({ correctChoiceId: "E" })]),
+    "correctChoiceId が A-D ではありません。",
+  );
+
+  assertHasError(
+    validateFixture([
+      createValidPart5Question({
+        choices: [
+          { id: "A", text: "before" },
+          { id: "B", text: "beneath" },
+          { id: "C", text: "beside" },
+          { id: "C", text: "between" },
+        ],
+        correctChoiceId: "D",
+      }),
+    ]),
+    "correctChoiceId が存在する選択肢を参照していません。",
+  );
+
+  assertHasError(
+    validateFixture([
+      createValidPart5Question({ id: "p5-fixture-001" }),
+      createValidPart5Question({
+        id: "p5-fixture-002",
+        choices: [
+          { id: "A", text: "before " },
+          { id: "B", text: "beneath" },
+          { id: "C", text: "beside" },
+          { id: "D", text: "between" },
+        ],
+      }),
+    ]),
+    "Part 5 の設問内容（英文と選択肢）が p5-fixture-001 と重複しています。",
+  );
+
+  assertHasError(
+    validateFixture([
+      createValidPart5Question({
+        choices: [
+          { id: "A", text: "   " },
+          { id: "B", text: "beneath" },
+          { id: "C", text: "beside" },
+          { id: "D", text: "between" },
+        ],
+        correctChoiceId: "B",
+      }),
+    ]),
+    "選択肢本文が空または文字列ではありません。",
+  );
+
+  console.log("問題データ検証の自己テストに成功しました。");
+}
+
+async function runValidation() {
+  const allErrors = [];
+  const seenEntryIds = new Set();
+  const seenQuestionIds = new Set();
+  const seenPart5Content = new Map();
+  let totalFlatQuestionCount = 0;
+
+  for (const filePath of files) {
+    try {
+      const json = JSON.parse(await readFile(new URL(`../${filePath}`, import.meta.url), "utf8"));
+      const result = validateEntries(json, filePath, seenEntryIds, seenQuestionIds, seenPart5Content);
+      allErrors.push(...result.errors);
+      totalFlatQuestionCount += result.flatQuestionCount;
+    } catch (error) {
+      allErrors.push({
+        filePath,
+        reason: error instanceof Error ? error.message : "JSON の読み込みに失敗しました。",
+      });
+    }
+  }
+
+  if (totalFlatQuestionCount < minimumFlatQuestionCount) {
     allErrors.push({
-      filePath,
-      reason: error instanceof Error ? error.message : "JSON の読み込みに失敗しました。",
+      filePath: "data/*.json",
+      reason: `フラット化後の設問数が ${minimumFlatQuestionCount} 問未満です。`,
     });
   }
-}
 
-if (totalFlatQuestionCount < minimumFlatQuestionCount) {
-  allErrors.push({
-    filePath: "data/*.json",
-    reason: `フラット化後の設問数が ${minimumFlatQuestionCount} 問未満です。`,
-  });
-}
-
-if (allErrors.length > 0) {
-  for (const error of allErrors) {
-    console.error(`${formatContext(error)}: ${error.reason}`);
+  if (allErrors.length > 0) {
+    for (const error of allErrors) {
+      console.error(`${formatContext(error)}: ${error.reason}`);
+    }
+    process.exitCode = 1;
+  } else {
+    console.log("問題データ検証に成功しました。");
   }
-  process.exitCode = 1;
+}
+
+if (process.argv.includes("--self-test")) {
+  runSelfTests();
 } else {
-  console.log("問題データ検証に成功しました。");
+  await runValidation();
 }

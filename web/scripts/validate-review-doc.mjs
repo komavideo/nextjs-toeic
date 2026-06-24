@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 
 const reviewDocPath = new URL("../../docs/QUESTION_REVIEW.md", import.meta.url);
+const part5DataPath = new URL("../data/part5.json", import.meta.url);
 
 const requiredSections = [
   "# 問題レビュー基準と記録フォーマット",
@@ -33,6 +34,13 @@ const requiredColumns = [
 const requiredReviewValues = ["OK", "NG", "NA"];
 const requiredFinalStatuses = ["レビュー完了", "要修正", "保留"];
 
+function parseMarkdownTableRow(line) {
+  return line
+    .split("|")
+    .slice(1, -1)
+    .map((cell) => cell.trim());
+}
+
 function hasMarkdownTableHeader(content, columns) {
   return content
     .split("\n")
@@ -41,29 +49,24 @@ function hasMarkdownTableHeader(content, columns) {
         return false;
       }
 
-      const cells = line
-        .split("|")
-        .map((cell) => cell.trim())
-        .filter(Boolean);
+      const cells = parseMarkdownTableRow(line).filter(Boolean);
 
       return columns.every((column) => cells.includes(column));
     });
 }
 
+function isMarkdownTableHeader(line, columns) {
+  if (!line.startsWith("|") || !line.endsWith("|")) {
+    return false;
+  }
+
+  const cells = parseMarkdownTableRow(line).filter(Boolean);
+  return columns.every((column) => cells.includes(column));
+}
+
 function getTableRows(content, columns) {
   const lines = content.split("\n");
-  const headerIndex = lines.findIndex((line) => {
-    if (!line.startsWith("|") || !line.endsWith("|")) {
-      return false;
-    }
-
-    const cells = line
-      .split("|")
-      .map((cell) => cell.trim())
-      .filter(Boolean);
-
-    return columns.every((column) => cells.includes(column));
-  });
+  const headerIndex = lines.findIndex((line) => isMarkdownTableHeader(line, columns));
 
   if (headerIndex === -1) {
     return [];
@@ -82,7 +85,99 @@ function getTableRows(content, columns) {
   return rows;
 }
 
-function collectMissingItems(content) {
+function getAllTableRows(content, columns) {
+  const lines = content.split("\n");
+  const rows = [];
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+
+    if (!isMarkdownTableHeader(line, columns)) {
+      continue;
+    }
+
+    const headerCells = parseMarkdownTableRow(line);
+    const columnIndexes = columns.map((column) => headerCells.indexOf(column));
+
+    for (const rowLine of lines.slice(index + 2)) {
+      if (!rowLine.startsWith("|") || !rowLine.endsWith("|")) {
+        break;
+      }
+
+      const cells = parseMarkdownTableRow(rowLine);
+      const row = Object.fromEntries(
+        columns.map((column, columnIndex) => [column, cells[columnIndexes[columnIndex]] ?? ""]),
+      );
+
+      rows.push(row);
+    }
+  }
+
+  return rows;
+}
+
+function getSectionContent(content, heading) {
+  const startIndex = content.indexOf(heading);
+
+  if (startIndex === -1) {
+    return "";
+  }
+
+  const sectionStart = startIndex + heading.length;
+  const nextSectionIndex = content.slice(sectionStart).search(/\n### /);
+
+  if (nextSectionIndex === -1) {
+    return content.slice(sectionStart);
+  }
+
+  return content.slice(sectionStart, sectionStart + nextSectionIndex);
+}
+
+function collectPart5ReviewItems(content, part5Entries) {
+  const missingItems = [];
+  const part5Ids = new Set(part5Entries.map((entry) => entry.id));
+  const part5ReviewContent = getSectionContent(content, "### Part 5 レビュー記録");
+  const reviewRows = getAllTableRows(part5ReviewContent, requiredColumns);
+  const reviewedPart5Ids = new Set();
+
+  if (!part5ReviewContent) {
+    return ["Part 5 レビュー記録セクションがありません。"];
+  }
+
+  for (const row of reviewRows) {
+    if (row.Part !== "part5" || !row.entryId || !row.questionId) {
+      continue;
+    }
+
+    if (!part5Ids.has(row.entryId)) {
+      missingItems.push(`Part 5 レビュー記録の entryId がデータに存在しません: ${row.entryId}`);
+      continue;
+    }
+
+    if (row.entryId !== row.questionId) {
+      missingItems.push(`Part 5 レビュー記録の entryId と questionId が一致しません: ${row.entryId}`);
+      continue;
+    }
+
+    if (row["総合判定"] === "レビュー完了") {
+      reviewedPart5Ids.add(row.entryId);
+    }
+  }
+
+  const missingReviewedEntries = part5Entries
+    .filter((entry) => entry.reviewed === true && !reviewedPart5Ids.has(entry.id))
+    .map((entry) => entry.id);
+
+  if (missingReviewedEntries.length > 0) {
+    missingItems.push(
+      `Part 5 の reviewed: true に対応するレビュー完了記録が不足しています: ${missingReviewedEntries.join(", ")}`,
+    );
+  }
+
+  return missingItems;
+}
+
+function collectMissingItems(content, part5Entries) {
   const missingItems = [];
 
   for (const section of requiredSections) {
@@ -115,12 +210,15 @@ function collectMissingItems(content) {
     }
   }
 
+  missingItems.push(...collectPart5ReviewItems(content, part5Entries));
+
   return missingItems;
 }
 
 try {
   const content = await readFile(reviewDocPath, "utf8");
-  const missingItems = collectMissingItems(content);
+  const part5Entries = JSON.parse(await readFile(part5DataPath, "utf8"));
+  const missingItems = collectMissingItems(content, part5Entries);
 
   if (missingItems.length > 0) {
     for (const item of missingItems) {
