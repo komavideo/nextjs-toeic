@@ -17,3 +17,21 @@
 - 30日間隔で正解した問題が定着済みとして扱われることを確認した。
 - 同日複数回答では連続学習日数が増えず、翌日回答では増え、学習していない日を挟むと1日に戻ることを確認した。
 - 今日以前の復習予定だけが期限到来として日付順に返ることを確認した。
+
+## localStorage 保存・復元・破損データ確認
+
+対応 Issue: #25 `[M2][P0] localStorage保存・復元・破損データの確認`
+
+| 検証日時 | 実行コマンド | 結果 |
+| --- | --- | --- |
+| 2026-06-25 08:14:33 JST (+0900) | `cd web && pnpm exec node --no-warnings --test --experimental-strip-types lib/storage/progressStorage.test.ts` | 成功（7 tests / 7 pass） |
+| 2026-06-25 08:14:33 JST (+0900) | `cd web && pnpm dev`、Playwright で `http://localhost:3000` を確認 | 成功（演習完了保存、再訪復元、破損 JSON、version 不一致、localStorage 利用不可相当の表示を確認。console warning/error は 0 件） |
+
+### 確認観点
+
+- 演習完了後、`toeicReadingProgress:v1` に回答履歴 5 件と SRS 状態 5 件が保存されることを確認した。
+- ページ再訪後、`/progress` で保存済み進捗が読み込まれ、`3/5 正解` として表示されることを確認した。
+- `toeicReadingProgress:v1` に破損 JSON を設定すると `screen-error` が表示され、「再試行」と「データ初期化」の導線が出ることを確認した。
+- `version: 2` の保存データを設定すると `screen-error` が表示され、「再試行」と「データ初期化」の導線が出ることを確認した。
+- `localStorage.getItem` が失敗する状態では、localStorage が利用できない旨のメッセージと初期化導線が表示されることを確認した。
+- 「データ初期化」から確認モーダルを経由して保存キーが削除され、空の進捗画面に復帰することを確認した。

@@ -1,4 +1,4 @@
-import { createInitialProgressState } from "@/lib/progress/initialState";
+import { createInitialProgressState } from "../progress/initialState.ts";
 import type {
   AnswerResult,
   ProgressState,
