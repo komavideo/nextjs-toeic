@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "pnpm validate:data && next build",
+    "build": "pnpm validate:data && pnpm validate:review && next build",
     "test": "node --no-warnings --test --experimental-strip-types lib/progress/recordAnswer.test.ts lib/question-bank/grade.test.ts lib/srs/updateSrs.test.ts",
-    "validate:data": "node scripts/validate-question-data.mjs"
+    "validate:data": "node scripts/validate-question-data.mjs",
+    "validate:review": "node scripts/validate-review-doc.mjs"
   },
   "dependencies": {
     "next": "16.2.9",
