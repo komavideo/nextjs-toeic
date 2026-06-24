@@ -627,6 +627,44 @@ function runSelfTests() {
     "本文・設問対応 が OK/NG/NA ではありません",
   );
 
+  // Part 6 セット: データに存在しない entryId。
+  assertReviewItems(
+    collectPart6SetReviewItems(
+      createPart6SetReviewSection([{ entryId: "p6-set-999", status: "レビュー完了" }]),
+      validPart6Entries,
+    ),
+    "セットレビュー記録の entryId がデータに存在しません",
+  );
+
+  // Part 6 セット: 総合判定の不正値。
+  assertReviewItems(
+    collectPart6SetReviewItems(
+      createPart6SetReviewSection([{ entryId: "p6-set-001", status: "完了" }]),
+      validPart6Entries,
+    ),
+    "セットレビュー記録の総合判定が不正です",
+  );
+
+  // Part 6 セット: NG を含むセットはレビュー完了にできない。
+  assertReviewItems(
+    collectPart6SetReviewItems(
+      createPart6SetReviewSection([
+        { entryId: "p6-set-001", status: "レビュー完了", "本文・設問対応": "NG" },
+      ]),
+      validPart6Entries,
+    ),
+    "NG を含むセットがレビュー完了になっています",
+  );
+
+  // Part 6 セット: 要修正/保留 が残存している。
+  assertReviewItems(
+    collectPart6SetReviewItems(
+      createPart6SetReviewSection([{ entryId: "p6-set-001", status: "要修正" }]),
+      validPart6Entries,
+    ),
+    "Part 6 セットに未完了（要修正/保留）の総合判定が残っています",
+  );
+
   // Part 6 正常系: reviewed: true の設問にレビュー完了記録がそろっていればエラー 0 件。
   assert.deepEqual(
     collectPart6ReviewItems(
@@ -659,6 +697,44 @@ function runSelfTests() {
       validPart6Entries,
     ),
     "reviewed: true に対応するレビュー完了記録が不足しています",
+  );
+
+  // Part 6 設問: データに存在しない entryId。
+  assertReviewItems(
+    collectPart6ReviewItems(
+      createPart6ReviewSection([{ entryId: "p6-set-999", questionId: "p6-q1", status: "レビュー完了" }]),
+      validPart6Entries,
+    ),
+    "Part 6 レビュー記録の entryId がデータに存在しません",
+  );
+
+  // Part 6 設問: 総合判定の不正値。
+  assertReviewItems(
+    collectPart6ReviewItems(
+      createPart6ReviewSection([{ entryId: "p6-set-001", questionId: "p6-q1", status: "完了" }]),
+      validPart6Entries,
+    ),
+    "Part 6 レビュー記録の総合判定が不正です",
+  );
+
+  // Part 6 設問: NG を含む設問はレビュー完了にできない。
+  assertReviewItems(
+    collectPart6ReviewItems(
+      createPart6ReviewSection([
+        { entryId: "p6-set-001", questionId: "p6-q1", status: "レビュー完了", 選択肢: "NG" },
+      ]),
+      validPart6Entries,
+    ),
+    "Part 6 レビュー記録で NG を含む設問がレビュー完了になっています",
+  );
+
+  // Part 6 設問: 要修正/保留 が残存している。
+  assertReviewItems(
+    collectPart6ReviewItems(
+      createPart6ReviewSection([{ entryId: "p6-set-001", questionId: "p6-q1", status: "要修正" }]),
+      validPart6Entries,
+    ),
+    "Part 6 に未完了（要修正/保留）の総合判定が残っています",
   );
 
   console.log("レビュー文書検証の自己テストに成功しました。");
