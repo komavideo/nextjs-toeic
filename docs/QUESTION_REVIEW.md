@@ -47,6 +47,126 @@
 | part6 | p6-set-001 | p6-001-q1 | 2026-06-24 | 山田 | OK | NG | OK | OK | OK | OK | OK | 要修正 | 選択肢 C と D の意味が近いため差し替える | 2026-06-25 |
 | part7 | p7-set-001 | p7-001-q1 | 2026-06-24 | 山田 | OK | OK | OK | OK | OK | OK | OK | 保留 | 類似表現の出典確認が必要 | 2026-06-25 |
 
+### Part 5 前半レビュー記録
+
+- 対象範囲: `web/data/part5.json` のファイル順 1〜110 件（`p5-sample-001`〜`p5-generated-105`）
+- レビュー日: 2026-06-24
+- レビュアー: Codex
+- レビュー結果: 110 件はレビュー完了、要修正 0 件（95 件は重複差し替え後に再レビュー済み）
+
+| Part | entryId | questionId | レビュー日 | レビュアー | 問題本文 | 選択肢 | 正解参照 | 解説 | 難易度 | タグ | 著作権・商標リスク | 総合判定 | 修正内容/保留理由 | 再レビュー日 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| part5 | p5-sample-001 | p5-sample-001 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-sample-002 | p5-sample-002 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-sample-003 | p5-sample-003 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-sample-004 | p5-sample-004 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-sample-005 | p5-sample-005 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-001 | p5-generated-001 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-002 | p5-generated-002 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-003 | p5-generated-003 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-004 | p5-generated-004 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-005 | p5-generated-005 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-006 | p5-generated-006 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-007 | p5-generated-007 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-008 | p5-generated-008 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-009 | p5-generated-009 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-010 | p5-generated-010 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | なし |  |
+| part5 | p5-generated-011 | p5-generated-011 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-012 | p5-generated-012 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-013 | p5-generated-013 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-014 | p5-generated-014 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-015 | p5-generated-015 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-016 | p5-generated-016 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-017 | p5-generated-017 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-018 | p5-generated-018 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-019 | p5-generated-019 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-020 | p5-generated-020 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-021 | p5-generated-021 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-022 | p5-generated-022 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-023 | p5-generated-023 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-024 | p5-generated-024 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-025 | p5-generated-025 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-026 | p5-generated-026 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-027 | p5-generated-027 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-028 | p5-generated-028 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-029 | p5-generated-029 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-030 | p5-generated-030 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-031 | p5-generated-031 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-032 | p5-generated-032 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-033 | p5-generated-033 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-034 | p5-generated-034 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-035 | p5-generated-035 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-036 | p5-generated-036 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-037 | p5-generated-037 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-038 | p5-generated-038 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-039 | p5-generated-039 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-040 | p5-generated-040 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-041 | p5-generated-041 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-042 | p5-generated-042 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-043 | p5-generated-043 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-044 | p5-generated-044 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-045 | p5-generated-045 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-046 | p5-generated-046 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-047 | p5-generated-047 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-048 | p5-generated-048 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-049 | p5-generated-049 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-050 | p5-generated-050 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-051 | p5-generated-051 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-052 | p5-generated-052 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-053 | p5-generated-053 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-054 | p5-generated-054 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-055 | p5-generated-055 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-056 | p5-generated-056 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-057 | p5-generated-057 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-058 | p5-generated-058 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-059 | p5-generated-059 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-060 | p5-generated-060 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-061 | p5-generated-061 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-062 | p5-generated-062 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-063 | p5-generated-063 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-064 | p5-generated-064 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-065 | p5-generated-065 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-066 | p5-generated-066 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-067 | p5-generated-067 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-068 | p5-generated-068 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-069 | p5-generated-069 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-070 | p5-generated-070 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-071 | p5-generated-071 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-072 | p5-generated-072 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-073 | p5-generated-073 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-074 | p5-generated-074 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-075 | p5-generated-075 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-076 | p5-generated-076 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-077 | p5-generated-077 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-078 | p5-generated-078 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-079 | p5-generated-079 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-080 | p5-generated-080 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-081 | p5-generated-081 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-082 | p5-generated-082 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-083 | p5-generated-083 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-084 | p5-generated-084 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-085 | p5-generated-085 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-086 | p5-generated-086 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-087 | p5-generated-087 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-088 | p5-generated-088 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-089 | p5-generated-089 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-090 | p5-generated-090 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-091 | p5-generated-091 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-092 | p5-generated-092 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-093 | p5-generated-093 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-094 | p5-generated-094 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-095 | p5-generated-095 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-096 | p5-generated-096 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-097 | p5-generated-097 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-098 | p5-generated-098 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-099 | p5-generated-099 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-100 | p5-generated-100 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-101 | p5-generated-101 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-102 | p5-generated-102 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-103 | p5-generated-103 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-104 | p5-generated-104 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+| part5 | p5-generated-105 | p5-generated-105 | 2026-06-24 | Codex | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 重複差し替え後に再レビュー済み | 2026-06-24 |
+
 ### コピー用テンプレート
 
 | Part | entryId | questionId | レビュー日 | レビュアー | 問題本文 | 選択肢 | 正解参照 | 解説 | 難易度 | タグ | 著作権・商標リスク | 総合判定 | 修正内容/保留理由 | 再レビュー日 |
