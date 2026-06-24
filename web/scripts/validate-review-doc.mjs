@@ -34,6 +34,15 @@ const requiredColumns = [
 
 const requiredReviewValues = ["OK", "NG", "NA"];
 const requiredFinalStatuses = ["レビュー完了", "要修正", "保留"];
+const reviewResultColumns = [
+  "問題本文",
+  "選択肢",
+  "正解参照",
+  "解説",
+  "難易度",
+  "タグ",
+  "著作権・商標リスク",
+];
 
 function parseMarkdownTableRow(line) {
   return line
@@ -151,6 +160,24 @@ function collectPart5ReviewItems(content, part5Entries) {
       continue;
     }
 
+    const invalidReviewColumns = reviewResultColumns.filter(
+      (column) => !requiredReviewValues.includes(row[column]),
+    );
+
+    for (const column of invalidReviewColumns) {
+      missingItems.push(`Part 5 レビュー記録の ${column} が OK/NG/NA ではありません: ${row.entryId}`);
+    }
+
+    if (!requiredFinalStatuses.includes(row["総合判定"])) {
+      missingItems.push(`Part 5 レビュー記録の総合判定が不正です: ${row.entryId}`);
+      continue;
+    }
+
+    if (row["総合判定"] === "レビュー完了" && reviewResultColumns.some((column) => row[column] === "NG")) {
+      missingItems.push(`Part 5 レビュー記録で NG を含む設問がレビュー完了になっています: ${row.entryId}`);
+      continue;
+    }
+
     if (row["総合判定"] === "レビュー完了") {
       reviewedPart5Ids.add(row.entryId);
     } else if (row["総合判定"] === "要修正" || row["総合判定"] === "保留") {
@@ -247,10 +274,10 @@ function createPart5ReviewSection(rows) {
   const separator =
     "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |";
   const body = rows
-    .map(
-      (row) =>
-        `| part5 | ${row.entryId} | ${row.questionId} | 2026-06-24 | Tester | OK | OK | OK | OK | OK | OK | OK | ${row.status} | なし |  |`,
-    )
+    .map((row) => {
+      const reviewCells = reviewResultColumns.map((column) => row[column] ?? "OK").join(" | ");
+      return `| part5 | ${row.entryId} | ${row.questionId} | 2026-06-24 | Tester | ${reviewCells} | ${row.status} | なし |  |`;
+    })
     .join("\n");
 
   return `### Part 5 レビュー記録\n\n${header}\n${separator}\n${body}\n`;
@@ -316,6 +343,37 @@ function runSelfTests() {
       validEntries,
     ),
     "reviewed: true に対応するレビュー完了記録が不足しています",
+  );
+
+  // レビュー観点の不正値。
+  assertReviewItems(
+    collectPart5ReviewItems(
+      createPart5ReviewSection([
+        { entryId: "p5-001", questionId: "p5-001", status: "レビュー完了", 問題本文: "未確認" },
+      ]),
+      validEntries,
+    ),
+    "問題本文 が OK/NG/NA ではありません",
+  );
+
+  // 総合判定の不正値。
+  assertReviewItems(
+    collectPart5ReviewItems(
+      createPart5ReviewSection([{ entryId: "p5-001", questionId: "p5-001", status: "完了" }]),
+      validEntries,
+    ),
+    "総合判定が不正です",
+  );
+
+  // NG を含む行はレビュー完了にできない。
+  assertReviewItems(
+    collectPart5ReviewItems(
+      createPart5ReviewSection([
+        { entryId: "p5-001", questionId: "p5-001", status: "レビュー完了", 選択肢: "NG" },
+      ]),
+      validEntries,
+    ),
+    "NG を含む設問がレビュー完了になっています",
   );
 
   console.log("レビュー文書検証の自己テストに成功しました。");
