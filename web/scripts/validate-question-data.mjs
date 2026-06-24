@@ -310,6 +310,28 @@ function runSelfTests() {
     "選択肢本文が空または文字列ではありません。",
   );
 
+  // 同一設問内で trim 正規化後に一致する選択肢本文（"before" と "before "）を重複として検出する。
+  assertHasError(
+    validateFixture([
+      createValidPart5Question({
+        choices: [
+          { id: "A", text: "before" },
+          { id: "B", text: "before " },
+          { id: "C", text: "beside" },
+          { id: "D", text: "between" },
+        ],
+      }),
+    ]),
+    "選択肢本文が重複しています。",
+  );
+
+  // 正常系: 妥当なフィクスチャはエラー 0 件であること（検査の過検出による退行を防ぐ）。
+  assert.deepEqual(
+    validateFixture([createValidPart5Question()]),
+    [],
+    "正常系フィクスチャでエラーが発生しました。",
+  );
+
   console.log("問題データ検証の自己テストに成功しました。");
 }
 
