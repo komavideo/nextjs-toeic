@@ -1,3 +1,6 @@
+// テスト（node --experimental-strip-types）は tsconfig の `@/` パスエイリアスを実行時に解決できない。
+// createInitialProgressState は型ではなく値の import で strip されないため、相対パス + `.ts` 拡張子で指定する
+// （型のみの import は strip されるため、下記の `@/types/progress` は `@/` のままで問題ない）。
 import { createInitialProgressState } from "../progress/initialState.ts";
 import type {
   AnswerResult,

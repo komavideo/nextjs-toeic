@@ -143,6 +143,60 @@ test("version不一致はversion-mismatchとして扱う", () => {
   });
 });
 
+test("version=1でも構造が壊れているデータはversion-mismatchとして扱う", () => {
+  const storage = new MemoryStorage();
+  // JSONとしては妥当だが answers が配列でない（version は 1 のまま）構造破損データ
+  const corruptedValue = { ...createProgressState(), answers: "broken" };
+  storage.setItem(progressStorageKey, JSON.stringify(corruptedValue));
+  setWindowStorage(storage);
+
+  assert.deepEqual(loadProgressState(), {
+    ok: false,
+    reason: "version-mismatch",
+  });
+});
+
+test("回答履歴に不正な値が含まれる場合はversion-mismatchとして扱う", () => {
+  const base = createProgressState();
+  const invalidAnswers: unknown[] = [
+    { ...base.answers[0], part: "part8" }, // 許可外のPart
+    { ...base.answers[0], selectedChoiceId: "E" }, // 許可外の選択肢ID
+    { ...base.answers[0], elapsedMs: "fast" }, // 数値でない経過時間
+    { ...base.answers[0], tags: [1] }, // 文字列以外を含むタグ
+  ];
+
+  for (const answer of invalidAnswers) {
+    const storage = new MemoryStorage();
+    storage.setItem(
+      progressStorageKey,
+      JSON.stringify({ ...base, answers: [answer] }),
+    );
+    setWindowStorage(storage);
+
+    assert.deepEqual(loadProgressState(), {
+      ok: false,
+      reason: "version-mismatch",
+    });
+  }
+});
+
+test("SRS状態に不正な間隔が含まれる場合はversion-mismatchとして扱う", () => {
+  const base = createProgressState();
+  const storage = new MemoryStorage();
+  // 許可外の復習間隔（1/3/7/14/30 以外）
+  const corruptedValue = {
+    ...base,
+    srs: { "part5-001": { ...base.srs["part5-001"], intervalDays: 2 } },
+  };
+  storage.setItem(progressStorageKey, JSON.stringify(corruptedValue));
+  setWindowStorage(storage);
+
+  assert.deepEqual(loadProgressState(), {
+    ok: false,
+    reason: "version-mismatch",
+  });
+});
+
 test("localStorageを取得できない場合はunavailableを返す", () => {
   setUnavailableWindow();
 
