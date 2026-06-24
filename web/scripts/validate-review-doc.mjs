@@ -42,20 +42,6 @@ function parseMarkdownTableRow(line) {
     .map((cell) => cell.trim());
 }
 
-function hasMarkdownTableHeader(content, columns) {
-  return content
-    .split("\n")
-    .some((line) => {
-      if (!line.startsWith("|") || !line.endsWith("|")) {
-        return false;
-      }
-
-      const cells = parseMarkdownTableRow(line).filter(Boolean);
-
-      return columns.every((column) => cells.includes(column));
-    });
-}
-
 function isMarkdownTableHeader(line, columns) {
   if (!line.startsWith("|") || !line.endsWith("|")) {
     return false;
@@ -63,6 +49,10 @@ function isMarkdownTableHeader(line, columns) {
 
   const cells = parseMarkdownTableRow(line).filter(Boolean);
   return columns.every((column) => cells.includes(column));
+}
+
+function hasMarkdownTableHeader(content, columns) {
+  return content.split("\n").some((line) => isMarkdownTableHeader(line, columns));
 }
 
 function getTableRows(content, columns) {
