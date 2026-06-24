@@ -68,7 +68,9 @@ function validateQuestionItem(item, errors, filePath, entryId, questionId) {
       }
     }
 
-    if (!choiceIds.includes(item.correctChoiceId)) {
+    if (typeof item.correctChoiceId !== "string" || !validChoiceIds.includes(item.correctChoiceId)) {
+      addError(errors, filePath, entryId, id, "correctChoiceId が A-D ではありません。");
+    } else if (!choiceIds.includes(item.correctChoiceId)) {
       addError(errors, filePath, entryId, id, "correctChoiceId が存在する選択肢を参照していません。");
     }
   }
@@ -96,7 +98,7 @@ function validateQuestionItem(item, errors, filePath, entryId, questionId) {
   }
 }
 
-function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds) {
+function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenPart5Content) {
   const errors = [];
   let flatQuestionCount = 0;
 
@@ -132,6 +134,23 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds) {
 
       if (typeof entry.sentence !== "string" || entry.sentence.length === 0) {
         addError(errors, filePath, entryId, entryId, "Part 5 の sentence が空または文字列ではありません。");
+      } else if (Array.isArray(entry.choices)) {
+        // ID が異なっても英文と選択肢が同一の設問（内容重複）を検出する。
+        // Part 6/7 は定型 prompt・選択肢を正当に共有するため、この検査は Part 5 のみに適用する。
+        const contentKey = JSON.stringify([
+          entry.sentence.trim(),
+          entry.choices
+            .filter(isRecord)
+            .map((choice) => (typeof choice.text === "string" ? choice.text : ""))
+            .slice()
+            .sort(),
+        ]);
+
+        if (seenPart5Content.has(contentKey)) {
+          addError(errors, filePath, entryId, entryId, "Part 5 の設問内容（英文と選択肢）が他の設問と重複しています。");
+        } else {
+          seenPart5Content.add(contentKey);
+        }
       }
 
       if (seenQuestionIds.has(entryId)) {
@@ -193,12 +212,13 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds) {
 const allErrors = [];
 const seenEntryIds = new Set();
 const seenQuestionIds = new Set();
+const seenPart5Content = new Set();
 let totalFlatQuestionCount = 0;
 
 for (const filePath of files) {
   try {
     const json = JSON.parse(await readFile(new URL(`../${filePath}`, import.meta.url), "utf8"));
-    const result = validateEntries(json, filePath, seenEntryIds, seenQuestionIds);
+    const result = validateEntries(json, filePath, seenEntryIds, seenQuestionIds, seenPart5Content);
     allErrors.push(...result.errors);
     totalFlatQuestionCount += result.flatQuestionCount;
   } catch (error) {
