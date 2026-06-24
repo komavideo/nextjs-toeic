@@ -64,11 +64,11 @@ test("翌日の回答では連続学習日数を増やす", () => {
 test("学習していない日を挟んだ回答では連続学習日数を1日に戻す", () => {
   const firstState = recordAnswer(
     createInitialProgressState(),
-    createAnswer("2026-06-24T10:00:00.000Z"),
+    createAnswer(new Date(2026, 5, 24, 10, 0).toISOString()),
   );
   const secondState = recordAnswer(
     firstState,
-    createAnswer("2026-06-26T10:00:00.000Z"),
+    createAnswer(new Date(2026, 5, 26, 10, 0).toISOString()),
   );
 
   assert.equal(secondState.currentStreakDays, 1);
