@@ -659,7 +659,7 @@ function runSelfTests() {
     part7Rows: [{ entryId: "p7-set-001", questionId: "p7-q1", status: "レビュー完了" }],
   });
 
-  // 統合正常系: CLI が使う collectMissingItems で Part 5/6 の記録が同時に検証できる。
+  // 統合正常系: CLI が使う collectMissingItems で Part 5/6/7 の記録が同時に検証できる。
   assert.deepEqual(
     collectMissingItems(validReviewDocument, validEntries, validPart6Entries, validPart7Entries),
     [],
@@ -914,6 +914,37 @@ function runSelfTests() {
     ),
     [],
     "Part 7 正常系のレビュー記録でエラーが発生しました。",
+  );
+
+  // Markdown 表: エスケープされた縦棒はセル内文字として扱い、列ずれさせない。
+  assert.deepEqual(
+    collectPart7ReviewItems(
+      `### Part 7 レビュー記録
+
+| Part | entryId | questionId | レビュー日 | レビュアー | 問題本文 | 選択肢 | 正解参照 | 解説 | 難易度 | タグ | 著作権・商標リスク | 総合判定 | 修正内容/保留理由 | 再レビュー日 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| part7 | p7-set-001 | p7-q1 | 2026-06-24 | Tester | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 根拠 A \\| 根拠 B |  |
+`,
+      validPart7Entries,
+    ),
+    [],
+    "エスケープされた縦棒を含む Part 7 レビュー記録でエラーが発生しました。",
+  );
+
+  // Markdown 表: 未エスケープの縦棒で列数がずれた行は明示的に失敗させる。
+  assert.throws(
+    () =>
+      collectPart7ReviewItems(
+        `### Part 7 レビュー記録
+
+| Part | entryId | questionId | レビュー日 | レビュアー | 問題本文 | 選択肢 | 正解参照 | 解説 | 難易度 | タグ | 著作権・商標リスク | 総合判定 | 修正内容/保留理由 | 再レビュー日 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| part7 | p7-set-001 | p7-q1 | 2026-06-24 | Tester | OK | OK | OK | OK | OK | OK | OK | レビュー完了 | 根拠 A | 根拠 B |  |
+`,
+        validPart7Entries,
+      ),
+    /テーブル行の列数がヘッダーと一致しません/,
+    "未エスケープの縦棒で列数がずれた行を検出できませんでした。",
   );
 
   // Part 7 セクション欠如。
