@@ -81,62 +81,62 @@
     "questions": [
       {
         "id": "p7-generated-q-001-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What is the session mainly about?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "Hiring seasonal employees"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Opening a second location"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Managing inventory"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Preparing tax documents"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "C",
+        "explanation": "本文冒頭に a practical session about inventory とあり、在庫管理に関するセッションです。",
         "difficulty": "easy",
         "tags": [
           "event",
-          "purpose",
+          "topic",
           "inventory"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-001-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What will participants compare during the session?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "Supplier contracts"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "Advertising budgets"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "Delivery routes"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "Common problems"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "D",
+        "explanation": "本文に Participants will review sample checklists, compare common problems とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "activity",
           "inventory"
         ],
         "reviewed": true
@@ -157,62 +157,62 @@
     "questions": [
       {
         "id": "p7-generated-q-002-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "When will the customer service session be held?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "August 10"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "August 11"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "August 20"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "August 21"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "B",
+        "explanation": "本文に customer service のセッションは August 11 に行われるとあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "schedule",
           "customer-service"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-002-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What must people send to register?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "A phone number and receipt"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "A checklist and staff list"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "Their name and business name"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "Their address and seating preference"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "C",
+        "explanation": "登録方法として send your name and business name と説明されています。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "registration",
           "customer-service"
         ],
         "reviewed": true
@@ -233,62 +233,62 @@
     "questions": [
       {
         "id": "p7-generated-q-003-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "Where will the staff training session take place?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "Room 100"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Room 101"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Room 112"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Room 102"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "D",
+        "explanation": "本文の第2段落に The event begins at 10:00 A.M. in Room 102 とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "location",
           "staff-training"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-003-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What does the notice say about registration?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "It is free"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "It closes after the session"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "It requires a signed contract"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "It is limited to existing members"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "A",
+        "explanation": "本文に Registration is free と明記されています。",
         "difficulty": "hard",
         "tags": [
           "event",
-          "detail",
+          "fee",
           "staff-training"
         ],
         "reviewed": true
@@ -309,27 +309,27 @@
     "questions": [
       {
         "id": "p7-generated-q-004-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "Why are small business owners likely to attend the session?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "They need to renew a building lease"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "They are applying for city permits"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "They want to improve daily operations without expensive systems"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "They must submit delivery invoices by Friday"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "C",
+        "explanation": "本文に small business owners who want to improve daily operations without adding expensive systems とあります。",
         "difficulty": "easy",
         "tags": [
           "event",
@@ -340,11 +340,11 @@
       },
       {
         "id": "p7-generated-q-004-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "How will seats be assigned?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "By business size"
           },
           {
             "id": "B",
@@ -352,11 +352,11 @@
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "By delivery area"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "After participants arrive"
           }
         ],
         "correctChoiceId": "B",
@@ -385,62 +385,62 @@
     "questions": [
       {
         "id": "p7-generated-q-005-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What will participants review?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "Store rental agreements"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Sample checklists"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Annual sales reports"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Customer refund forms"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "B",
+        "explanation": "本文に Participants will review sample checklists とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "activity",
           "store-layout"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-005-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What topic will the session cover?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "Store layout"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "Online payments"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "Vendor meetings"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "Monthly reporting"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "A",
+        "explanation": "本文冒頭に a practical session about store layout とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "topic",
           "store-layout"
         ],
         "reviewed": true
@@ -461,62 +461,62 @@
     "questions": [
       {
         "id": "p7-generated-q-006-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What is one activity planned for the online orders session?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "Testing a new payment terminal"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Signing a delivery contract"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Ordering additional furniture"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Discussing ways to communicate changes to staff"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "D",
+        "explanation": "本文に discuss simple ways to communicate changes to staff とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "activity",
           "online-orders"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-006-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What time does the event begin?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "9:30 A.M."
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "10:00 A.M."
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "12:00 P.M."
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "2:00 P.M."
           }
         ],
         "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "explanation": "第2段落に The event begins at 10:00 A.M. とあります。",
         "difficulty": "hard",
         "tags": [
           "event",
-          "detail",
+          "schedule",
           "online-orders"
         ],
         "reviewed": true
@@ -537,62 +537,62 @@
     "questions": [
       {
         "id": "p7-generated-q-007-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "Who is the facility repairs session intended for?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "Building inspectors"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Equipment suppliers"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Small business owners"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "New center employees"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "C",
+        "explanation": "本文に The session is intended for small business owners とあります。",
         "difficulty": "easy",
         "tags": [
           "event",
-          "purpose",
+          "audience",
           "facility-repairs"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-007-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "Which information must people send to register?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "A preferred seat number"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "A repair checklist"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "A business name"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "A phone number"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "C",
+        "explanation": "登録方法として send your name and business name とあり、business name を送る必要があります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "registration",
           "facility-repairs"
         ],
         "reviewed": true
@@ -613,27 +613,27 @@
     "questions": [
       {
         "id": "p7-generated-q-008-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What does the session avoid requiring from participants?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "Adding expensive systems"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Reviewing checklists"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Comparing common problems"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Sending a registration request"
           }
         ],
         "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "explanation": "本文に improve daily operations without adding expensive systems とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
@@ -644,31 +644,31 @@
       },
       {
         "id": "p7-generated-q-008-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "In which room will the monthly reporting session be held?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "Room 105"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "Room 106"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "Room 107"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "Room 117"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "C",
+        "explanation": "本文に 10:00 A.M. in Room 107 とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "location",
           "monthly-reporting"
         ],
         "reviewed": true
@@ -689,62 +689,62 @@
     "questions": [
       {
         "id": "p7-generated-q-009-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What should people send to register?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "A vendor list and phone number"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Their name and business name"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "A meeting agenda and invoice"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Their seating preference and address"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "B",
+        "explanation": "登録方法として send your name and business name と記載されています。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "registration",
           "vendor-meetings"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-009-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What is the topic of the session?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "Inventory"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "Customer service"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "Store layout"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "Vendor meetings"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "D",
+        "explanation": "本文冒頭に a practical session about vendor meetings とあります。",
         "difficulty": "hard",
         "tags": [
           "event",
-          "detail",
+          "topic",
           "vendor-meetings"
         ],
         "reviewed": true
@@ -765,62 +765,62 @@
     "questions": [
       {
         "id": "p7-generated-q-010-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "How much does registration cost?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "It is free"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "A small business membership fee"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "The price of a product display kit"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "A room reservation charge"
           }
         ],
         "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "explanation": "本文に Registration is free と明記されています。",
         "difficulty": "easy",
         "tags": [
           "event",
-          "purpose",
+          "fee",
           "product-displays"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-010-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "Which activity is mentioned in the notice?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "Installing display shelves"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "Reviewing sample checklists"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "Hiring visual designers"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "Choosing a new store name"
           }
         ],
         "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "explanation": "本文に Participants will review sample checklists とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "activity",
           "product-displays"
         ],
         "reviewed": true
@@ -841,62 +841,62 @@
     "questions": [
       {
         "id": "p7-generated-q-011-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "Where will the Business Notice 11 session take place?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "Room 110"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Room 100"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Room 111"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Room 119"
           }
         ],
         "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "explanation": "本文に The event begins at 10:00 A.M. in Room 110 とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "location",
           "inventory"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-011-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What is one purpose of the session?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "To announce a new ownership group"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "To cancel a previous product launch"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "To collect annual membership dues"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "To help owners improve daily operations"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "D",
+        "explanation": "本文に small business owners who want to improve daily operations とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "purpose",
           "inventory"
         ],
         "reviewed": true
@@ -917,62 +917,62 @@
     "questions": [
       {
         "id": "p7-generated-q-012-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What happens to seats for the customer service session?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "They are selected by lottery"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "They are assigned as requests are received"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "They are reserved for returning customers"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "They are chosen after the event begins"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "detail",
           "customer-service"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-012-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "On what date is the event scheduled?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "August 11"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "August 12"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "August 21"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "August 22"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "C",
+        "explanation": "本文冒頭に customer service のセッションは August 21 とあります。",
         "difficulty": "hard",
         "tags": [
           "event",
-          "detail",
+          "schedule",
           "customer-service"
         ],
         "reviewed": true
@@ -993,62 +993,62 @@
     "questions": [
       {
         "id": "p7-generated-q-013-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What is the main topic of Business Notice 13?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "Facility repairs"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Product displays"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Delivery planning"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Staff training"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "D",
+        "explanation": "本文冒頭に a practical session about staff training とあります。",
         "difficulty": "easy",
         "tags": [
           "event",
-          "purpose",
+          "topic",
           "staff-training"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-013-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What will participants discuss?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "Simple ways to communicate changes to staff"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "The cost of adding expensive systems"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "Plans for a new training facility"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "The results of a staff survey"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "A",
+        "explanation": "本文に discuss simple ways to communicate changes to staff とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "activity",
           "staff-training"
         ],
         "reviewed": true
@@ -1069,58 +1069,58 @@
     "questions": [
       {
         "id": "p7-generated-q-014-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What will participants compare?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "Room assignments"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Delivery truck prices"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Common problems"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Business center memberships"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "C",
+        "explanation": "本文に compare common problems とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "activity",
           "delivery-planning"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-014-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "Which statement is true about the event?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "It ends at 10:00 A.M."
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "It is held in Room 103"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "It requires a registration fee"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "It begins at 10:00 A.M. in Room 113"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "D",
+        "explanation": "本文に The event begins at 10:00 A.M. in Room 113 とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
@@ -1145,62 +1145,62 @@
     "questions": [
       {
         "id": "p7-generated-q-015-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "Who is the store layout session intended for?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "New business center employees"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Small business owners"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Product delivery drivers"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Outside advertising agencies"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "B",
+        "explanation": "本文に The session is intended for small business owners とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "audience",
           "store-layout"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-015-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "How can people register?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "By sending their name and business name by e-mail"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "By calling the room coordinator"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "By bringing a completed form to Room 114"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "By paying a fee at the business center"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "A",
+        "explanation": "本文に To register, send your name and business name to events@example.local とあります。",
         "difficulty": "hard",
         "tags": [
           "event",
-          "detail",
+          "registration",
           "store-layout"
         ],
         "reviewed": true
@@ -1221,62 +1221,62 @@
     "questions": [
       {
         "id": "p7-generated-q-016-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "When and where will the online orders session begin?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "August 15 in Room 105"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "August 10 in Room 100"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "August 10 in Room 115"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "August 20 in Room 110"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "C",
+        "explanation": "本文では August 10 のセッションで、開始場所は Room 115 とされています。",
         "difficulty": "easy",
         "tags": [
           "event",
-          "purpose",
+          "schedule",
           "online-orders"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-016-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What is one goal of the session?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "To replace every existing system"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "To sell online ordering software"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "To introduce a new delivery fee"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "To improve operations without adding expensive systems"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "D",
+        "explanation": "本文に improve daily operations without adding expensive systems とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "purpose",
           "online-orders"
         ],
         "reviewed": true
@@ -1297,62 +1297,62 @@
     "questions": [
       {
         "id": "p7-generated-q-017-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What does the notice say about the registration fee?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "It depends on business size"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Registration is free"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "It must be paid in advance"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "It is refunded after attendance"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "B",
+        "explanation": "本文に Registration is free とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "fee",
           "facility-repairs"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-017-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What is the session about?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "Monthly reporting"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "Vendor meetings"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "Facility repairs"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "Product displays"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "C",
+        "explanation": "本文冒頭に a practical session about facility repairs とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "topic",
           "facility-repairs"
         ],
         "reviewed": true
@@ -1373,62 +1373,62 @@
     "questions": [
       {
         "id": "p7-generated-q-018-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What will be reviewed during the monthly reporting session?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "Sample checklists"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Tax receipts"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Room reservation records"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Customer complaint letters"
           }
         ],
         "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "explanation": "本文に Participants will review sample checklists とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "activity",
           "monthly-reporting"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-018-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "Which item is required to register?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "A payment confirmation"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "A preferred seat number"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "A copy of a monthly report"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "A business name"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "correctChoiceId": "D",
+        "explanation": "登録には name と business name を送る必要があり、business name が求められています。",
         "difficulty": "hard",
         "tags": [
           "event",
-          "detail",
+          "registration",
           "monthly-reporting"
         ],
         "reviewed": true
@@ -1449,57 +1449,57 @@
     "questions": [
       {
         "id": "p7-generated-q-019-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "What time does the vendor meetings session begin?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "8:30 A.M."
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "9:30 A.M."
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "10:00 A.M."
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "1:00 P.M."
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "C",
+        "explanation": "本文に The event begins at 10:00 A.M. とあります。",
         "difficulty": "easy",
         "tags": [
           "event",
-          "purpose",
+          "schedule",
           "vendor-meetings"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-019-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "What policy determines seat assignment?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "The order in which requests are received"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "The number of employees in each business"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "The topic participants choose"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "The distance from the business center"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "A",
         "explanation": "本文に seats are assigned in the order requests are received とあります。",
         "difficulty": "medium",
         "tags": [
@@ -1525,62 +1525,62 @@
     "questions": [
       {
         "id": "p7-generated-q-020-01",
-        "prompt": "Who is the event intended for?",
+        "prompt": "Who would most likely benefit from this session?",
         "choices": [
           {
             "id": "A",
-            "text": "Small business owners"
+            "text": "People arranging a building sale"
           },
           {
             "id": "B",
-            "text": "A request for annual leave"
+            "text": "Students applying for internships"
           },
           {
             "id": "C",
-            "text": "A change in building ownership"
+            "text": "Visitors attending a product launch"
           },
           {
             "id": "D",
-            "text": "A cancelled product launch"
+            "text": "Owners trying to improve daily operations"
           }
         ],
-        "correctChoiceId": "A",
-        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "correctChoiceId": "D",
+        "explanation": "本文に small business owners who want to improve daily operations とあり、このような事業者が対象です。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "purpose",
+          "audience",
           "product-displays"
         ],
         "reviewed": true
       },
       {
         "id": "p7-generated-q-020-02",
-        "prompt": "How are seats assigned?",
+        "prompt": "In which room will the product displays session be held?",
         "choices": [
           {
             "id": "A",
-            "text": "By Monday morning"
+            "text": "Room 109"
           },
           {
             "id": "B",
-            "text": "In the order requests are received"
+            "text": "Room 119"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "Room 114"
           },
           {
             "id": "D",
-            "text": "Only after the session ends"
+            "text": "Room 104"
           }
         ],
         "correctChoiceId": "B",
-        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "explanation": "本文に The event begins at 10:00 A.M. in Room 119 とあります。",
         "difficulty": "medium",
         "tags": [
           "event",
-          "detail",
+          "location",
           "product-displays"
         ],
         "reviewed": true
