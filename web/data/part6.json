@@ -1,1 +1,1596 @@
-[]
+[
+  {
+    "id": "p6-sample-set-001",
+    "part": "part6",
+    "title": "Office Supply Notice",
+    "passage": "To all staff,\n\nStarting next month, office supplies will be ordered through the new internal request form. The form is available on the company portal and should be submitted by Thursday afternoon for delivery the following week. This change is intended to reduce duplicate orders and help the administration team track monthly expenses more accurately.\n\nIf your department needs an item urgently, please contact the administration desk before submitting the form.",
+    "questions": [
+      {
+        "id": "p6-sample-001",
+        "prompt": "What is the purpose of the notice?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To announce a new ordering procedure"
+          },
+          {
+            "id": "B",
+            "text": "To introduce a new supplier"
+          },
+          {
+            "id": "C",
+            "text": "To cancel weekly deliveries"
+          },
+          {
+            "id": "D",
+            "text": "To request expense reports"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文では、来月から社内申請フォームで備品を注文する変更が案内されています。",
+        "difficulty": "easy",
+        "tags": [
+          "purpose",
+          "notice"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-sample-002",
+        "prompt": "When should the request form be submitted for delivery the following week?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Thursday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the delivery arrives"
+          },
+          {
+            "id": "D",
+            "text": "At the end of each month"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に should be submitted by Thursday afternoon と明記されています。",
+        "difficulty": "easy",
+        "tags": [
+          "detail",
+          "deadline"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "notice",
+      "office"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-001",
+    "part": "part6",
+    "title": "Internal Memo 1",
+    "passage": "To all team members,\n\nThe office will update its inventory procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-001-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the inventory procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は inventory 手順の更新について説明しています。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "purpose",
+          "inventory"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-001-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "inventory"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "memo",
+      "inventory"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-002",
+    "part": "part6",
+    "title": "Internal Memo 2",
+    "passage": "To all team members,\n\nThe office will update its customer service procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-002-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the customer service procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は customer service 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "customer-service"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-002-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "customer-service"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-003",
+    "part": "part6",
+    "title": "Internal Memo 3",
+    "passage": "To all team members,\n\nThe office will update its staff training procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-003-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the staff training procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は staff training 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-003-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "hard",
+        "tags": [
+          "memo",
+          "detail",
+          "staff-training"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "memo",
+      "staff-training"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-004",
+    "part": "part6",
+    "title": "Internal Memo 4",
+    "passage": "To all team members,\n\nThe office will update its delivery planning procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-004-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the delivery planning procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は delivery planning 手順の更新について説明しています。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "purpose",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-004-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "memo",
+      "delivery-planning"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-005",
+    "part": "part6",
+    "title": "Internal Memo 5",
+    "passage": "To all team members,\n\nThe office will update its store layout procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-005-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the store layout procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は store layout 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "store-layout"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-005-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "store-layout"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "store-layout"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-006",
+    "part": "part6",
+    "title": "Internal Memo 6",
+    "passage": "To all team members,\n\nThe office will update its online orders procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-006-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the online orders procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は online orders 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "online-orders"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-006-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "hard",
+        "tags": [
+          "memo",
+          "detail",
+          "online-orders"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "memo",
+      "online-orders"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-007",
+    "part": "part6",
+    "title": "Internal Memo 7",
+    "passage": "To all team members,\n\nThe office will update its facility repairs procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-007-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the facility repairs procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は facility repairs 手順の更新について説明しています。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "purpose",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-007-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "memo",
+      "facility-repairs"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-008",
+    "part": "part6",
+    "title": "Internal Memo 8",
+    "passage": "To all team members,\n\nThe office will update its monthly reporting procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-008-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the monthly reporting procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は monthly reporting 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "monthly-reporting"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-008-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "monthly-reporting"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "monthly-reporting"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-009",
+    "part": "part6",
+    "title": "Internal Memo 9",
+    "passage": "To all team members,\n\nThe office will update its vendor meetings procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-009-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the vendor meetings procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は vendor meetings 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-009-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "hard",
+        "tags": [
+          "memo",
+          "detail",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "memo",
+      "vendor-meetings"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-010",
+    "part": "part6",
+    "title": "Internal Memo 10",
+    "passage": "To all team members,\n\nThe office will update its product displays procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-010-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the product displays procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は product displays 手順の更新について説明しています。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "purpose",
+          "product-displays"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-010-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "product-displays"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "memo",
+      "product-displays"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-011",
+    "part": "part6",
+    "title": "Internal Memo 11",
+    "passage": "To all team members,\n\nThe office will update its inventory procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-011-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the inventory procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は inventory 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "inventory"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-011-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "inventory"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "inventory"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-012",
+    "part": "part6",
+    "title": "Internal Memo 12",
+    "passage": "To all team members,\n\nThe office will update its customer service procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-012-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the customer service procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は customer service 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "customer-service"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-012-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "hard",
+        "tags": [
+          "memo",
+          "detail",
+          "customer-service"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "memo",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-013",
+    "part": "part6",
+    "title": "Internal Memo 13",
+    "passage": "To all team members,\n\nThe office will update its staff training procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-013-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the staff training procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は staff training 手順の更新について説明しています。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "purpose",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-013-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "staff-training"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "memo",
+      "staff-training"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-014",
+    "part": "part6",
+    "title": "Internal Memo 14",
+    "passage": "To all team members,\n\nThe office will update its delivery planning procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-014-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the delivery planning procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は delivery planning 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-014-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "delivery-planning"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-015",
+    "part": "part6",
+    "title": "Internal Memo 15",
+    "passage": "To all team members,\n\nThe office will update its store layout procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-015-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the store layout procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は store layout 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "store-layout"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-015-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "hard",
+        "tags": [
+          "memo",
+          "detail",
+          "store-layout"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "memo",
+      "store-layout"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-016",
+    "part": "part6",
+    "title": "Internal Memo 16",
+    "passage": "To all team members,\n\nThe office will update its online orders procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-016-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the online orders procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は online orders 手順の更新について説明しています。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "purpose",
+          "online-orders"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-016-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "online-orders"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "memo",
+      "online-orders"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-017",
+    "part": "part6",
+    "title": "Internal Memo 17",
+    "passage": "To all team members,\n\nThe office will update its facility repairs procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-017-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the facility repairs procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は facility repairs 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-017-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "facility-repairs"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-018",
+    "part": "part6",
+    "title": "Internal Memo 18",
+    "passage": "To all team members,\n\nThe office will update its monthly reporting procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-018-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the monthly reporting procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は monthly reporting 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "monthly-reporting"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-018-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "hard",
+        "tags": [
+          "memo",
+          "detail",
+          "monthly-reporting"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "memo",
+      "monthly-reporting"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-019",
+    "part": "part6",
+    "title": "Internal Memo 19",
+    "passage": "To all team members,\n\nThe office will update its vendor meetings procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-019-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the vendor meetings procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は vendor meetings 手順の更新について説明しています。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "purpose",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-019-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "memo",
+      "vendor-meetings"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-020",
+    "part": "part6",
+    "title": "Internal Memo 20",
+    "passage": "To all team members,\n\nThe office will update its product displays procedure next month. The new process is designed to make daily work easier and reduce repeated requests. Team leaders will explain the details during a short meeting on Tuesday morning. Staff members who cannot attend should read the summary posted on the internal portal.\n\nPlease send any questions to the administration desk by Friday afternoon.",
+    "questions": [
+      {
+        "id": "p6-generated-q-020-01",
+        "prompt": "What is the memo mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change to the product displays procedure"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は product displays 手順の更新について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "purpose",
+          "product-displays"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-020-02",
+        "prompt": "By when should questions be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "By Friday afternoon"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に by Friday afternoon と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "product-displays"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "product-displays"
+    ],
+    "reviewed": true
+  }
+]

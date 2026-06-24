@@ -1,7 +1,5 @@
+import { ReviewClient } from "@/components/practice/ReviewClient";
+
 export default function ReviewPage() {
-  return (
-    <main>
-      <h1>復習</h1>
-    </main>
-  );
+  return <ReviewClient />;
 }

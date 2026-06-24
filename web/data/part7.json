@@ -1,1 +1,1596 @@
-[]
+[
+  {
+    "id": "p7-sample-set-001",
+    "part": "part7",
+    "title": "Community Business Workshop",
+    "passage": "The East Harbor Business Association will host a free workshop for local shop owners on July 18 at the Civic Learning Center. The session will focus on practical ways to improve in-store displays, manage seasonal promotions, and communicate with returning customers.\n\nThe workshop begins at 9:30 A.M. and ends at 12:00 P.M. Participants are encouraged to bring one example of a current advertisement or product display. A short consultation period will be available after the main session, but spaces are limited and will be assigned in the order registrations are received.\n\nTo register, send your name, business name, and phone number to events@eastharbor.example by July 10.",
+    "questions": [
+      {
+        "id": "p7-sample-001",
+        "prompt": "Who is the workshop intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Local shop owners"
+          },
+          {
+            "id": "B",
+            "text": "New city employees"
+          },
+          {
+            "id": "C",
+            "text": "College instructors"
+          },
+          {
+            "id": "D",
+            "text": "Restaurant suppliers"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "冒頭に for local shop owners とあり、地域の店舗オーナー向けのワークショップです。",
+        "difficulty": "easy",
+        "tags": [
+          "audience",
+          "event"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-sample-002",
+        "prompt": "What are participants encouraged to bring?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A list of suppliers"
+          },
+          {
+            "id": "B",
+            "text": "A current advertisement or product display"
+          },
+          {
+            "id": "C",
+            "text": "A completed registration form"
+          },
+          {
+            "id": "D",
+            "text": "A copy of last year's sales report"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に bring one example of a current advertisement or product display と説明されています。",
+        "difficulty": "medium",
+        "tags": [
+          "detail",
+          "event"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "event",
+      "business"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-001",
+    "part": "part7",
+    "title": "Business Notice 1",
+    "passage": "The North Avenue Business Center will hold a practical session about inventory on August 10. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 100. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-001-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "event",
+          "purpose",
+          "inventory"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-001-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "inventory"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "event",
+      "inventory"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-002",
+    "part": "part7",
+    "title": "Business Notice 2",
+    "passage": "The North Avenue Business Center will hold a practical session about customer service on August 11. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 101. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-002-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "customer-service"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-002-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "customer-service"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "event",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-003",
+    "part": "part7",
+    "title": "Business Notice 3",
+    "passage": "The North Avenue Business Center will hold a practical session about staff training on August 12. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 102. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-003-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-003-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "event",
+          "detail",
+          "staff-training"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "event",
+      "staff-training"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-004",
+    "part": "part7",
+    "title": "Business Notice 4",
+    "passage": "The North Avenue Business Center will hold a practical session about delivery planning on August 13. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 103. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-004-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "event",
+          "purpose",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-004-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "event",
+      "delivery-planning"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-005",
+    "part": "part7",
+    "title": "Business Notice 5",
+    "passage": "The North Avenue Business Center will hold a practical session about store layout on August 14. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 104. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-005-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "store-layout"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-005-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "store-layout"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "event",
+      "store-layout"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-006",
+    "part": "part7",
+    "title": "Business Notice 6",
+    "passage": "The North Avenue Business Center will hold a practical session about online orders on August 15. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 105. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-006-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "online-orders"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-006-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "event",
+          "detail",
+          "online-orders"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "event",
+      "online-orders"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-007",
+    "part": "part7",
+    "title": "Business Notice 7",
+    "passage": "The North Avenue Business Center will hold a practical session about facility repairs on August 16. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 106. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-007-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "event",
+          "purpose",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-007-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "event",
+      "facility-repairs"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-008",
+    "part": "part7",
+    "title": "Business Notice 8",
+    "passage": "The North Avenue Business Center will hold a practical session about monthly reporting on August 17. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 107. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-008-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "monthly-reporting"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-008-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "monthly-reporting"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "event",
+      "monthly-reporting"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-009",
+    "part": "part7",
+    "title": "Business Notice 9",
+    "passage": "The North Avenue Business Center will hold a practical session about vendor meetings on August 18. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 108. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-009-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-009-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "event",
+          "detail",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "event",
+      "vendor-meetings"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-010",
+    "part": "part7",
+    "title": "Business Notice 10",
+    "passage": "The North Avenue Business Center will hold a practical session about product displays on August 19. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 109. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-010-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "event",
+          "purpose",
+          "product-displays"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-010-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "product-displays"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "event",
+      "product-displays"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-011",
+    "part": "part7",
+    "title": "Business Notice 11",
+    "passage": "The North Avenue Business Center will hold a practical session about inventory on August 20. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 110. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-011-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "inventory"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-011-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "inventory"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "event",
+      "inventory"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-012",
+    "part": "part7",
+    "title": "Business Notice 12",
+    "passage": "The North Avenue Business Center will hold a practical session about customer service on August 21. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 111. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-012-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "customer-service"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-012-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "event",
+          "detail",
+          "customer-service"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "event",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-013",
+    "part": "part7",
+    "title": "Business Notice 13",
+    "passage": "The North Avenue Business Center will hold a practical session about staff training on August 22. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 112. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-013-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "event",
+          "purpose",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-013-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "staff-training"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "event",
+      "staff-training"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-014",
+    "part": "part7",
+    "title": "Business Notice 14",
+    "passage": "The North Avenue Business Center will hold a practical session about delivery planning on August 23. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 113. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-014-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-014-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "event",
+      "delivery-planning"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-015",
+    "part": "part7",
+    "title": "Business Notice 15",
+    "passage": "The North Avenue Business Center will hold a practical session about store layout on August 24. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 114. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-015-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "store-layout"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-015-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "event",
+          "detail",
+          "store-layout"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "event",
+      "store-layout"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-016",
+    "part": "part7",
+    "title": "Business Notice 16",
+    "passage": "The North Avenue Business Center will hold a practical session about online orders on August 10. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 115. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-016-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "event",
+          "purpose",
+          "online-orders"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-016-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "online-orders"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "event",
+      "online-orders"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-017",
+    "part": "part7",
+    "title": "Business Notice 17",
+    "passage": "The North Avenue Business Center will hold a practical session about facility repairs on August 11. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 116. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-017-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-017-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "event",
+      "facility-repairs"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-018",
+    "part": "part7",
+    "title": "Business Notice 18",
+    "passage": "The North Avenue Business Center will hold a practical session about monthly reporting on August 12. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 117. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-018-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "monthly-reporting"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-018-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "event",
+          "detail",
+          "monthly-reporting"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "event",
+      "monthly-reporting"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-019",
+    "part": "part7",
+    "title": "Business Notice 19",
+    "passage": "The North Avenue Business Center will hold a practical session about vendor meetings on August 13. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 118. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-019-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "event",
+          "purpose",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-019-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "easy",
+    "tags": [
+      "event",
+      "vendor-meetings"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-020",
+    "part": "part7",
+    "title": "Business Notice 20",
+    "passage": "The North Avenue Business Center will hold a practical session about product displays on August 14. The session is intended for small business owners who want to improve daily operations without adding expensive systems. Participants will review sample checklists, compare common problems, and discuss simple ways to communicate changes to staff.\n\nThe event begins at 10:00 A.M. in Room 119. Registration is free, but seats are assigned in the order requests are received. To register, send your name and business name to events@example.local.",
+    "questions": [
+      {
+        "id": "p7-generated-q-020-01",
+        "prompt": "Who is the event intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Small business owners"
+          },
+          {
+            "id": "B",
+            "text": "A request for annual leave"
+          },
+          {
+            "id": "C",
+            "text": "A change in building ownership"
+          },
+          {
+            "id": "D",
+            "text": "A cancelled product launch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に small business owners 向けの実用セッションとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "purpose",
+          "product-displays"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-020-02",
+        "prompt": "How are seats assigned?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday morning"
+          },
+          {
+            "id": "B",
+            "text": "In the order requests are received"
+          },
+          {
+            "id": "C",
+            "text": "After the next quarter begins"
+          },
+          {
+            "id": "D",
+            "text": "Only after the session ends"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に seats are assigned in the order requests are received とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "event",
+          "detail",
+          "product-displays"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "event",
+      "product-displays"
+    ],
+    "reviewed": true
+  }
+]

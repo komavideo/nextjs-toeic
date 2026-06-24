@@ -1,7 +1,10 @@
+import { Suspense } from "react";
+import { PracticeClient } from "@/components/practice/PracticeClient";
+
 export default function PracticePage() {
   return (
-    <main>
-      <h1>演習</h1>
-    </main>
+    <Suspense fallback={<div>演習を読み込んでいます。</div>}>
+      <PracticeClient />
+    </Suspense>
   );
 }

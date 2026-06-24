@@ -1,1 +1,7042 @@
-[]
+[
+  {
+    "id": "p5-sample-001",
+    "part": "part5",
+    "sentence": "The accounting team will submit the revised budget report _____ Friday afternoon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "by"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "during"
+      },
+      {
+        "id": "D",
+        "text": "among"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "期限を表す場合は by を使います。by Friday afternoon で「金曜午後までに」という意味です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "deadline"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-sample-002",
+    "part": "part5",
+    "sentence": "Please contact Ms. Rivera if you need _____ information about the training schedule.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "far"
+      },
+      {
+        "id": "B",
+        "text": "further"
+      },
+      {
+        "id": "C",
+        "text": "furthest"
+      },
+      {
+        "id": "D",
+        "text": "forward"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "additional に近い意味で「さらに詳しい情報」を表す場合は further information が自然です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-sample-003",
+    "part": "part5",
+    "sentence": "The new inventory system was installed _____ so that staff could test it before opening.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "early"
+      },
+      {
+        "id": "B",
+        "text": "earliness"
+      },
+      {
+        "id": "C",
+        "text": "earlier"
+      },
+      {
+        "id": "D",
+        "text": "earliest"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "動詞 installed を修飾する副詞が必要です。文脈上「早めに設置された」なので early が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-sample-004",
+    "part": "part5",
+    "sentence": "All visitors are required _____ a temporary badge at the front desk.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "obtain"
+      },
+      {
+        "id": "B",
+        "text": "obtaining"
+      },
+      {
+        "id": "C",
+        "text": "to obtain"
+      },
+      {
+        "id": "D",
+        "text": "obtained"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "be required to do の形で「〜することを求められる」を表します。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "passive"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-sample-005",
+    "part": "part5",
+    "sentence": "The marketing proposal was approved because it presented the product benefits _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "clearly"
+      },
+      {
+        "id": "B",
+        "text": "clear"
+      },
+      {
+        "id": "C",
+        "text": "clearing"
+      },
+      {
+        "id": "D",
+        "text": "clearness"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "動詞 presented を修飾する副詞が必要です。clearly が「明確に」という意味で適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-001",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-002",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-003",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-004",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-005",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-006",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-007",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-008",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-009",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-010",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-011",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-012",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-013",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-014",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-015",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-016",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-017",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-018",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-019",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-020",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-021",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-022",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-023",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-024",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-025",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-026",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-027",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-028",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-029",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-030",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-031",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-032",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-033",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-034",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-035",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-036",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-037",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-038",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-039",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-040",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-041",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-042",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-043",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-044",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-045",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-046",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-047",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-048",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-049",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-050",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-051",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-052",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-053",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-054",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-055",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-056",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-057",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-058",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-059",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-060",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-061",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-062",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-063",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-064",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-065",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-066",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-067",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-068",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-069",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-070",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-071",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-072",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-073",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-074",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-075",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-076",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-077",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-078",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-079",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-080",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-081",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-082",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-083",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-084",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-085",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-086",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-087",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-088",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-089",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-090",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-091",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-092",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-093",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-094",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-095",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-096",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-097",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-098",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-099",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-100",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-101",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-102",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-103",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-104",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-105",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-106",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-107",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-108",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-109",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-110",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-111",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-112",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-113",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-114",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-115",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-116",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-117",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-118",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-119",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-120",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-121",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-122",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-123",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-124",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-125",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-126",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-127",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-128",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-129",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-130",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-131",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-132",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-133",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-134",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-135",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-136",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-137",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-138",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-139",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-140",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-141",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-142",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-143",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-144",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-145",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-146",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-147",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-148",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-149",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-150",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-151",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-152",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-153",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-154",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-155",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-156",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-157",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-158",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-159",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-160",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-161",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-162",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-163",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-164",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-165",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-166",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-167",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-168",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-169",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-170",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-171",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-172",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-173",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-174",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-175",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-176",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-177",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-178",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-179",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-180",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-181",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-182",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-183",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-184",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-185",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-186",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-187",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-188",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-189",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-190",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-191",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-192",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-193",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-194",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-195",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-196",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-197",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-198",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-199",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-200",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-201",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-202",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-203",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-204",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-205",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-206",
+    "part": "part5",
+    "sentence": "A confirmation email will be sent _____ the design coordinator receives the request.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "between"
+      },
+      {
+        "id": "B",
+        "text": "after"
+      },
+      {
+        "id": "C",
+        "text": "onto"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "依頼を受け取った後にメールが送られる流れなので after が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-207",
+    "part": "part5",
+    "sentence": "Please make sure that the survey is stored in a _____ location.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "securely"
+      },
+      {
+        "id": "B",
+        "text": "security"
+      },
+      {
+        "id": "C",
+        "text": "secure"
+      },
+      {
+        "id": "D",
+        "text": "securedly"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 location を修飾する形容詞が必要なので secure が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-208",
+    "part": "part5",
+    "sentence": "The purchasing supervisor is responsible _____ checking the safety list every morning.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "be responsible for doing の形なので for が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-209",
+    "part": "part5",
+    "sentence": "The team postponed the agenda review because several figures were _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "missing"
+      },
+      {
+        "id": "B",
+        "text": "miss"
+      },
+      {
+        "id": "C",
+        "text": "missed"
+      },
+      {
+        "id": "D",
+        "text": "misses"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 figures の状態を表す形容詞的な語として missing が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-210",
+    "part": "part5",
+    "sentence": "The planning assistant prepared copies of the agenda _____ every participant.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "for"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「参加者のために」資料を用意する文脈なので for が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "purpose"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-211",
+    "part": "part5",
+    "sentence": "The sales team will review the report _____ the weekly meeting begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "会議が始まる前に確認するという時の前後関係なので before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-212",
+    "part": "part5",
+    "sentence": "Employees in the finance department must submit travel receipts _____ for reimbursement.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompting"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 submit を修飾する副詞が必要なので promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-213",
+    "part": "part5",
+    "sentence": "The updated proposal is available on the portal, and staff may download _____ at any time.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "them"
+      },
+      {
+        "id": "B",
+        "text": "those"
+      },
+      {
+        "id": "C",
+        "text": "it"
+      },
+      {
+        "id": "D",
+        "text": "itself"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "reference"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-214",
+    "part": "part5",
+    "sentence": "The branch manager asked the training staff _____ the client files by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "updated"
+      },
+      {
+        "id": "B",
+        "text": "updating"
+      },
+      {
+        "id": "C",
+        "text": "updates"
+      },
+      {
+        "id": "D",
+        "text": "to update"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形なので to update が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-215",
+    "part": "part5",
+    "sentence": "The manual was approved because the cost estimate was _____ than expected.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "low"
+      },
+      {
+        "id": "C",
+        "text": "lowest"
+      },
+      {
+        "id": "D",
+        "text": "lowly"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "than expected があるため比較級 lower が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  }
+]
