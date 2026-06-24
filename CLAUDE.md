@@ -20,7 +20,7 @@ pnpm build            # 静的サイトを web/out/ に出力 (output: "export")
 pnpm exec tsc --noEmit # 型チェック（PRD の完了条件「既知の TS エラーがない」の確認に使う）
 ```
 
-- **lint / test スクリプトは存在しない**（テストフレームワーク未導入）。`pnpm lint` や `pnpm test` を勝手に前提にしない。品質確認は上記 `tsc` を使う。
+- **lint スクリプトは存在しない**（リンタ未導入）。`pnpm lint` を勝手に前提にしない。`pnpm test` は存在する（`node --test` による単体テストと、`validate:data` / `validate:review` の自己テスト）。型エラーの確認は上記 `tsc` を使う。
 - **テスト実行方針**: コード修正後は **変更分に直接関係する最小限のテストだけ**を実行する。プロジェクト全体のテスト・単体テスト全件・UI テスト全件は、**利用者が手動で明確に指示した場合のみ**実行する。
 - Node バージョン指定（`.nvmrc` / `engines`）はなし。
 
