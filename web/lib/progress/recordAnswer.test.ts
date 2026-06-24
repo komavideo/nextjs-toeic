@@ -60,3 +60,17 @@ test("翌日の回答では連続学習日数を増やす", () => {
   assert.equal(secondState.currentStreakDays, 2);
   assert.equal(secondState.lastStudiedDate, "2026-06-25");
 });
+
+test("学習していない日を挟んだ回答では連続学習日数を1日に戻す", () => {
+  const firstState = recordAnswer(
+    createInitialProgressState(),
+    createAnswer("2026-06-24T10:00:00.000Z"),
+  );
+  const secondState = recordAnswer(
+    firstState,
+    createAnswer("2026-06-26T10:00:00.000Z"),
+  );
+
+  assert.equal(secondState.currentStreakDays, 1);
+  assert.equal(secondState.lastStudiedDate, "2026-06-26");
+});
