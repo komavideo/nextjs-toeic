@@ -207,7 +207,7 @@ flowchart TD
 | `screen-home` | `今日の学習ミッション: クイック` | `screen-quick` | 指定 Part でセッション作成 |
 | `screen-home` | `今日の学習ミッション: 復習` | `screen-quick` | 期限到来 SRS から復習キューを作成 |
 | `screen-home` | `今日の学習ミッション: 苦手 Part / 苦手タグ` | `screen-quick` | Part / タグ条件で出題キューを作成 |
-| `screen-home` | `今日の学習ミッション: 未回答` | `screen-quick` | 既回答 `questionId` を除外して出題キューを作成 |
+| `screen-home` | `今日の学習ミッション: 未回答` | `screen-quick` | 未回答問題を優先し、不足時は回答済み問題で補完して出題キューを作成 |
 | `screen-home` | `弱点を練習` | `screen-quick` | Part / タグ別正答率の最低候補から出題キューを作成 |
 | `screen-part` | `Part / 難易度 / タグを変更` | `screen-part` | 出題条件を更新 |
 | `screen-part` | `この条件で開始` | `screen-quick` | 出題キューを作成 |

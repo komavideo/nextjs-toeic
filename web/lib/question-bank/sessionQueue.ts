@@ -37,6 +37,8 @@ type SessionQueuePriorityOptions = {
   today?: string;
 };
 
+// 出題優先度のランク。数値が小さいほど優先的に出題する。
+// 0 = 未回答（最優先） / 1 = SRS 復習期限到来 / 2 = 誤答履歴あり / 3 = 正答済み（最低優先）。
 type QuestionPriority = {
   rank: 0 | 1 | 2 | 3;
   dueDate?: string;
@@ -105,20 +107,24 @@ function getQuestionPriority(
   question: FlatQuestion,
   context: QuestionPriorityContext | undefined,
 ): QuestionPriority {
+  // 進捗が無い、または回答履歴に含まれない問題は未回答として最優先（rank 0）扱い。
   if (!context || !context.answeredQuestionIds.has(question.questionId)) {
     return { rank: 0 };
   }
 
   const dueDate = context.dueSrsByQuestionId.get(question.questionId);
 
+  // SRS 復習期限が到来している問題（rank 1）。dueDate でさらに早い期限を優先する。
   if (dueDate) {
     return { rank: 1, dueDate };
   }
 
+  // 誤答履歴がある問題（rank 2）。
   if (context.incorrectQuestionIds.has(question.questionId)) {
     return { rank: 2 };
   }
 
+  // 正答済み・定着済みの問題（rank 3、最低優先）。
   return { rank: 3 };
 }
 

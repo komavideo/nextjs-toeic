@@ -232,6 +232,33 @@ test("未回答優先で不足する場合は回答済み問題で補完する",
   );
 });
 
+test("Part 5 で難易度を指定した場合は該当難易度の問題だけを出題する", () => {
+  const queue = createPartSessionQueue({ part: "part5", difficulty: "easy" });
+
+  assert.equal(queue.length, 5);
+  assert.ok(queue.every((question) => question.difficulty === "easy"));
+});
+
+test("Part 6 で難易度を指定した場合はエントリ難易度を継承したパッセージセット単位で出題する", () => {
+  // エントリ難易度が hard のパッセージセットは、設問単体の難易度が hard でなくても
+  // difficulty="hard" 指定で出題対象になる（エントリ難易度の継承）。
+  const targetEntry = questionBankEntriesByPart.part6.find(
+    (entry) =>
+      "questions" in entry &&
+      (entry.difficulty === "hard" ||
+        entry.questions.some((question) => question.difficulty === "hard")),
+  );
+
+  assert.ok(targetEntry, "Part 6 に hard 難易度のパッセージセットが必要です。");
+
+  const queue = createPartSessionQueue({ part: "part6", difficulty: "hard" });
+
+  assert.ok(queue.length > 0);
+  // パッセージセットは分割されず、全問が同一エントリ単位で出題される。
+  assert.ok(queue.every((question) => question.entryId === targetEntry.id));
+  assert.ok(queue.some((question) => question.difficulty === "hard"));
+});
+
 for (const part of ["part6", "part7"] as const) {
   const partLabel = part === "part6" ? "Part 6" : "Part 7";
 
