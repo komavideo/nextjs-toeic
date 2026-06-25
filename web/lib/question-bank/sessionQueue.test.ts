@@ -159,12 +159,26 @@ test("Part別正答率の差に応じて最低正答率のPartを選ぶ", () => 
   );
 });
 
+test("回答3件以上では1件だけの最低正答率Partも候補にする", () => {
+  const part5Questions = firstQuestions("part5", 2);
+  const part6Questions = firstQuestions("part6", 1);
+  const state = createProgressState([
+    ...part5Questions.map((question) => createAnswer({ question, correct: true })),
+    ...part6Questions.map((question) => createAnswer({ question, correct: false })),
+  ]);
+
+  assert.deepEqual(
+    toQuestionIds(createWeaknessSessionQueue(state)),
+    toQuestionIds(createPartSessionQueue({ part: "part6" })),
+  );
+});
+
 test("タグ別正答率の差に応じて最低正答率のタグを選ぶ", () => {
   const { tag, questions: weakTagQuestions } = findTagQuestions("part5", 2);
   const otherQuestions = findQuestionsWithoutTag("part5", tag, 2);
   const state = createProgressState([
     ...weakTagQuestions.map((question) =>
-      createAnswer({ question, correct: false }),
+      createAnswer({ question, correct: false, tags: [tag] }),
     ),
     ...otherQuestions.map((question) => createAnswer({ question, correct: true })),
   ]);
@@ -177,28 +191,30 @@ test("タグ別正答率の差に応じて最低正答率のタグを選ぶ", ()
 
 test("対象タグの問題が存在しない場合は次の候補へフォールバックする", () => {
   const missingTag = "missing-tag-for-test";
-  const weakQuestions = firstQuestions("part5", 2);
-  const otherQuestions = firstQuestions("part5", 4).slice(2);
+  const questions = firstQuestions("part6", 3);
   const state = createProgressState([
-    ...weakQuestions.map((question) =>
-      createAnswer({ question, correct: false, tags: [missingTag] }),
-    ),
-    ...otherQuestions.map((question) => createAnswer({ question, correct: true })),
+    createAnswer({ question: questions[0], correct: false, tags: [missingTag] }),
+    ...questions
+      .slice(1)
+      .map((question) => createAnswer({ question, correct: true })),
   ]);
-  const queue = createWeaknessSessionQueue(state);
 
-  assert.equal(queue.length > 0, true);
-  assert.equal(queue.some((question) => question.tags.includes(missingTag)), false);
+  assert.deepEqual(
+    toQuestionIds(createWeaknessSessionQueue(state)),
+    toQuestionIds(createPartSessionQueue({ part: "part6" })),
+  );
 });
 
 test("Part候補とTag候補が同率の場合はPart候補を優先する", () => {
-  // 同一タグの2問を両方とも誤答にすると、Part5（全体）候補とそのタグ候補が
-  // どちらも正答率0%で同率になる。このときタグ絞り込みではなく
+  // 同一タグの2問と別タグの1問をすべて誤答にすると、回答3件以上の条件を満たしたうえで
+  // Part5（全体）候補とタグ候補が正答率0%で同率になる。このときタグ絞り込みではなく
   // Part5 全体キューが選ばれること（同率時の Part 優先）を検証する。
-  const { questions } = findTagQuestions("part5", 2);
-  const state = createProgressState(
-    questions.map((question) => createAnswer({ question, correct: false })),
-  );
+  const { tag, questions } = findTagQuestions("part5", 2);
+  const [otherQuestion] = findQuestionsWithoutTag("part5", tag, 1);
+  const state = createProgressState([
+    ...questions.map((question) => createAnswer({ question, correct: false })),
+    createAnswer({ question: otherQuestion, correct: false }),
+  ]);
 
   assert.deepEqual(
     toQuestionIds(createWeaknessSessionQueue(state)),

@@ -1,8 +1,4 @@
 import { getDueSrsItems } from "../srs/due.ts";
-import {
-  calculatePartStatistics,
-  calculateTagWeaknessStatistics,
-} from "../progress/statistics.ts";
 import type { ProgressState } from "@/types/progress";
 import type { Difficulty, QuestionBankEntry, ToeicReadingPart } from "@/types/question";
 import { getAllQuestionBankEntries, getQuestionBankEntriesByPart } from "./index.ts";
@@ -10,7 +6,16 @@ import { type FlatQuestion, flattenQuestionBankEntries } from "./flatten.ts";
 
 const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
 const minimumWeaknessTotalAnswers = 3;
-const minimumWeaknessCandidateAnswers = 2;
+const minimumWeaknessCandidateAnswers = 1;
+
+type WeaknessAnswerStatistics = {
+  answered: number;
+  correct: number;
+};
+
+type WeaknessTagStatistics = WeaknessAnswerStatistics & {
+  partStatistics: Map<ToeicReadingPart, WeaknessAnswerStatistics>;
+};
 
 type WeaknessCandidate =
   | {
@@ -170,48 +175,75 @@ export function createReviewSessionQueue(progressState: ProgressState): FlatQues
     .filter((question): question is FlatQuestion => Boolean(question));
 }
 
-function getWeakestPartForTag(
-  progressState: ProgressState,
-  tag: string,
-): ToeicReadingPart | undefined {
-  const statistics = new Map<
-    ToeicReadingPart,
-    { part: ToeicReadingPart; answered: number; correct: number }
-  >();
+function incrementWeaknessStatistics(
+  statistics: WeaknessAnswerStatistics | undefined,
+  correct: boolean,
+): WeaknessAnswerStatistics {
+  return {
+    answered: (statistics?.answered ?? 0) + 1,
+    correct: (statistics?.correct ?? 0) + (correct ? 1 : 0),
+  };
+}
 
-  for (const answer of progressState.answers) {
-    if (!answer.tags.includes(tag)) {
-      continue;
+function createWeaknessStatistics(answers: ProgressState["answers"]): {
+  partStatistics: Map<ToeicReadingPart, WeaknessAnswerStatistics>;
+  tagStatistics: Map<string, WeaknessTagStatistics>;
+} {
+  const partStatistics = new Map<ToeicReadingPart, WeaknessAnswerStatistics>();
+  const tagStatistics = new Map<string, WeaknessTagStatistics>();
+
+  for (const answer of answers) {
+    partStatistics.set(
+      answer.part,
+      incrementWeaknessStatistics(partStatistics.get(answer.part), answer.correct),
+    );
+
+    for (const tag of answer.tags) {
+      const current = tagStatistics.get(tag) ?? {
+        answered: 0,
+        correct: 0,
+        partStatistics: new Map<ToeicReadingPart, WeaknessAnswerStatistics>(),
+      };
+
+      tagStatistics.set(tag, {
+        answered: current.answered + 1,
+        correct: current.correct + (answer.correct ? 1 : 0),
+        partStatistics: new Map(current.partStatistics).set(
+          answer.part,
+          incrementWeaknessStatistics(
+            current.partStatistics.get(answer.part),
+            answer.correct,
+          ),
+        ),
+      });
     }
-
-    const current = statistics.get(answer.part) ?? {
-      part: answer.part,
-      answered: 0,
-      correct: 0,
-    };
-
-    statistics.set(answer.part, {
-      part: answer.part,
-      answered: current.answered + 1,
-      correct: current.correct + (answer.correct ? 1 : 0),
-    });
   }
 
-  return Array.from(statistics.values()).sort(
-    (left, right) =>
-      left.correct / left.answered - right.correct / right.answered ||
-      partOrder.indexOf(left.part) - partOrder.indexOf(right.part),
-  )[0]?.part;
+  return { partStatistics, tagStatistics };
+}
+
+function toRawAccuracy(statistics: WeaknessAnswerStatistics): number {
+  return statistics.correct / statistics.answered;
+}
+
+function getWeakestPartFromTagStatistics(
+  statistics: WeaknessTagStatistics,
+): ToeicReadingPart | undefined {
+  return Array.from(statistics.partStatistics.entries()).sort(
+    ([leftPart, leftStatistics], [rightPart, rightStatistics]) =>
+      toRawAccuracy(leftStatistics) - toRawAccuracy(rightStatistics) ||
+      partOrder.indexOf(leftPart) - partOrder.indexOf(rightPart),
+  )[0]?.[0];
 }
 
 function compareWeaknessCandidates(
   left: WeaknessCandidate,
   right: WeaknessCandidate,
 ): number {
-  // 丸め済みの accuracy ではなく生の正答率で比較し、getWeakestPartForTag と判定基準を揃える
+  // 丸め済みの accuracy ではなく生の正答率で比較し、タグ内の最弱 Part 判定と基準を揃える
   // （候補は answered >= minimumWeaknessCandidateAnswers でフィルタ済みのためゼロ除算は発生しない）
-  const leftAccuracy = left.correct / left.answered;
-  const rightAccuracy = right.correct / right.answered;
+  const leftAccuracy = toRawAccuracy(left);
+  const rightAccuracy = toRawAccuracy(right);
 
   if (leftAccuracy !== rightAccuracy) {
     return leftAccuracy - rightAccuracy;
@@ -235,20 +267,30 @@ function compareWeaknessCandidates(
 function createWeaknessCandidates(
   progressState: ProgressState,
 ): WeaknessCandidate[] {
-  const partCandidates = calculatePartStatistics(progressState.answers)
-    .filter((statistic) => statistic.answered >= minimumWeaknessCandidateAnswers)
-    .map(
-      (statistic): WeaknessCandidate => ({
+  const { partStatistics, tagStatistics } = createWeaknessStatistics(
+    progressState.answers,
+  );
+  const partCandidates = partOrder.flatMap((part): WeaknessCandidate[] => {
+    const statistic = partStatistics.get(part);
+
+    if (!statistic || statistic.answered < minimumWeaknessCandidateAnswers) {
+      return [];
+    }
+
+    return [
+      {
         kind: "part",
-        part: statistic.part,
+        part,
         answered: statistic.answered,
         correct: statistic.correct,
-      }),
-    );
-  const tagCandidates = calculateTagWeaknessStatistics(progressState.answers)
-    .filter((statistic) => statistic.answered >= minimumWeaknessCandidateAnswers)
+      },
+    ];
+  });
+  const tagCandidates = Array.from(tagStatistics.entries())
+    .filter(([, statistic]) => statistic.answered >= minimumWeaknessCandidateAnswers)
     .flatMap((statistic): WeaknessCandidate[] => {
-      const part = getWeakestPartForTag(progressState, statistic.tag);
+      const [tag, tagStatistic] = statistic;
+      const part = getWeakestPartFromTagStatistics(tagStatistic);
 
       if (!part) {
         return [];
@@ -257,10 +299,10 @@ function createWeaknessCandidates(
       return [
         {
           kind: "tag",
-          tag: statistic.tag,
+          tag,
           part,
-          answered: statistic.answered,
-          correct: statistic.correct,
+          answered: tagStatistic.answered,
+          correct: tagStatistic.correct,
         },
       ];
     });
