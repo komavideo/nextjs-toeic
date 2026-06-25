@@ -35,6 +35,21 @@ const questionBankEntriesByPart: Record<ToeicReadingPart, QuestionBankEntry[]> =
   part7: part7Entries as QuestionBankEntry[],
 };
 
+// 問題データはビルド時に確定する静的 JSON のため、未回答判定で使う questionId は
+// モジュール読み込み時に一度だけ展開してキャッシュする（レンダーごとの再展開を避ける）。
+const questionIdsByPart: Record<ToeicReadingPart, string[]> = {
+  part5: flattenQuestionBankEntries(questionBankEntriesByPart.part5).map(
+    (question) => question.questionId,
+  ),
+  part6: flattenQuestionBankEntries(questionBankEntriesByPart.part6).map(
+    (question) => question.questionId,
+  ),
+  part7: flattenQuestionBankEntries(questionBankEntriesByPart.part7).map(
+    (question) => question.questionId,
+  ),
+};
+
+// "part5" → "Part 5" のように表示用ラベルへ整形する。
 function formatPart(part: ToeicReadingPart): string {
   return part.toUpperCase().replace("PART", "Part ");
 }
@@ -57,6 +72,8 @@ function buildPracticeHref({
   return `/practice?${searchParams.toString()}`;
 }
 
+// ミッションを追加する。最大件数（3件）に達している場合や、同じ遷移先（href）が
+// 既にある場合は追加しない（導線の重複を抑止する）。
 function appendMission(
   missions: DailyMission[],
   mission: DailyMission | undefined,
@@ -90,6 +107,8 @@ function getWeakestPart(
   )[0];
 }
 
+// 指定タグを含む回答だけを Part 別に集計し、正答率が最も低い Part を返す
+// （同率の場合は part5 → part6 → part7 の順を優先）。
 function getWeakestPartForTag(
   progressState: ProgressState,
   tag: string,
@@ -124,6 +143,7 @@ function getWeakestPartForTag(
   )[0]?.part;
 }
 
+// 未回答が最も多く残っている Part を返す（同数の場合は part5 → part6 → part7 の順を優先）。
 function getMostUnansweredPart(
   progressState: ProgressState,
 ): { part: ToeicReadingPart; unanswered: number } | undefined {
@@ -131,14 +151,14 @@ function getMostUnansweredPart(
     progressState.answers.map((answer) => answer.questionId),
   );
   const unansweredCounts = partOrder.map((part) => {
-    const questions = flattenQuestionBankEntries(questionBankEntriesByPart[part]);
-    const answeredCount = questions.filter((question) =>
-      answeredQuestionIds.has(question.questionId),
+    const questionIds = questionIdsByPart[part];
+    const answeredCount = questionIds.filter((questionId) =>
+      answeredQuestionIds.has(questionId),
     ).length;
 
     return {
       part,
-      unanswered: Math.max(questions.length - answeredCount, 0),
+      unanswered: Math.max(questionIds.length - answeredCount, 0),
     };
   });
 
@@ -234,19 +254,33 @@ function createInitialMission(): DailyMission {
   };
 }
 
+// 呼び出し元（HomeDashboard）が表示用に算出済みの統計を再利用するための任意引数。
+// 省略時は内部で計算するため、テストや EmptyState からはそのまま呼び出せる。
+type DailyMissionDeps = {
+  partStatistics?: PartStatistic[];
+  weakTags?: TagStatistic[];
+  dueCount?: number;
+};
+
+// 今日の学習ミッションを「復習 → 苦手 Part → 苦手タグ → 未回答」の優先順で最大3件生成する。
 export function createDailyMissions(
   progressState: ProgressState,
   today?: string,
+  deps?: DailyMissionDeps,
 ): DailyMission[] {
-  const dueItems = getDueSrsItems(progressState.srs, today);
-  let missions = appendMission([], createReviewMission(dueItems.length));
+  const dueCount =
+    deps?.dueCount ?? getDueSrsItems(progressState.srs, today).length;
+  let missions = appendMission([], createReviewMission(dueCount));
 
+  // 回答履歴がなければ最初の一歩としてクイック演習だけを促す。
   if (progressState.answers.length === 0) {
     return appendMission(missions, createInitialMission());
   }
 
-  const partStatistics = calculatePartStatistics(progressState.answers);
-  const weakTags = calculateTagWeaknessStatistics(progressState.answers);
+  const partStatistics =
+    deps?.partStatistics ?? calculatePartStatistics(progressState.answers);
+  const weakTags =
+    deps?.weakTags ?? calculateTagWeaknessStatistics(progressState.answers);
 
   missions = appendMission(
     missions,
