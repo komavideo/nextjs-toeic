@@ -1,7 +1,4 @@
-// テスト（node --experimental-strip-types）は tsconfig の `@/` パスエイリアスを実行時に解決できない。
-// createInitialProgressState は型ではなく値の import で strip されないため、相対パス + `.ts` 拡張子で指定する
-// （型のみの import は strip されるため、下記の `@/types/progress` は `@/` のままで問題ない）。
-import { createInitialProgressState } from "../progress/initialState.ts";
+import { createInitialProgressState } from "@/lib/progress/initialState";
 import type {
   AnswerResult,
   ProgressState,
@@ -47,6 +44,31 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+function isNonNegativeInteger(value: unknown): value is number {
+  return typeof value === "number" && Number.isInteger(value) && value >= 0;
+}
+
+function isDateKey(value: unknown): value is string {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return false;
+  }
+
+  const date = new Date(`${value}T00:00:00.000Z`);
+  return (
+    !Number.isNaN(date.getTime()) &&
+    date.toISOString().slice(0, 10) === value
+  );
+}
+
+function isIsoDateTime(value: unknown): value is string {
+  if (typeof value !== "string") {
+    return false;
+  }
+
+  const date = new Date(value);
+  return !Number.isNaN(date.getTime()) && date.toISOString() === value;
+}
+
 function isAnswerResult(value: unknown): value is AnswerResult {
   if (!isRecord(value)) {
     return false;
@@ -58,9 +80,8 @@ function isAnswerResult(value: unknown): value is AnswerResult {
     validParts.has(value.part as string) &&
     validChoiceIds.has(value.selectedChoiceId as string) &&
     typeof value.correct === "boolean" &&
-    typeof value.answeredAt === "string" &&
-    typeof value.elapsedMs === "number" &&
-    Number.isFinite(value.elapsedMs) &&
+    isIsoDateTime(value.answeredAt) &&
+    isNonNegativeInteger(value.elapsedMs) &&
     isStringArray(value.tags)
   );
 }
@@ -74,10 +95,9 @@ function isSrsState(value: unknown): value is SrsState {
     typeof value.questionId === "string" &&
     value.questionId.length > 0 &&
     validIntervals.has(value.intervalDays as number) &&
-    typeof value.dueDate === "string" &&
-    typeof value.correctStreak === "number" &&
-    Number.isFinite(value.correctStreak) &&
-    typeof value.lastAnsweredAt === "string"
+    isDateKey(value.dueDate) &&
+    isNonNegativeInteger(value.correctStreak) &&
+    isIsoDateTime(value.lastAnsweredAt)
   );
 }
 
@@ -87,18 +107,20 @@ function isProgressState(value: unknown): value is ProgressState {
   }
 
   const state = value as Partial<ProgressState>;
+  const answers = Array.isArray(state.answers) ? state.answers : [];
   const srsValues = isRecord(state.srs) ? Object.values(state.srs) : [];
+  const totalCorrect = answers.filter(
+    (answer) => isRecord(answer) && answer.correct === true,
+  ).length;
 
   return (
     state.version === 1 &&
-    typeof state.totalAnswered === "number" &&
-    Number.isFinite(state.totalAnswered) &&
-    typeof state.totalCorrect === "number" &&
-    Number.isFinite(state.totalCorrect) &&
-    typeof state.currentStreakDays === "number" &&
-    Number.isFinite(state.currentStreakDays) &&
-    (state.lastStudiedDate === undefined ||
-      typeof state.lastStudiedDate === "string") &&
+    isNonNegativeInteger(state.totalAnswered) &&
+    isNonNegativeInteger(state.totalCorrect) &&
+    state.totalAnswered === answers.length &&
+    state.totalCorrect === totalCorrect &&
+    isNonNegativeInteger(state.currentStreakDays) &&
+    (state.lastStudiedDate === undefined || isDateKey(state.lastStudiedDate)) &&
     Array.isArray(state.answers) &&
     state.answers.every(isAnswerResult) &&
     isRecord(state.srs) &&

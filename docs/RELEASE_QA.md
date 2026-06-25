@@ -24,7 +24,8 @@
 
 | 検証日時 | 実行コマンド | 結果 |
 | --- | --- | --- |
-| 2026-06-25 08:14:33 JST (+0900) | `cd web && pnpm exec node --no-warnings --test --experimental-strip-types lib/storage/progressStorage.test.ts` | 成功（7 tests / 7 pass） |
+| 2026-06-25 09:00:42 JST (+0900) | `cd web && pnpm exec node --no-warnings --test --experimental-strip-types lib/storage/progressStorage.test.ts` | 成功（12 tests / 12 pass） |
+| 2026-06-25 09:00:42 JST (+0900) | `cd web && pnpm build` | 成功（問題データ検証、レビュー文書検証、静的エクスポート 8 routes） |
 | 2026-06-25 08:14:33 JST (+0900) | `cd web && pnpm dev`、Playwright で `http://localhost:3000` を確認 | 成功（演習完了保存、再訪復元、破損 JSON、version 不一致、localStorage 利用不可相当の表示を確認。console warning/error は 0 件） |
 
 ### 確認観点
