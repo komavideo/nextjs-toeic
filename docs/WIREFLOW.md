@@ -44,9 +44,11 @@ flowchart TD
 
   Empty -->|開始| Quick
   Empty -->|Partを選ぶ| Part
+  Empty -->|弱点を練習| Quick
   Home -->|今日の学習ミッション: クイック| Quick
   Home -->|今日の学習ミッション: 復習| Quick
   Home -->|今日の学習ミッション: Part / タグ / 未回答| Quick
+  Home -->|弱点を練習| Quick
   Home -->|下部/サイドナビ| Progress
   Home -->|下部/サイドナビ| Settings
   Part -->|この条件で開始| Quick
@@ -62,6 +64,7 @@ flowchart TD
   Review -->|復習を開始| Quick
   Review -->|復習対象なし| Part
   Progress -->|苦手 Part / タグ| Part
+  Progress -->|弱点を練習| Quick
   Settings -->|データリセット完了| Empty
   Error -->|再試行成功| Home
   Error -->|初期化| Empty
@@ -105,6 +108,7 @@ flowchart TD
 | 5問クイック | `screen-home`, `screen-empty`, `screen-part` | Part 5 は5問、Part 6/7 はパッセージセット内の設問 | 5問またはセット内設問の回答完了 |
 | Part 指定 | `screen-part`, `screen-progress` | 選択された Part のみ | セッション内設問の回答完了 |
 | 復習 | `screen-review`, `screen-result` | `dueDate <= today` の SRS 対象 | 復習キューの回答完了またはユーザー中断 |
+| 弱点優先 | `screen-home`, `screen-empty`, `screen-progress` | Part / タグ別正答率が最低の候補（回答3件未満は Part 5 クイックへフォールバック） | セッション内設問の回答完了 |
 
 ### 4.2 Part 別出題分岐
 
@@ -199,10 +203,12 @@ flowchart TD
 | --- | --- | --- | --- |
 | `screen-empty` | `今日の学習ミッション: クイック` | `screen-quick` | 初期セッションを作成 |
 | `screen-empty` | `Partを選ぶ` | `screen-part` | なし |
+| `screen-empty` | `弱点を練習` | `screen-quick` | Part / タグ別正答率の最低候補から出題キューを作成 |
 | `screen-home` | `今日の学習ミッション: クイック` | `screen-quick` | 指定 Part でセッション作成 |
 | `screen-home` | `今日の学習ミッション: 復習` | `screen-quick` | 期限到来 SRS から復習キューを作成 |
 | `screen-home` | `今日の学習ミッション: 苦手 Part / 苦手タグ` | `screen-quick` | Part / タグ条件で出題キューを作成 |
 | `screen-home` | `今日の学習ミッション: 未回答` | `screen-quick` | 既回答 `questionId` を除外して出題キューを作成 |
+| `screen-home` | `弱点を練習` | `screen-quick` | Part / タグ別正答率の最低候補から出題キューを作成 |
 | `screen-part` | `Part / 難易度 / タグを変更` | `screen-part` | 出題条件を更新 |
 | `screen-part` | `この条件で開始` | `screen-quick` | 出題キューを作成 |
 | `screen-quick` | `現在問を表示` | `screen-part5` or `screen-passage` | 現在問 index を参照 |
@@ -220,6 +226,7 @@ flowchart TD
 | `screen-review` | `復習対象なしで通常演習へ` | `screen-part` | なし |
 | `screen-progress` | `苦手 Part を選択` | `screen-part` | 選択 Part を初期値にする |
 | `screen-progress` | `苦手タグを選択` | `screen-part` | 選択タグを初期値にする |
+| `screen-progress` | `弱点を練習` | `screen-quick` | Part / タグ別正答率の最低候補から出題キューを作成 |
 | `screen-settings` | `データリセット` | 確認モーダル | まだ削除しない |
 | `screen-settings` | `リセット実行` | `screen-empty` | `toeicReadingProgress:v1` を削除 |
 | `screen-error` | `再試行` | 元画面 or `screen-home` | 失敗した保存/読み込み処理を再実行 |

@@ -18,7 +18,6 @@ type WeaknessCandidate =
       part: ToeicReadingPart;
       answered: number;
       correct: number;
-      accuracy: number;
     }
   | {
       kind: "tag";
@@ -26,7 +25,6 @@ type WeaknessCandidate =
       part: ToeicReadingPart;
       answered: number;
       correct: number;
-      accuracy: number;
     };
 
 function pickFirstPassageSet(entries: QuestionBankEntry[]): QuestionBankEntry[] {
@@ -210,8 +208,13 @@ function compareWeaknessCandidates(
   left: WeaknessCandidate,
   right: WeaknessCandidate,
 ): number {
-  if (left.accuracy !== right.accuracy) {
-    return left.accuracy - right.accuracy;
+  // 丸め済みの accuracy ではなく生の正答率で比較し、getWeakestPartForTag と判定基準を揃える
+  // （候補は answered >= minimumWeaknessCandidateAnswers でフィルタ済みのためゼロ除算は発生しない）
+  const leftAccuracy = left.correct / left.answered;
+  const rightAccuracy = right.correct / right.answered;
+
+  if (leftAccuracy !== rightAccuracy) {
+    return leftAccuracy - rightAccuracy;
   }
 
   if (left.kind !== right.kind) {
@@ -240,7 +243,6 @@ function createWeaknessCandidates(
         part: statistic.part,
         answered: statistic.answered,
         correct: statistic.correct,
-        accuracy: statistic.accuracy,
       }),
     );
   const tagCandidates = calculateTagWeaknessStatistics(progressState.answers)
@@ -259,7 +261,6 @@ function createWeaknessCandidates(
           part,
           answered: statistic.answered,
           correct: statistic.correct,
-          accuracy: statistic.accuracy,
         },
       ];
     });

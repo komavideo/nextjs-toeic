@@ -125,6 +125,7 @@ Phase 1 を公開できる水準に拡張し、初回リリース `0.1.0` とし
 | 進捗保存 | Phase 1 | Must | `localStorage` で保存 |
 | 進捗ダッシュボード | Phase 1 | Must | 正答率、連続学習日数、弱点 Part |
 | 簡易 SRS 復習 | Phase 1 | Must | 日付ベースで復習予定を管理 |
+| 弱点優先セッション | Phase 1 | Should | Part / タグ別正答率が最低の領域を自動出題（`/practice?mode=weakness`、回答3件未満は Part 5 クイックへフォールバック） |
 | 問題データ検証 | Phase 1 | Must | 型・整合性の検証 |
 | 300問以上の問題バンク | Phase 2 | Must | `0.1.0` の商品価値 |
 | 全問人間レビュー | Phase 2 | Must | 問題品質の担保 |
