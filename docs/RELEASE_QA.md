@@ -67,7 +67,33 @@
 
 対応 Issue: #28 `[M2][P0] 復習フローのE2E手動確認`
 
-このセクションは手動 QA 記録です。復習対象ありケースは、再現性を優先して `toeicReadingProgress:v1` に既知の `ProgressState` を投入して確認しました。
+このセクションは手動 QA 記録です。`pnpm build` は問題データ検証、レビュー文書検証、静的エクスポートの確認であり、`docs/RELEASE_QA.md` 自体は自動検証対象外です。復習対象ありケースは、再現性を優先して `toeicReadingProgress:v1` に以下の `ProgressState` を投入して確認しました。
+
+```json
+{
+  "version": 1,
+  "totalAnswered": 0,
+  "totalCorrect": 0,
+  "currentStreakDays": 0,
+  "answers": [],
+  "srs": {
+    "p5-sample-001": {
+      "questionId": "p5-sample-001",
+      "intervalDays": 1,
+      "dueDate": "2026-06-25",
+      "correctStreak": 1,
+      "lastAnsweredAt": "2026-06-24T01:30:03.000Z"
+    },
+    "p5-sample-002": {
+      "questionId": "p5-sample-002",
+      "intervalDays": 1,
+      "dueDate": "2026-06-25",
+      "correctStreak": 0,
+      "lastAnsweredAt": "2026-06-24T01:30:03.000Z"
+    }
+  }
+}
+```
 
 | 検証日時 | 実行コマンド | 結果 |
 | --- | --- | --- |
