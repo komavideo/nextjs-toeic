@@ -44,21 +44,26 @@ function toDifficulty(value: string | null): Difficulty | undefined {
   return validDifficulties.find((difficulty) => difficulty === value);
 }
 
-function isUnansweredOnly(value: string | null): boolean {
+function isUnansweredPriority(value: string | null): boolean {
   return value === "1" || value === "true";
 }
 
-function getAnsweredQuestionIds(progressState: ProgressState): Set<string> {
-  return new Set(progressState.answers.map((answer) => answer.questionId));
+function loadOptionalProgressState(): ProgressState | undefined {
+  const progressResult = loadProgressState();
+
+  return progressResult.ok ? progressResult.state : undefined;
 }
 
-function createSession(part: ToeicReadingPart): ActivePracticeSession {
+function createSession(
+  part: ToeicReadingPart,
+  progressState?: ProgressState,
+): ActivePracticeSession {
   const startedAt = new Date().toISOString();
 
   return {
     id: `session-${Date.now()}`,
     condition: { kind: "quick", part },
-    queue: createQuickSessionQueue(part),
+    queue: createQuickSessionQueue(part, { progressState }),
     currentIndex: 0,
     startedAt,
     questionStartedAt: startedAt,
@@ -71,15 +76,11 @@ function createPartSession(
     part: ToeicReadingPart;
     difficulty?: Difficulty;
     tag?: string;
-    unansweredOnly?: boolean;
+    unansweredPriority?: boolean;
   },
   progressState?: ProgressState,
 ): ActivePracticeSession {
   const startedAt = new Date().toISOString();
-  const excludeQuestionIds =
-    condition.unansweredOnly && progressState
-      ? getAnsweredQuestionIds(progressState)
-      : undefined;
 
   return {
     id: `session-${Date.now()}`,
@@ -88,7 +89,7 @@ function createPartSession(
       part: condition.part,
       difficulty: condition.difficulty,
       tag: condition.tag,
-      excludeQuestionIds,
+      progressState,
     }),
     currentIndex: 0,
     startedAt,
@@ -159,7 +160,7 @@ function createRestartedSessionState(
   }
 
   if (condition.kind === "part") {
-    const progressResult = condition.unansweredOnly
+    const progressResult = condition.unansweredPriority
       ? loadProgressState()
       : undefined;
 
@@ -177,14 +178,16 @@ function createRestartedSessionState(
           part: condition.part ?? "part5",
           difficulty: condition.difficulty,
           tag: condition.tag,
-          unansweredOnly: condition.unansweredOnly,
+          unansweredPriority: condition.unansweredPriority,
         },
-        progressResult?.state,
+        progressResult?.state ?? loadOptionalProgressState(),
       ),
     );
   }
 
-  return createRunnableSessionState(createSession(condition.part ?? "part5"));
+  return createRunnableSessionState(
+    createSession(condition.part ?? "part5", loadOptionalProgressState()),
+  );
 }
 
 function createSelectStateFromCondition(
@@ -227,16 +230,18 @@ function createPracticeStateFromSearchParams(
 ): PracticeState {
   const mode = searchParams.get("mode");
   const part = toPart(searchParams.get("part")) ?? "part5";
-  const unansweredOnly = isUnansweredOnly(searchParams.get("unanswered"));
+  const unansweredPriority = isUnansweredPriority(searchParams.get("unanswered"));
 
   if (mode === "quick") {
-    return createRunnableSessionState(createSession(part));
+    return createRunnableSessionState(
+      createSession(part, loadOptionalProgressState()),
+    );
   }
 
   if (mode === "part") {
-    const progressResult = unansweredOnly ? loadProgressState() : undefined;
+    const progressResult = loadProgressState();
 
-    if (progressResult && !progressResult.ok) {
+    if (unansweredPriority && !progressResult.ok) {
       return {
         screen: "error",
         message: "未回答データを読み込めませんでした。",
@@ -250,9 +255,9 @@ function createPracticeStateFromSearchParams(
           part,
           difficulty: toDifficulty(searchParams.get("difficulty")),
           tag: searchParams.get("tag") ?? undefined,
-          unansweredOnly,
+          unansweredPriority,
         },
-        progressResult?.state,
+        progressResult.ok ? progressResult.state : undefined,
       ),
     );
   }
@@ -639,7 +644,11 @@ export function PracticeClient() {
         initialPart={state.initialPart}
         initialTag={state.initialTag}
         onStart={(condition) =>
-          setState(createRunnableSessionState(createPartSession(condition)))
+          setState(
+            createRunnableSessionState(
+              createPartSession(condition, loadOptionalProgressState()),
+            ),
+          )
         }
       />
       {interruptModal}
