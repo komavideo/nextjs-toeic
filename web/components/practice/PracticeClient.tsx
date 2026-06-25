@@ -164,6 +164,16 @@ function createPracticeStateFromSearchParams(
     return createRunnableSessionState(createSession(part));
   }
 
+  if (mode === "part") {
+    return createRunnableSessionState(
+      createPartSession({
+        part,
+        difficulty: toDifficulty(searchParams.get("difficulty")),
+        tag: searchParams.get("tag") ?? undefined,
+      }),
+    );
+  }
+
   if (mode === "review") {
     const progressResult = loadProgressState();
 

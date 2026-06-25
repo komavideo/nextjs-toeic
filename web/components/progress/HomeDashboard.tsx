@@ -1,42 +1,24 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Button } from "@/components/shared/Button";
 import { ErrorState } from "@/components/shared/ErrorState";
 import { Panel } from "@/components/shared/Panel";
+import { createDailyMissions } from "@/lib/progress/dailyMissions";
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import { calculatePartStatistics, calculateTagWeaknessStatistics } from "@/lib/progress/statistics";
 import { getDueSrsItems } from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
-import type { ToeicReadingPart } from "@/types/question";
 import { EmptyState } from "./EmptyState";
+import { HomeMissionPanel } from "./HomeMissionPanel";
 import { HomeSummary } from "./HomeSummary";
 import { PartPerformance } from "./PartPerformance";
 import { RecentHistory } from "./RecentHistory";
-
-const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
 
 type LoadError = {
   message: string;
   storageUnavailable: boolean;
 };
-
-function getRecommendedPart(
-  partStatistics: ReturnType<typeof calculatePartStatistics>,
-): ToeicReadingPart {
-  const answeredStatistics = partStatistics.filter((statistic) => statistic.answered > 0);
-
-  if (answeredStatistics.length === 0) {
-    return "part5";
-  }
-
-  return [...answeredStatistics].sort(
-    (left, right) =>
-      left.accuracy - right.accuracy ||
-      partOrder.indexOf(left.part) - partOrder.indexOf(right.part),
-  )[0].part;
-}
 
 function toDateKey(date: Date): string {
   const year = date.getFullYear();
@@ -88,7 +70,6 @@ export function HomeDashboard() {
   }
 
   const partStatistics = calculatePartStatistics(progressState.answers);
-  const recommendedPart = getRecommendedPart(partStatistics);
   const weakTags = calculateTagWeaknessStatistics(progressState.answers);
   const dueCount = getDueSrsItems(progressState.srs).length;
   const accuracy =
@@ -99,26 +80,20 @@ export function HomeDashboard() {
   const todayCount = progressState.answers.filter((answer) =>
     toDateKey(new Date(answer.answeredAt)) === today,
   ).length;
+  const missions = createDailyMissions(progressState, today);
 
   return (
     <section className="mx-auto max-w-[1120px]">
       <p className="mb-2 text-sm font-semibold text-[var(--primary)]">screen-home</p>
       <h1 className="text-2xl font-bold leading-8">5分リーディングドリル</h1>
-      <div className="mt-6">
+      <HomeMissionPanel missions={missions} />
+      <div className="mt-5">
         <HomeSummary
           accuracy={accuracy}
           dueCount={dueCount}
           streakDays={progressState.currentStreakDays}
           todayCount={todayCount}
         />
-      </div>
-      <div className="mt-5 flex flex-wrap gap-3">
-        <Button href={`/practice?mode=quick&part=${recommendedPart}`}>
-          5問クイックを開始
-        </Button>
-        <Button href="/review" variant="secondary">
-          復習期限カード
-        </Button>
       </div>
       <Panel className="mt-4" title="Part 別成績">
         <PartPerformance statistics={partStatistics} />
