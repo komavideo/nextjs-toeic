@@ -136,3 +136,46 @@
 - 復習画面では当日期限の SRS 2 件に対して「今日の復習 2件」と「復習を開始」が表示されることを確認した。
 - 進捗画面では保存済み回答履歴 5 件をもとに `3/5 正解`、Part 別正答率、タグ別苦手一覧、直近7日の学習量、復習定着状況が表示されることを確認した。
 - in-app Browser は `iab` が利用できなかったため、Playwright で代替確認した。
+
+## 基本アクセシビリティ確認
+
+対応 Issue: #30 `[M2][P1] 基本アクセシビリティ確認`
+
+このセクションは手動 QA 記録です。`pnpm build` は問題データ検証、レビュー文書検証、静的エクスポートの確認であり、`docs/RELEASE_QA.md` 自体は自動検証対象外です。Lighthouse はプロジェクト依存に追加せず、`npx --yes lighthouse@latest` で一時実行しました。
+
+| 検証日時 | 実行コマンド | 結果 |
+| --- | --- | --- |
+| 2026-06-25 12:10:18 JST (+0900) | `cd web && pnpm exec tsc --noEmit` | 成功 |
+| 2026-06-25 12:10:18 JST (+0900) | `cd web && pnpm build` | 成功（問題データ検証、レビュー文書検証、静的エクスポート 8 routes） |
+| 2026-06-25 12:10:18 JST (+0900) | `cd web && python3 -m http.server 4173 --directory out`、Playwright で `http://localhost:4173` を確認 | 成功（初回ホーム、通常ホーム、設定、演習中断モーダルを確認。console warning/error は 0 件） |
+| 2026-06-25 12:10:18 JST (+0900) | `CHROME_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" npx --yes lighthouse@latest <url> --only-categories=accessibility --chrome-flags="--headless --no-sandbox" --output=json --quiet` | 成功（`/`, `/practice/`, `/review/`, `/progress/`, `/settings/` の Accessibility score はすべて 100） |
+
+### 確認観点
+
+- 初回ホーム、通常ホーム、設定、演習画面の主要操作にキーボードで到達できることを確認した。
+- `:focus-visible` による 3px のフォーカスリングが表示されることを確認した。
+- 設定のデータリセットモーダルが `role="dialog"`、`aria-modal="true"`、`aria-labelledby`、`aria-describedby` を持ち、スクリーンリーダー上の名前と説明を持つことを確認した。
+- 設定モーダルで初期フォーカスがモーダル内に入り、Tab / Shift+Tab でモーダル内を循環することを確認した。
+- 設定モーダルは Escape で閉じ、閉じた後に起点の「データリセット」ボタンへフォーカスが戻ることを確認した。
+- 演習中断モーダルが dialog として認識され、「続ける」ボタンで閉じられることを確認した。
+- Lighthouse の `color-contrast` 指摘に対応し、リンク型 primary ボタンと警告バッジのコントラスト不足が解消されたことを確認した。
+- in-app Browser は `iab` が利用できなかったため、Playwright で代替確認した。
+
+## ETS非提携・オリジナル問題表記確認
+
+対応 Issue: #31 `[M2][P0] ETS非提携・オリジナル問題表記の確認`
+
+このセクションは手動 QA 記録です。初回ホームは `toeicReadingProgress:v1` を削除した状態、通常ホームは再現用の `ProgressState` を投入した状態で確認しました。
+
+| 検証日時 | 実行コマンド | 結果 |
+| --- | --- | --- |
+| 2026-06-25 12:10:18 JST (+0900) | `cd web && pnpm exec tsc --noEmit` | 成功 |
+| 2026-06-25 12:10:18 JST (+0900) | `cd web && pnpm build` | 成功（問題データ検証、レビュー文書検証、静的エクスポート 8 routes） |
+| 2026-06-25 12:10:18 JST (+0900) | `cd web && python3 -m http.server 4173 --directory out`、Playwright で `http://localhost:4173` を確認 | 成功（初回ホーム、通常ホーム、設定で ETS 非提携とオリジナル問題方針を確認。console warning/error は 0 件） |
+
+### 確認観点
+
+- 初回ホームの `screen-empty` で「TOEIC は ETS の登録商標」「ETS と提携、承認、推薦されたものではない」「オリジナル問題」が確認できることを確認した。
+- 通常ホームの `screen-home` で同じ権利表記と問題方針が確認できることを確認した。
+- 設定画面の「権利表記と問題方針」で同じ権利表記と問題方針が確認できることを確認した。
+- アプリ名、サイドナビのロゴ相当表示、ホーム H1 は「5分リーディングドリル」であり、TOEIC をアプリ名、ロゴ、主ブランドとして使っていないことを確認した。
