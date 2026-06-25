@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { Button } from "@/components/shared/Button";
 import { ErrorState } from "@/components/shared/ErrorState";
 import { Panel } from "@/components/shared/Panel";
 import { createDailyMissions } from "@/lib/progress/dailyMissions";
@@ -122,6 +123,9 @@ export function HomeDashboard() {
     <section className="mx-auto max-w-[1120px]">
       <p className="mb-2 text-sm font-semibold text-[var(--primary)]">screen-home</p>
       <h1 className="text-2xl font-bold leading-8">5分リーディングドリル</h1>
+      <div className="mt-5 flex flex-wrap gap-3">
+        <Button href="/practice?mode=weakness">弱点を練習</Button>
+      </div>
       <HomeMissionPanel missions={missions} />
       <div className="mt-5">
         <HomeSummary

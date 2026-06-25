@@ -4,7 +4,7 @@ import type { UpdateSrsResult } from "@/lib/srs/updateSrs";
 import type { AnswerResult } from "@/types/progress";
 import type { ChoiceId, Difficulty, ToeicReadingPart } from "@/types/question";
 
-export type PracticeSessionKind = "quick" | "part" | "review";
+export type PracticeSessionKind = "quick" | "part" | "review" | "weakness";
 
 export type PracticeSessionCondition = {
   kind: PracticeSessionKind;
