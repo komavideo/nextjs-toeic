@@ -1,6 +1,6 @@
-import part5Entries from "@/data/part5.json";
-import part6Entries from "@/data/part6.json";
-import part7Entries from "@/data/part7.json";
+import part5Entries from "../../data/part5.json" with { type: "json" };
+import part6Entries from "../../data/part6.json" with { type: "json" };
+import part7Entries from "../../data/part7.json" with { type: "json" };
 import type { QuestionBankEntry, ToeicReadingPart } from "@/types/question";
 
 const questionBankEntries = [

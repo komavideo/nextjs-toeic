@@ -1,8 +1,8 @@
-import { getDueSrsItems } from "@/lib/srs/due";
+import { getDueSrsItems } from "../srs/due.ts";
 import type { ProgressState } from "@/types/progress";
 import type { Difficulty, QuestionBankEntry, ToeicReadingPart } from "@/types/question";
-import { getAllQuestionBankEntries, getQuestionBankEntriesByPart } from "./index";
-import { type FlatQuestion, flattenQuestionBankEntries } from "./flatten";
+import { getAllQuestionBankEntries, getQuestionBankEntriesByPart } from "./index.ts";
+import { type FlatQuestion, flattenQuestionBankEntries } from "./flatten.ts";
 
 function pickFirstPassageSet(entries: QuestionBankEntry[]): QuestionBankEntry[] {
   return entries.length > 0 ? [entries[0]] : [];
@@ -24,6 +24,7 @@ export type PartSessionQueueOptions = {
   part: ToeicReadingPart;
   difficulty?: Difficulty;
   tag?: string;
+  excludeQuestionIds?: ReadonlySet<string>;
 };
 
 function entryMatchesCondition(
@@ -75,7 +76,12 @@ function flatQuestionMatchesCondition(
   question: FlatQuestion,
   difficulty?: Difficulty,
   tag?: string,
+  excludeQuestionIds?: ReadonlySet<string>,
 ): boolean {
+  if (excludeQuestionIds?.has(question.questionId)) {
+    return false;
+  }
+
   if (difficulty && question.difficulty !== difficulty) {
     return false;
   }
@@ -91,15 +97,38 @@ export function createPartSessionQueue({
   part,
   difficulty,
   tag,
+  excludeQuestionIds,
 }: PartSessionQueueOptions): FlatQuestion[] {
   const entries = getQuestionBankEntriesByPart(part);
 
   if (part === "part5") {
     return flattenQuestionBankEntries(entries)
       .filter((question) =>
-        flatQuestionMatchesCondition(question, difficulty, tag),
+        flatQuestionMatchesCondition(
+          question,
+          difficulty,
+          tag,
+          excludeQuestionIds,
+        ),
       )
       .slice(0, 5);
+  }
+
+  if (excludeQuestionIds) {
+    const matchedQuestions = entries
+      .map((entry) =>
+        flattenQuestionBankEntries([entry]).filter((question) =>
+          flatQuestionMatchesCondition(
+            question,
+            difficulty,
+            tag,
+            excludeQuestionIds,
+          ),
+        ),
+      )
+      .find((questions) => questions.length > 0);
+
+    return matchedQuestions ?? [];
   }
 
   const matchedSet = entries.find((entry) =>

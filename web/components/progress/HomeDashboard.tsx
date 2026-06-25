@@ -1,42 +1,24 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { Button } from "@/components/shared/Button";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { ErrorState } from "@/components/shared/ErrorState";
 import { Panel } from "@/components/shared/Panel";
+import { createDailyMissions } from "@/lib/progress/dailyMissions";
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import { calculatePartStatistics, calculateTagWeaknessStatistics } from "@/lib/progress/statistics";
 import { getDueSrsItems } from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
-import type { ToeicReadingPart } from "@/types/question";
 import { EmptyState } from "./EmptyState";
+import { HomeMissionPanel } from "./HomeMissionPanel";
 import { HomeSummary } from "./HomeSummary";
 import { PartPerformance } from "./PartPerformance";
 import { RecentHistory } from "./RecentHistory";
-
-const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
 
 type LoadError = {
   message: string;
   storageUnavailable: boolean;
 };
-
-function getRecommendedPart(
-  partStatistics: ReturnType<typeof calculatePartStatistics>,
-): ToeicReadingPart {
-  const answeredStatistics = partStatistics.filter((statistic) => statistic.answered > 0);
-
-  if (answeredStatistics.length === 0) {
-    return "part5";
-  }
-
-  return [...answeredStatistics].sort(
-    (left, right) =>
-      left.accuracy - right.accuracy ||
-      partOrder.indexOf(left.part) - partOrder.indexOf(right.part),
-  )[0].part;
-}
 
 function toDateKey(date: Date): string {
   const year = date.getFullYear();
@@ -68,6 +50,44 @@ export function HomeDashboard() {
     loadProgress();
   }, [loadProgress]);
 
+  // progressState から派生する表示値とミッションをまとめて算出し、再レンダーごとの再計算を避ける。
+  const dashboard = useMemo(() => {
+    if (!progressState || progressState.answers.length === 0) {
+      return null;
+    }
+
+    const partStatistics = calculatePartStatistics(progressState.answers);
+    const weakTags = calculateTagWeaknessStatistics(progressState.answers);
+    const today = toDateKey(new Date());
+    const dueCount = getDueSrsItems(progressState.srs, today).length;
+    const accuracy =
+      progressState.totalAnswered === 0
+        ? 0
+        : Math.round(
+            (progressState.totalCorrect / progressState.totalAnswered) * 100,
+          );
+    const todayCount = progressState.answers.filter(
+      (answer) => toDateKey(new Date(answer.answeredAt)) === today,
+    ).length;
+    // 算出済みの統計を渡し、createDailyMissions 内での再計算を避ける。
+    const missions = createDailyMissions(progressState, today, {
+      partStatistics,
+      weakTags,
+      dueCount,
+    });
+
+    return {
+      partStatistics,
+      weakTags,
+      dueCount,
+      accuracy,
+      todayCount,
+      missions,
+      streakDays: progressState.currentStreakDays,
+      answers: progressState.answers,
+    };
+  }, [progressState]);
+
   if (loadError) {
     return (
       <ErrorState
@@ -83,42 +103,33 @@ export function HomeDashboard() {
     );
   }
 
-  if (!progressState || progressState.answers.length === 0) {
+  if (!dashboard) {
     return <EmptyState />;
   }
 
-  const partStatistics = calculatePartStatistics(progressState.answers);
-  const recommendedPart = getRecommendedPart(partStatistics);
-  const weakTags = calculateTagWeaknessStatistics(progressState.answers);
-  const dueCount = getDueSrsItems(progressState.srs).length;
-  const accuracy =
-    progressState.totalAnswered === 0
-      ? 0
-      : Math.round((progressState.totalCorrect / progressState.totalAnswered) * 100);
-  const today = toDateKey(new Date());
-  const todayCount = progressState.answers.filter((answer) =>
-    toDateKey(new Date(answer.answeredAt)) === today,
-  ).length;
+  const {
+    partStatistics,
+    weakTags,
+    dueCount,
+    accuracy,
+    todayCount,
+    missions,
+    streakDays,
+    answers,
+  } = dashboard;
 
   return (
     <section className="mx-auto max-w-[1120px]">
       <p className="mb-2 text-sm font-semibold text-[var(--primary)]">screen-home</p>
       <h1 className="text-2xl font-bold leading-8">5分リーディングドリル</h1>
-      <div className="mt-6">
+      <HomeMissionPanel missions={missions} />
+      <div className="mt-5">
         <HomeSummary
           accuracy={accuracy}
           dueCount={dueCount}
-          streakDays={progressState.currentStreakDays}
+          streakDays={streakDays}
           todayCount={todayCount}
         />
-      </div>
-      <div className="mt-5 flex flex-wrap gap-3">
-        <Button href={`/practice?mode=quick&part=${recommendedPart}`}>
-          5問クイックを開始
-        </Button>
-        <Button href="/review" variant="secondary">
-          復習期限カード
-        </Button>
       </div>
       <Panel className="mt-4" title="Part 別成績">
         <PartPerformance statistics={partStatistics} />
@@ -129,7 +140,7 @@ export function HomeDashboard() {
         </p>
       </Panel>
       <Panel className="mt-4" title="直近セッション履歴">
-        <RecentHistory answers={progressState.answers} />
+        <RecentHistory answers={answers} />
       </Panel>
       <p className="mt-5 text-xs leading-4 text-[var(--text-muted)]">
         TOEIC は ETS の登録商標です。本アプリは ETS と提携、承認、推薦されたものではありません。問題は既存教材や公式問題の複製ではないオリジナル問題です。
