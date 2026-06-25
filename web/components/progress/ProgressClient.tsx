@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { Button } from "@/components/shared/Button";
 import { ErrorState } from "@/components/shared/ErrorState";
 import { Panel } from "@/components/shared/Panel";
 import { createInitialProgressState } from "@/lib/progress/initialState";
@@ -117,6 +118,9 @@ export function ProgressClient() {
         screen-progress
       </p>
       <h1 className="text-2xl font-bold leading-8">進捗</h1>
+      <div className="mt-5 flex flex-wrap gap-3">
+        <Button href="/practice?mode=weakness">弱点を練習</Button>
+      </div>
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <Panel title="全体正答率">
           <div className="text-3xl font-bold">{accuracy}%</div>

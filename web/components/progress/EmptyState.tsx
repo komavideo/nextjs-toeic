@@ -16,6 +16,7 @@ export function EmptyState() {
           5問単位で Reading の弱点を確認できます。進捗はこの端末内だけに保存されます。
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
+          <Button href="/practice?mode=weakness">弱点を練習</Button>
           <Button href="/practice" variant="secondary">
             Partを選ぶ
           </Button>

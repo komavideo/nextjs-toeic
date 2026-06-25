@@ -10,6 +10,7 @@ import {
   createPartSessionQueue,
   createQuickSessionQueue,
   createReviewSessionQueue,
+  createWeaknessSessionQueue,
 } from "@/lib/question-bank/sessionQueue";
 import { updateSrsState } from "@/lib/srs/updateSrs";
 import {
@@ -110,6 +111,20 @@ function createReviewSession(progressState: ProgressState): ActivePracticeSessio
   };
 }
 
+function createWeaknessSession(progressState: ProgressState): ActivePracticeSession {
+  const startedAt = new Date().toISOString();
+
+  return {
+    id: `session-${Date.now()}`,
+    condition: { kind: "weakness" },
+    queue: createWeaknessSessionQueue(progressState),
+    currentIndex: 0,
+    startedAt,
+    questionStartedAt: startedAt,
+    answers: [],
+  };
+}
+
 function createRestartedSessionState(
   condition: PracticeSessionCondition,
 ): PracticeState {
@@ -125,6 +140,22 @@ function createRestartedSessionState(
     }
 
     return createRunnableSessionState(createReviewSession(progressResult.state));
+  }
+
+  if (condition.kind === "weakness") {
+    const progressResult = loadProgressState();
+
+    if (!progressResult.ok) {
+      return {
+        screen: "error",
+        message: "弱点データを読み込めませんでした。",
+        storageUnavailable: progressResult.reason === "unavailable",
+      };
+    }
+
+    return createRunnableSessionState(
+      createWeaknessSession(progressResult.state),
+    );
   }
 
   if (condition.kind === "part") {
@@ -240,6 +271,22 @@ function createPracticeStateFromSearchParams(
     const reviewSession = createReviewSession(progressResult.state);
 
     return createRunnableSessionState(reviewSession);
+  }
+
+  if (mode === "weakness") {
+    const progressResult = loadProgressState();
+
+    if (!progressResult.ok) {
+      return {
+        screen: "error",
+        message: "弱点データを読み込めませんでした。",
+        storageUnavailable: progressResult.reason === "unavailable",
+      };
+    }
+
+    return createRunnableSessionState(
+      createWeaknessSession(progressResult.state),
+    );
   }
 
   return createSelectStateFromSearchParams(searchParams);
