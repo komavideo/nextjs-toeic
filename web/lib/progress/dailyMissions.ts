@@ -1,9 +1,5 @@
-import part5Entries from "../../data/part5.json" with { type: "json" };
-import part6Entries from "../../data/part6.json" with { type: "json" };
-import part7Entries from "../../data/part7.json" with { type: "json" };
 import type { ProgressState } from "@/types/progress";
-import type { QuestionBankEntry, ToeicReadingPart } from "@/types/question";
-import { flattenQuestionBankEntries } from "../question-bank/flatten.ts";
+import type { ToeicReadingPart } from "@/types/question";
 import { getDueSrsItems } from "../srs/due.ts";
 import {
   calculatePartStatistics,
@@ -29,24 +25,13 @@ export type DailyMission = {
 
 const maxMissionCount = 3;
 const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
-const questionBankEntriesByPart: Record<ToeicReadingPart, QuestionBankEntry[]> = {
-  part5: part5Entries as QuestionBankEntry[],
-  part6: part6Entries as QuestionBankEntry[],
-  part7: part7Entries as QuestionBankEntry[],
-};
 
-// 問題データはビルド時に確定する静的 JSON のため、未回答判定で使う questionId は
-// モジュール読み込み時に一度だけ展開してキャッシュする（レンダーごとの再展開を避ける）。
-const questionIdsByPart: Record<ToeicReadingPart, string[]> = {
-  part5: flattenQuestionBankEntries(questionBankEntriesByPart.part5).map(
-    (question) => question.questionId,
-  ),
-  part6: flattenQuestionBankEntries(questionBankEntriesByPart.part6).map(
-    (question) => question.questionId,
-  ),
-  part7: flattenQuestionBankEntries(questionBankEntriesByPart.part7).map(
-    (question) => question.questionId,
-  ),
+// ホームのクライアントバンドルへ問題本文・解説を取り込まないよう、
+// 未回答数は Part 別の軽量な総設問数だけで判定する。
+export const questionCountsByPart: Record<ToeicReadingPart, number> = {
+  part5: 220,
+  part6: 42,
+  part7: 42,
 };
 
 // "part5" → "Part 5" のように表示用ラベルへ整形する。
@@ -58,15 +43,21 @@ function buildPracticeHref({
   mode,
   part,
   tag,
+  unansweredOnly,
 }: {
   mode: "quick" | "part";
   part: ToeicReadingPart;
   tag?: string;
+  unansweredOnly?: boolean;
 }): string {
   const searchParams = new URLSearchParams({ mode, part });
 
   if (tag) {
     searchParams.set("tag", tag);
+  }
+
+  if (unansweredOnly) {
+    searchParams.set("unanswered", "1");
   }
 
   return `/practice?${searchParams.toString()}`;
@@ -147,18 +138,21 @@ function getWeakestPartForTag(
 function getMostUnansweredPart(
   progressState: ProgressState,
 ): { part: ToeicReadingPart; unanswered: number } | undefined {
-  const answeredQuestionIds = new Set(
-    progressState.answers.map((answer) => answer.questionId),
-  );
+  const answeredQuestionIdsByPart = new Map<ToeicReadingPart, Set<string>>();
+
+  for (const answer of progressState.answers) {
+    const questionIds =
+      answeredQuestionIdsByPart.get(answer.part) ?? new Set<string>();
+    questionIds.add(answer.questionId);
+    answeredQuestionIdsByPart.set(answer.part, questionIds);
+  }
+
   const unansweredCounts = partOrder.map((part) => {
-    const questionIds = questionIdsByPart[part];
-    const answeredCount = questionIds.filter((questionId) =>
-      answeredQuestionIds.has(questionId),
-    ).length;
+    const answeredCount = answeredQuestionIdsByPart.get(part)?.size ?? 0;
 
     return {
       part,
-      unanswered: Math.max(questionIds.length - answeredCount, 0),
+      unanswered: Math.max(questionCountsByPart[part] - answeredCount, 0),
     };
   });
 
@@ -239,7 +233,11 @@ function createUnansweredMission(
     kind: "unanswered",
     title: `${partLabel} の未回答を進める`,
     description: `この Part には未回答が${target.unanswered}問あります。`,
-    href: buildPracticeHref({ mode: "part", part: target.part }),
+    href: buildPracticeHref({
+      mode: "part",
+      part: target.part,
+      unansweredOnly: true,
+    }),
     actionLabel: "演習を開始",
   };
 }

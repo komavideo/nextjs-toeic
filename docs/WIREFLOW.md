@@ -44,9 +44,9 @@ flowchart TD
 
   Empty -->|開始| Quick
   Empty -->|Partを選ぶ| Part
-  Home -->|5問クイック| Quick
-  Home -->|Part別成績| Part
-  Home -->|復習期限| Review
+  Home -->|今日の学習ミッション: クイック| Quick
+  Home -->|今日の学習ミッション: 復習| Quick
+  Home -->|今日の学習ミッション: Part / タグ / 未回答| Quick
   Home -->|下部/サイドナビ| Progress
   Home -->|下部/サイドナビ| Settings
   Part -->|この条件で開始| Quick
@@ -197,11 +197,12 @@ flowchart TD
 
 | Screen ID | 主イベント | 遷移先 | 状態更新 |
 | --- | --- | --- | --- |
-| `screen-empty` | `開始` | `screen-quick` | 初期セッションを作成 |
+| `screen-empty` | `今日の学習ミッション: クイック` | `screen-quick` | 初期セッションを作成 |
 | `screen-empty` | `Partを選ぶ` | `screen-part` | なし |
-| `screen-home` | `5問クイック` | `screen-quick` | おすすめ Part でセッション作成 |
-| `screen-home` | `Part別成績を選択` | `screen-part` | 選択 Part を初期値にする |
-| `screen-home` | `復習期限カードを選択` | `screen-review` | なし |
+| `screen-home` | `今日の学習ミッション: クイック` | `screen-quick` | 指定 Part でセッション作成 |
+| `screen-home` | `今日の学習ミッション: 復習` | `screen-quick` | 期限到来 SRS から復習キューを作成 |
+| `screen-home` | `今日の学習ミッション: 苦手 Part / 苦手タグ` | `screen-quick` | Part / タグ条件で出題キューを作成 |
+| `screen-home` | `今日の学習ミッション: 未回答` | `screen-quick` | 既回答 `questionId` を除外して出題キューを作成 |
 | `screen-part` | `Part / 難易度 / タグを変更` | `screen-part` | 出題条件を更新 |
 | `screen-part` | `この条件で開始` | `screen-quick` | 出題キューを作成 |
 | `screen-quick` | `現在問を表示` | `screen-part5` or `screen-passage` | 現在問 index を参照 |
@@ -254,7 +255,7 @@ flowchart TD
 ## 10. 受け入れ確認
 
 - Phase 1 の12画面すべてに遷移または表示条件が定義されている
-- 5問クイック、Part 指定、復習の3つの開始導線が定義されている
+- 5問クイック、Part 指定、タグ指定、未回答優先、復習の開始導線が定義されている
 - 回答、解説、結果、SRS 更新、進捗保存の順序が定義されている
 - `localStorage` 読み込み失敗、保存失敗、データ破損、リセット失敗の復旧導線が定義されている
 - `PRD.md` の完全クライアント完結方針に反する外部 API やサーバー処理が含まれていない

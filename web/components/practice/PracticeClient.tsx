@@ -43,6 +43,14 @@ function toDifficulty(value: string | null): Difficulty | undefined {
   return validDifficulties.find((difficulty) => difficulty === value);
 }
 
+function isUnansweredOnly(value: string | null): boolean {
+  return value === "1" || value === "true";
+}
+
+function getAnsweredQuestionIds(progressState: ProgressState): Set<string> {
+  return new Set(progressState.answers.map((answer) => answer.questionId));
+}
+
 function createSession(part: ToeicReadingPart): ActivePracticeSession {
   const startedAt = new Date().toISOString();
 
@@ -57,17 +65,30 @@ function createSession(part: ToeicReadingPart): ActivePracticeSession {
   };
 }
 
-function createPartSession(condition: {
-  part: ToeicReadingPart;
-  difficulty?: Difficulty;
-  tag?: string;
-}): ActivePracticeSession {
+function createPartSession(
+  condition: {
+    part: ToeicReadingPart;
+    difficulty?: Difficulty;
+    tag?: string;
+    unansweredOnly?: boolean;
+  },
+  progressState?: ProgressState,
+): ActivePracticeSession {
   const startedAt = new Date().toISOString();
+  const excludeQuestionIds =
+    condition.unansweredOnly && progressState
+      ? getAnsweredQuestionIds(progressState)
+      : undefined;
 
   return {
     id: `session-${Date.now()}`,
     condition: { kind: "part", ...condition },
-    queue: createPartSessionQueue(condition),
+    queue: createPartSessionQueue({
+      part: condition.part,
+      difficulty: condition.difficulty,
+      tag: condition.tag,
+      excludeQuestionIds,
+    }),
     currentIndex: 0,
     startedAt,
     questionStartedAt: startedAt,
@@ -107,12 +128,28 @@ function createRestartedSessionState(
   }
 
   if (condition.kind === "part") {
+    const progressResult = condition.unansweredOnly
+      ? loadProgressState()
+      : undefined;
+
+    if (progressResult && !progressResult.ok) {
+      return {
+        screen: "error",
+        message: "未回答データを読み込めませんでした。",
+        storageUnavailable: progressResult.reason === "unavailable",
+      };
+    }
+
     return createRunnableSessionState(
-      createPartSession({
-        part: condition.part ?? "part5",
-        difficulty: condition.difficulty,
-        tag: condition.tag,
-      }),
+      createPartSession(
+        {
+          part: condition.part ?? "part5",
+          difficulty: condition.difficulty,
+          tag: condition.tag,
+          unansweredOnly: condition.unansweredOnly,
+        },
+        progressResult?.state,
+      ),
     );
   }
 
@@ -159,18 +196,33 @@ function createPracticeStateFromSearchParams(
 ): PracticeState {
   const mode = searchParams.get("mode");
   const part = toPart(searchParams.get("part")) ?? "part5";
+  const unansweredOnly = isUnansweredOnly(searchParams.get("unanswered"));
 
   if (mode === "quick") {
     return createRunnableSessionState(createSession(part));
   }
 
   if (mode === "part") {
+    const progressResult = unansweredOnly ? loadProgressState() : undefined;
+
+    if (progressResult && !progressResult.ok) {
+      return {
+        screen: "error",
+        message: "未回答データを読み込めませんでした。",
+        storageUnavailable: progressResult.reason === "unavailable",
+      };
+    }
+
     return createRunnableSessionState(
-      createPartSession({
-        part,
-        difficulty: toDifficulty(searchParams.get("difficulty")),
-        tag: searchParams.get("tag") ?? undefined,
-      }),
+      createPartSession(
+        {
+          part,
+          difficulty: toDifficulty(searchParams.get("difficulty")),
+          tag: searchParams.get("tag") ?? undefined,
+          unansweredOnly,
+        },
+        progressResult?.state,
+      ),
     );
   }
 
