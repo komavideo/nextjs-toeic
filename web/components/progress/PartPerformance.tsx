@@ -22,7 +22,7 @@ export function PartPerformance({ statistics }: PartPerformanceProps) {
         return (
           <a
             className={[
-              "rounded-[var(--radius-md)] border p-3",
+              "rounded-[var(--radius-md)] border p-3 text-[var(--text-primary)]",
               highlighted
                 ? "border-[var(--warning)] bg-[var(--warning-soft)]"
                 : "border-[var(--border)] bg-[var(--surface)]",
