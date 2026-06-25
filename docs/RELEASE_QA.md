@@ -62,3 +62,53 @@
 - 進捗画面では `3/5 正解`、直近7日の学習量 `2026-06-25: 5問`、復習予定 5 件が表示されることを確認した。
 - デスクトップ幅ではホーム、演習中、結果、進捗の主要画面が空白や Next.js エラー overlay なしで表示されることを確認した。
 - in-app Browser は `iab` が利用できなかったため、Playwright で代替確認した。
+
+## 復習フローE2E確認
+
+対応 Issue: #28 `[M2][P0] 復習フローのE2E手動確認`
+
+このセクションは手動 QA 記録です。`pnpm build` は問題データ検証、レビュー文書検証、静的エクスポートの確認であり、`docs/RELEASE_QA.md` 自体は自動検証対象外です。復習対象ありケースは、再現性を優先して `toeicReadingProgress:v1` に以下の `ProgressState` を投入して確認しました。
+
+```json
+{
+  "version": 1,
+  "totalAnswered": 0,
+  "totalCorrect": 0,
+  "currentStreakDays": 0,
+  "answers": [],
+  "srs": {
+    "p5-sample-001": {
+      "questionId": "p5-sample-001",
+      "intervalDays": 1,
+      "dueDate": "2026-06-25",
+      "correctStreak": 1,
+      "lastAnsweredAt": "2026-06-24T01:30:03.000Z"
+    },
+    "p5-sample-002": {
+      "questionId": "p5-sample-002",
+      "intervalDays": 1,
+      "dueDate": "2026-06-25",
+      "correctStreak": 0,
+      "lastAnsweredAt": "2026-06-24T01:30:03.000Z"
+    }
+  }
+}
+```
+
+| 検証日時 | 実行コマンド | 結果 |
+| --- | --- | --- |
+| 2026-06-25 10:30:03 JST (+0900) | `cd web && pnpm build`、`cd web && python3 -m http.server 4173 --directory out`、Playwright で `http://localhost:4173` を確認 | 成功（復習対象なし、期限到来 2 件の復習一覧、復習開始、回答、採点、解説、結果、正解時と不正解時の SRS 保存更新を確認。モバイル幅 390x844 を主確認、デスクトップ幅 1280x800 を軽量確認。console warning/error は 0 件） |
+
+### 確認観点
+
+- `toeicReadingProgress:v1` を削除した状態で `/review/` を表示し、「復習対象はありません」と「通常演習へ」が表示されることを確認した。
+- 投入した初期 SRS は `p5-sample-001`: `intervalDays: 1`、`correctStreak: 1`、`dueDate: 2026-06-25`、`p5-sample-002`: `intervalDays: 1`、`correctStreak: 0`、`dueDate: 2026-06-25`（いずれも期限到来）であり、後述の保存データ更新後値はこの初期状態から検算できる。
+- `p5-sample-001` と `p5-sample-002` の期限到来 SRS を投入し、`/review/` に「今日の復習 2件」と「復習を開始」が表示されることを確認した。
+- 「復習を開始」から `/practice/?mode=review` に遷移し、復習セッションが 2 問で開始されることを確認した。
+- 1 問目 `p5-sample-001` で選択肢 A を回答し、正解表示、解説、`復習予定: 2026-06-28` が表示されることを確認した。
+- 2 問目 `p5-sample-002` で選択肢 A を回答し、不正解表示、正解 B、解説、`復習予定: 2026-06-26` が表示されることを確認した。
+- セッション結果で `1/2`、正答率 `50%`、誤答 `p5-sample-002: 選択 A` が表示されることを確認した。復習モードは既存の復習予定を更新するのみで新規登録は発生しないため、復習予定追加数 `0`（主要学習フローの `5` とは異なり、復習モードでは期待値）が表示されることを確認した。
+- セッション完了後の保存データで、`p5-sample-001` は `intervalDays: 3`、`dueDate: 2026-06-28`、`correctStreak: 2` に更新されることを確認した。
+- セッション完了後の保存データで、`p5-sample-002` は `intervalDays: 1`、`dueDate: 2026-06-26`、`correctStreak: 0` に更新されることを確認した。
+- モバイル幅 390x844 とデスクトップ幅 1280x800 で、復習一覧、解説、結果の主要表示に空白・Next.js エラー overlay・明らかな表示崩れがないことを確認した。
+- in-app Browser は `iab` が利用できなかったため、Playwright で代替確認した。
