@@ -2,6 +2,11 @@
 
 import { useEffect, useId, useRef } from "react";
 import { Button } from "./Button";
+import {
+  getModalFocusRestoreTarget,
+  getModalFocusTrapResult,
+  isModalCloseKey,
+} from "./modalFocus";
 
 type ModalProps = {
   open: boolean;
@@ -61,7 +66,7 @@ export function Modal({
     getFocusableElements()[0]?.focus();
 
     function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") {
+      if (isModalCloseKey(event.key)) {
         onCloseRef.current();
         return;
       }
@@ -71,30 +76,16 @@ export function Modal({
       }
 
       const focusableElements = getFocusableElements();
-      // フォーカス可能要素が無い／1つだけの場合はモーダル外へ抜けないよう留める。
-      if (focusableElements.length === 0) {
-        event.preventDefault();
-        return;
-      }
+      const focusTrapResult = getModalFocusTrapResult({
+        activeElement: document.activeElement,
+        dialog,
+        focusableElements,
+        shiftKey: event.shiftKey,
+      });
 
-      const firstFocusableElement = focusableElements[0];
-      const lastFocusableElement = focusableElements[focusableElements.length - 1];
-
-      if (focusableElements.length === 1) {
+      if (focusTrapResult.shouldPreventDefault) {
         event.preventDefault();
-        firstFocusableElement.focus();
-        return;
-      }
-
-      if (event.shiftKey && document.activeElement === firstFocusableElement) {
-        event.preventDefault();
-        lastFocusableElement.focus();
-        return;
-      }
-
-      if (!event.shiftKey && document.activeElement === lastFocusableElement) {
-        event.preventDefault();
-        firstFocusableElement.focus();
+        focusTrapResult.focusTarget?.focus();
       }
     }
 
@@ -103,12 +94,12 @@ export function Modal({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
 
-      if (
-        previousActiveElement instanceof HTMLElement &&
-        document.contains(previousActiveElement)
-      ) {
-        previousActiveElement.focus();
-      }
+      getModalFocusRestoreTarget({
+        documentContains: (element) => document.contains(element),
+        isHTMLElement: (element): element is HTMLElement =>
+          element instanceof HTMLElement,
+        previousActiveElement,
+      })?.focus();
     };
   }, [open]);
 
