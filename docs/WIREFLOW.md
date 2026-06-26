@@ -237,6 +237,7 @@ flowchart TD
 | `screen-progress` | `苦手 Part を選択` | `screen-part` | 選択 Part を初期値にする |
 | `screen-progress` | `苦手タグを選択` | `screen-part` | 選択タグを初期値にする |
 | `screen-progress` | `弱点を練習` | `screen-quick` | Part / タグ別正答率の最低候補から出題キューを作成 |
+| `screen-progress` | `未回答を演習`（問題到達率メーター） | `screen-quick` | 選択 Part の未回答を優先（`mode=part&unanswered=1`）して出題キューを作成 |
 | `screen-settings` | `データリセット` | 確認モーダル | まだ削除しない |
 | `screen-settings` | `リセット実行` | `screen-empty` | `toeicReadingProgress:v1` を削除 |
 | `screen-error` | `再試行` | 元画面 or `screen-home` | 失敗した保存/読み込み処理を再実行 |

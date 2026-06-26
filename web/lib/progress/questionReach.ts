@@ -26,10 +26,24 @@ export type QuestionReachSummary = {
 
 const readingParts: ToeicReadingPart[] = ["part5", "part6", "part7"];
 
+// 到達率(%)を整数で算出する。母数が 0 の場合はゼロ除算を避けて 0 を返す。
 function toRate(answered: number, total: number): number {
   return total === 0 ? 0 : Math.round((answered / total) * 100);
 }
 
+/**
+ * 進捗状態から問題到達率（全体・Part 別）を集計する。
+ *
+ * 各指標の定義:
+ * - 回答済み: answers に1回以上回答が記録された questionId（重複回答は1件として数える）
+ * - 未回答  : 問題リストに存在するが answers に含まれない questionId
+ * - 定着済み: 回答済みかつ SRS スケジュール（srs のキー）に残っていない questionId。
+ *   30日間隔をクリアして SRS から外れた問題 = 十分に定着した問題とみなす。
+ * - 到達率  : 回答済み / 総数 × 100（整数 %）
+ *
+ * @param progressState 回答履歴と SRS 状態を持つ進捗データ
+ * @param questions 全問題の questionId と Part の対応リスト（ビルド時に確定）
+ */
 export function calculateQuestionReach(
   progressState: ProgressState,
   questions: QuestionReachQuestion[],
