@@ -69,7 +69,7 @@ export function SettingsClient() {
         </Panel>
       </div>
       <Modal
-        description="端末内に保存された回答履歴と復習予定を削除します。この操作は元に戻せません。"
+        description="端末内に保存された回答履歴、復習予定、ブックマークを削除します。この操作は元に戻せません。"
         onClose={() => setResetOpen(false)}
         onPrimary={executeReset}
         onSecondary={() => setResetOpen(false)}
