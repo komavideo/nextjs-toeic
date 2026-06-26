@@ -220,3 +220,63 @@ test("タグ詳細は最弱Partに現行問題がない場合に練習可能なP
   assert.equal(detail.firstAvailablePart, "part5");
   assert.equal(detail.practicePart, "part5");
 });
+
+test("タグ詳細は現行問題に該当タグがない場合は練習対象を持たない", () => {
+  const tag = "removed-tag";
+  const questions: TagDetailQuestion[] = [
+    {
+      questionId: "p5-1",
+      part: "part5",
+      sentence: "The invoice was attached.",
+      prompt: "Choose the best word.",
+      tags: ["other"],
+    },
+  ];
+  const answers = [
+    createAnswer("2026-06-24T09:00:00.000Z", {
+      questionId: "old-p6-1",
+      part: "part6",
+      correct: false,
+      tags: [tag],
+    }),
+  ];
+
+  const detail = calculateTagDetailStatistic(answers, questions, tag);
+
+  assert.equal(detail.answered, 1);
+  assert.deepEqual(detail.relatedParts, []);
+  assert.equal(detail.firstAvailablePart, undefined);
+  assert.equal(detail.practicePart, undefined);
+});
+
+test("タグ詳細の誤答概要は設問が見つからなければ questionId、prompt のみなら prompt を使う", () => {
+  const tag = "fallback-tag";
+  const questions: TagDetailQuestion[] = [
+    {
+      questionId: "p7-1",
+      part: "part7",
+      prompt: "Read the passage and answer.",
+      tags: [tag],
+    },
+  ];
+  const answers = [
+    createAnswer("2026-06-24T09:00:00.000Z", {
+      questionId: "p7-1",
+      part: "part7",
+      correct: false,
+      tags: [tag],
+    }),
+    createAnswer("2026-06-24T08:00:00.000Z", {
+      questionId: "deleted-1",
+      part: "part7",
+      correct: false,
+      tags: [tag],
+    }),
+  ];
+
+  const detail = calculateTagDetailStatistic(answers, questions, tag);
+
+  // 直近順に並ぶ: p7-1(09:00) は prompt フォールバック、deleted-1(08:00) は設問が無く questionId フォールバック。
+  assert.equal(detail.incorrectAnswers[0].summary, "Read the passage and answer.");
+  assert.equal(detail.incorrectAnswers[1].summary, "deleted-1");
+});
