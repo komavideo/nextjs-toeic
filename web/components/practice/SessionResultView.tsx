@@ -113,7 +113,10 @@ export function SessionResultView({
           })}
         </ul>
         {bookmarkError ? (
-          <p className="mt-3 text-sm font-semibold text-[var(--danger)]">
+          <p
+            className="mt-3 text-sm font-semibold text-[var(--danger)]"
+            role="alert"
+          >
             {bookmarkError}
           </p>
         ) : null}
