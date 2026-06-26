@@ -6,6 +6,10 @@ import { ErrorState } from "@/components/shared/ErrorState";
 import { Panel } from "@/components/shared/Panel";
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import {
+  calculateQuestionReach,
+  type QuestionReachQuestion,
+} from "@/lib/progress/questionReach";
+import {
   calculatePartStatistics,
   calculateRecentDailyAnswerCounts,
   calculateTagWeaknessStatistics,
@@ -15,10 +19,15 @@ import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
 import type { ToeicReadingPart } from "@/types/question";
 import { PartPerformance } from "./PartPerformance";
+import { QuestionReachMeter } from "./QuestionReachMeter";
 
 type LoadError = {
   message: string;
   storageUnavailable: boolean;
+};
+
+type ProgressClientProps = {
+  questionRefs: QuestionReachQuestion[];
 };
 
 function getWeakestPartForTag(
@@ -55,7 +64,7 @@ function getWeakestPartForTag(
   )[0]?.part;
 }
 
-export function ProgressClient() {
+export function ProgressClient({ questionRefs }: ProgressClientProps) {
   const [progressState, setProgressState] = useState<ProgressState | null>(null);
   const [loadError, setLoadError] = useState<LoadError | null>(null);
 
@@ -111,6 +120,7 @@ export function ProgressClient() {
   const tagStatistics = calculateTagWeaknessStatistics(state.answers);
   const dailyCounts = calculateRecentDailyAnswerCounts(state.answers);
   const dueItems = getDueSrsItems(state.srs);
+  const questionReach = calculateQuestionReach(state, questionRefs);
 
   return (
     <section className="mx-auto max-w-[1120px]">
@@ -121,6 +131,7 @@ export function ProgressClient() {
       <div className="mt-5 flex flex-wrap gap-3">
         <Button href="/practice?mode=weakness">弱点を練習</Button>
       </div>
+      <QuestionReachMeter summary={questionReach} />
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <Panel title="全体正答率">
           <div className="text-3xl font-bold">{accuracy}%</div>
