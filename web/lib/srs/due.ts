@@ -8,6 +8,20 @@ export type SrsDueDateGroups = {
   future: SrsState[];
 };
 
+export type SrsDueDateCounts = {
+  overdue: number;
+  today: number;
+  future: number;
+};
+
+export type SrsDueDateSummary = {
+  counts: SrsDueDateCounts;
+  dueCount: number;
+  scheduledCount: number;
+  hasDueItems: boolean;
+  hasScheduledItems: boolean;
+};
+
 function toDateKey(date: Date): string {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -55,13 +69,35 @@ export function getDueSrsItems(
   srs: ProgressState["srs"],
   today = toDateKey(new Date()),
 ): SrsState[] {
-  const groups = getSrsDueDateGroups(srs, today);
-
-  return [...groups.overdue, ...groups.today];
+  return sortByDueDate(
+    Object.values(srs).filter((item) => item.dueDate <= today),
+  );
 }
 
 // 分類済みグループから「復習対象（期限到来）件数」を求める。
 // 「期限到来 = 期限切れ＋今日」の定義を 1 箇所に集約するためのヘルパ。
 export function countDueSrsItems(groups: SrsDueDateGroups): number {
   return groups.overdue.length + groups.today.length;
+}
+
+// 表示分岐と件数表示で使うサマリーをまとめて作る。
+// dueCount は復習開始対象、scheduledCount は明日以降も含む予定総数。
+export function getSrsDueDateSummary(
+  groups: SrsDueDateGroups,
+): SrsDueDateSummary {
+  const counts: SrsDueDateCounts = {
+    overdue: groups.overdue.length,
+    today: groups.today.length,
+    future: groups.future.length,
+  };
+  const dueCount = countDueSrsItems(groups);
+  const scheduledCount = dueCount + counts.future;
+
+  return {
+    counts,
+    dueCount,
+    scheduledCount,
+    hasDueItems: dueCount > 0,
+    hasScheduledItems: scheduledCount > 0,
+  };
 }

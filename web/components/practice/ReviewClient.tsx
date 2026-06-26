@@ -4,8 +4,8 @@ import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/shared/Button";
 import { ErrorState } from "@/components/shared/ErrorState";
 import {
-  countDueSrsItems,
   getSrsDueDateGroups,
+  getSrsDueDateSummary,
   type SrsDueDateGroups,
 } from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
@@ -66,8 +66,7 @@ export function ReviewClient() {
     );
   }
 
-  const dueCount = countDueSrsItems(dueDateGroups);
-  const scheduledCount = dueCount + dueDateGroups.future.length;
+  const dueDateSummary = getSrsDueDateSummary(dueDateGroups);
 
   return (
     <section className="mx-auto max-w-[720px]">
@@ -76,12 +75,12 @@ export function ReviewClient() {
       </p>
       <h1 className="text-2xl font-bold leading-8">復習</h1>
       <div className="mt-6">
-        {scheduledCount === 0 ? (
+        {!dueDateSummary.hasScheduledItems ? (
           <ReviewEmptyState />
         ) : (
           <>
             <ReviewList answers={answers} dueDateGroups={dueDateGroups} />
-            {dueCount > 0 ? (
+            {dueDateSummary.hasDueItems ? (
               <Button className="mt-5 w-full" href="/practice?mode=review">
                 復習を開始
               </Button>

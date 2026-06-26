@@ -4,7 +4,7 @@ type HomeSummaryProps = {
   todayCount: number;
   accuracy: number;
   streakDays: number;
-  dueCount: number;
+  reviewScheduledCount: number;
   reviewDueBreakdown: {
     overdue: number;
     today: number;
@@ -25,7 +25,7 @@ export function HomeSummary({
   todayCount,
   accuracy,
   streakDays,
-  dueCount,
+  reviewScheduledCount,
   reviewDueBreakdown,
 }: HomeSummaryProps) {
   const items: SummaryItem[] = [
@@ -33,8 +33,8 @@ export function HomeSummary({
     { label: "全体正答率", value: `${accuracy}%` },
     { label: "連続学習日数", value: streakDays },
     {
-      label: "復習期限数",
-      value: dueCount,
+      label: "復習予定数",
+      value: reviewScheduledCount,
       detailItems: [
         { label: "期限切れ", value: reviewDueBreakdown.overdue },
         { label: "今日", value: reviewDueBreakdown.today },

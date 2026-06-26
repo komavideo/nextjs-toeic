@@ -7,7 +7,7 @@ import { Panel } from "@/components/shared/Panel";
 import { createDailyMissions } from "@/lib/progress/dailyMissions";
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import { calculatePartStatistics, calculateTagWeaknessStatistics } from "@/lib/progress/statistics";
-import { countDueSrsItems, getSrsDueDateGroups } from "@/lib/srs/due";
+import { getSrsDueDateGroups, getSrsDueDateSummary } from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
 import { EmptyState } from "./EmptyState";
@@ -61,12 +61,7 @@ export function HomeDashboard() {
     const weakTags = calculateTagWeaknessStatistics(progressState.answers);
     const today = toDateKey(new Date());
     const dueDateGroups = getSrsDueDateGroups(progressState.srs, today);
-    const reviewDueBreakdown = {
-      overdue: dueDateGroups.overdue.length,
-      today: dueDateGroups.today.length,
-      future: dueDateGroups.future.length,
-    };
-    const dueCount = countDueSrsItems(dueDateGroups);
+    const reviewDueSummary = getSrsDueDateSummary(dueDateGroups);
     const accuracy =
       progressState.totalAnswered === 0
         ? 0
@@ -80,14 +75,13 @@ export function HomeDashboard() {
     const missions = createDailyMissions(progressState, today, {
       partStatistics,
       weakTags,
-      dueCount,
+      dueCount: reviewDueSummary.dueCount,
     });
 
     return {
       partStatistics,
       weakTags,
-      dueCount,
-      reviewDueBreakdown,
+      reviewDueSummary,
       accuracy,
       todayCount,
       missions,
@@ -118,8 +112,7 @@ export function HomeDashboard() {
   const {
     partStatistics,
     weakTags,
-    dueCount,
-    reviewDueBreakdown,
+    reviewDueSummary,
     accuracy,
     todayCount,
     missions,
@@ -138,8 +131,8 @@ export function HomeDashboard() {
       <div className="mt-5">
         <HomeSummary
           accuracy={accuracy}
-          dueCount={dueCount}
-          reviewDueBreakdown={reviewDueBreakdown}
+          reviewDueBreakdown={reviewDueSummary.counts}
+          reviewScheduledCount={reviewDueSummary.scheduledCount}
           streakDays={streakDays}
           todayCount={todayCount}
         />
