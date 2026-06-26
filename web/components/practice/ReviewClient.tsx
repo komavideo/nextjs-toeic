@@ -3,9 +3,13 @@
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/shared/Button";
 import { ErrorState } from "@/components/shared/ErrorState";
-import { getDueSrsItems } from "@/lib/srs/due";
+import {
+  getSrsDueDateGroups,
+  getSrsDueDateSummary,
+  type SrsDueDateGroups,
+} from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
-import type { AnswerResult, SrsState } from "@/types/progress";
+import type { AnswerResult } from "@/types/progress";
 import { ReviewEmptyState } from "./ReviewEmptyState";
 import { ReviewList } from "./ReviewList";
 
@@ -14,8 +18,15 @@ type LoadError = {
   storageUnavailable: boolean;
 };
 
+const emptyDueDateGroups: SrsDueDateGroups = {
+  overdue: [],
+  today: [],
+  future: [],
+};
+
 export function ReviewClient() {
-  const [dueItems, setDueItems] = useState<SrsState[]>([]);
+  const [dueDateGroups, setDueDateGroups] =
+    useState<SrsDueDateGroups>(emptyDueDateGroups);
   const [answers, setAnswers] = useState<AnswerResult[]>([]);
   const [loadError, setLoadError] = useState<LoadError | null>(null);
 
@@ -30,7 +41,7 @@ export function ReviewClient() {
       return;
     }
 
-    setDueItems(getDueSrsItems(result.state.srs));
+    setDueDateGroups(getSrsDueDateGroups(result.state.srs));
     setAnswers(result.state.answers);
     setLoadError(null);
   }, []);
@@ -44,7 +55,7 @@ export function ReviewClient() {
       <ErrorState
         message={loadError.message}
         onInitialized={() => {
-          setDueItems([]);
+          setDueDateGroups(emptyDueDateGroups);
           setAnswers([]);
           setLoadError(null);
         }}
@@ -55,6 +66,8 @@ export function ReviewClient() {
     );
   }
 
+  const dueDateSummary = getSrsDueDateSummary(dueDateGroups);
+
   return (
     <section className="mx-auto max-w-[720px]">
       <p className="mb-2 text-sm font-semibold text-[var(--primary)]">
@@ -62,14 +75,16 @@ export function ReviewClient() {
       </p>
       <h1 className="text-2xl font-bold leading-8">復習</h1>
       <div className="mt-6">
-        {dueItems.length === 0 ? (
+        {!dueDateSummary.hasScheduledItems ? (
           <ReviewEmptyState />
         ) : (
           <>
-            <ReviewList answers={answers} dueItems={dueItems} />
-            <Button className="mt-5 w-full" href="/practice?mode=review">
-              復習を開始
-            </Button>
+            <ReviewList answers={answers} dueDateGroups={dueDateGroups} />
+            {dueDateSummary.hasDueItems ? (
+              <Button className="mt-5 w-full" href="/practice?mode=review">
+                復習を開始
+              </Button>
+            ) : null}
           </>
         )}
       </div>

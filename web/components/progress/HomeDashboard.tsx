@@ -7,7 +7,7 @@ import { Panel } from "@/components/shared/Panel";
 import { createDailyMissions } from "@/lib/progress/dailyMissions";
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import { calculatePartStatistics, calculateTagWeaknessStatistics } from "@/lib/progress/statistics";
-import { getDueSrsItems } from "@/lib/srs/due";
+import { getSrsDueDateGroups, getSrsDueDateSummary } from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
 import { EmptyState } from "./EmptyState";
@@ -60,7 +60,8 @@ export function HomeDashboard() {
     const partStatistics = calculatePartStatistics(progressState.answers);
     const weakTags = calculateTagWeaknessStatistics(progressState.answers);
     const today = toDateKey(new Date());
-    const dueCount = getDueSrsItems(progressState.srs, today).length;
+    const dueDateGroups = getSrsDueDateGroups(progressState.srs, today);
+    const reviewDueSummary = getSrsDueDateSummary(dueDateGroups);
     const accuracy =
       progressState.totalAnswered === 0
         ? 0
@@ -74,13 +75,13 @@ export function HomeDashboard() {
     const missions = createDailyMissions(progressState, today, {
       partStatistics,
       weakTags,
-      dueCount,
+      dueCount: reviewDueSummary.dueCount,
     });
 
     return {
       partStatistics,
       weakTags,
-      dueCount,
+      reviewDueSummary,
       accuracy,
       todayCount,
       missions,
@@ -111,7 +112,7 @@ export function HomeDashboard() {
   const {
     partStatistics,
     weakTags,
-    dueCount,
+    reviewDueSummary,
     accuracy,
     todayCount,
     missions,
@@ -130,7 +131,8 @@ export function HomeDashboard() {
       <div className="mt-5">
         <HomeSummary
           accuracy={accuracy}
-          dueCount={dueCount}
+          reviewDueBreakdown={reviewDueSummary.counts}
+          reviewScheduledCount={reviewDueSummary.scheduledCount}
           streakDays={streakDays}
           todayCount={todayCount}
         />
