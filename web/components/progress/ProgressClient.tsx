@@ -183,7 +183,7 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
             <p className="text-sm text-[var(--text-secondary)]">まだありません。</p>
           )}
         </Panel>
-        <Panel title="週間学習カレンダー">
+        <Panel title="学習カレンダー">
           {today ? (
             <LearningCalendar dailyCounts={dailyCounts} />
           ) : (
