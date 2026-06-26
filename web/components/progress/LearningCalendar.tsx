@@ -22,26 +22,33 @@ function getWeekdayLabel(dateKey: string): string {
   return weekdayLabels[parseDateKey(dateKey).getDay()];
 }
 
+// 学習量を 4 段階の色で表現する（数値が大きいほど強い色で集中度を示す）
 function getCountClass(count: number): string {
+  // 0問: 未学習（控えめな背景）
   if (count === 0) {
     return "border-[var(--border)] bg-[var(--surface)] text-[var(--text-muted)]";
   }
 
+  // 1〜2問: 少量学習
   if (count <= 2) {
     return "border-[var(--primary)] bg-[var(--primary-soft)] text-[var(--text-primary)]";
   }
 
+  // 3〜5問: 適度な学習
   if (count <= 5) {
     return "border-[var(--success)] bg-[var(--success-soft)] text-[var(--text-primary)]";
   }
 
+  // 6問以上: 集中学習
   return "border-[var(--warning)] bg-[var(--warning-soft)] text-[var(--text-primary)]";
 }
 
 export function LearningCalendar({ dailyCounts }: LearningCalendarProps) {
   const todayIndex = dailyCounts.length - 1;
   const totalCount = dailyCounts.reduce((sum, item) => sum + item.count, 0);
-  const weekdayHeader = dailyCounts.slice(0, 7);
+  // 7列グリッドの曜日見出し。先頭1週間（最大7日）の曜日が各行の列位置と一致する
+  // （dayCount が 7 の倍数のとき）。日数が7未満でも崩れないよう Math.min でガードする。
+  const weekdayHeader = dailyCounts.slice(0, Math.min(7, dailyCounts.length));
 
   return (
     <div>

@@ -74,6 +74,14 @@ function toDateKey(date: Date): string {
   return `${year}-${month}-${day}`;
 }
 
+/**
+ * 直近 dayCount 日分の日別回答数を、古い日付から今日の順で集計する。
+ * 日付は回答時点のローカル暦日（toDateKey と同じローカルタイム解釈）で揃える。
+ * @param answers 回答履歴
+ * @param today 基準日（既定: 実行時の現在日時）
+ * @param dayCount 集計対象の日数（既定: 7。今日を含む）
+ * @returns 各日の { date: "YYYY-MM-DD", count } を dayCount 件、昇順で返す
+ */
 export function calculateRecentDailyAnswerCounts(
   answers: AnswerResult[],
   today = new Date(),
