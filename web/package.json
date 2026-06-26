@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "pnpm validate:data && pnpm validate:review && next build",
-    "test": "node --no-warnings --test --experimental-strip-types components/shared/modalFocus.test.ts lib/progress/dailyMissions.test.ts lib/progress/questionReach.test.ts lib/progress/recordAnswer.test.ts lib/question-bank/grade.test.ts lib/question-bank/sessionQueue.test.ts lib/srs/due.test.ts lib/srs/updateSrs.test.ts lib/storage/progressStorage.test.ts && node scripts/validate-question-data.mjs --self-test && node scripts/validate-review-doc.mjs --self-test",
+    "test": "node --no-warnings --test --experimental-strip-types components/shared/modalFocus.test.ts lib/progress/dailyMissions.test.ts lib/progress/questionReach.test.ts lib/progress/recordAnswer.test.ts lib/progress/statistics.test.ts lib/question-bank/grade.test.ts lib/question-bank/sessionQueue.test.ts lib/srs/due.test.ts lib/srs/updateSrs.test.ts lib/storage/progressStorage.test.ts && node scripts/validate-question-data.mjs --self-test && node scripts/validate-review-doc.mjs --self-test",
     "validate:data": "node scripts/validate-question-data.mjs",
     "validate:review": "node scripts/validate-review-doc.mjs"
   },

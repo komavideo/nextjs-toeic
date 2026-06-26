@@ -18,6 +18,7 @@ import { getDueSrsItems } from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
 import type { ToeicReadingPart } from "@/types/question";
+import { LearningCalendar } from "./LearningCalendar";
 import { PartPerformance } from "./PartPerformance";
 import { QuestionReachMeter } from "./QuestionReachMeter";
 
@@ -67,6 +68,7 @@ function getWeakestPartForTag(
 export function ProgressClient({ questionRefs }: ProgressClientProps) {
   const [progressState, setProgressState] = useState<ProgressState | null>(null);
   const [loadError, setLoadError] = useState<LoadError | null>(null);
+  const [today, setToday] = useState<Date | null>(null);
 
   const loadProgress = useCallback(() => {
     const result = loadProgressState();
@@ -86,6 +88,10 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
   useEffect(() => {
     loadProgress();
   }, [loadProgress]);
+
+  useEffect(() => {
+    setToday(new Date());
+  }, []);
 
   if (loadError) {
     return (
@@ -118,7 +124,9 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
       : Math.round((state.totalCorrect / state.totalAnswered) * 100);
   const partStatistics = calculatePartStatistics(state.answers);
   const tagStatistics = calculateTagWeaknessStatistics(state.answers);
-  const dailyCounts = calculateRecentDailyAnswerCounts(state.answers);
+  const dailyCounts = today
+    ? calculateRecentDailyAnswerCounts(state.answers, today, 28)
+    : [];
   const dueItems = getDueSrsItems(state.srs);
   const questionReach = calculateQuestionReach(state, questionRefs);
 
@@ -175,14 +183,12 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
             <p className="text-sm text-[var(--text-secondary)]">まだありません。</p>
           )}
         </Panel>
-        <Panel title="直近7日の学習量">
-          <ul className="grid gap-2 text-sm">
-            {dailyCounts.map((item) => (
-              <li key={item.date}>
-                {item.date}: {item.count}問
-              </li>
-            ))}
-          </ul>
+        <Panel title="学習カレンダー">
+          {today ? (
+            <LearningCalendar dailyCounts={dailyCounts} />
+          ) : (
+            <p className="text-sm text-[var(--text-secondary)]">読み込み中...</p>
+          )}
         </Panel>
         <Panel title="復習定着状況">
           <p className="text-sm text-[var(--text-secondary)]">
