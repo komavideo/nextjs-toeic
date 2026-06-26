@@ -193,7 +193,11 @@ export function PartSelector({
             <div className="grid grid-cols-3 gap-2">
               {sessionQuestionCounts.map((questionCount) => (
                 <button
-                  aria-pressed={selectedQuestionCount === questionCount}
+                  aria-pressed={
+                    questionCountApplies
+                      ? selectedQuestionCount === questionCount
+                      : undefined
+                  }
                   className={[
                     "min-h-11 rounded-[var(--radius-md)] border px-3 text-sm font-semibold transition-colors disabled:cursor-not-allowed",
                     selectedQuestionCount === questionCount

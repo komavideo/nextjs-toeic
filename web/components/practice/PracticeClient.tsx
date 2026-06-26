@@ -47,6 +47,8 @@ function toDifficulty(value: string | null): Difficulty | undefined {
   return validDifficulties.find((difficulty) => difficulty === value);
 }
 
+// URL クエリ `count` を出題数に変換する。Part 5 のみ有効。
+// 選択肢（3 / 5 / 10）以外・数値以外・未指定はすべて既定値（5 問）にフォールバックする。
 function toQuestionCount(value: string | null): SessionQuestionCount {
   const parsedValue = Number(value);
 

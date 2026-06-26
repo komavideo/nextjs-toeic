@@ -7,8 +7,14 @@ import { type FlatQuestion, flattenQuestionBankEntries } from "./flatten.ts";
 const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
 const minimumWeaknessTotalAnswers = 3;
 const minimumWeaknessCandidateAnswers = 1;
+/** Part 5 のクイック／Part 指定セッションで選べる出題数（問数）の選択肢。 */
 export const sessionQuestionCounts = [3, 5, 10] as const;
+/**
+ * セッション出題数の型。`sessionQuestionCounts` のいずれか。
+ * Part 5 のみ有効で、Part 6 / Part 7 はパッセージセット単位のため使用しない。
+ */
 export type SessionQuestionCount = (typeof sessionQuestionCounts)[number];
+/** 出題数が指定されない場合に使う既定値（5 問）。 */
 export const defaultSessionQuestionCount: SessionQuestionCount = 5;
 
 type WeaknessAnswerStatistics = {
@@ -80,6 +86,8 @@ export function createQuickSessionQueue(
     ).slice(0, questionCount);
   }
 
+  // Part 6 / Part 7 は本文を分割しないため questionCount は使わず、
+  // 選ばれたパッセージセット内の全設問を出題する。
   const entry = pickPrioritizedPassageSet(entries, priorityContext);
 
   return flattenPrioritizedPassageSet(entry, priorityContext);
@@ -300,6 +308,7 @@ export function createPartSessionQueue({
     ).slice(0, questionCount);
   }
 
+  // Part 6 / Part 7 は questionCount を無視し、パッセージセット単位で出題する。
   const matchedSet = pickPrioritizedPassageSet(
     entries,
     priorityContext,
