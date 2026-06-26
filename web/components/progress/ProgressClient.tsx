@@ -68,6 +68,7 @@ function getWeakestPartForTag(
 export function ProgressClient({ questionRefs }: ProgressClientProps) {
   const [progressState, setProgressState] = useState<ProgressState | null>(null);
   const [loadError, setLoadError] = useState<LoadError | null>(null);
+  const [today, setToday] = useState<Date | null>(null);
 
   const loadProgress = useCallback(() => {
     const result = loadProgressState();
@@ -87,6 +88,10 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
   useEffect(() => {
     loadProgress();
   }, [loadProgress]);
+
+  useEffect(() => {
+    setToday(new Date());
+  }, []);
 
   if (loadError) {
     return (
@@ -119,11 +124,9 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
       : Math.round((state.totalCorrect / state.totalAnswered) * 100);
   const partStatistics = calculatePartStatistics(state.answers);
   const tagStatistics = calculateTagWeaknessStatistics(state.answers);
-  const dailyCounts = calculateRecentDailyAnswerCounts(
-    state.answers,
-    new Date(),
-    28,
-  );
+  const dailyCounts = today
+    ? calculateRecentDailyAnswerCounts(state.answers, today, 28)
+    : [];
   const dueItems = getDueSrsItems(state.srs);
   const questionReach = calculateQuestionReach(state, questionRefs);
 
@@ -181,7 +184,11 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
           )}
         </Panel>
         <Panel title="週間学習カレンダー">
-          <LearningCalendar dailyCounts={dailyCounts} />
+          {today ? (
+            <LearningCalendar dailyCounts={dailyCounts} />
+          ) : (
+            <p className="text-sm text-[var(--text-secondary)]">読み込み中...</p>
+          )}
         </Panel>
         <Panel title="復習定着状況">
           <p className="text-sm text-[var(--text-secondary)]">
