@@ -3,7 +3,10 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Modal } from "@/components/shared/Modal";
-import { toggleBookmarkedQuestionId } from "@/lib/progress/bookmarks";
+import {
+  bookmarkSaveErrorMessage,
+  toggleBookmarkedQuestionId,
+} from "@/lib/progress/bookmarks";
 import { recordAnswer } from "@/lib/progress/recordAnswer";
 import { gradeQuestion } from "@/lib/question-bank/grade";
 import {
@@ -397,8 +400,10 @@ export function PracticeClient() {
   const [state, setState] = useState<PracticeState>(() =>
     createSelectStateFromSearchParams(new URLSearchParams(searchParamKey)),
   );
+  // 静的エクスポートのハイドレーション不整合と render 中の副作用（v1→v2 移行書き込み）を
+  // 避けるため、初期値は空配列にしてマウント後の useEffect で localStorage から読み込む。
   const [bookmarkedQuestionIds, setBookmarkedQuestionIds] = useState<string[]>(
-    () => loadOptionalBookmarkedQuestionIds(),
+    [],
   );
   const [bookmarkError, setBookmarkError] = useState<string | null>(null);
   const [pendingNavigationHref, setPendingNavigationHref] = useState<string | null>(
@@ -413,6 +418,8 @@ export function PracticeClient() {
       createPracticeStateFromSearchParams(new URLSearchParams(searchParamKey)),
     );
     setBookmarkedQuestionIds(loadOptionalBookmarkedQuestionIds());
+    // 新しいセッションへ遷移したら、前セッションのブックマーク保存エラーは持ち越さない。
+    setBookmarkError(null);
   }, [searchParamKey]);
 
   useEffect(() => {
@@ -472,9 +479,7 @@ export function PracticeClient() {
 
     if (!loadResult.ok) {
       setBookmarkError(
-        loadResult.reason === "unavailable"
-          ? "localStorage が利用できないため、ブックマークを保存できませんでした。"
-          : "進捗データを読み込めないため、ブックマークを保存できませんでした。",
+        bookmarkSaveErrorMessage("load", loadResult.reason === "unavailable"),
       );
       return;
     }
@@ -484,9 +489,7 @@ export function PracticeClient() {
 
     if (!saveResult.ok) {
       setBookmarkError(
-        saveResult.reason === "unavailable"
-          ? "localStorage が利用できないため、ブックマークを保存できませんでした。"
-          : "ブックマークの保存に失敗しました。",
+        bookmarkSaveErrorMessage("save", saveResult.reason === "unavailable"),
       );
       return;
     }
@@ -524,6 +527,8 @@ export function PracticeClient() {
       answeredAt,
     });
 
+    // 新しい解説画面へ入る前に、別問題のブックマーク保存エラーを持ち越さない。
+    setBookmarkError(null);
     setState({
       screen: "explain",
       session: {
@@ -620,6 +625,9 @@ export function PracticeClient() {
   }
 
   function moveNextFromExplanation(session: ActivePracticeSession) {
+    // 解説画面を離れる時点で、この問題のブックマーク保存エラーをクリアし、
+    // 次の問題の解説画面や結果画面へ持ち越さない。
+    setBookmarkError(null);
     const nextIndex = session.currentIndex + 1;
 
     if (nextIndex < session.queue.length) {

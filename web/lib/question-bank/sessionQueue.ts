@@ -338,39 +338,57 @@ export function createPartSessionQueue({
   return flattenPrioritizedPassageSet(matchedSet, priorityContext);
 }
 
-export function createReviewSessionQueue(progressState: ProgressState): FlatQuestion[] {
-  const allQuestions = flattenQuestionBankEntries(getAllQuestionBankEntries());
-  const questionMap = new Map(
-    allQuestions.map((question) => [question.questionId, question]),
-  );
+// 問題バンクは実行時に書き換えない静的データのため、questionId → FlatQuestion の
+// ルックアップ用 Map は初回呼び出し時に一度だけ構築してキャッシュし、復習／ブックマーク
+// などの ID 解決で共有する。
+let flattenedQuestionMap: Map<string, FlatQuestion> | null = null;
 
-  return getDueSrsItems(progressState.srs)
-    .map((item) => questionMap.get(item.questionId))
-    .filter((question): question is FlatQuestion => Boolean(question));
+function getFlattenedQuestionMap(): Map<string, FlatQuestion> {
+  if (flattenedQuestionMap === null) {
+    flattenedQuestionMap = new Map(
+      flattenQuestionBankEntries(getAllQuestionBankEntries()).map((question) => [
+        question.questionId,
+        question,
+      ]),
+    );
+  }
+
+  return flattenedQuestionMap;
+}
+
+// 問題ID列を渡された順序のまま FlatQuestion 配列へ解決する。
+// 存在しない問題IDと重複した問題IDは除外する。
+function resolveQuestionsByIds(
+  questionIds: Iterable<string>,
+): FlatQuestion[] {
+  const questionMap = getFlattenedQuestionMap();
+  const seenQuestionIds = new Set<string>();
+  const questions: FlatQuestion[] = [];
+
+  for (const questionId of questionIds) {
+    const question = questionMap.get(questionId);
+
+    if (!question || seenQuestionIds.has(questionId)) {
+      continue;
+    }
+
+    seenQuestionIds.add(questionId);
+    questions.push(question);
+  }
+
+  return questions;
+}
+
+export function createReviewSessionQueue(progressState: ProgressState): FlatQuestion[] {
+  return resolveQuestionsByIds(
+    getDueSrsItems(progressState.srs).map((item) => item.questionId),
+  );
 }
 
 export function createBookmarkSessionQueue(
   progressState: ProgressState,
 ): FlatQuestion[] {
-  const allQuestions = flattenQuestionBankEntries(getAllQuestionBankEntries());
-  const questionMap = new Map(
-    allQuestions.map((question) => [question.questionId, question]),
-  );
-  const queuedQuestionIds = new Set<string>();
-  const questions: FlatQuestion[] = [];
-
-  for (const questionId of progressState.bookmarkedQuestionIds) {
-    const question = questionMap.get(questionId);
-
-    if (!question || queuedQuestionIds.has(questionId)) {
-      continue;
-    }
-
-    queuedQuestionIds.add(questionId);
-    questions.push(question);
-  }
-
-  return questions;
+  return resolveQuestionsByIds(progressState.bookmarkedQuestionIds);
 }
 
 function incrementWeaknessStatistics(

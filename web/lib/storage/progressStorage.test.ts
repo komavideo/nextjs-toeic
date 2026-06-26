@@ -175,6 +175,29 @@ test("v1保存データをv2へ移行して旧キーを削除する", () => {
   assert.equal(storage.getItem(legacyProgressStorageKey), null);
 });
 
+test("移行保存に失敗しても移行後の進捗を読み込める", () => {
+  const storage = new MemoryStorage();
+  const legacyState = createLegacyProgressState();
+  setWindowStorage(storage);
+  storage.setItem(legacyProgressStorageKey, JSON.stringify(legacyState));
+  // 移行時の v2 保存だけを失敗させ、読み込み自体は成功扱いになることを確認する。
+  storage.setItem = () => {
+    throw new Error("write failed");
+  };
+
+  const expectedState: ProgressState = {
+    ...legacyState,
+    version: 2,
+    bookmarkedQuestionIds: [],
+  };
+
+  assert.deepEqual(loadProgressState(), {
+    ok: true,
+    state: expectedState,
+    source: "migration",
+  });
+});
+
 test("v2キーが存在する場合はv1キーへフォールバックしない", () => {
   const storage = new MemoryStorage();
   storage.setItem(

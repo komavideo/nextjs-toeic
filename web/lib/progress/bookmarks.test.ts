@@ -3,6 +3,7 @@ import test from "node:test";
 import { createInitialProgressState } from "./initialState.ts";
 import {
   addBookmarkedQuestionId,
+  bookmarkSaveErrorMessage,
   isQuestionBookmarked,
   removeBookmarkedQuestionId,
   toggleBookmarkedQuestionId,
@@ -53,4 +54,25 @@ test("ブックマーク状態を切り替える", () => {
 
   assert.equal(isQuestionBookmarked(bookmarkedState, "question-001"), true);
   assert.equal(isQuestionBookmarked(removedState, "question-001"), false);
+});
+
+test("ブックマーク保存エラーのメッセージを状況別に生成する", () => {
+  // localStorage が利用できない場合は読み込み・保存いずれも同じ文言。
+  assert.equal(
+    bookmarkSaveErrorMessage("load", true),
+    "localStorage が利用できないため、ブックマークを保存できませんでした。",
+  );
+  assert.equal(
+    bookmarkSaveErrorMessage("save", true),
+    "localStorage が利用できないため、ブックマークを保存できませんでした。",
+  );
+  // localStorage は使えるが読み込み／保存に失敗した場合は文言を出し分ける。
+  assert.equal(
+    bookmarkSaveErrorMessage("load", false),
+    "進捗データを読み込めないため、ブックマークを保存できませんでした。",
+  );
+  assert.equal(
+    bookmarkSaveErrorMessage("save", false),
+    "ブックマークの保存に失敗しました。",
+  );
 });
