@@ -17,6 +17,36 @@ export type TagStatistic = {
   accuracy: number;
 };
 
+export type TagDetailQuestion = {
+  questionId: string;
+  part: ToeicReadingPart;
+  sentence?: string;
+  title?: string;
+  prompt: string;
+  tags: string[];
+};
+
+export type TagIncorrectAnswer = {
+  questionId: string;
+  part: ToeicReadingPart;
+  selectedChoiceId: AnswerResult["selectedChoiceId"];
+  answeredAt: string;
+  summary: string;
+};
+
+export type TagDetailStatistic = {
+  tag: string;
+  answered: number;
+  correct: number;
+  accuracy: number;
+  partStatistics: PartStatistic[];
+  incorrectAnswers: TagIncorrectAnswer[];
+  weakestPart?: ToeicReadingPart;
+  firstAvailablePart?: ToeicReadingPart;
+  practicePart?: ToeicReadingPart;
+  relatedParts: ToeicReadingPart[];
+};
+
 export type DailyAnswerCount = {
   date: string;
   count: number;
@@ -65,6 +95,92 @@ export function calculateTagWeaknessStatistics(
       accuracy: toAccuracy(value.correct, value.answered),
     }))
     .sort((left, right) => left.accuracy - right.accuracy || left.tag.localeCompare(right.tag));
+}
+
+function sortPartsByReadingOrder(parts: ToeicReadingPart[]): ToeicReadingPart[] {
+  return [...parts].sort(
+    (left, right) => readingParts.indexOf(left) - readingParts.indexOf(right),
+  );
+}
+
+function getQuestionSummary(
+  question: TagDetailQuestion | undefined,
+  questionId: string,
+): string {
+  return question?.sentence ?? question?.title ?? question?.prompt ?? questionId;
+}
+
+function getWeakestPart(partStatistics: PartStatistic[]): ToeicReadingPart | undefined {
+  return partStatistics
+    .filter((statistic) => statistic.answered > 0)
+    .sort(
+      (left, right) =>
+        left.correct / left.answered - right.correct / right.answered ||
+        readingParts.indexOf(left.part) - readingParts.indexOf(right.part),
+    )[0]?.part;
+}
+
+export function calculateTagDetailStatistic(
+  answers: AnswerResult[],
+  questions: TagDetailQuestion[],
+  tag: string,
+  incorrectLimit = 5,
+): TagDetailStatistic {
+  const tagAnswers = answers.filter((answer) => answer.tags.includes(tag));
+  const questionMap = new Map(
+    questions.map((question) => [question.questionId, question]),
+  );
+  const relatedParts = sortPartsByReadingOrder(
+    Array.from(
+      new Set(
+        questions
+          .filter((question) => question.tags.includes(tag))
+          .map((question) => question.part),
+      ),
+    ),
+  );
+  const correct = tagAnswers.filter((answer) => answer.correct).length;
+  const partStatistics = readingParts.map((part) => {
+    const partAnswers = tagAnswers.filter((answer) => answer.part === part);
+    const partCorrect = partAnswers.filter((answer) => answer.correct).length;
+
+    return {
+      part,
+      answered: partAnswers.length,
+      correct: partCorrect,
+      accuracy: toAccuracy(partCorrect, partAnswers.length),
+    };
+  });
+  const incorrectAnswers = tagAnswers
+    .filter((answer) => !answer.correct)
+    .sort((left, right) => right.answeredAt.localeCompare(left.answeredAt))
+    .slice(0, incorrectLimit)
+    .map((answer) => ({
+      questionId: answer.questionId,
+      part: answer.part,
+      selectedChoiceId: answer.selectedChoiceId,
+      answeredAt: answer.answeredAt,
+      summary: getQuestionSummary(questionMap.get(answer.questionId), answer.questionId),
+    }));
+  const weakestPart = getWeakestPart(partStatistics);
+  const firstAvailablePart = relatedParts[0];
+  const practicePart =
+    weakestPart && relatedParts.includes(weakestPart)
+      ? weakestPart
+      : firstAvailablePart;
+
+  return {
+    tag,
+    answered: tagAnswers.length,
+    correct,
+    accuracy: toAccuracy(correct, tagAnswers.length),
+    partStatistics,
+    incorrectAnswers,
+    weakestPart,
+    firstAvailablePart,
+    practicePart,
+    relatedParts,
+  };
 }
 
 function toDateKey(date: Date): string {

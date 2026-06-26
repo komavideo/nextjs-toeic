@@ -14,10 +14,10 @@ import {
   calculateRecentDailyAnswerCounts,
   calculateTagWeaknessStatistics,
 } from "@/lib/progress/statistics";
+import { buildProgressTagDetailHref } from "@/lib/progress/tagLinks";
 import { getDueSrsItems } from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
-import type { ToeicReadingPart } from "@/types/question";
 import { LearningCalendar } from "./LearningCalendar";
 import { PartPerformance } from "./PartPerformance";
 import { QuestionReachMeter } from "./QuestionReachMeter";
@@ -30,40 +30,6 @@ type LoadError = {
 type ProgressClientProps = {
   questionRefs: QuestionReachQuestion[];
 };
-
-function getWeakestPartForTag(
-  answers: ProgressState["answers"],
-  tag: string,
-): ToeicReadingPart | undefined {
-  const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
-  const partStats = new Map<
-    ToeicReadingPart,
-    { part: ToeicReadingPart; answered: number; correct: number }
-  >();
-
-  for (const answer of answers) {
-    if (!answer.tags.includes(tag)) {
-      continue;
-    }
-
-    const current = partStats.get(answer.part) ?? {
-      part: answer.part,
-      answered: 0,
-      correct: 0,
-    };
-    partStats.set(answer.part, {
-      part: answer.part,
-      answered: current.answered + 1,
-      correct: current.correct + (answer.correct ? 1 : 0),
-    });
-  }
-
-  return Array.from(partStats.values()).sort(
-    (left, right) =>
-      left.correct / left.answered - right.correct / right.answered ||
-      partOrder.indexOf(left.part) - partOrder.indexOf(right.part),
-  )[0]?.part;
-}
 
 export function ProgressClient({ questionRefs }: ProgressClientProps) {
   const [progressState, setProgressState] = useState<ProgressState | null>(null);
@@ -156,28 +122,16 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
         <Panel title="タグ別苦手一覧">
           {tagStatistics.length > 0 ? (
             <ul className="grid gap-2 text-sm">
-              {tagStatistics.map((statistic) => {
-                const weakestPart = getWeakestPartForTag(
-                  state.answers,
-                  statistic.tag,
-                );
-                const searchParams = new URLSearchParams({ tag: statistic.tag });
-
-                if (weakestPart) {
-                  searchParams.set("part", weakestPart);
-                }
-
-                return (
-                  <li key={statistic.tag}>
-                    <a
-                      className="font-semibold text-[var(--primary)]"
-                      href={`/practice?${searchParams.toString()}`}
-                    >
-                      {statistic.tag}: {statistic.accuracy}%
-                    </a>
-                  </li>
-                );
-              })}
+              {tagStatistics.map((statistic) => (
+                <li key={statistic.tag}>
+                  <a
+                    className="font-semibold text-[var(--primary)]"
+                    href={buildProgressTagDetailHref(statistic.tag)}
+                  >
+                    {statistic.tag}: {statistic.accuracy}%
+                  </a>
+                </li>
+              ))}
             </ul>
           ) : (
             <p className="text-sm text-[var(--text-secondary)]">まだありません。</p>
