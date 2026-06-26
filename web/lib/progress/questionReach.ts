@@ -26,9 +26,17 @@ export type QuestionReachSummary = {
 
 const readingParts: ToeicReadingPart[] = ["part5", "part6", "part7"];
 
-// 到達率(%)を整数で算出する。母数が 0 の場合はゼロ除算を避けて 0 を返す。
+// 到達率(%)を整数で算出する。未回答が残る場合は 100% 表示にしない。
 function toRate(answered: number, total: number): number {
-  return total === 0 ? 0 : Math.round((answered / total) * 100);
+  if (total === 0) {
+    return 0;
+  }
+
+  if (answered >= total) {
+    return 100;
+  }
+
+  return Math.floor((answered / total) * 100);
 }
 
 /**
