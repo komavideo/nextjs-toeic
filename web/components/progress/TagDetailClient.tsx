@@ -96,6 +96,41 @@ export function TagDetailClient({ questions }: TagDetailClientProps) {
     ? buildTagPracticeHref(detail.practicePart, detail.tag)
     : undefined;
 
+  if (detail.answered === 0) {
+    return (
+      <section className="mx-auto max-w-[1120px]">
+        <p className="mb-2 text-sm font-semibold text-[var(--primary)]">
+          screen-progress-tag
+        </p>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h1 className="text-2xl font-bold leading-8">苦手タグ詳細</h1>
+            <p className="mt-2 break-words text-sm text-[var(--text-secondary)]">
+              {detail.tag}
+            </p>
+          </div>
+          <Button href="/progress" variant="secondary">
+            進捗へ戻る
+          </Button>
+        </div>
+        <Panel className="mt-6" title="回答履歴がありません">
+          <p className="text-sm leading-5 text-[var(--text-secondary)]">
+            このタグの回答履歴はまだありません。
+          </p>
+          <div className="mt-5">
+            {practiceHref ? (
+              <Button href={practiceHref}>このタグを練習</Button>
+            ) : (
+              <p className="text-sm leading-5 text-[var(--text-secondary)]">
+                該当タグの問題が見つかりません。
+              </p>
+            )}
+          </div>
+        </Panel>
+      </section>
+    );
+  }
+
   return (
     <section className="mx-auto max-w-[1120px]">
       <p className="mb-2 text-sm font-semibold text-[var(--primary)]">
