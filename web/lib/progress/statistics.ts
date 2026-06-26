@@ -77,6 +77,7 @@ function toDateKey(date: Date): string {
 export function calculateRecentDailyAnswerCounts(
   answers: AnswerResult[],
   today = new Date(),
+  dayCount = 7,
 ): DailyAnswerCount[] {
   const counts = new Map<string, number>();
 
@@ -85,9 +86,9 @@ export function calculateRecentDailyAnswerCounts(
     counts.set(dateKey, (counts.get(dateKey) ?? 0) + 1);
   }
 
-  return Array.from({ length: 7 }, (_, index) => {
+  return Array.from({ length: dayCount }, (_, index) => {
     const date = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    date.setDate(date.getDate() - (6 - index));
+    date.setDate(date.getDate() - (dayCount - 1 - index));
     const dateKey = toDateKey(date);
 
     return {
