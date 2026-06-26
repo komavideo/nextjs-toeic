@@ -105,7 +105,7 @@ flowchart TD
 
 | 種別 | 入り口 | 出題単位 | 完了条件 |
 | --- | --- | --- | --- |
-| 5問クイック | `screen-home`, `screen-empty`, `screen-part` | Part 5 は5問、Part 6/7 はパッセージセット内の設問 | 5問またはセット内設問の回答完了 |
+| クイック | `screen-home`, `screen-empty`, `screen-part` | Part 5 は 3 / 5 / 10 問から選択（既定 5 問）、Part 6/7 はパッセージセット内の設問 | 選択した問数またはセット内設問の回答完了 |
 | Part 指定 | `screen-part`, `screen-progress` | 選択された Part のみ | セッション内設問の回答完了 |
 | 復習 | `screen-review`, `screen-result` | `dueDate <= today` の SRS 対象 | 復習キューの回答完了またはユーザー中断 |
 | 弱点優先 | `screen-home`, `screen-empty`, `screen-progress` | Part / タグ別正答率が最低の候補（回答3件未満は Part 5 クイックへフォールバック） | セッション内設問の回答完了 |
@@ -273,7 +273,7 @@ flowchart TD
 ## 10. 受け入れ確認
 
 - Phase 1 の12画面すべてに遷移または表示条件が定義されている
-- 5問クイック、Part 指定、タグ指定、未回答優先、復習の開始導線が定義されている
+- クイック（Part 5 は出題数選択）、Part 指定、タグ指定、未回答優先、復習の開始導線が定義されている
 - 回答、解説、結果、SRS 更新、進捗保存の順序が定義されている
 - `localStorage` 読み込み失敗、保存失敗、データ破損、リセット失敗の復旧導線が定義されている
 - `PRD.md` の完全クライアント完結方針に反する外部 API やサーバー処理が含まれていない

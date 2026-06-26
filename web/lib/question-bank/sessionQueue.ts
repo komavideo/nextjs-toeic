@@ -7,6 +7,33 @@ import { type FlatQuestion, flattenQuestionBankEntries } from "./flatten.ts";
 const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
 const minimumWeaknessTotalAnswers = 3;
 const minimumWeaknessCandidateAnswers = 1;
+/** Part 5 のクイック／Part 指定セッションで選べる出題数（問数）の選択肢。 */
+export const sessionQuestionCounts = [3, 5, 10] as const;
+/**
+ * セッション出題数の型。`sessionQuestionCounts` のいずれか。
+ * Part 5 のみ有効で、Part 6 / Part 7 はパッセージセット単位のため使用しない。
+ */
+export type SessionQuestionCount = (typeof sessionQuestionCounts)[number];
+/** 出題数が指定されない場合に使う既定値（5 問）。 */
+export const defaultSessionQuestionCount: SessionQuestionCount = 5;
+
+// URL クエリなどの文字列値を、利用できる出題数だけに正規化する。
+export function parseSessionQuestionCount(value: string | null): SessionQuestionCount {
+  const parsedValue = Number(value);
+
+  return (
+    sessionQuestionCounts.find((questionCount) => questionCount === parsedValue) ??
+    defaultSessionQuestionCount
+  );
+}
+
+// 出題数指定は Part 5 にだけ適用し、Part 6 / Part 7 では契約上保持しない。
+export function getSessionQuestionCountForPart(
+  part: ToeicReadingPart,
+  questionCount: SessionQuestionCount | undefined = defaultSessionQuestionCount,
+): SessionQuestionCount | undefined {
+  return part === "part5" ? questionCount : undefined;
+}
 
 type WeaknessAnswerStatistics = {
   answered: number;
@@ -35,6 +62,7 @@ type WeaknessCandidate =
 type SessionQueuePriorityOptions = {
   progressState?: ProgressState;
   today?: string;
+  questionCount?: SessionQuestionCount;
 };
 
 // 出題優先度のランク。数値が小さいほど優先的に出題する。
@@ -67,14 +95,17 @@ export function createQuickSessionQueue(
 ): FlatQuestion[] {
   const entries = getQuestionBankEntriesByPart(part);
   const priorityContext = createQuestionPriorityContext(options);
+  const questionCount = getSessionQuestionCountForPart(part, options.questionCount);
 
   if (part === "part5") {
     return sortFlatQuestionsByPriority(
       flattenQuestionBankEntries(entries),
       priorityContext,
-    ).slice(0, 5);
+    ).slice(0, questionCount ?? defaultSessionQuestionCount);
   }
 
+  // Part 6 / Part 7 は本文を分割しないため questionCount は使わず、
+  // 選ばれたパッセージセット内の全設問を出題する。
   const entry = pickPrioritizedPassageSet(entries, priorityContext);
 
   return flattenPrioritizedPassageSet(entry, priorityContext);
@@ -86,6 +117,7 @@ export type PartSessionQueueOptions = {
   tag?: string;
   progressState?: ProgressState;
   today?: string;
+  questionCount?: SessionQuestionCount;
 };
 
 function createQuestionPriorityContext({
@@ -280,9 +312,11 @@ export function createPartSessionQueue({
   tag,
   progressState,
   today,
+  questionCount,
 }: PartSessionQueueOptions): FlatQuestion[] {
   const entries = getQuestionBankEntriesByPart(part);
   const priorityContext = createQuestionPriorityContext({ progressState, today });
+  const partQuestionCount = getSessionQuestionCountForPart(part, questionCount);
 
   if (part === "part5") {
     return sortFlatQuestionsByPriority(
@@ -290,9 +324,10 @@ export function createPartSessionQueue({
         flatQuestionMatchesCondition(question, difficulty, tag),
       ),
       priorityContext,
-    ).slice(0, 5);
+    ).slice(0, partQuestionCount ?? defaultSessionQuestionCount);
   }
 
+  // Part 6 / Part 7 は questionCount を無視し、パッセージセット単位で出題する。
   const matchedSet = pickPrioritizedPassageSet(
     entries,
     priorityContext,

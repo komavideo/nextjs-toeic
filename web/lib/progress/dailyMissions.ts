@@ -187,10 +187,14 @@ function createWeakPartMission(
   }
 
   const partLabel = formatPart(statistic.part);
+  const title =
+    statistic.part === "part5"
+      ? `${partLabel} をクイック演習`
+      : `${partLabel} を1セット`;
 
   return {
     kind: "weak-part",
-    title: `${partLabel} を5問`,
+    title,
     description: `現在の正答率は${statistic.accuracy}%です。苦手な Part を先に整えます。`,
     href: buildPracticeHref({ mode: "part", part: statistic.part }),
     actionLabel: "演習を開始",
@@ -245,10 +249,10 @@ function createUnansweredMission(
 function createInitialMission(): DailyMission {
   return {
     kind: "quick",
-    title: "Part 5 を5問クイック",
-    description: "最初の5問で Reading の感覚をつかみます。",
+    title: "Part 5 クイック",
+    description: "既定の5問で Reading の感覚をつかみます。",
     href: buildPracticeHref({ mode: "quick", part: "part5" }),
-    actionLabel: "5問クイックを開始",
+    actionLabel: "クイックを開始",
   };
 }
 

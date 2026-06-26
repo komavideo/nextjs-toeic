@@ -1,5 +1,6 @@
 import type { FlatQuestion } from "@/lib/question-bank/flatten";
 import type { GradeQuestionResult } from "@/lib/question-bank/grade";
+import type { SessionQuestionCount } from "@/lib/question-bank/sessionQueue";
 import type { UpdateSrsResult } from "@/lib/srs/updateSrs";
 import type { AnswerResult } from "@/types/progress";
 import type { ChoiceId, Difficulty, ToeicReadingPart } from "@/types/question";
@@ -11,6 +12,7 @@ export type PracticeSessionCondition = {
   part?: ToeicReadingPart;
   difficulty?: Difficulty;
   tag?: string;
+  questionCount?: SessionQuestionCount;
   requiresProgressState?: boolean;
 };
 
@@ -30,6 +32,7 @@ export type SelectPracticeState = {
   initialPart?: ToeicReadingPart;
   initialDifficulty?: Difficulty;
   initialTag?: string;
+  initialQuestionCount?: SessionQuestionCount;
 };
 
 export type QuestionPracticeState = {
