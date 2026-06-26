@@ -120,13 +120,58 @@ function getWeakestPart(partStatistics: PartStatistic[]): ToeicReadingPart | und
     )[0]?.part;
 }
 
+function addRecentIncorrectAnswer(
+  recentAnswers: AnswerResult[],
+  answer: AnswerResult,
+  limit: number,
+): void {
+  if (limit <= 0) {
+    return;
+  }
+
+  const insertIndex = recentAnswers.findIndex(
+    (recentAnswer) => answer.answeredAt.localeCompare(recentAnswer.answeredAt) > 0,
+  );
+
+  if (insertIndex === -1) {
+    if (recentAnswers.length < limit) {
+      recentAnswers.push(answer);
+    }
+
+    return;
+  }
+
+  recentAnswers.splice(insertIndex, 0, answer);
+
+  if (recentAnswers.length > limit) {
+    recentAnswers.pop();
+  }
+}
+
 export function calculateTagDetailStatistic(
   answers: AnswerResult[],
   questions: TagDetailQuestion[],
   tag: string,
   incorrectLimit = 5,
 ): TagDetailStatistic {
-  const tagAnswers = answers.filter((answer) => answer.tags.includes(tag));
+  const tagAnswers: AnswerResult[] = [];
+  const recentIncorrectAnswers: AnswerResult[] = [];
+  let correct = 0;
+
+  for (const answer of answers) {
+    if (!answer.tags.includes(tag)) {
+      continue;
+    }
+
+    tagAnswers.push(answer);
+
+    if (answer.correct) {
+      correct += 1;
+    } else {
+      addRecentIncorrectAnswer(recentIncorrectAnswers, answer, incorrectLimit);
+    }
+  }
+
   const questionMap = new Map(
     questions.map((question) => [question.questionId, question]),
   );
@@ -139,20 +184,15 @@ export function calculateTagDetailStatistic(
       ),
     ),
   );
-  const correct = tagAnswers.filter((answer) => answer.correct).length;
   // tagAnswers は既に対象タグで絞り込み済みのため、Part 別集計は共通関数を再利用する。
   const partStatistics = calculatePartStatistics(tagAnswers);
-  const incorrectAnswers = tagAnswers
-    .filter((answer) => !answer.correct)
-    .sort((left, right) => right.answeredAt.localeCompare(left.answeredAt))
-    .slice(0, incorrectLimit)
-    .map((answer) => ({
-      questionId: answer.questionId,
-      part: answer.part,
-      selectedChoiceId: answer.selectedChoiceId,
-      answeredAt: answer.answeredAt,
-      summary: getQuestionSummary(questionMap.get(answer.questionId), answer.questionId),
-    }));
+  const incorrectAnswers = recentIncorrectAnswers.map((answer) => ({
+    questionId: answer.questionId,
+    part: answer.part,
+    selectedChoiceId: answer.selectedChoiceId,
+    answeredAt: answer.answeredAt,
+    summary: getQuestionSummary(questionMap.get(answer.questionId), answer.questionId),
+  }));
   // weakestPart は回答実績のある全 Part 横断での最弱 Part（表示・診断用の参考値）。
   const weakestPart = getWeakestPart(partStatistics);
   // firstAvailablePart は問題バンク上で最初に見つかった出題可能 Part（読解順で先頭）。
