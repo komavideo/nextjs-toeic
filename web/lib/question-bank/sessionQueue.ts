@@ -32,52 +32,151 @@ type WeaknessCandidate =
       correct: number;
     };
 
-function pickFirstPassageSet(entries: QuestionBankEntry[]): QuestionBankEntry[] {
-  return entries.length > 0 ? [entries[0]] : [];
+type SessionQueuePriorityOptions = {
+  progressState?: ProgressState;
+  today?: string;
+};
+
+// 出題優先度のランク。数値が小さいほど優先的に出題する。
+// 0 = 未回答（最優先） / 1 = SRS 復習期限到来 / 2 = 誤答履歴あり / 3 = 正答済み（最低優先）。
+type QuestionPriority = {
+  rank: 0 | 1 | 2 | 3;
+  dueDate?: string;
+};
+
+type QuestionPriorityContext = {
+  answeredQuestionIds: ReadonlySet<string>;
+  dueSrsByQuestionId: ReadonlyMap<string, string>;
+  incorrectQuestionIds: ReadonlySet<string>;
+};
+
+// 期限到来判定は復習セッションと同じ getDueSrsItems に委譲し、
+// 「今日時点で期限到来」の定義を一元管理する（today 省略時は当日扱い）。
+function getDueSrsByQuestionId(
+  srs: ProgressState["srs"],
+  today?: string,
+): Map<string, string> {
+  return new Map(
+    getDueSrsItems(srs, today).map((item) => [item.questionId, item.dueDate]),
+  );
 }
 
 export function createQuickSessionQueue(
   part: ToeicReadingPart = "part5",
+  options: SessionQueuePriorityOptions = {},
 ): FlatQuestion[] {
   const entries = getQuestionBankEntriesByPart(part);
+  const priorityContext = createQuestionPriorityContext(options);
 
   if (part === "part5") {
-    return flattenQuestionBankEntries(entries).slice(0, 5);
+    return sortFlatQuestionsByPriority(
+      flattenQuestionBankEntries(entries),
+      priorityContext,
+    ).slice(0, 5);
   }
 
-  return flattenQuestionBankEntries(pickFirstPassageSet(entries));
+  const entry = pickPrioritizedPassageSet(entries, priorityContext);
+
+  return flattenPrioritizedPassageSet(entry, priorityContext);
 }
 
 export type PartSessionQueueOptions = {
   part: ToeicReadingPart;
   difficulty?: Difficulty;
   tag?: string;
-  excludeQuestionIds?: ReadonlySet<string>;
+  progressState?: ProgressState;
+  today?: string;
 };
 
-function entryMatchesCondition(
-  entry: QuestionBankEntry,
-  difficulty?: Difficulty,
-  tag?: string,
-): boolean {
-  if (entry.part === "part5") {
-    if (difficulty && entry.difficulty !== difficulty) {
-      return false;
-    }
-
-    if (tag && !entry.tags.includes(tag)) {
-      return false;
-    }
-
-    return true;
+function createQuestionPriorityContext({
+  progressState,
+  today,
+}: SessionQueuePriorityOptions): QuestionPriorityContext | undefined {
+  if (!progressState) {
+    return undefined;
   }
 
-  return entry.questions.some(
-    (question) =>
-      (!difficulty ||
-        entry.difficulty === difficulty ||
-        question.difficulty === difficulty) &&
-      (!tag || entry.tags.includes(tag) || question.tags.includes(tag)),
+  const answeredQuestionIds = new Set<string>();
+  const incorrectQuestionIds = new Set<string>();
+
+  for (const answer of progressState.answers) {
+    answeredQuestionIds.add(answer.questionId);
+
+    if (!answer.correct) {
+      incorrectQuestionIds.add(answer.questionId);
+    }
+  }
+
+  return {
+    answeredQuestionIds,
+    dueSrsByQuestionId: getDueSrsByQuestionId(progressState.srs, today),
+    incorrectQuestionIds,
+  };
+}
+
+function getQuestionPriority(
+  question: FlatQuestion,
+  context: QuestionPriorityContext | undefined,
+): QuestionPriority {
+  // 進捗が無い、または回答履歴に含まれない問題は未回答として最優先（rank 0）扱い。
+  if (!context || !context.answeredQuestionIds.has(question.questionId)) {
+    return { rank: 0 };
+  }
+
+  const dueDate = context.dueSrsByQuestionId.get(question.questionId);
+
+  // SRS 復習期限が到来している問題（rank 1）。dueDate でさらに早い期限を優先する。
+  if (dueDate) {
+    return { rank: 1, dueDate };
+  }
+
+  // 誤答履歴がある問題（rank 2）。
+  if (context.incorrectQuestionIds.has(question.questionId)) {
+    return { rank: 2 };
+  }
+
+  // 正答済み・定着済みの問題（rank 3、最低優先）。
+  return { rank: 3 };
+}
+
+function compareQuestionPriority(
+  left: QuestionPriority,
+  right: QuestionPriority,
+): number {
+  if (left.rank !== right.rank) {
+    return left.rank - right.rank;
+  }
+
+  if (left.rank === 1 && right.rank === 1) {
+    return (left.dueDate ?? "").localeCompare(right.dueDate ?? "");
+  }
+
+  return 0;
+}
+
+function sortFlatQuestionsByPriority(
+  questions: FlatQuestion[],
+  context: QuestionPriorityContext | undefined,
+): FlatQuestion[] {
+  if (!context) {
+    return questions;
+  }
+
+  return [...questions].sort((left, right) =>
+    compareQuestionPriority(
+      getQuestionPriority(left, context),
+      getQuestionPriority(right, context),
+    ),
+  );
+}
+
+function flattenPrioritizedPassageSet(
+  entry: QuestionBankEntry | undefined,
+  context: QuestionPriorityContext | undefined,
+): FlatQuestion[] {
+  return sortFlatQuestionsByPriority(
+    flattenQuestionBankEntries(entry ? [entry] : []),
+    context,
   );
 }
 
@@ -102,13 +201,13 @@ function flatQuestionMatchesCondition(
   question: FlatQuestion,
   difficulty?: Difficulty,
   tag?: string,
-  excludeQuestionIds?: ReadonlySet<string>,
+  entryDifficulty?: Difficulty,
 ): boolean {
-  if (excludeQuestionIds?.has(question.questionId)) {
-    return false;
-  }
-
-  if (difficulty && question.difficulty !== difficulty) {
+  if (
+    difficulty &&
+    question.difficulty !== difficulty &&
+    entryDifficulty !== difficulty
+  ) {
     return false;
   }
 
@@ -119,49 +218,89 @@ function flatQuestionMatchesCondition(
   return true;
 }
 
+function getPrioritizedQuestionFromPassageSet(
+  entry: QuestionBankEntry,
+  context: QuestionPriorityContext | undefined,
+  difficulty?: Difficulty,
+  tag?: string,
+): { priority: QuestionPriority } | undefined {
+  const questions = flattenQuestionBankEntries([entry]).filter((question) =>
+    flatQuestionMatchesCondition(question, difficulty, tag, entry.difficulty),
+  );
+
+  if (questions.length === 0) {
+    return undefined;
+  }
+
+  const [question] = sortFlatQuestionsByPriority(questions, context);
+
+  return { priority: getQuestionPriority(question, context) };
+}
+
+function pickPrioritizedPassageSet(
+  entries: QuestionBankEntry[],
+  context: QuestionPriorityContext | undefined,
+  difficulty?: Difficulty,
+  tag?: string,
+): QuestionBankEntry | undefined {
+  return entries
+    .map((entry, index) => {
+      const matched = getPrioritizedQuestionFromPassageSet(
+        entry,
+        context,
+        difficulty,
+        tag,
+      );
+
+      if (!matched) {
+        return undefined;
+      }
+
+      return { entry, index, priority: matched.priority };
+    })
+    .filter(
+      (
+        item,
+      ): item is {
+        entry: QuestionBankEntry;
+        index: number;
+        priority: QuestionPriority;
+      } => Boolean(item),
+    )
+    .sort(
+      (left, right) =>
+        compareQuestionPriority(left.priority, right.priority) ||
+        left.index - right.index,
+    )[0]?.entry;
+}
+
 export function createPartSessionQueue({
   part,
   difficulty,
   tag,
-  excludeQuestionIds,
+  progressState,
+  today,
 }: PartSessionQueueOptions): FlatQuestion[] {
   const entries = getQuestionBankEntriesByPart(part);
+  const priorityContext = createQuestionPriorityContext({ progressState, today });
 
   if (part === "part5") {
-    return flattenQuestionBankEntries(entries)
-      .filter((question) =>
-        flatQuestionMatchesCondition(
-          question,
-          difficulty,
-          tag,
-          excludeQuestionIds,
-        ),
-      )
-      .slice(0, 5);
+    return sortFlatQuestionsByPriority(
+      flattenQuestionBankEntries(entries).filter((question) =>
+        flatQuestionMatchesCondition(question, difficulty, tag),
+      ),
+      priorityContext,
+    ).slice(0, 5);
   }
 
-  if (excludeQuestionIds) {
-    const matchedQuestions = entries
-      .map((entry) =>
-        flattenQuestionBankEntries([entry]).filter((question) =>
-          flatQuestionMatchesCondition(
-            question,
-            difficulty,
-            tag,
-            excludeQuestionIds,
-          ),
-        ),
-      )
-      .find((questions) => questions.length > 0);
-
-    return matchedQuestions ?? [];
-  }
-
-  const matchedSet = entries.find((entry) =>
-    entryMatchesCondition(entry, difficulty, tag),
+  const matchedSet = pickPrioritizedPassageSet(
+    entries,
+    priorityContext,
+    difficulty,
+    tag,
   );
 
-  return flattenQuestionBankEntries(matchedSet ? [matchedSet] : []);
+  return flattenPrioritizedPassageSet(matchedSet, priorityContext);
 }
 
 export function createReviewSessionQueue(progressState: ProgressState): FlatQuestion[] {
@@ -312,28 +451,33 @@ function createWeaknessCandidates(
 
 function createQueueForWeaknessCandidate(
   candidate: WeaknessCandidate,
+  progressState: ProgressState,
 ): FlatQuestion[] {
   if (candidate.kind === "part") {
-    return createPartSessionQueue({ part: candidate.part });
+    return createPartSessionQueue({ part: candidate.part, progressState });
   }
 
-  return createPartSessionQueue({ part: candidate.part, tag: candidate.tag });
+  return createPartSessionQueue({
+    part: candidate.part,
+    progressState,
+    tag: candidate.tag,
+  });
 }
 
 export function createWeaknessSessionQueue(
   progressState: ProgressState,
 ): FlatQuestion[] {
   if (progressState.answers.length < minimumWeaknessTotalAnswers) {
-    return createQuickSessionQueue("part5");
+    return createQuickSessionQueue("part5", { progressState });
   }
 
   for (const candidate of createWeaknessCandidates(progressState)) {
-    const queue = createQueueForWeaknessCandidate(candidate);
+    const queue = createQueueForWeaknessCandidate(candidate, progressState);
 
     if (queue.length > 0) {
       return queue;
     }
   }
 
-  return createQuickSessionQueue("part5");
+  return createQuickSessionQueue("part5", { progressState });
 }

@@ -110,6 +110,8 @@ flowchart TD
 | 復習 | `screen-review`, `screen-result` | `dueDate <= today` の SRS 対象 | 復習キューの回答完了またはユーザー中断 |
 | 弱点優先 | `screen-home`, `screen-empty`, `screen-progress` | Part / タグ別正答率が最低の候補（回答3件未満は Part 5 クイックへフォールバック） | セッション内設問の回答完了 |
 
+復習以外のセッションでは、進捗データを読み込める場合、同じ出題条件内で `未回答 -> SRS 期限到来 -> 誤答履歴あり -> 正答済み` の順にキューを作る。出題数が不足する場合は回答済み問題で補完し、Part 6 / Part 7 は選ばれたパッセージセット内の設問も同じ優先順で表示する。
+
 ### 4.2 Part 別出題分岐
 
 ```mermaid
@@ -207,7 +209,7 @@ flowchart TD
 | `screen-home` | `今日の学習ミッション: クイック` | `screen-quick` | 指定 Part でセッション作成 |
 | `screen-home` | `今日の学習ミッション: 復習` | `screen-quick` | 期限到来 SRS から復習キューを作成 |
 | `screen-home` | `今日の学習ミッション: 苦手 Part / 苦手タグ` | `screen-quick` | Part / タグ条件で出題キューを作成 |
-| `screen-home` | `今日の学習ミッション: 未回答` | `screen-quick` | 既回答 `questionId` を除外して出題キューを作成 |
+| `screen-home` | `今日の学習ミッション: 未回答` | `screen-quick` | 未回答問題を優先し、不足時は回答済み問題で補完して出題キューを作成 |
 | `screen-home` | `弱点を練習` | `screen-quick` | Part / タグ別正答率の最低候補から出題キューを作成 |
 | `screen-part` | `Part / 難易度 / タグを変更` | `screen-part` | 出題条件を更新 |
 | `screen-part` | `この条件で開始` | `screen-quick` | 出題キューを作成 |

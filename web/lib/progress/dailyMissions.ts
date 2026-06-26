@@ -43,12 +43,12 @@ function buildPracticeHref({
   mode,
   part,
   tag,
-  unansweredOnly,
+  unansweredPriority,
 }: {
   mode: "quick" | "part";
   part: ToeicReadingPart;
   tag?: string;
-  unansweredOnly?: boolean;
+  unansweredPriority?: boolean;
 }): string {
   const searchParams = new URLSearchParams({ mode, part });
 
@@ -56,7 +56,7 @@ function buildPracticeHref({
     searchParams.set("tag", tag);
   }
 
-  if (unansweredOnly) {
+  if (unansweredPriority) {
     searchParams.set("unanswered", "1");
   }
 
@@ -236,7 +236,7 @@ function createUnansweredMission(
     href: buildPracticeHref({
       mode: "part",
       part: target.part,
-      unansweredOnly: true,
+      unansweredPriority: true,
     }),
     actionLabel: "演習を開始",
   };
