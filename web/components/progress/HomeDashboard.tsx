@@ -7,7 +7,7 @@ import { Panel } from "@/components/shared/Panel";
 import { createDailyMissions } from "@/lib/progress/dailyMissions";
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import { calculatePartStatistics, calculateTagWeaknessStatistics } from "@/lib/progress/statistics";
-import { getDueSrsItems } from "@/lib/srs/due";
+import { getSrsDueDateGroups } from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
 import { EmptyState } from "./EmptyState";
@@ -60,7 +60,13 @@ export function HomeDashboard() {
     const partStatistics = calculatePartStatistics(progressState.answers);
     const weakTags = calculateTagWeaknessStatistics(progressState.answers);
     const today = toDateKey(new Date());
-    const dueCount = getDueSrsItems(progressState.srs, today).length;
+    const dueDateGroups = getSrsDueDateGroups(progressState.srs, today);
+    const reviewDueBreakdown = {
+      overdue: dueDateGroups.overdue.length,
+      today: dueDateGroups.today.length,
+      future: dueDateGroups.future.length,
+    };
+    const dueCount = reviewDueBreakdown.overdue + reviewDueBreakdown.today;
     const accuracy =
       progressState.totalAnswered === 0
         ? 0
@@ -81,6 +87,7 @@ export function HomeDashboard() {
       partStatistics,
       weakTags,
       dueCount,
+      reviewDueBreakdown,
       accuracy,
       todayCount,
       missions,
@@ -112,6 +119,7 @@ export function HomeDashboard() {
     partStatistics,
     weakTags,
     dueCount,
+    reviewDueBreakdown,
     accuracy,
     todayCount,
     missions,
@@ -131,6 +139,7 @@ export function HomeDashboard() {
         <HomeSummary
           accuracy={accuracy}
           dueCount={dueCount}
+          reviewDueBreakdown={reviewDueBreakdown}
           streakDays={streakDays}
           todayCount={todayCount}
         />

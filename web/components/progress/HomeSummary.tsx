@@ -5,6 +5,20 @@ type HomeSummaryProps = {
   accuracy: number;
   streakDays: number;
   dueCount: number;
+  reviewDueBreakdown: {
+    overdue: number;
+    today: number;
+    future: number;
+  };
+};
+
+type SummaryItem = {
+  label: string;
+  value: number | string;
+  detailItems?: {
+    label: string;
+    value: number;
+  }[];
 };
 
 export function HomeSummary({
@@ -12,12 +26,21 @@ export function HomeSummary({
   accuracy,
   streakDays,
   dueCount,
+  reviewDueBreakdown,
 }: HomeSummaryProps) {
-  const items = [
+  const items: SummaryItem[] = [
     { label: "今日の学習数", value: todayCount },
     { label: "全体正答率", value: `${accuracy}%` },
     { label: "連続学習日数", value: streakDays },
-    { label: "復習期限数", value: dueCount },
+    {
+      label: "復習期限数",
+      value: dueCount,
+      detailItems: [
+        { label: "期限切れ", value: reviewDueBreakdown.overdue },
+        { label: "今日", value: reviewDueBreakdown.today },
+        { label: "明日以降", value: reviewDueBreakdown.future },
+      ],
+    },
   ];
 
   return (
@@ -28,6 +51,15 @@ export function HomeSummary({
           <div className="mt-1 text-sm text-[var(--text-secondary)]">
             {item.label}
           </div>
+          {item.detailItems ? (
+            <div className="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-xs text-[var(--text-muted)]">
+              {item.detailItems.map((detail) => (
+                <span key={detail.label}>
+                  {detail.label} {detail.value}
+                </span>
+              ))}
+            </div>
+          ) : null}
         </Panel>
       ))}
     </div>
