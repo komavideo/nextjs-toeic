@@ -68,16 +68,7 @@ export function TagDetailClient({ questions }: TagDetailClientProps) {
     );
   }
 
-  const state =
-    progressState ??
-    ({
-      version: 1,
-      totalAnswered: 0,
-      totalCorrect: 0,
-      currentStreakDays: 0,
-      answers: [],
-      srs: {},
-    } satisfies ProgressState);
+  const state = progressState ?? createInitialProgressState();
 
   if (!tag) {
     return (
