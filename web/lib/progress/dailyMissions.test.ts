@@ -83,12 +83,14 @@ function createProgressState(answers: AnswerResult[]): ProgressState {
   };
 }
 
-test("進捗がない場合はPart 5の5問クイックを促す", () => {
+test("進捗がない場合はPart 5のクイックを促す", () => {
   const missions = createDailyMissions(createInitialProgressState(), "2026-06-25");
 
   assert.equal(missions.length, 1);
   assert.equal(missions[0].kind, "quick");
+  assert.equal(missions[0].title, "Part 5 クイック");
   assert.equal(missions[0].href, "/practice?mode=quick&part=part5");
+  assert.equal(missions[0].actionLabel, "クイックを開始");
 });
 
 test("未回答数の軽量メタデータは問題データの設問数と一致する", () => {
@@ -153,6 +155,7 @@ test("復習期限がない場合は苦手Partを未回答Partより優先する
   const missions = createDailyMissions(state, "2026-06-25");
 
   assert.equal(missions[0].kind, "weak-part");
+  assert.equal(missions[0].title, "Part 6 を1セット");
   assert.equal(missions[0].href, "/practice?mode=part&part=part6");
 });
 

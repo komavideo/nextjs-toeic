@@ -22,7 +22,7 @@ type PartSelectorProps = {
     part: ToeicReadingPart;
     difficulty?: Difficulty;
     tag?: string;
-    questionCount: SessionQuestionCount;
+    questionCount?: SessionQuestionCount;
   }) => void;
 };
 
@@ -200,7 +200,7 @@ export function PartSelector({
                   }
                   className={[
                     "min-h-11 rounded-[var(--radius-md)] border px-3 text-sm font-semibold transition-colors disabled:cursor-not-allowed",
-                    selectedQuestionCount === questionCount
+                    questionCountApplies && selectedQuestionCount === questionCount
                       ? "border-[var(--primary)] bg-[var(--primary-soft)] text-[var(--primary)]"
                       : "border-[var(--border)] bg-[var(--surface)]",
                     questionCountApplies
@@ -276,7 +276,9 @@ export function PartSelector({
                 part: selectedPart,
                 difficulty: selectedDifficulty,
                 tag: selectedTag,
-                questionCount: selectedQuestionCount,
+                ...(questionCountApplies
+                  ? { questionCount: selectedQuestionCount }
+                  : {}),
               })
             }
           >

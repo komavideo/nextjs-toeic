@@ -17,6 +17,24 @@ export type SessionQuestionCount = (typeof sessionQuestionCounts)[number];
 /** 出題数が指定されない場合に使う既定値（5 問）。 */
 export const defaultSessionQuestionCount: SessionQuestionCount = 5;
 
+// URL クエリなどの文字列値を、利用できる出題数だけに正規化する。
+export function parseSessionQuestionCount(value: string | null): SessionQuestionCount {
+  const parsedValue = Number(value);
+
+  return (
+    sessionQuestionCounts.find((questionCount) => questionCount === parsedValue) ??
+    defaultSessionQuestionCount
+  );
+}
+
+// 出題数指定は Part 5 にだけ適用し、Part 6 / Part 7 では契約上保持しない。
+export function getSessionQuestionCountForPart(
+  part: ToeicReadingPart,
+  questionCount: SessionQuestionCount | undefined = defaultSessionQuestionCount,
+): SessionQuestionCount | undefined {
+  return part === "part5" ? questionCount : undefined;
+}
+
 type WeaknessAnswerStatistics = {
   answered: number;
   correct: number;
@@ -77,13 +95,13 @@ export function createQuickSessionQueue(
 ): FlatQuestion[] {
   const entries = getQuestionBankEntriesByPart(part);
   const priorityContext = createQuestionPriorityContext(options);
-  const questionCount = options.questionCount ?? defaultSessionQuestionCount;
+  const questionCount = getSessionQuestionCountForPart(part, options.questionCount);
 
   if (part === "part5") {
     return sortFlatQuestionsByPriority(
       flattenQuestionBankEntries(entries),
       priorityContext,
-    ).slice(0, questionCount);
+    ).slice(0, questionCount ?? defaultSessionQuestionCount);
   }
 
   // Part 6 / Part 7 は本文を分割しないため questionCount は使わず、
@@ -294,10 +312,11 @@ export function createPartSessionQueue({
   tag,
   progressState,
   today,
-  questionCount = defaultSessionQuestionCount,
+  questionCount,
 }: PartSessionQueueOptions): FlatQuestion[] {
   const entries = getQuestionBankEntriesByPart(part);
   const priorityContext = createQuestionPriorityContext({ progressState, today });
+  const partQuestionCount = getSessionQuestionCountForPart(part, questionCount);
 
   if (part === "part5") {
     return sortFlatQuestionsByPriority(
@@ -305,7 +324,7 @@ export function createPartSessionQueue({
         flatQuestionMatchesCondition(question, difficulty, tag),
       ),
       priorityContext,
-    ).slice(0, questionCount);
+    ).slice(0, partQuestionCount ?? defaultSessionQuestionCount);
   }
 
   // Part 6 / Part 7 は questionCount を無視し、パッセージセット単位で出題する。

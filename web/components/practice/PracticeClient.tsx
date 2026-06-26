@@ -8,11 +8,12 @@ import { gradeQuestion } from "@/lib/question-bank/grade";
 import {
   defaultSessionQuestionCount,
   findFirstPartByTag,
+  getSessionQuestionCountForPart,
   createPartSessionQueue,
   createQuickSessionQueue,
   createReviewSessionQueue,
   createWeaknessSessionQueue,
-  sessionQuestionCounts,
+  parseSessionQuestionCount,
   type SessionQuestionCount,
 } from "@/lib/question-bank/sessionQueue";
 import { updateSrsState } from "@/lib/srs/updateSrs";
@@ -47,17 +48,6 @@ function toDifficulty(value: string | null): Difficulty | undefined {
   return validDifficulties.find((difficulty) => difficulty === value);
 }
 
-// URL クエリ `count` を出題数に変換する。Part 5 のみ有効。
-// 選択肢（3 / 5 / 10）以外・数値以外・未指定はすべて既定値（5 問）にフォールバックする。
-function toQuestionCount(value: string | null): SessionQuestionCount {
-  const parsedValue = Number(value);
-
-  return (
-    sessionQuestionCounts.find((questionCount) => questionCount === parsedValue) ??
-    defaultSessionQuestionCount
-  );
-}
-
 function isUnansweredPriority(value: string | null): boolean {
   return value === "1" || value === "true";
 }
@@ -74,11 +64,21 @@ function createSession(
   questionCount: SessionQuestionCount = defaultSessionQuestionCount,
 ): ActivePracticeSession {
   const startedAt = new Date().toISOString();
+  const effectiveQuestionCount = getSessionQuestionCountForPart(part, questionCount);
 
   return {
     id: `session-${Date.now()}`,
-    condition: { kind: "quick", part, questionCount },
-    queue: createQuickSessionQueue(part, { progressState, questionCount }),
+    condition: {
+      kind: "quick",
+      part,
+      ...(effectiveQuestionCount !== undefined
+        ? { questionCount: effectiveQuestionCount }
+        : {}),
+    },
+    queue: createQuickSessionQueue(part, {
+      progressState,
+      questionCount: effectiveQuestionCount,
+    }),
     currentIndex: 0,
     startedAt,
     questionStartedAt: startedAt,
@@ -97,16 +97,29 @@ function createPartSession(
   progressState?: ProgressState,
 ): ActivePracticeSession {
   const startedAt = new Date().toISOString();
+  const effectiveQuestionCount = getSessionQuestionCountForPart(
+    condition.part,
+    condition.questionCount,
+  );
 
   return {
     id: `session-${Date.now()}`,
-    condition: { kind: "part", ...condition },
+    condition: {
+      kind: "part",
+      part: condition.part,
+      difficulty: condition.difficulty,
+      tag: condition.tag,
+      requiresProgressState: condition.requiresProgressState,
+      ...(effectiveQuestionCount !== undefined
+        ? { questionCount: effectiveQuestionCount }
+        : {}),
+    },
     queue: createPartSessionQueue({
       part: condition.part,
       difficulty: condition.difficulty,
       tag: condition.tag,
       progressState,
-      questionCount: condition.questionCount,
+      questionCount: effectiveQuestionCount,
     }),
     currentIndex: 0,
     startedAt,
@@ -245,7 +258,7 @@ function createSelectStateFromSearchParams(
       toPart(searchParams.get("part")) ?? (tag ? findFirstPartByTag(tag) : undefined),
     initialDifficulty: toDifficulty(searchParams.get("difficulty")),
     initialTag: tag,
-    initialQuestionCount: toQuestionCount(searchParams.get("count")),
+    initialQuestionCount: parseSessionQuestionCount(searchParams.get("count")),
   };
 }
 
@@ -254,7 +267,7 @@ function createPracticeStateFromSearchParams(
 ): PracticeState {
   const mode = searchParams.get("mode");
   const part = toPart(searchParams.get("part")) ?? "part5";
-  const questionCount = toQuestionCount(searchParams.get("count"));
+  const questionCount = parseSessionQuestionCount(searchParams.get("count"));
   const requiresProgressState = isUnansweredPriority(searchParams.get("unanswered"));
 
   if (mode === "quick") {
@@ -670,6 +683,12 @@ export function PracticeClient() {
         initialPart={state.initialPart}
         initialQuestionCount={state.initialQuestionCount}
         initialTag={state.initialTag}
+        key={[
+          state.initialPart ?? "part5",
+          state.initialDifficulty ?? "",
+          state.initialTag ?? "",
+          state.initialQuestionCount ?? defaultSessionQuestionCount,
+        ].join(":")}
         onStart={(condition) =>
           setState(
             createRunnableSessionState(

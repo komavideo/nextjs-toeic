@@ -34,6 +34,8 @@ const {
   createQuickSessionQueue,
   createReviewSessionQueue,
   createWeaknessSessionQueue,
+  getSessionQuestionCountForPart,
+  parseSessionQuestionCount,
 } = await import("./sessionQueue.ts");
 
 const questionBankEntriesByPart: Record<ToeicReadingPart, QuestionBankEntry[]> = {
@@ -211,6 +213,18 @@ test("Part 5クイックは指定した出題数でキューを作成する", ()
   );
 });
 
+test("出題数指定は有効な値だけを採用し、Part 5にだけ適用する", () => {
+  assert.equal(parseSessionQuestionCount("3"), 3);
+  assert.equal(parseSessionQuestionCount("10"), 10);
+  assert.equal(parseSessionQuestionCount("999"), 5);
+  assert.equal(parseSessionQuestionCount("invalid"), 5);
+  assert.equal(parseSessionQuestionCount(null), 5);
+  assert.equal(getSessionQuestionCountForPart("part5", 10), 10);
+  assert.equal(getSessionQuestionCountForPart("part5"), 5);
+  assert.equal(getSessionQuestionCountForPart("part6", 10), undefined);
+  assert.equal(getSessionQuestionCountForPart("part7", 3), undefined);
+});
+
 test("Part 5のPart指定セッションは指定した出題数でキューを作成する", () => {
   const queue = createPartSessionQueue({ part: "part5", questionCount: 10 });
 
@@ -341,6 +355,19 @@ for (const part of ["part6", "part7"] as const) {
 
   test(`${partLabel}は出題数指定でもパッセージセットを分割しない`, () => {
     const queue = createPartSessionQueue({ part, questionCount: 10 });
+    const entryId = queue[0]?.entryId;
+
+    assert.ok(entryId, `${partLabel} の出題キューが必要です。`);
+    assert.ok(queue.every((question) => question.entryId === entryId));
+    assert.equal(
+      queue.length,
+      questionsByPart[part].filter((question) => question.entryId === entryId)
+        .length,
+    );
+  });
+
+  test(`${partLabel}クイックは出題数指定でもパッセージセットを分割しない`, () => {
+    const queue = createQuickSessionQueue(part, { questionCount: 10 });
     const entryId = queue[0]?.entryId;
 
     assert.ok(entryId, `${partLabel} の出題キューが必要です。`);
