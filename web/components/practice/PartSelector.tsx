@@ -3,7 +3,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/shared/Button";
 import { Panel } from "@/components/shared/Panel";
-import { getAvailableTagsByPart } from "@/lib/question-bank/sessionQueue";
+import {
+  defaultSessionQuestionCount,
+  getAvailableTagsByPart,
+  sessionQuestionCounts,
+  type SessionQuestionCount,
+} from "@/lib/question-bank/sessionQueue";
 import { calculatePartStatistics } from "@/lib/progress/statistics";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { Difficulty, ToeicReadingPart } from "@/types/question";
@@ -12,10 +17,12 @@ type PartSelectorProps = {
   initialPart?: ToeicReadingPart;
   initialDifficulty?: Difficulty;
   initialTag?: string;
+  initialQuestionCount?: SessionQuestionCount;
   onStart: (condition: {
     part: ToeicReadingPart;
     difficulty?: Difficulty;
     tag?: string;
+    questionCount: SessionQuestionCount;
   }) => void;
 };
 
@@ -75,15 +82,19 @@ export function PartSelector({
   initialPart = "part5",
   initialDifficulty,
   initialTag,
+  initialQuestionCount = defaultSessionQuestionCount,
   onStart,
 }: PartSelectorProps) {
   const [selectedPart, setSelectedPart] = useState<ToeicReadingPart>(initialPart);
   const [selectedDifficulty, setSelectedDifficulty] =
     useState<Difficulty | undefined>(initialDifficulty);
   const [selectedTag, setSelectedTag] = useState<string | undefined>(initialTag);
+  const [selectedQuestionCount, setSelectedQuestionCount] =
+    useState<SessionQuestionCount>(initialQuestionCount);
   const [partAccuracies, setPartAccuracies] = useState(initialPartAccuracies);
   const [recommendedPart, setRecommendedPart] =
     useState<ToeicReadingPart>("part5");
+  const questionCountApplies = selectedPart === "part5";
   const tagOptions = useMemo(() => {
     const tags = getAvailableTagsByPart(selectedPart);
 
@@ -173,6 +184,42 @@ export function PartSelector({
       <Panel className="mt-6" title="条件">
         <div className="grid gap-5">
           <div>
+            <div className="mb-2 flex flex-wrap items-center gap-2 text-sm font-semibold">
+              <span>出題数</span>
+              <span className="rounded-[var(--radius-sm)] bg-[var(--surface-subtle)] px-2 py-1 text-xs text-[var(--text-muted)]">
+                Part 5 のみ
+              </span>
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              {sessionQuestionCounts.map((questionCount) => (
+                <button
+                  aria-pressed={selectedQuestionCount === questionCount}
+                  className={[
+                    "min-h-11 rounded-[var(--radius-md)] border px-3 text-sm font-semibold transition-colors disabled:cursor-not-allowed",
+                    selectedQuestionCount === questionCount
+                      ? "border-[var(--primary)] bg-[var(--primary-soft)] text-[var(--primary)]"
+                      : "border-[var(--border)] bg-[var(--surface)]",
+                    questionCountApplies
+                      ? "hover:bg-[var(--surface-subtle)]"
+                      : "opacity-60",
+                  ].join(" ")}
+                  disabled={!questionCountApplies}
+                  key={questionCount}
+                  onClick={() => setSelectedQuestionCount(questionCount)}
+                  type="button"
+                >
+                  {questionCount}問
+                </button>
+              ))}
+            </div>
+            <p className="mt-2 text-sm leading-5 text-[var(--text-secondary)]">
+              {questionCountApplies
+                ? `${selectedQuestionCount}問で開始します。`
+                : "Part 6 / Part 7 は本文を分割せず、選ばれたパッセージセット内の全設問を出題します。"}
+            </p>
+          </div>
+
+          <div>
             <div className="mb-2 text-sm font-semibold">難易度</div>
             <div className="flex flex-wrap gap-2">
               {difficultyOptions.map((difficulty) => (
@@ -225,6 +272,7 @@ export function PartSelector({
                 part: selectedPart,
                 difficulty: selectedDifficulty,
                 tag: selectedTag,
+                questionCount: selectedQuestionCount,
               })
             }
           >

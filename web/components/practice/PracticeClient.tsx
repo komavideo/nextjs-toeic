@@ -6,11 +6,14 @@ import { Modal } from "@/components/shared/Modal";
 import { recordAnswer } from "@/lib/progress/recordAnswer";
 import { gradeQuestion } from "@/lib/question-bank/grade";
 import {
+  defaultSessionQuestionCount,
   findFirstPartByTag,
   createPartSessionQueue,
   createQuickSessionQueue,
   createReviewSessionQueue,
   createWeaknessSessionQueue,
+  sessionQuestionCounts,
+  type SessionQuestionCount,
 } from "@/lib/question-bank/sessionQueue";
 import { updateSrsState } from "@/lib/srs/updateSrs";
 import {
@@ -44,6 +47,15 @@ function toDifficulty(value: string | null): Difficulty | undefined {
   return validDifficulties.find((difficulty) => difficulty === value);
 }
 
+function toQuestionCount(value: string | null): SessionQuestionCount {
+  const parsedValue = Number(value);
+
+  return (
+    sessionQuestionCounts.find((questionCount) => questionCount === parsedValue) ??
+    defaultSessionQuestionCount
+  );
+}
+
 function isUnansweredPriority(value: string | null): boolean {
   return value === "1" || value === "true";
 }
@@ -57,13 +69,14 @@ function loadOptionalProgressState(): ProgressState | undefined {
 function createSession(
   part: ToeicReadingPart,
   progressState?: ProgressState,
+  questionCount: SessionQuestionCount = defaultSessionQuestionCount,
 ): ActivePracticeSession {
   const startedAt = new Date().toISOString();
 
   return {
     id: `session-${Date.now()}`,
-    condition: { kind: "quick", part },
-    queue: createQuickSessionQueue(part, { progressState }),
+    condition: { kind: "quick", part, questionCount },
+    queue: createQuickSessionQueue(part, { progressState, questionCount }),
     currentIndex: 0,
     startedAt,
     questionStartedAt: startedAt,
@@ -76,6 +89,7 @@ function createPartSession(
     part: ToeicReadingPart;
     difficulty?: Difficulty;
     tag?: string;
+    questionCount?: SessionQuestionCount;
     requiresProgressState?: boolean;
   },
   progressState?: ProgressState,
@@ -90,6 +104,7 @@ function createPartSession(
       difficulty: condition.difficulty,
       tag: condition.tag,
       progressState,
+      questionCount: condition.questionCount,
     }),
     currentIndex: 0,
     startedAt,
@@ -178,6 +193,7 @@ function createRestartedSessionState(
           part: condition.part ?? "part5",
           difficulty: condition.difficulty,
           tag: condition.tag,
+          questionCount: condition.questionCount,
           requiresProgressState: condition.requiresProgressState,
         },
         progressResult?.state ?? loadOptionalProgressState(),
@@ -186,7 +202,11 @@ function createRestartedSessionState(
   }
 
   return createRunnableSessionState(
-    createSession(condition.part ?? "part5", loadOptionalProgressState()),
+    createSession(
+      condition.part ?? "part5",
+      loadOptionalProgressState(),
+      condition.questionCount,
+    ),
   );
 }
 
@@ -198,6 +218,7 @@ function createSelectStateFromCondition(
     initialPart: condition.part,
     initialDifficulty: condition.difficulty,
     initialTag: condition.tag,
+    initialQuestionCount: condition.questionCount,
   };
 }
 
@@ -222,6 +243,7 @@ function createSelectStateFromSearchParams(
       toPart(searchParams.get("part")) ?? (tag ? findFirstPartByTag(tag) : undefined),
     initialDifficulty: toDifficulty(searchParams.get("difficulty")),
     initialTag: tag,
+    initialQuestionCount: toQuestionCount(searchParams.get("count")),
   };
 }
 
@@ -230,11 +252,12 @@ function createPracticeStateFromSearchParams(
 ): PracticeState {
   const mode = searchParams.get("mode");
   const part = toPart(searchParams.get("part")) ?? "part5";
+  const questionCount = toQuestionCount(searchParams.get("count"));
   const requiresProgressState = isUnansweredPriority(searchParams.get("unanswered"));
 
   if (mode === "quick") {
     return createRunnableSessionState(
-      createSession(part, loadOptionalProgressState()),
+      createSession(part, loadOptionalProgressState(), questionCount),
     );
   }
 
@@ -255,6 +278,7 @@ function createPracticeStateFromSearchParams(
           part,
           difficulty: toDifficulty(searchParams.get("difficulty")),
           tag: searchParams.get("tag") ?? undefined,
+          questionCount,
           requiresProgressState,
         },
         progressResult.ok ? progressResult.state : undefined,
@@ -642,6 +666,7 @@ export function PracticeClient() {
       <PartSelector
         initialDifficulty={state.initialDifficulty}
         initialPart={state.initialPart}
+        initialQuestionCount={state.initialQuestionCount}
         initialTag={state.initialTag}
         onStart={(condition) =>
           setState(

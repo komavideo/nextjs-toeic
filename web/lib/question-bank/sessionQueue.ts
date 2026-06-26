@@ -7,6 +7,9 @@ import { type FlatQuestion, flattenQuestionBankEntries } from "./flatten.ts";
 const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
 const minimumWeaknessTotalAnswers = 3;
 const minimumWeaknessCandidateAnswers = 1;
+export const sessionQuestionCounts = [3, 5, 10] as const;
+export type SessionQuestionCount = (typeof sessionQuestionCounts)[number];
+export const defaultSessionQuestionCount: SessionQuestionCount = 5;
 
 type WeaknessAnswerStatistics = {
   answered: number;
@@ -35,6 +38,7 @@ type WeaknessCandidate =
 type SessionQueuePriorityOptions = {
   progressState?: ProgressState;
   today?: string;
+  questionCount?: SessionQuestionCount;
 };
 
 // 出題優先度のランク。数値が小さいほど優先的に出題する。
@@ -67,12 +71,13 @@ export function createQuickSessionQueue(
 ): FlatQuestion[] {
   const entries = getQuestionBankEntriesByPart(part);
   const priorityContext = createQuestionPriorityContext(options);
+  const questionCount = options.questionCount ?? defaultSessionQuestionCount;
 
   if (part === "part5") {
     return sortFlatQuestionsByPriority(
       flattenQuestionBankEntries(entries),
       priorityContext,
-    ).slice(0, 5);
+    ).slice(0, questionCount);
   }
 
   const entry = pickPrioritizedPassageSet(entries, priorityContext);
@@ -86,6 +91,7 @@ export type PartSessionQueueOptions = {
   tag?: string;
   progressState?: ProgressState;
   today?: string;
+  questionCount?: SessionQuestionCount;
 };
 
 function createQuestionPriorityContext({
@@ -280,6 +286,7 @@ export function createPartSessionQueue({
   tag,
   progressState,
   today,
+  questionCount = defaultSessionQuestionCount,
 }: PartSessionQueueOptions): FlatQuestion[] {
   const entries = getQuestionBankEntriesByPart(part);
   const priorityContext = createQuestionPriorityContext({ progressState, today });
@@ -290,7 +297,7 @@ export function createPartSessionQueue({
         flatQuestionMatchesCondition(question, difficulty, tag),
       ),
       priorityContext,
-    ).slice(0, 5);
+    ).slice(0, questionCount);
   }
 
   const matchedSet = pickPrioritizedPassageSet(
