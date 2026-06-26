@@ -76,7 +76,7 @@ function createPartSession(
     part: ToeicReadingPart;
     difficulty?: Difficulty;
     tag?: string;
-    unansweredPriority?: boolean;
+    requiresProgressState?: boolean;
   },
   progressState?: ProgressState,
 ): ActivePracticeSession {
@@ -160,7 +160,7 @@ function createRestartedSessionState(
   }
 
   if (condition.kind === "part") {
-    const progressResult = condition.unansweredPriority
+    const progressResult = condition.requiresProgressState
       ? loadProgressState()
       : undefined;
 
@@ -178,7 +178,7 @@ function createRestartedSessionState(
           part: condition.part ?? "part5",
           difficulty: condition.difficulty,
           tag: condition.tag,
-          unansweredPriority: condition.unansweredPriority,
+          requiresProgressState: condition.requiresProgressState,
         },
         progressResult?.state ?? loadOptionalProgressState(),
       ),
@@ -230,7 +230,7 @@ function createPracticeStateFromSearchParams(
 ): PracticeState {
   const mode = searchParams.get("mode");
   const part = toPart(searchParams.get("part")) ?? "part5";
-  const unansweredPriority = isUnansweredPriority(searchParams.get("unanswered"));
+  const requiresProgressState = isUnansweredPriority(searchParams.get("unanswered"));
 
   if (mode === "quick") {
     return createRunnableSessionState(
@@ -241,7 +241,7 @@ function createPracticeStateFromSearchParams(
   if (mode === "part") {
     const progressResult = loadProgressState();
 
-    if (unansweredPriority && !progressResult.ok) {
+    if (requiresProgressState && !progressResult.ok) {
       return {
         screen: "error",
         message: "未回答データを読み込めませんでした。",
@@ -255,7 +255,7 @@ function createPracticeStateFromSearchParams(
           part,
           difficulty: toDifficulty(searchParams.get("difficulty")),
           tag: searchParams.get("tag") ?? undefined,
-          unansweredPriority,
+          requiresProgressState,
         },
         progressResult.ok ? progressResult.state : undefined,
       ),

@@ -110,6 +110,8 @@ flowchart TD
 | 復習 | `screen-review`, `screen-result` | `dueDate <= today` の SRS 対象 | 復習キューの回答完了またはユーザー中断 |
 | 弱点優先 | `screen-home`, `screen-empty`, `screen-progress` | Part / タグ別正答率が最低の候補（回答3件未満は Part 5 クイックへフォールバック） | セッション内設問の回答完了 |
 
+復習以外のセッションでは、進捗データを読み込める場合、同じ出題条件内で `未回答 -> SRS 期限到来 -> 誤答履歴あり -> 正答済み` の順にキューを作る。出題数が不足する場合は回答済み問題で補完し、Part 6 / Part 7 は選ばれたパッセージセット内の設問も同じ優先順で表示する。
+
 ### 4.2 Part 別出題分岐
 
 ```mermaid

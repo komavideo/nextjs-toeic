@@ -11,7 +11,7 @@ export type PracticeSessionCondition = {
   part?: ToeicReadingPart;
   difficulty?: Difficulty;
   tag?: string;
-  unansweredPriority?: boolean;
+  requiresProgressState?: boolean;
 };
 
 export type ActivePracticeSession = {

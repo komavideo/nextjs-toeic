@@ -281,6 +281,28 @@ for (const part of ["part6", "part7"] as const) {
     assert.equal(queue[0].entryId, secondEntryId);
     assert.ok(queue.every((question) => question.entryId === secondEntryId));
   });
+
+  test(`${partLabel}は選んだパッセージセット内でも未回答設問を先に出す`, () => {
+    const entryQuestions = questionsByPart[part].filter(
+      (question) => question.entryId === questionsByPart[part][0].entryId,
+    );
+    const [answeredQuestion, unansweredQuestion] = entryQuestions;
+
+    assert.ok(
+      answeredQuestion && unansweredQuestion,
+      `${partLabel} に複数設問のパッセージセットが必要です。`,
+    );
+
+    const state = createProgressState([
+      createAnswer({ question: answeredQuestion, correct: true }),
+    ]);
+    const queue = createPartSessionQueue({ part, progressState: state });
+
+    assert.equal(queue[0].questionId, unansweredQuestion.questionId);
+    assert.ok(
+      queue.every((question) => question.entryId === answeredQuestion.entryId),
+    );
+  });
 }
 
 test("復習セッションは期限到来SRSだけを返す", () => {

@@ -50,6 +50,28 @@ type QuestionPriorityContext = {
   incorrectQuestionIds: ReadonlySet<string>;
 };
 
+function toDateKey(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function getDueSrsByQuestionId(
+  srs: ProgressState["srs"],
+  today = toDateKey(new Date()),
+): Map<string, string> {
+  const dueSrsByQuestionId = new Map<string, string>();
+
+  for (const item of Object.values(srs)) {
+    if (item.dueDate <= today) {
+      dueSrsByQuestionId.set(item.questionId, item.dueDate);
+    }
+  }
+
+  return dueSrsByQuestionId;
+}
+
 export function createQuickSessionQueue(
   part: ToeicReadingPart = "part5",
   options: SessionQueuePriorityOptions = {},
@@ -66,7 +88,7 @@ export function createQuickSessionQueue(
 
   const entry = pickPrioritizedPassageSet(entries, priorityContext);
 
-  return flattenQuestionBankEntries(entry ? [entry] : []);
+  return flattenPrioritizedPassageSet(entry, priorityContext);
 }
 
 export type PartSessionQueueOptions = {
@@ -85,21 +107,21 @@ function createQuestionPriorityContext({
     return undefined;
   }
 
+  const answeredQuestionIds = new Set<string>();
+  const incorrectQuestionIds = new Set<string>();
+
+  for (const answer of progressState.answers) {
+    answeredQuestionIds.add(answer.questionId);
+
+    if (!answer.correct) {
+      incorrectQuestionIds.add(answer.questionId);
+    }
+  }
+
   return {
-    answeredQuestionIds: new Set(
-      progressState.answers.map((answer) => answer.questionId),
-    ),
-    dueSrsByQuestionId: new Map(
-      getDueSrsItems(progressState.srs, today).map((item) => [
-        item.questionId,
-        item.dueDate,
-      ]),
-    ),
-    incorrectQuestionIds: new Set(
-      progressState.answers
-        .filter((answer) => !answer.correct)
-        .map((answer) => answer.questionId),
-    ),
+    answeredQuestionIds,
+    dueSrsByQuestionId: getDueSrsByQuestionId(progressState.srs, today),
+    incorrectQuestionIds,
   };
 }
 
@@ -156,6 +178,16 @@ function sortFlatQuestionsByPriority(
       getQuestionPriority(left, context),
       getQuestionPriority(right, context),
     ),
+  );
+}
+
+function flattenPrioritizedPassageSet(
+  entry: QuestionBankEntry | undefined,
+  context: QuestionPriorityContext | undefined,
+): FlatQuestion[] {
+  return sortFlatQuestionsByPriority(
+    flattenQuestionBankEntries(entry ? [entry] : []),
+    context,
   );
 }
 
@@ -279,7 +311,7 @@ export function createPartSessionQueue({
     tag,
   );
 
-  return flattenQuestionBankEntries(matchedSet ? [matchedSet] : []);
+  return flattenPrioritizedPassageSet(matchedSet, priorityContext);
 }
 
 export function createReviewSessionQueue(progressState: ProgressState): FlatQuestion[] {
