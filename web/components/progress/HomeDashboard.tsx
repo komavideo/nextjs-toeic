@@ -7,7 +7,7 @@ import { Panel } from "@/components/shared/Panel";
 import { createDailyMissions } from "@/lib/progress/dailyMissions";
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import { calculatePartStatistics, calculateTagWeaknessStatistics } from "@/lib/progress/statistics";
-import { getSrsDueDateGroups } from "@/lib/srs/due";
+import { countDueSrsItems, getSrsDueDateGroups } from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
 import { EmptyState } from "./EmptyState";
@@ -66,7 +66,7 @@ export function HomeDashboard() {
       today: dueDateGroups.today.length,
       future: dueDateGroups.future.length,
     };
-    const dueCount = reviewDueBreakdown.overdue + reviewDueBreakdown.today;
+    const dueCount = countDueSrsItems(dueDateGroups);
     const accuracy =
       progressState.totalAnswered === 0
         ? 0

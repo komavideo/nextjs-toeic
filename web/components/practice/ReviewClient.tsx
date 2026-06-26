@@ -3,7 +3,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/shared/Button";
 import { ErrorState } from "@/components/shared/ErrorState";
-import { getSrsDueDateGroups, type SrsDueDateGroups } from "@/lib/srs/due";
+import {
+  countDueSrsItems,
+  getSrsDueDateGroups,
+  type SrsDueDateGroups,
+} from "@/lib/srs/due";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { AnswerResult } from "@/types/progress";
 import { ReviewEmptyState } from "./ReviewEmptyState";
@@ -62,7 +66,7 @@ export function ReviewClient() {
     );
   }
 
-  const dueCount = dueDateGroups.overdue.length + dueDateGroups.today.length;
+  const dueCount = countDueSrsItems(dueDateGroups);
   const scheduledCount = dueCount + dueDateGroups.future.length;
 
   return (
