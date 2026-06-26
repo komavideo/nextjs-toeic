@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { register } from "node:module";
 import test, { afterEach } from "node:test";
-import type { ProgressState } from "@/types/progress";
+import type { ProgressState, ProgressStateV1 } from "@/types/progress";
 
 // node:test で直接実行するため、テスト内で tsconfig の `@/` alias を解決する。
 const webRootUrl = new URL("../../", import.meta.url);
@@ -23,6 +23,7 @@ register(`data:text/javascript,${encodeURIComponent(aliasLoaderCode)}`, import.m
 
 const {
   clearProgressState,
+  legacyProgressStorageKey,
   loadProgressState,
   progressStorageKey,
   saveProgressState,
@@ -58,7 +59,7 @@ class MemoryStorage implements Storage {
 
 function createProgressState(): ProgressState {
   return {
-    version: 1,
+    version: 2,
     totalAnswered: 1,
     totalCorrect: 1,
     currentStreakDays: 1,
@@ -83,6 +84,17 @@ function createProgressState(): ProgressState {
         lastAnsweredAt: "2026-06-25T10:00:00.000Z",
       },
     },
+    bookmarkedQuestionIds: ["part5-001"],
+  };
+}
+
+function createLegacyProgressState(): ProgressStateV1 {
+  const { bookmarkedQuestionIds: _bookmarkedQuestionIds, ...legacyState } =
+    createProgressState();
+
+  return {
+    ...legacyState,
+    version: 1,
   };
 }
 
@@ -127,14 +139,80 @@ test("保存データがない場合は初期状態を返す", () => {
   assert.deepEqual(loadProgressState(), {
     ok: true,
     state: {
-      version: 1,
+      version: 2,
       totalAnswered: 0,
       totalCorrect: 0,
       currentStreakDays: 0,
       answers: [],
       srs: {},
+      bookmarkedQuestionIds: [],
     },
     source: "empty",
+  });
+});
+
+test("v1保存データをv2へ移行して旧キーを削除する", () => {
+  const storage = new MemoryStorage();
+  const legacyState = createLegacyProgressState();
+  setWindowStorage(storage);
+  storage.setItem(legacyProgressStorageKey, JSON.stringify(legacyState));
+
+  const expectedState: ProgressState = {
+    ...legacyState,
+    version: 2,
+    bookmarkedQuestionIds: [],
+  };
+
+  assert.deepEqual(loadProgressState(), {
+    ok: true,
+    state: expectedState,
+    source: "migration",
+  });
+  assert.deepEqual(
+    JSON.parse(storage.getItem(progressStorageKey) ?? ""),
+    expectedState,
+  );
+  assert.equal(storage.getItem(legacyProgressStorageKey), null);
+});
+
+test("移行保存に失敗しても移行後の進捗を読み込める", () => {
+  const storage = new MemoryStorage();
+  const legacyState = createLegacyProgressState();
+  setWindowStorage(storage);
+  storage.setItem(legacyProgressStorageKey, JSON.stringify(legacyState));
+  // 移行時の v2 保存だけを失敗させ、読み込み自体は成功扱いになることを確認する。
+  storage.setItem = () => {
+    throw new Error("write failed");
+  };
+
+  const expectedState: ProgressState = {
+    ...legacyState,
+    version: 2,
+    bookmarkedQuestionIds: [],
+  };
+
+  assert.deepEqual(loadProgressState(), {
+    ok: true,
+    state: expectedState,
+    source: "migration",
+  });
+});
+
+test("v2キーが存在する場合はv1キーへフォールバックしない", () => {
+  const storage = new MemoryStorage();
+  storage.setItem(
+    progressStorageKey,
+    JSON.stringify({ ...createProgressState(), version: 3 }),
+  );
+  storage.setItem(
+    legacyProgressStorageKey,
+    JSON.stringify(createLegacyProgressState()),
+  );
+  setWindowStorage(storage);
+
+  assert.deepEqual(loadProgressState(), {
+    ok: false,
+    reason: "version-mismatch",
   });
 });
 
@@ -153,7 +231,7 @@ test("version不一致はversion-mismatchとして扱う", () => {
   const storage = new MemoryStorage();
   storage.setItem(
     progressStorageKey,
-    JSON.stringify({ ...createProgressState(), version: 2 }),
+    JSON.stringify({ ...createProgressState(), version: 3 }),
   );
   setWindowStorage(storage);
 
@@ -163,11 +241,28 @@ test("version不一致はversion-mismatchとして扱う", () => {
   });
 });
 
-test("version=1でも構造が壊れているデータはversion-mismatchとして扱う", () => {
+test("version=2でも構造が壊れているデータはversion-mismatchとして扱う", () => {
   const storage = new MemoryStorage();
-  // JSONとしては妥当だが answers が配列でない（version は 1 のまま）構造破損データ
+  // JSONとしては妥当だが answers が配列でない（version は 2 のまま）構造破損データ
   const corruptedValue = { ...createProgressState(), answers: "broken" };
   storage.setItem(progressStorageKey, JSON.stringify(corruptedValue));
+  setWindowStorage(storage);
+
+  assert.deepEqual(loadProgressState(), {
+    ok: false,
+    reason: "version-mismatch",
+  });
+});
+
+test("ブックマークIDが配列でない場合はversion-mismatchとして扱う", () => {
+  const storage = new MemoryStorage();
+  storage.setItem(
+    progressStorageKey,
+    JSON.stringify({
+      ...createProgressState(),
+      bookmarkedQuestionIds: "part5-001",
+    }),
+  );
   setWindowStorage(storage);
 
   assert.deepEqual(loadProgressState(), {
@@ -327,8 +422,13 @@ test("localStorage操作失敗時は操作別の失敗理由を返す", () => {
 test("初期化時に保存キーを削除する", () => {
   const storage = new MemoryStorage();
   storage.setItem(progressStorageKey, JSON.stringify(createProgressState()));
+  storage.setItem(
+    legacyProgressStorageKey,
+    JSON.stringify(createLegacyProgressState()),
+  );
   setWindowStorage(storage);
 
   assert.deepEqual(clearProgressState(), { ok: true });
   assert.equal(storage.getItem(progressStorageKey), null);
+  assert.equal(storage.getItem(legacyProgressStorageKey), null);
 });

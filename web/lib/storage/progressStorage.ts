@@ -1,15 +1,19 @@
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import type {
   AnswerResult,
+  LegacyProgressStorageKey,
   ProgressState,
+  ProgressStateV1,
   ProgressStorageKey,
   SrsState,
 } from "@/types/progress";
 
-export const progressStorageKey: ProgressStorageKey = "toeicReadingProgress:v1";
+export const progressStorageKey: ProgressStorageKey = "toeicReadingProgress:v2";
+export const legacyProgressStorageKey: LegacyProgressStorageKey =
+  "toeicReadingProgress:v1";
 
 export type LoadProgressResult =
-  | { ok: true; state: ProgressState; source: "empty" | "storage" }
+  | { ok: true; state: ProgressState; source: "empty" | "storage" | "migration" }
   | { ok: false; reason: "unavailable" | "parse-error" | "version-mismatch" };
 
 export type SaveProgressResult =
@@ -101,12 +105,14 @@ function isSrsState(value: unknown): value is SrsState {
   );
 }
 
-function isProgressState(value: unknown): value is ProgressState {
+function hasValidProgressBase(
+  value: unknown,
+): value is ProgressState | ProgressStateV1 {
   if (!isRecord(value)) {
     return false;
   }
 
-  const state = value as Partial<ProgressState>;
+  const state = value as Partial<ProgressState | ProgressStateV1>;
   const answers = Array.isArray(state.answers) ? state.answers : [];
   const srsValues = isRecord(state.srs) ? Object.values(state.srs) : [];
   const totalCorrect = answers.filter(
@@ -114,7 +120,6 @@ function isProgressState(value: unknown): value is ProgressState {
   ).length;
 
   return (
-    state.version === 1 &&
     isNonNegativeInteger(state.totalAnswered) &&
     isNonNegativeInteger(state.totalCorrect) &&
     state.totalAnswered === answers.length &&
@@ -126,6 +131,48 @@ function isProgressState(value: unknown): value is ProgressState {
     isRecord(state.srs) &&
     srsValues.every(isSrsState)
   );
+}
+
+function isProgressStateV1(value: unknown): value is ProgressStateV1 {
+  return isRecord(value) && value.version === 1 && hasValidProgressBase(value);
+}
+
+function isProgressState(value: unknown): value is ProgressState {
+  const bookmarkedQuestionIds = isRecord(value)
+    ? (value as { bookmarkedQuestionIds?: unknown }).bookmarkedQuestionIds
+    : undefined;
+
+  return (
+    isRecord(value) &&
+    value.version === 2 &&
+    hasValidProgressBase(value) &&
+    isStringArray(bookmarkedQuestionIds)
+  );
+}
+
+function migrateProgressStateV1(state: ProgressStateV1): ProgressState {
+  return {
+    version: 2,
+    totalAnswered: state.totalAnswered,
+    totalCorrect: state.totalCorrect,
+    currentStreakDays: state.currentStreakDays,
+    ...(state.lastStudiedDate ? { lastStudiedDate: state.lastStudiedDate } : {}),
+    answers: state.answers,
+    srs: state.srs,
+    bookmarkedQuestionIds: [],
+  };
+}
+
+function saveMigratedProgressState(
+  storage: Storage,
+  state: ProgressState,
+): void {
+  try {
+    storage.setItem(progressStorageKey, JSON.stringify(state));
+    storage.removeItem(legacyProgressStorageKey);
+  } catch {
+    // 移行保存に失敗しても、読み込めた進捗は画面上で利用できるようにする。
+  }
 }
 
 export function loadProgressState(): LoadProgressResult {
@@ -143,18 +190,43 @@ export function loadProgressState(): LoadProgressResult {
     return { ok: false, reason: "unavailable" };
   }
 
-  if (rawValue === null) {
+  if (rawValue !== null) {
+    try {
+      const parsedValue: unknown = JSON.parse(rawValue);
+
+      if (!isProgressState(parsedValue)) {
+        return { ok: false, reason: "version-mismatch" };
+      }
+
+      return { ok: true, state: parsedValue, source: "storage" };
+    } catch {
+      return { ok: false, reason: "parse-error" };
+    }
+  }
+
+  let legacyRawValue: string | null;
+
+  try {
+    legacyRawValue = storage.getItem(legacyProgressStorageKey);
+  } catch {
+    return { ok: false, reason: "unavailable" };
+  }
+
+  if (legacyRawValue === null) {
     return { ok: true, state: createInitialProgressState(), source: "empty" };
   }
 
   try {
-    const parsedValue: unknown = JSON.parse(rawValue);
+    const parsedValue: unknown = JSON.parse(legacyRawValue);
 
-    if (!isProgressState(parsedValue)) {
+    if (!isProgressStateV1(parsedValue)) {
       return { ok: false, reason: "version-mismatch" };
     }
 
-    return { ok: true, state: parsedValue, source: "storage" };
+    const migratedState = migrateProgressStateV1(parsedValue);
+    saveMigratedProgressState(storage, migratedState);
+
+    return { ok: true, state: migratedState, source: "migration" };
   } catch {
     return { ok: false, reason: "parse-error" };
   }
@@ -184,6 +256,7 @@ export function clearProgressState(): ClearProgressResult {
 
   try {
     storage.removeItem(progressStorageKey);
+    storage.removeItem(legacyProgressStorageKey);
     return { ok: true };
   } catch {
     return { ok: false, reason: "remove-failed" };

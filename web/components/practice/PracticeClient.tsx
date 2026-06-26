@@ -3,12 +3,17 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Modal } from "@/components/shared/Modal";
+import {
+  bookmarkSaveErrorMessage,
+  toggleBookmarkedQuestionId,
+} from "@/lib/progress/bookmarks";
 import { recordAnswer } from "@/lib/progress/recordAnswer";
 import { gradeQuestion } from "@/lib/question-bank/grade";
 import {
   defaultSessionQuestionCount,
   findFirstPartByTag,
   getSessionQuestionCountForPart,
+  createBookmarkSessionQueue,
   createPartSessionQueue,
   createQuickSessionQueue,
   createReviewSessionQueue,
@@ -20,6 +25,7 @@ import { updateSrsState } from "@/lib/srs/updateSrs";
 import {
   loadProgressState,
   saveProgressState,
+  type LoadProgressResult,
 } from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
 import type {
@@ -52,10 +58,30 @@ function isUnansweredPriority(value: string | null): boolean {
   return value === "1" || value === "true";
 }
 
-function loadOptionalProgressState(): ProgressState | undefined {
-  const progressResult = loadProgressState();
-
+function loadOptionalProgressState(
+  progressResult: LoadProgressResult = loadProgressState(),
+): ProgressState | undefined {
   return progressResult.ok ? progressResult.state : undefined;
+}
+
+function bookmarkedQuestionIdsFromProgressResult(
+  progressResult?: LoadProgressResult,
+): string[] {
+  return progressResult?.ok ? progressResult.state.bookmarkedQuestionIds : [];
+}
+
+function loadProgressResultForPracticeMode(
+  searchParams: URLSearchParams,
+): LoadProgressResult | undefined {
+  const mode = searchParams.get("mode");
+
+  return mode === "quick" ||
+    mode === "part" ||
+    mode === "review" ||
+    mode === "bookmark" ||
+    mode === "weakness"
+    ? loadProgressState()
+    : undefined;
 }
 
 function createSession(
@@ -142,6 +168,22 @@ function createReviewSession(progressState: ProgressState): ActivePracticeSessio
   };
 }
 
+function createBookmarkSession(
+  progressState: ProgressState,
+): ActivePracticeSession {
+  const startedAt = new Date().toISOString();
+
+  return {
+    id: `session-${Date.now()}`,
+    condition: { kind: "bookmark" },
+    queue: createBookmarkSessionQueue(progressState),
+    currentIndex: 0,
+    startedAt,
+    questionStartedAt: startedAt,
+    answers: [],
+  };
+}
+
 function createWeaknessSession(progressState: ProgressState): ActivePracticeSession {
   const startedAt = new Date().toISOString();
 
@@ -171,6 +213,22 @@ function createRestartedSessionState(
     }
 
     return createRunnableSessionState(createReviewSession(progressResult.state));
+  }
+
+  if (condition.kind === "bookmark") {
+    const progressResult = loadProgressState();
+
+    if (!progressResult.ok) {
+      return {
+        screen: "error",
+        message: "ブックマークデータを読み込めませんでした。",
+        storageUnavailable: progressResult.reason === "unavailable",
+      };
+    }
+
+    return createRunnableSessionState(
+      createBookmarkSession(progressResult.state),
+    );
   }
 
   if (condition.kind === "weakness") {
@@ -264,26 +322,34 @@ function createSelectStateFromSearchParams(
 
 function createPracticeStateFromSearchParams(
   searchParams: URLSearchParams,
+  progressResult?: LoadProgressResult,
 ): PracticeState {
   const mode = searchParams.get("mode");
   const part = toPart(searchParams.get("part")) ?? "part5";
   const questionCount = parseSessionQuestionCount(searchParams.get("count"));
   const requiresProgressState = isUnansweredPriority(searchParams.get("unanswered"));
+  const getProgressResult = () => progressResult ?? loadProgressState();
 
   if (mode === "quick") {
+    const quickProgressResult = getProgressResult();
+
     return createRunnableSessionState(
-      createSession(part, loadOptionalProgressState(), questionCount),
+      createSession(
+        part,
+        loadOptionalProgressState(quickProgressResult),
+        questionCount,
+      ),
     );
   }
 
   if (mode === "part") {
-    const progressResult = loadProgressState();
+    const partProgressResult = getProgressResult();
 
-    if (requiresProgressState && !progressResult.ok) {
+    if (requiresProgressState && !partProgressResult.ok) {
       return {
         screen: "error",
         message: "未回答データを読み込めませんでした。",
-        storageUnavailable: progressResult.reason === "unavailable",
+        storageUnavailable: partProgressResult.reason === "unavailable",
       };
     }
 
@@ -296,40 +362,56 @@ function createPracticeStateFromSearchParams(
           questionCount,
           requiresProgressState,
         },
-        progressResult.ok ? progressResult.state : undefined,
+        partProgressResult.ok ? partProgressResult.state : undefined,
       ),
     );
   }
 
   if (mode === "review") {
-    const progressResult = loadProgressState();
+    const reviewProgressResult = getProgressResult();
 
-    if (!progressResult.ok) {
+    if (!reviewProgressResult.ok) {
       return {
         screen: "error",
         message: "復習データを読み込めませんでした。",
-        storageUnavailable: progressResult.reason === "unavailable",
+        storageUnavailable: reviewProgressResult.reason === "unavailable",
       };
     }
 
-    const reviewSession = createReviewSession(progressResult.state);
+    const reviewSession = createReviewSession(reviewProgressResult.state);
 
     return createRunnableSessionState(reviewSession);
   }
 
-  if (mode === "weakness") {
-    const progressResult = loadProgressState();
+  if (mode === "bookmark") {
+    const bookmarkProgressResult = getProgressResult();
 
-    if (!progressResult.ok) {
+    if (!bookmarkProgressResult.ok) {
       return {
         screen: "error",
-        message: "弱点データを読み込めませんでした。",
-        storageUnavailable: progressResult.reason === "unavailable",
+        message: "ブックマークデータを読み込めませんでした。",
+        storageUnavailable: bookmarkProgressResult.reason === "unavailable",
       };
     }
 
     return createRunnableSessionState(
-      createWeaknessSession(progressResult.state),
+      createBookmarkSession(bookmarkProgressResult.state),
+    );
+  }
+
+  if (mode === "weakness") {
+    const weaknessProgressResult = getProgressResult();
+
+    if (!weaknessProgressResult.ok) {
+      return {
+        screen: "error",
+        message: "弱点データを読み込めませんでした。",
+        storageUnavailable: weaknessProgressResult.reason === "unavailable",
+      };
+    }
+
+    return createRunnableSessionState(
+      createWeaknessSession(weaknessProgressResult.state),
     );
   }
 
@@ -343,6 +425,12 @@ export function PracticeClient() {
   const [state, setState] = useState<PracticeState>(() =>
     createSelectStateFromSearchParams(new URLSearchParams(searchParamKey)),
   );
+  // 静的エクスポートのハイドレーション不整合と render 中の副作用（v1→v2 移行書き込み）を
+  // 避けるため、初期値は空配列にしてマウント後の useEffect で localStorage から読み込む。
+  const [bookmarkedQuestionIds, setBookmarkedQuestionIds] = useState<string[]>(
+    [],
+  );
+  const [bookmarkError, setBookmarkError] = useState<string | null>(null);
   const [pendingNavigationHref, setPendingNavigationHref] = useState<string | null>(
     null,
   );
@@ -351,9 +439,17 @@ export function PracticeClient() {
     state.screen === "question" || state.screen === "explain";
 
   useEffect(() => {
+    const nextSearchParams = new URLSearchParams(searchParamKey);
+    const progressResult = loadProgressResultForPracticeMode(nextSearchParams);
+
     setState(
-      createPracticeStateFromSearchParams(new URLSearchParams(searchParamKey)),
+      createPracticeStateFromSearchParams(nextSearchParams, progressResult),
     );
+    setBookmarkedQuestionIds(
+      bookmarkedQuestionIdsFromProgressResult(progressResult),
+    );
+    // 新しいセッションへ遷移したら、前セッションのブックマーク保存エラーは持ち越さない。
+    setBookmarkError(null);
   }, [searchParamKey]);
 
   useEffect(() => {
@@ -408,6 +504,30 @@ export function PracticeClient() {
     setState({ screen: "select" });
   }
 
+  function toggleBookmark(questionId: string) {
+    const loadResult = loadProgressState();
+
+    if (!loadResult.ok) {
+      setBookmarkError(
+        bookmarkSaveErrorMessage("load", loadResult.reason === "unavailable"),
+      );
+      return;
+    }
+
+    const nextProgress = toggleBookmarkedQuestionId(loadResult.state, questionId);
+    const saveResult = saveProgressState(nextProgress);
+
+    if (!saveResult.ok) {
+      setBookmarkError(
+        bookmarkSaveErrorMessage("save", saveResult.reason === "unavailable"),
+      );
+      return;
+    }
+
+    setBookmarkedQuestionIds(nextProgress.bookmarkedQuestionIds);
+    setBookmarkError(null);
+  }
+
   function submitCurrentAnswer(session: ActivePracticeSession) {
     const currentQuestion = session.queue[session.currentIndex];
 
@@ -437,6 +557,8 @@ export function PracticeClient() {
       answeredAt,
     });
 
+    // 新しい解説画面へ入る前に、別問題のブックマーク保存エラーを持ち越さない。
+    setBookmarkError(null);
     setState({
       screen: "explain",
       session: {
@@ -521,6 +643,7 @@ export function PracticeClient() {
       return;
     }
 
+    setBookmarkedQuestionIds(nextProgress.bookmarkedQuestionIds);
     setState({
       screen: "result",
       session,
@@ -532,6 +655,9 @@ export function PracticeClient() {
   }
 
   function moveNextFromExplanation(session: ActivePracticeSession) {
+    // 解説画面を離れる時点で、この問題のブックマーク保存エラーをクリアし、
+    // 次の問題の解説画面や結果画面へ持ち越さない。
+    setBookmarkError(null);
     const nextIndex = session.currentIndex + 1;
 
     if (nextIndex < session.queue.length) {
@@ -618,18 +744,30 @@ export function PracticeClient() {
     return (
       <PracticeErrorView
         message={state.message}
-        onInitialized={() => setState({ screen: "select" })}
+        onInitialized={() => {
+          setBookmarkedQuestionIds([]);
+          setBookmarkError(null);
+          setState({ screen: "select" });
+        }}
         onRetry={() => {
           if (state.session) {
             completeSession(state.session);
             return;
           }
 
+          const nextSearchParams = new URLSearchParams(searchParamKey);
+          const progressResult = loadProgressResultForPracticeMode(nextSearchParams);
+
           setState(
             createPracticeStateFromSearchParams(
-              new URLSearchParams(searchParamKey),
+              nextSearchParams,
+              progressResult,
             ),
           );
+          setBookmarkedQuestionIds(
+            bookmarkedQuestionIdsFromProgressResult(progressResult),
+          );
+          setBookmarkError(null);
         }}
         preserveSession={Boolean(state.session)}
         storageUnavailable={state.storageUnavailable}
@@ -648,7 +786,10 @@ export function PracticeClient() {
       <>
         <ExplanationView
           answer={state.answer}
+          bookmarkError={bookmarkError}
+          bookmarked={bookmarkedQuestionIds.includes(currentQuestion.questionId)}
           onNext={() => moveNextFromExplanation(state.session)}
+          onToggleBookmark={() => toggleBookmark(currentQuestion.questionId)}
           question={currentQuestion}
           srsPreview={state.srsPreview}
         />
@@ -661,10 +802,13 @@ export function PracticeClient() {
     return (
       <SessionResultView
         answers={state.session.answers}
+        bookmarkError={bookmarkError}
+        bookmarkedQuestionIds={bookmarkedQuestionIds}
         elapsedMs={state.elapsedMs}
         onRestart={() =>
           setState(createRestartedSessionState(state.session.condition))
         }
+        onToggleBookmark={toggleBookmark}
         reviewScheduledCount={state.reviewScheduledCount}
         totalAnswered={state.totalAnswered}
         totalCorrect={state.totalCorrect}
@@ -689,13 +833,22 @@ export function PracticeClient() {
           state.initialTag ?? "",
           state.initialQuestionCount ?? defaultSessionQuestionCount,
         ].join(":")}
-        onStart={(condition) =>
+        onStart={(condition) => {
+          const progressResult = loadProgressState();
+
+          setBookmarkedQuestionIds(
+            bookmarkedQuestionIdsFromProgressResult(progressResult),
+          );
+          setBookmarkError(null);
           setState(
             createRunnableSessionState(
-              createPartSession(condition, loadOptionalProgressState()),
+              createPartSession(
+                condition,
+                loadOptionalProgressState(progressResult),
+              ),
             ),
-          )
-        }
+          );
+        }}
       />
       {interruptModal}
     </>

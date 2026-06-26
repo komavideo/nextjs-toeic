@@ -30,6 +30,7 @@ register(`data:text/javascript,${encodeURIComponent(aliasLoaderCode)}`, import.m
 
 const { flattenQuestionBankEntries } = await import("./flatten.ts");
 const {
+  createBookmarkSessionQueue,
   createPartSessionQueue,
   createQuickSessionQueue,
   createReviewSessionQueue,
@@ -154,13 +155,14 @@ function createProgressState(
   srs: ProgressState["srs"] = {},
 ): ProgressState {
   return {
-    version: 1,
+    version: 2,
     totalAnswered: answers.length,
     totalCorrect: answers.filter((answer) => answer.correct).length,
     currentStreakDays: 1,
     lastStudiedDate: "2026-06-24",
     answers,
     srs,
+    bookmarkedQuestionIds: [],
   };
 }
 
@@ -419,6 +421,26 @@ test("復習セッションは期限到来SRSだけを返す", () => {
     toQuestionIds(createReviewSessionQueue(state)),
     [dueQuestion.questionId],
   );
+});
+
+test("ブックマーク復習セッションは保存順の既知問題だけを返す", () => {
+  const [firstQuestion, secondQuestion, thirdQuestion] = firstQuestions("part5", 3);
+  const state: ProgressState = {
+    ...createProgressState([]),
+    bookmarkedQuestionIds: [
+      secondQuestion.questionId,
+      "missing-question-id",
+      firstQuestion.questionId,
+      secondQuestion.questionId,
+      thirdQuestion.questionId,
+    ],
+  };
+
+  assert.deepEqual(toQuestionIds(createBookmarkSessionQueue(state)), [
+    secondQuestion.questionId,
+    firstQuestion.questionId,
+    thirdQuestion.questionId,
+  ]);
 });
 
 test("回答履歴が3件未満の場合はPart 5のクイック演習へフォールバックする", () => {

@@ -11,6 +11,9 @@ type ExplanationViewProps = {
   question: FlatQuestion;
   answer: GradeQuestionResult;
   srsPreview: UpdateSrsResult;
+  bookmarked: boolean;
+  bookmarkError?: string | null;
+  onToggleBookmark: () => void;
   onNext: () => void;
 };
 
@@ -18,6 +21,9 @@ export function ExplanationView({
   question,
   answer,
   srsPreview,
+  bookmarked,
+  bookmarkError,
+  onToggleBookmark,
   onNext,
 }: ExplanationViewProps) {
   return (
@@ -82,6 +88,31 @@ export function ExplanationView({
             ? "この問題は定着済みとして扱われます。"
             : `復習予定: ${srsPreview.state.dueDate}`}
         </p>
+
+        <div className="mt-5 rounded-[var(--radius-md)] border border-[var(--border)] p-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="text-sm font-bold">ブックマーク</h2>
+              <p className="mt-1 text-sm leading-5 text-[var(--text-secondary)]">
+                あとで見直したい問題として保存します。
+              </p>
+            </div>
+            <Button
+              onClick={onToggleBookmark}
+              variant={bookmarked ? "secondary" : "tertiary"}
+            >
+              {bookmarked ? "ブックマーク解除" : "ブックマークする"}
+            </Button>
+          </div>
+          {bookmarkError ? (
+            <p
+              className="mt-3 text-sm font-semibold text-[var(--danger)]"
+              role="alert"
+            >
+              {bookmarkError}
+            </p>
+          ) : null}
+        </div>
 
         <Button className="mt-5 w-full" onClick={onNext}>
           次へ
