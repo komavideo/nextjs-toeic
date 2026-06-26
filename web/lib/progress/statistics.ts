@@ -17,6 +17,36 @@ export type TagStatistic = {
   accuracy: number;
 };
 
+export type TagDetailQuestion = {
+  questionId: string;
+  part: ToeicReadingPart;
+  sentence?: string;
+  title?: string;
+  prompt: string;
+  tags: string[];
+};
+
+export type TagIncorrectAnswer = {
+  questionId: string;
+  part: ToeicReadingPart;
+  selectedChoiceId: AnswerResult["selectedChoiceId"];
+  answeredAt: string;
+  summary: string;
+};
+
+export type TagDetailStatistic = {
+  tag: string;
+  answered: number;
+  correct: number;
+  accuracy: number;
+  partStatistics: PartStatistic[];
+  incorrectAnswers: TagIncorrectAnswer[];
+  weakestPart?: ToeicReadingPart;
+  firstAvailablePart?: ToeicReadingPart;
+  practicePart?: ToeicReadingPart;
+  relatedParts: ToeicReadingPart[];
+};
+
 export type DailyAnswerCount = {
   date: string;
   count: number;
@@ -65,6 +95,127 @@ export function calculateTagWeaknessStatistics(
       accuracy: toAccuracy(value.correct, value.answered),
     }))
     .sort((left, right) => left.accuracy - right.accuracy || left.tag.localeCompare(right.tag));
+}
+
+function sortPartsByReadingOrder(parts: ToeicReadingPart[]): ToeicReadingPart[] {
+  return [...parts].sort(
+    (left, right) => readingParts.indexOf(left) - readingParts.indexOf(right),
+  );
+}
+
+function getQuestionSummary(
+  question: TagDetailQuestion | undefined,
+  questionId: string,
+): string {
+  return question?.sentence ?? question?.title ?? question?.prompt ?? questionId;
+}
+
+function getWeakestPart(partStatistics: PartStatistic[]): ToeicReadingPart | undefined {
+  return partStatistics
+    .filter((statistic) => statistic.answered > 0)
+    .sort(
+      (left, right) =>
+        left.correct / left.answered - right.correct / right.answered ||
+        readingParts.indexOf(left.part) - readingParts.indexOf(right.part),
+    )[0]?.part;
+}
+
+function addRecentIncorrectAnswer(
+  recentAnswers: AnswerResult[],
+  answer: AnswerResult,
+  limit: number,
+): void {
+  if (limit <= 0) {
+    return;
+  }
+
+  const insertIndex = recentAnswers.findIndex(
+    (recentAnswer) => answer.answeredAt.localeCompare(recentAnswer.answeredAt) > 0,
+  );
+
+  if (insertIndex === -1) {
+    if (recentAnswers.length < limit) {
+      recentAnswers.push(answer);
+    }
+
+    return;
+  }
+
+  recentAnswers.splice(insertIndex, 0, answer);
+
+  if (recentAnswers.length > limit) {
+    recentAnswers.pop();
+  }
+}
+
+export function calculateTagDetailStatistic(
+  answers: AnswerResult[],
+  questions: TagDetailQuestion[],
+  tag: string,
+  incorrectLimit = 5,
+): TagDetailStatistic {
+  const tagAnswers: AnswerResult[] = [];
+  const recentIncorrectAnswers: AnswerResult[] = [];
+  let correct = 0;
+
+  for (const answer of answers) {
+    if (!answer.tags.includes(tag)) {
+      continue;
+    }
+
+    tagAnswers.push(answer);
+
+    if (answer.correct) {
+      correct += 1;
+    } else {
+      addRecentIncorrectAnswer(recentIncorrectAnswers, answer, incorrectLimit);
+    }
+  }
+
+  const questionMap = new Map(
+    questions.map((question) => [question.questionId, question]),
+  );
+  const relatedParts = sortPartsByReadingOrder(
+    Array.from(
+      new Set(
+        questions
+          .filter((question) => question.tags.includes(tag))
+          .map((question) => question.part),
+      ),
+    ),
+  );
+  // tagAnswers は既に対象タグで絞り込み済みのため、Part 別集計は共通関数を再利用する。
+  const partStatistics = calculatePartStatistics(tagAnswers);
+  const incorrectAnswers = recentIncorrectAnswers.map((answer) => ({
+    questionId: answer.questionId,
+    part: answer.part,
+    selectedChoiceId: answer.selectedChoiceId,
+    answeredAt: answer.answeredAt,
+    summary: getQuestionSummary(questionMap.get(answer.questionId), answer.questionId),
+  }));
+  // weakestPart は回答実績のある全 Part 横断での最弱 Part（表示・診断用の参考値）。
+  const weakestPart = getWeakestPart(partStatistics);
+  // firstAvailablePart は問題バンク上で最初に見つかった出題可能 Part（読解順で先頭）。
+  const firstAvailablePart = relatedParts[0];
+  // practicePart は「出題可能な Part のうち最も苦手な Part」を選ぶ。
+  // 回答履歴がない、または最弱 Part の問題が現存しない場合は firstAvailablePart にフォールバックする。
+  const weakestAvailablePart = getWeakestPart(
+    partStatistics.filter((statistic) => relatedParts.includes(statistic.part)),
+  );
+  const practicePart = weakestAvailablePart ?? firstAvailablePart;
+
+  return {
+    tag,
+    answered: tagAnswers.length,
+    correct,
+    accuracy: toAccuracy(correct, tagAnswers.length),
+    partStatistics,
+    incorrectAnswers,
+    weakestPart,
+    firstAvailablePart,
+    practicePart,
+    relatedParts,
+  };
 }
 
 function toDateKey(date: Date): string {

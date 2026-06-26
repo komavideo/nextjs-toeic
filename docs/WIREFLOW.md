@@ -4,7 +4,7 @@
 
 この文書は、Phase 1 の実装者向けにアプリ画面の遷移、画面内イベント、状態更新、例外処理を定義するワイヤーフローである。全体像は Mermaid 図、実装契約は表で示す。視覚仕様は `docs/UI-DESIGN.md`、画面見本は `docs/VISUAL-COMPANION.html`、プロダクト要件とデータ方針は `docs/PRD.md` を正とする。
 
-対象は Phase 1 の12画面のみとする。Listening、ログイン、クラウド同期、多言語、Phase 2 の300問以上投入は扱わない。
+対象は Phase 1 の拡張画面を含む13画面のみとする。Listening、ログイン、クラウド同期、多言語、Phase 2 の300問以上投入は扱わない。
 
 ## 2. 画面対応表
 
@@ -19,6 +19,7 @@
 | `screen-result` | セッション結果画面 | `/practice` | Client state | `VISUAL-COMPANION.html` |
 | `screen-review` | 復習画面 | `/review` | Client Component | `VISUAL-COMPANION.html` |
 | `screen-progress` | 進捗分析画面 | `/progress` | RSC + Client summary | `VISUAL-COMPANION.html` |
+| `screen-progress-tag` | 苦手タグ詳細画面 | `/progress/tag?tag=...` | RSC + Client detail | `NEW_FEATURES.md` |
 | `screen-settings` | 設定 / データ管理画面 | `/settings` | Client Component | `VISUAL-COMPANION.html` |
 | `screen-empty` | 初回利用 / 空状態 | `/` | Client conditional state | `VISUAL-COMPANION.html` |
 | `screen-error` | エラー / 保存失敗状態 | current route | Client error state | `VISUAL-COMPANION.html` |
@@ -39,6 +40,7 @@ flowchart TD
   Result["screen-result: セッション結果画面"]
   Review["screen-review: 復習画面"]
   Progress["screen-progress: 進捗分析画面"]
+  ProgressTag["screen-progress-tag: 苦手タグ詳細画面"]
   Settings["screen-settings: 設定 / データ管理画面"]
   Error["screen-error: エラー / 保存失敗状態"]
 
@@ -63,7 +65,10 @@ flowchart TD
   Result -->|ホームへ戻る| Home
   Review -->|復習を開始| Quick
   Review -->|復習対象なし| Part
-  Progress -->|苦手 Part / タグ| Part
+  Progress -->|苦手 Part| Part
+  Progress -->|苦手タグ| ProgressTag
+  ProgressTag -->|このタグを練習| Quick
+  ProgressTag -->|進捗へ戻る| Progress
   Progress -->|弱点を練習| Quick
   Settings -->|データリセット完了| Empty
   Error -->|再試行成功| Home
@@ -235,7 +240,9 @@ flowchart TD
 | `screen-review` | `復習を開始` | `screen-quick` | 期限到来問題で復習セッション作成 |
 | `screen-review` | `復習対象なしで通常演習へ` | `screen-part` | なし |
 | `screen-progress` | `苦手 Part を選択` | `screen-part` | 選択 Part を初期値にする |
-| `screen-progress` | `苦手タグを選択` | `screen-part` | 選択タグを初期値にする |
+| `screen-progress` | `苦手タグを選択` | `screen-progress-tag` | 選択タグの回答数、正答率、Part 内訳、直近誤答を表示 |
+| `screen-progress-tag` | `このタグを練習` | `screen-quick` | 対象タグで正答率が最も低い Part を選択済みにして出題キューを作成。回答履歴がない場合は問題バンク上で最初に見つかった Part を使う |
+| `screen-progress-tag` | `進捗へ戻る` | `screen-progress` | なし |
 | `screen-progress` | `弱点を練習` | `screen-quick` | Part / タグ別正答率の最低候補から出題キューを作成 |
 | `screen-progress` | `未回答を演習`（問題到達率メーター） | `screen-quick` | 選択 Part の未回答を優先（`mode=part&unanswered=1`）して出題キューを作成 |
 | `screen-settings` | `データリセット` | 確認モーダル | まだ削除しない |
