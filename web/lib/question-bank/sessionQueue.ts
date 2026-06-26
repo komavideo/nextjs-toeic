@@ -50,26 +50,15 @@ type QuestionPriorityContext = {
   incorrectQuestionIds: ReadonlySet<string>;
 };
 
-function toDateKey(date: Date): string {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-}
-
+// 期限到来判定は復習セッションと同じ getDueSrsItems に委譲し、
+// 「今日時点で期限到来」の定義を一元管理する（today 省略時は当日扱い）。
 function getDueSrsByQuestionId(
   srs: ProgressState["srs"],
-  today = toDateKey(new Date()),
+  today?: string,
 ): Map<string, string> {
-  const dueSrsByQuestionId = new Map<string, string>();
-
-  for (const item of Object.values(srs)) {
-    if (item.dueDate <= today) {
-      dueSrsByQuestionId.set(item.questionId, item.dueDate);
-    }
-  }
-
-  return dueSrsByQuestionId;
+  return new Map(
+    getDueSrsItems(srs, today).map((item) => [item.questionId, item.dueDate]),
+  );
 }
 
 export function createQuickSessionQueue(
