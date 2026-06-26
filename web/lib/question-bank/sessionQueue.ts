@@ -349,6 +349,30 @@ export function createReviewSessionQueue(progressState: ProgressState): FlatQues
     .filter((question): question is FlatQuestion => Boolean(question));
 }
 
+export function createBookmarkSessionQueue(
+  progressState: ProgressState,
+): FlatQuestion[] {
+  const allQuestions = flattenQuestionBankEntries(getAllQuestionBankEntries());
+  const questionMap = new Map(
+    allQuestions.map((question) => [question.questionId, question]),
+  );
+  const queuedQuestionIds = new Set<string>();
+  const questions: FlatQuestion[] = [];
+
+  for (const questionId of progressState.bookmarkedQuestionIds) {
+    const question = questionMap.get(questionId);
+
+    if (!question || queuedQuestionIds.has(questionId)) {
+      continue;
+    }
+
+    queuedQuestionIds.add(questionId);
+    questions.push(question);
+  }
+
+  return questions;
+}
+
 function incrementWeaknessStatistics(
   statistics: WeaknessAnswerStatistics | undefined,
   correct: boolean,

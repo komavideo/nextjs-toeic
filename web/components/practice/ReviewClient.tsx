@@ -8,8 +8,11 @@ import {
   getSrsDueDateSummary,
   type SrsDueDateGroups,
 } from "@/lib/srs/due";
+import { createBookmarkSessionQueue } from "@/lib/question-bank/sessionQueue";
 import { loadProgressState } from "@/lib/storage/progressStorage";
+import type { FlatQuestion } from "@/lib/question-bank/flatten";
 import type { AnswerResult } from "@/types/progress";
+import { BookmarkReviewList } from "./BookmarkReviewList";
 import { ReviewEmptyState } from "./ReviewEmptyState";
 import { ReviewList } from "./ReviewList";
 
@@ -28,6 +31,9 @@ export function ReviewClient() {
   const [dueDateGroups, setDueDateGroups] =
     useState<SrsDueDateGroups>(emptyDueDateGroups);
   const [answers, setAnswers] = useState<AnswerResult[]>([]);
+  const [bookmarkedQuestions, setBookmarkedQuestions] = useState<FlatQuestion[]>(
+    [],
+  );
   const [loadError, setLoadError] = useState<LoadError | null>(null);
 
   const loadReviewProgress = useCallback(() => {
@@ -43,6 +49,7 @@ export function ReviewClient() {
 
     setDueDateGroups(getSrsDueDateGroups(result.state.srs));
     setAnswers(result.state.answers);
+    setBookmarkedQuestions(createBookmarkSessionQueue(result.state));
     setLoadError(null);
   }, []);
 
@@ -57,6 +64,7 @@ export function ReviewClient() {
         onInitialized={() => {
           setDueDateGroups(emptyDueDateGroups);
           setAnswers([]);
+          setBookmarkedQuestions([]);
           setLoadError(null);
         }}
         onRetry={loadReviewProgress}
@@ -67,6 +75,8 @@ export function ReviewClient() {
   }
 
   const dueDateSummary = getSrsDueDateSummary(dueDateGroups);
+  const hasReviewContent =
+    dueDateSummary.hasScheduledItems || bookmarkedQuestions.length > 0;
 
   return (
     <section className="mx-auto max-w-[720px]">
@@ -74,16 +84,31 @@ export function ReviewClient() {
         screen-review
       </p>
       <h1 className="text-2xl font-bold leading-8">復習</h1>
-      <div className="mt-6">
-        {!dueDateSummary.hasScheduledItems ? (
+      <div className="mt-6 grid gap-5">
+        {!hasReviewContent ? (
           <ReviewEmptyState />
         ) : (
           <>
-            <ReviewList answers={answers} dueDateGroups={dueDateGroups} />
-            {dueDateSummary.hasDueItems ? (
-              <Button className="mt-5 w-full" href="/practice?mode=review">
-                復習を開始
-              </Button>
+            {dueDateSummary.hasScheduledItems ? (
+              <>
+                <ReviewList answers={answers} dueDateGroups={dueDateGroups} />
+                {dueDateSummary.hasDueItems ? (
+                  <Button className="w-full" href="/practice?mode=review">
+                    復習を開始
+                  </Button>
+                ) : null}
+              </>
+            ) : null}
+            {bookmarkedQuestions.length > 0 ? (
+              <>
+                <BookmarkReviewList
+                  answers={answers}
+                  questions={bookmarkedQuestions}
+                />
+                <Button className="w-full" href="/practice?mode=bookmark">
+                  ブックマーク復習を開始
+                </Button>
+              </>
             ) : null}
           </>
         )}

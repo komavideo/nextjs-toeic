@@ -238,6 +238,7 @@ flowchart TD
 | `screen-result` | `もう1セット` | `screen-quick` | 同条件で新規セッション作成 |
 | `screen-result` | `ホームへ戻る` | `screen-home` | なし |
 | `screen-review` | `復習を開始` | `screen-quick` | 期限到来問題で復習セッション作成 |
+| `screen-review` | `ブックマーク復習を開始` | `screen-quick` | ブックマーク済み問題で復習セッション作成 |
 | `screen-review` | `復習対象なしで通常演習へ` | `screen-part` | なし |
 | `screen-progress` | `苦手 Part を選択` | `screen-part` | 選択 Part を初期値にする |
 | `screen-progress` | `苦手タグを選択` | `screen-progress-tag` | 選択タグの回答数、正答率、Part 内訳、直近誤答を表示 |
@@ -246,7 +247,7 @@ flowchart TD
 | `screen-progress` | `弱点を練習` | `screen-quick` | Part / タグ別正答率の最低候補から出題キューを作成 |
 | `screen-progress` | `未回答を演習`（問題到達率メーター） | `screen-quick` | 選択 Part の未回答を優先（`mode=part&unanswered=1`）して出題キューを作成 |
 | `screen-settings` | `データリセット` | 確認モーダル | まだ削除しない |
-| `screen-settings` | `リセット実行` | `screen-empty` | `toeicReadingProgress:v1` を削除 |
+| `screen-settings` | `リセット実行` | `screen-empty` | `toeicReadingProgress:v2` と旧 `toeicReadingProgress:v1` を削除 |
 | `screen-error` | `再試行` | 元画面 or `screen-home` | 失敗した保存/読み込み処理を再実行 |
 | `screen-error` | `初期化` | `screen-empty` | 保存キー削除を試行 |
 
@@ -259,13 +260,14 @@ flowchart TD
 | 選択肢選択 | `selectedChoiceId` | メモリのみ | なし |
 | 回答確定 | `AnswerResult`, 正誤, 経過時間 | 可能なら即時保存を試行 | 失敗してもメモリ保持し `screen-error` で再試行 |
 | 解説表示 | SRS 更新予定の表示 | まだ確定保存しなくてよい | なし |
+| ブックマーク切替 | `bookmarkedQuestionIds` | `localStorage` へ即時保存 | 画面上に保存エラーを表示 |
 | 次問へ進む | `currentIndex` | メモリのみ | なし |
 | セッション完了 | 集計、SRS、連続学習日数 | `localStorage` へ保存 | `screen-error` |
 | 復習回答で正解 | `intervalDays`, `dueDate`, `correctStreak` | セッション完了時に保存 | `screen-error` |
 | 復習回答で不正解 | `intervalDays = 1`, 翌日 `dueDate` | セッション完了時に保存 | `screen-error` |
 | データリセット | 保存キー削除 | `localStorage.removeItem` | `screen-error` |
 
-永続化キーは PRD の `toeicReadingProgress:v1` を使う。保存データの `version` が未対応の場合は破損扱いにし、`screen-error` で初期化導線を出す。
+永続化キーは PRD の `toeicReadingProgress:v2` を使う。旧 `toeicReadingProgress:v1` は初回読み込み時に v2 へ移行する。保存データの `version` が未対応の場合は破損扱いにし、`screen-error` で初期化導線を出す。
 
 ## 9. 実装メモ
 

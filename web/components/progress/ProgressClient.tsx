@@ -74,16 +74,7 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
     );
   }
 
-  const state =
-    progressState ??
-    ({
-      version: 1,
-      totalAnswered: 0,
-      totalCorrect: 0,
-      currentStreakDays: 0,
-      answers: [],
-      srs: {},
-    } satisfies ProgressState);
+  const state = progressState ?? createInitialProgressState();
   const accuracy =
     state.totalAnswered === 0
       ? 0

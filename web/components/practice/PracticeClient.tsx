@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Modal } from "@/components/shared/Modal";
+import { toggleBookmarkedQuestionId } from "@/lib/progress/bookmarks";
 import { recordAnswer } from "@/lib/progress/recordAnswer";
 import { gradeQuestion } from "@/lib/question-bank/grade";
 import {
   defaultSessionQuestionCount,
   findFirstPartByTag,
   getSessionQuestionCountForPart,
+  createBookmarkSessionQueue,
   createPartSessionQueue,
   createQuickSessionQueue,
   createReviewSessionQueue,
@@ -56,6 +58,10 @@ function loadOptionalProgressState(): ProgressState | undefined {
   const progressResult = loadProgressState();
 
   return progressResult.ok ? progressResult.state : undefined;
+}
+
+function loadOptionalBookmarkedQuestionIds(): string[] {
+  return loadOptionalProgressState()?.bookmarkedQuestionIds ?? [];
 }
 
 function createSession(
@@ -142,6 +148,22 @@ function createReviewSession(progressState: ProgressState): ActivePracticeSessio
   };
 }
 
+function createBookmarkSession(
+  progressState: ProgressState,
+): ActivePracticeSession {
+  const startedAt = new Date().toISOString();
+
+  return {
+    id: `session-${Date.now()}`,
+    condition: { kind: "bookmark" },
+    queue: createBookmarkSessionQueue(progressState),
+    currentIndex: 0,
+    startedAt,
+    questionStartedAt: startedAt,
+    answers: [],
+  };
+}
+
 function createWeaknessSession(progressState: ProgressState): ActivePracticeSession {
   const startedAt = new Date().toISOString();
 
@@ -171,6 +193,22 @@ function createRestartedSessionState(
     }
 
     return createRunnableSessionState(createReviewSession(progressResult.state));
+  }
+
+  if (condition.kind === "bookmark") {
+    const progressResult = loadProgressState();
+
+    if (!progressResult.ok) {
+      return {
+        screen: "error",
+        message: "ブックマークデータを読み込めませんでした。",
+        storageUnavailable: progressResult.reason === "unavailable",
+      };
+    }
+
+    return createRunnableSessionState(
+      createBookmarkSession(progressResult.state),
+    );
   }
 
   if (condition.kind === "weakness") {
@@ -317,6 +355,22 @@ function createPracticeStateFromSearchParams(
     return createRunnableSessionState(reviewSession);
   }
 
+  if (mode === "bookmark") {
+    const progressResult = loadProgressState();
+
+    if (!progressResult.ok) {
+      return {
+        screen: "error",
+        message: "ブックマークデータを読み込めませんでした。",
+        storageUnavailable: progressResult.reason === "unavailable",
+      };
+    }
+
+    return createRunnableSessionState(
+      createBookmarkSession(progressResult.state),
+    );
+  }
+
   if (mode === "weakness") {
     const progressResult = loadProgressState();
 
@@ -343,6 +397,10 @@ export function PracticeClient() {
   const [state, setState] = useState<PracticeState>(() =>
     createSelectStateFromSearchParams(new URLSearchParams(searchParamKey)),
   );
+  const [bookmarkedQuestionIds, setBookmarkedQuestionIds] = useState<string[]>(
+    () => loadOptionalBookmarkedQuestionIds(),
+  );
+  const [bookmarkError, setBookmarkError] = useState<string | null>(null);
   const [pendingNavigationHref, setPendingNavigationHref] = useState<string | null>(
     null,
   );
@@ -354,6 +412,7 @@ export function PracticeClient() {
     setState(
       createPracticeStateFromSearchParams(new URLSearchParams(searchParamKey)),
     );
+    setBookmarkedQuestionIds(loadOptionalBookmarkedQuestionIds());
   }, [searchParamKey]);
 
   useEffect(() => {
@@ -406,6 +465,34 @@ export function PracticeClient() {
     }
 
     setState({ screen: "select" });
+  }
+
+  function toggleBookmark(questionId: string) {
+    const loadResult = loadProgressState();
+
+    if (!loadResult.ok) {
+      setBookmarkError(
+        loadResult.reason === "unavailable"
+          ? "localStorage が利用できないため、ブックマークを保存できませんでした。"
+          : "進捗データを読み込めないため、ブックマークを保存できませんでした。",
+      );
+      return;
+    }
+
+    const nextProgress = toggleBookmarkedQuestionId(loadResult.state, questionId);
+    const saveResult = saveProgressState(nextProgress);
+
+    if (!saveResult.ok) {
+      setBookmarkError(
+        saveResult.reason === "unavailable"
+          ? "localStorage が利用できないため、ブックマークを保存できませんでした。"
+          : "ブックマークの保存に失敗しました。",
+      );
+      return;
+    }
+
+    setBookmarkedQuestionIds(nextProgress.bookmarkedQuestionIds);
+    setBookmarkError(null);
   }
 
   function submitCurrentAnswer(session: ActivePracticeSession) {
@@ -521,6 +608,7 @@ export function PracticeClient() {
       return;
     }
 
+    setBookmarkedQuestionIds(nextProgress.bookmarkedQuestionIds);
     setState({
       screen: "result",
       session,
@@ -648,7 +736,10 @@ export function PracticeClient() {
       <>
         <ExplanationView
           answer={state.answer}
+          bookmarkError={bookmarkError}
+          bookmarked={bookmarkedQuestionIds.includes(currentQuestion.questionId)}
           onNext={() => moveNextFromExplanation(state.session)}
+          onToggleBookmark={() => toggleBookmark(currentQuestion.questionId)}
           question={currentQuestion}
           srsPreview={state.srsPreview}
         />
@@ -661,10 +752,13 @@ export function PracticeClient() {
     return (
       <SessionResultView
         answers={state.session.answers}
+        bookmarkError={bookmarkError}
+        bookmarkedQuestionIds={bookmarkedQuestionIds}
         elapsedMs={state.elapsedMs}
         onRestart={() =>
           setState(createRestartedSessionState(state.session.condition))
         }
+        onToggleBookmark={toggleBookmark}
         reviewScheduledCount={state.reviewScheduledCount}
         totalAnswered={state.totalAnswered}
         totalCorrect={state.totalCorrect}
