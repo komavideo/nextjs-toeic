@@ -7,10 +7,7 @@ import {
   bookmarkSaveErrorMessage,
   toggleBookmarkedQuestionId,
 } from "@/lib/progress/bookmarks";
-import {
-  questionNoteSaveErrorMessage,
-  saveQuestionNote,
-} from "@/lib/progress/questionNotes";
+import { persistQuestionNote } from "@/lib/progress/questionNotes";
 import { recordAnswer } from "@/lib/progress/recordAnswer";
 import { gradeQuestion } from "@/lib/question-bank/grade";
 import {
@@ -547,47 +544,22 @@ export function PracticeClient() {
   }
 
   function saveCurrentQuestionNote(questionId: string, note: string) {
-    const loadResult = loadProgressState();
-
-    if (!loadResult.ok) {
-      setQuestionNoteError(
-        questionNoteSaveErrorMessage(
-          "load",
-          loadResult.reason === "unavailable",
-        ),
-      );
-      setQuestionNoteFeedback(null);
-      return;
-    }
-
-    const noteResult = saveQuestionNote(loadResult.state, questionId, note);
+    const noteResult = persistQuestionNote({
+      questionId,
+      note,
+      loadProgressState,
+      saveProgressState,
+    });
 
     if (!noteResult.ok) {
-      setQuestionNoteError("学習メモは200文字以内で入力してください。");
-      setQuestionNoteFeedback(null);
-      return;
-    }
-
-    const saveResult = saveProgressState(noteResult.state);
-
-    if (!saveResult.ok) {
-      setQuestionNoteError(
-        questionNoteSaveErrorMessage(
-          "save",
-          saveResult.reason === "unavailable",
-        ),
-      );
+      setQuestionNoteError(noteResult.error);
       setQuestionNoteFeedback(null);
       return;
     }
 
     setQuestionNotes(noteResult.state.questionNotes);
     setQuestionNoteError(null);
-    setQuestionNoteFeedback(
-      noteResult.note === null
-        ? "学習メモを削除しました。"
-        : "学習メモを保存しました。",
-    );
+    setQuestionNoteFeedback(noteResult.feedback);
   }
 
   function submitCurrentAnswer(session: ActivePracticeSession) {

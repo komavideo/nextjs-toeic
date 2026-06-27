@@ -3,6 +3,7 @@ import test from "node:test";
 import { createInitialProgressState } from "./initialState.ts";
 import {
   getQuestionNote,
+  persistQuestionNote,
   questionNoteMaxLength,
   questionNoteSaveErrorMessage,
   saveQuestionNote,
@@ -143,4 +144,112 @@ test("学習メモ保存エラーのメッセージを状況別に生成する",
     questionNoteSaveErrorMessage("save", false),
     "学習メモの保存に失敗しました。",
   );
+});
+
+test("学習メモ保存フローは読み込み、保存、成功フィードバックを返す", () => {
+  let savedState: ReturnType<typeof createInitialProgressState> | undefined;
+  const result = persistQuestionNote({
+    questionId: "question-001",
+    note: "  語法を確認する。  ",
+    loadProgressState: () => ({ ok: true, state: createInitialProgressState() }),
+    saveProgressState: (state) => {
+      savedState = state;
+      return { ok: true };
+    },
+  });
+
+  assert.equal(result.ok, true);
+  assert.ok(savedState);
+  if (!result.ok) {
+    return;
+  }
+
+  assert.deepEqual(savedState.questionNotes, {
+    "question-001": "語法を確認する。",
+  });
+  assert.deepEqual(result.state, savedState);
+  assert.equal(result.feedback, "学習メモを保存しました。");
+});
+
+test("学習メモ保存フローは空白保存を削除として扱う", () => {
+  let savedState: ReturnType<typeof createInitialProgressState> | undefined;
+  const result = persistQuestionNote({
+    questionId: "question-001",
+    note: "   ",
+    loadProgressState: () => ({
+      ok: true,
+      state: {
+        ...createInitialProgressState(),
+        questionNotes: {
+          "question-001": "語法を確認する。",
+        },
+      },
+    }),
+    saveProgressState: (state) => {
+      savedState = state;
+      return { ok: true };
+    },
+  });
+
+  assert.equal(result.ok, true);
+  assert.ok(savedState);
+  if (!result.ok) {
+    return;
+  }
+
+  assert.deepEqual(savedState.questionNotes, {});
+  assert.deepEqual(result.state, savedState);
+  assert.equal(result.feedback, "学習メモを削除しました。");
+});
+
+test("学習メモ保存フローは読み込み失敗時に保存しない", () => {
+  let saveCalled = false;
+  const result = persistQuestionNote({
+    questionId: "question-001",
+    note: "語法を確認する。",
+    loadProgressState: () => ({ ok: false, reason: "parse-error" }),
+    saveProgressState: () => {
+      saveCalled = true;
+      return { ok: true };
+    },
+  });
+
+  assert.deepEqual(result, {
+    ok: false,
+    error: "進捗データを読み込めないため、学習メモを保存できませんでした。",
+  });
+  assert.equal(saveCalled, false);
+});
+
+test("学習メモ保存フローは長すぎるメモを保存しない", () => {
+  let saveCalled = false;
+  const result = persistQuestionNote({
+    questionId: "question-001",
+    note: "a".repeat(questionNoteMaxLength + 1),
+    loadProgressState: () => ({ ok: true, state: createInitialProgressState() }),
+    saveProgressState: () => {
+      saveCalled = true;
+      return { ok: true };
+    },
+  });
+
+  assert.deepEqual(result, {
+    ok: false,
+    error: "学習メモは200文字以内で入力してください。",
+  });
+  assert.equal(saveCalled, false);
+});
+
+test("学習メモ保存フローは保存失敗時にエラーを返す", () => {
+  const result = persistQuestionNote({
+    questionId: "question-001",
+    note: "語法を確認する。",
+    loadProgressState: () => ({ ok: true, state: createInitialProgressState() }),
+    saveProgressState: () => ({ ok: false, reason: "write-failed" }),
+  });
+
+  assert.deepEqual(result, {
+    ok: false,
+    error: "学習メモの保存に失敗しました。",
+  });
 });
