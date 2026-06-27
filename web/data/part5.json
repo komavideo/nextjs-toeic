@@ -7358,5 +7358,645 @@
       "word-form"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p5-generated-226",
+    "part": "part5",
+    "sentence": "Due to unexpected demand, the shipping department arranged _____ carriers for the weekend deliveries.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "adding"
+      },
+      {
+        "id": "B",
+        "text": "addition"
+      },
+      {
+        "id": "C",
+        "text": "additional"
+      },
+      {
+        "id": "D",
+        "text": "additionally"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 carriers を修飾する形容詞 additional が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-227",
+    "part": "part5",
+    "sentence": "The updated safety manual will be distributed _____ all warehouse employees by Monday.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "to"
+      },
+      {
+        "id": "B",
+        "text": "on"
+      },
+      {
+        "id": "C",
+        "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "over"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "distribute A to B で「AをBに配布する」という意味です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-228",
+    "part": "part5",
+    "sentence": "The project manager asked the analyst _____ the sales figures before the client meeting.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "verify"
+      },
+      {
+        "id": "B",
+        "text": "verified"
+      },
+      {
+        "id": "C",
+        "text": "verifying"
+      },
+      {
+        "id": "D",
+        "text": "to verify"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "ask 人 to do の形で「人に〜するよう依頼する」を表します。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-229",
+    "part": "part5",
+    "sentence": "Because several invoices were missing, the accountant requested a _____ review of the records.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "thorough"
+      },
+      {
+        "id": "B",
+        "text": "thoroughly"
+      },
+      {
+        "id": "C",
+        "text": "thoroughness"
+      },
+      {
+        "id": "D",
+        "text": "thoroughest"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "名詞 review を修飾する形容詞 thorough が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-230",
+    "part": "part5",
+    "sentence": "The supplier can deliver the replacement parts _____ the purchase order is approved.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "once"
+      },
+      {
+        "id": "B",
+        "text": "despite"
+      },
+      {
+        "id": "C",
+        "text": "unless"
+      },
+      {
+        "id": "D",
+        "text": "during"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "once は「いったん〜すると」という条件を表し、承認後に配送できるという文脈に合います。",
+    "difficulty": "medium",
+    "tags": [
+      "conjunction",
+      "condition"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-231",
+    "part": "part5",
+    "sentence": "The training room is equipped with projectors that operate more _____ than the older models.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "efficient"
+      },
+      {
+        "id": "B",
+        "text": "efficiency"
+      },
+      {
+        "id": "C",
+        "text": "efficiently"
+      },
+      {
+        "id": "D",
+        "text": "efficientness"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "動詞 operate を修飾する副詞 efficiently が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "comparison"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-232",
+    "part": "part5",
+    "sentence": "Please contact the front desk if you need assistance _____ the visitor badge.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "with"
+      },
+      {
+        "id": "B",
+        "text": "among"
+      },
+      {
+        "id": "C",
+        "text": "beside"
+      },
+      {
+        "id": "D",
+        "text": "throughout"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "assistance with で「〜に関する支援」を表します。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-233",
+    "part": "part5",
+    "sentence": "The director approved the proposal only after it had been _____ revised by the planning team.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "extent"
+      },
+      {
+        "id": "B",
+        "text": "extensive"
+      },
+      {
+        "id": "C",
+        "text": "extensively"
+      },
+      {
+        "id": "D",
+        "text": "extension"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "受け身の動詞句 had been revised を修飾する副詞 extensively が適切です。",
+    "difficulty": "hard",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-234",
+    "part": "part5",
+    "sentence": "The catalog lists several storage units _____ are suitable for narrow offices.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "that"
+      },
+      {
+        "id": "B",
+        "text": "what"
+      },
+      {
+        "id": "C",
+        "text": "whose"
+      },
+      {
+        "id": "D",
+        "text": "where"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "先行詞 storage units を主語として受ける関係代名詞 that が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "pronoun",
+      "relative-clause"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-235",
+    "part": "part5",
+    "sentence": "The customer service team responded to the complaint _____ and professionally.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "prompt"
+      },
+      {
+        "id": "B",
+        "text": "promptly"
+      },
+      {
+        "id": "C",
+        "text": "promptness"
+      },
+      {
+        "id": "D",
+        "text": "prompts"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "動詞 responded を修飾し、professionally と並列になる副詞 promptly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-236",
+    "part": "part5",
+    "sentence": "Before the software update begins, all users should save _____ work.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "they"
+      },
+      {
+        "id": "B",
+        "text": "them"
+      },
+      {
+        "id": "C",
+        "text": "their"
+      },
+      {
+        "id": "D",
+        "text": "theirs"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "名詞 work を修飾する所有格 their が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "pronoun",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-237",
+    "part": "part5",
+    "sentence": "The committee postponed the announcement _____ it could review the final budget.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "until"
+      },
+      {
+        "id": "B",
+        "text": "among"
+      },
+      {
+        "id": "C",
+        "text": "during"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "until は「〜するまで」を表し、予算を確認するまで発表を延期したという意味になります。",
+    "difficulty": "medium",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-238",
+    "part": "part5",
+    "sentence": "The new packaging is light enough _____ shipping costs without reducing durability.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lower"
+      },
+      {
+        "id": "B",
+        "text": "lowering"
+      },
+      {
+        "id": "C",
+        "text": "to lower"
+      },
+      {
+        "id": "D",
+        "text": "lowered"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "形容詞 enough の後には to 不定詞を続け、結果や目的を表します。",
+    "difficulty": "hard",
+    "tags": [
+      "infinitive",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-239",
+    "part": "part5",
+    "sentence": "The maintenance request was marked as _____ because it involved a broken entrance lock.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "urgent"
+      },
+      {
+        "id": "B",
+        "text": "urgently"
+      },
+      {
+        "id": "C",
+        "text": "urgency"
+      },
+      {
+        "id": "D",
+        "text": "urges"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "marked as の後で状態を表す形容詞 urgent が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-240",
+    "part": "part5",
+    "sentence": "Sales of the desk lamp increased _____ the price reduction was advertised.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "after"
+      },
+      {
+        "id": "B",
+        "text": "between"
+      },
+      {
+        "id": "C",
+        "text": "whereas"
+      },
+      {
+        "id": "D",
+        "text": "without"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "after は「〜した後で」を表し、値下げが告知された後に売上が増えたという流れに合います。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-241",
+    "part": "part5",
+    "sentence": "The regional office expects attendance to be slightly _____ than last year's seminar.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "high"
+      },
+      {
+        "id": "B",
+        "text": "higher"
+      },
+      {
+        "id": "C",
+        "text": "highest"
+      },
+      {
+        "id": "D",
+        "text": "highly"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "than が続くため、比較級 higher が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "adjective"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-242",
+    "part": "part5",
+    "sentence": "The agreement will remain valid _____ both parties sign the revised schedule.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "until"
+      },
+      {
+        "id": "B",
+        "text": "despite"
+      },
+      {
+        "id": "C",
+        "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "whether"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "until は「〜するまで」を表し、両者が改訂予定表に署名するまで有効という意味になります。",
+    "difficulty": "medium",
+    "tags": [
+      "conjunction",
+      "contract"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-243",
+    "part": "part5",
+    "sentence": "The finance assistant prepared a report _____ quarterly expenses for each branch.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "summarize"
+      },
+      {
+        "id": "B",
+        "text": "summarized"
+      },
+      {
+        "id": "C",
+        "text": "summarizing"
+      },
+      {
+        "id": "D",
+        "text": "summarizes"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "report を後ろから修飾し「費用を要約した報告書」を表す現在分詞 summarizing が適切です。",
+    "difficulty": "hard",
+    "tags": [
+      "participle",
+      "monthly-reporting"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-244",
+    "part": "part5",
+    "sentence": "Only employees who have completed the course may access the _____ database.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "confidential"
+      },
+      {
+        "id": "B",
+        "text": "confidently"
+      },
+      {
+        "id": "C",
+        "text": "confidence"
+      },
+      {
+        "id": "D",
+        "text": "confide"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "名詞 database を修飾する形容詞 confidential が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-245",
+    "part": "part5",
+    "sentence": "The installation team finished the network upgrade _____ than expected, so the office reopened at noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "early"
+      },
+      {
+        "id": "B",
+        "text": "earlier"
+      },
+      {
+        "id": "C",
+        "text": "earliest"
+      },
+      {
+        "id": "D",
+        "text": "earliness"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "than expected と比較しているため、比較級 earlier が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "comparison",
+      "time"
+    ],
+    "reviewed": true
   }
 ]

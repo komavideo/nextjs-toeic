@@ -2352,5 +2352,557 @@
       "cafeteria"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-031",
+    "part": "part6",
+    "title": "Payment Schedule Memo",
+    "passage": "To department coordinators,\n\nBeginning July 1, vendor invoices will be paid every Wednesday instead of on the last business day of the month. Please submit approved invoices to the accounting folder by 3:00 P.M. on Monday so the payment list can be checked before processing. Receipts for small purchases should still be uploaded within two business days.\n\nThe new schedule is intended to reduce late-payment fees and give vendors a more predictable timeline. Questions about missing documents should be sent to payments@westbridge.example.",
+    "questions": [
+      {
+        "id": "p6-generated-q-031-01",
+        "prompt": "What is the main purpose of the memo?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To announce a new payment schedule"
+          },
+          {
+            "id": "B",
+            "text": "To introduce a new accounting manager"
+          },
+          {
+            "id": "C",
+            "text": "To cancel all vendor contracts"
+          },
+          {
+            "id": "D",
+            "text": "To request travel expense reports"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文冒頭で vendor invoices will be paid every Wednesday とあり、支払い日程の変更を知らせるメモです。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "purpose",
+          "payment"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-031-02",
+        "prompt": "When should approved invoices be submitted?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By Monday at 3:00 P.M."
+          },
+          {
+            "id": "B",
+            "text": "By Wednesday morning"
+          },
+          {
+            "id": "C",
+            "text": "On the last business day"
+          },
+          {
+            "id": "D",
+            "text": "Within two weeks"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に by 3:00 P.M. on Monday とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "deadline"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-031-03",
+        "prompt": "What should still be uploaded within two business days?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Receipts for small purchases"
+          },
+          {
+            "id": "B",
+            "text": "A list of department coordinators"
+          },
+          {
+            "id": "C",
+            "text": "Vendor bank statements"
+          },
+          {
+            "id": "D",
+            "text": "Meeting room schedules"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Receipts for small purchases should still be uploaded within two business days とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "receipts"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-031-04",
+        "prompt": "What can be inferred about the previous payment schedule?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It sometimes made vendor payments less predictable"
+          },
+          {
+            "id": "B",
+            "text": "It required invoices to be checked on Wednesdays"
+          },
+          {
+            "id": "C",
+            "text": "It was designed for small purchases only"
+          },
+          {
+            "id": "D",
+            "text": "It was managed by vendors directly"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "新しい日程の目的が vendors に a more predictable timeline を与えることなので、以前は予測しにくい面があったと推測できます。",
+        "difficulty": "hard",
+        "tags": [
+          "memo",
+          "inference",
+          "payment"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "payment"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-032",
+    "part": "part6",
+    "title": "Customer Support Shift Update",
+    "passage": "Team members,\n\nCustomer Support will extend its weekday phone coverage from 6:00 P.M. to 8:00 P.M. for six weeks after the launch of the new ordering portal. The evening shift will be staffed by two representatives from the online services group and one representative from billing. A draft rotation has been posted on the staff dashboard.\n\nAnyone who needs to trade an assigned evening shift should contact his or her supervisor by Friday. The schedule will be finalized next Monday, and no changes will be accepted after that date except for emergencies.",
+    "questions": [
+      {
+        "id": "p6-generated-q-032-01",
+        "prompt": "What change is being announced?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Weekday phone coverage will be extended"
+          },
+          {
+            "id": "B",
+            "text": "The billing department will close"
+          },
+          {
+            "id": "C",
+            "text": "The ordering portal will be removed"
+          },
+          {
+            "id": "D",
+            "text": "Weekend shifts will be canceled"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Customer Support will extend its weekday phone coverage とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "detail",
+          "customer-service"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-032-02",
+        "prompt": "How long will the extended coverage last?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "For six weeks after the launch"
+          },
+          {
+            "id": "B",
+            "text": "Until this Friday"
+          },
+          {
+            "id": "C",
+            "text": "For one weekend"
+          },
+          {
+            "id": "D",
+            "text": "Until the end of the year"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に for six weeks after the launch of the new ordering portal とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "time",
+          "customer-service"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-032-03",
+        "prompt": "Who should contact a supervisor by Friday?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Employees who need to trade an evening shift"
+          },
+          {
+            "id": "B",
+            "text": "Customers who cannot use the portal"
+          },
+          {
+            "id": "C",
+            "text": "Vendors delivering new phones"
+          },
+          {
+            "id": "D",
+            "text": "Managers requesting a budget report"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Anyone who needs to trade an assigned evening shift should contact his or her supervisor by Friday とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "staff-schedule"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-032-04",
+        "prompt": "What can be inferred about the schedule after next Monday?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It will usually be considered final"
+          },
+          {
+            "id": "B",
+            "text": "It will be posted for the first time"
+          },
+          {
+            "id": "C",
+            "text": "It will include weekend shifts"
+          },
+          {
+            "id": "D",
+            "text": "It will be managed by customers"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "next Monday に final となり、その後の変更は緊急時を除いて受け付けないため、通常は確定扱いになると推測できます。",
+        "difficulty": "hard",
+        "tags": [
+          "memo",
+          "inference",
+          "staff-schedule"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-033",
+    "part": "part6",
+    "title": "Packaging Supplier Notice",
+    "passage": "Dear Ms. Patel,\n\nThank you for asking about lighter packaging for the countertop mixers. Our new recycled shipping box is 18 percent lighter than the current box but has passed the same drop test. I have arranged for twelve samples to be delivered to your warehouse this Thursday.\n\nPlease test the samples with your standard inserts and let us know by May 22 whether you would like a price quote for the first production order. If you decide to proceed, we can begin regular shipments in late June.\n\nSincerely,\nDaniel Cho",
+    "questions": [
+      {
+        "id": "p6-generated-q-033-01",
+        "prompt": "What product is the supplier discussing?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A recycled shipping box"
+          },
+          {
+            "id": "B",
+            "text": "A countertop mixer"
+          },
+          {
+            "id": "C",
+            "text": "A warehouse shelf"
+          },
+          {
+            "id": "D",
+            "text": "A printed catalog"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Our new recycled shipping box とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "packaging"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-033-02",
+        "prompt": "Why will samples be delivered?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "So they can be tested with standard inserts"
+          },
+          {
+            "id": "B",
+            "text": "So the supplier can repair a warehouse door"
+          },
+          {
+            "id": "C",
+            "text": "So customers can receive free mixers"
+          },
+          {
+            "id": "D",
+            "text": "So a catalog can be mailed to stores"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Please test the samples with your standard inserts とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "purpose",
+          "packaging"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-033-03",
+        "prompt": "By when should Ms. Patel respond about a price quote?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By May 22"
+          },
+          {
+            "id": "B",
+            "text": "This Thursday"
+          },
+          {
+            "id": "C",
+            "text": "In late June"
+          },
+          {
+            "id": "D",
+            "text": "In eighteen days"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に let us know by May 22 whether you would like a price quote とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "deadline",
+          "packaging"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-033-04",
+        "prompt": "What can be inferred about the current shipping box?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It is heavier than the new option"
+          },
+          {
+            "id": "B",
+            "text": "It failed the supplier's drop test"
+          },
+          {
+            "id": "C",
+            "text": "It cannot be used with inserts"
+          },
+          {
+            "id": "D",
+            "text": "It will be delivered this Thursday"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "新しい箱が current box より 18 percent lighter とあるため、現行の箱は新しい選択肢より重いと分かります。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "inference",
+          "packaging"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "email",
+      "packaging"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-034",
+    "part": "part6",
+    "title": "Training Enrollment Reminder",
+    "passage": "To all department managers,\n\nRegistration for the Practical Leadership Workshop closes at 5:00 P.M. on September 9. The workshop is intended for employees who recently began supervising a team or are expected to do so within the next year. Managers must approve each nomination before the training office can reserve a seat.\n\nBecause the room holds only twenty participants, additional nominees will be placed on a waiting list. Confirmation notices will be sent on September 12, after the training office reviews all approved requests.",
+    "questions": [
+      {
+        "id": "p6-generated-q-034-01",
+        "prompt": "What is the reminder mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Registration for a leadership workshop"
+          },
+          {
+            "id": "B",
+            "text": "A change in office seating"
+          },
+          {
+            "id": "C",
+            "text": "A new payroll system"
+          },
+          {
+            "id": "D",
+            "text": "The cancellation of manager meetings"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文冒頭に Registration for the Practical Leadership Workshop closes とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "purpose",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-034-02",
+        "prompt": "Who is the workshop intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Employees who supervise or may soon supervise a team"
+          },
+          {
+            "id": "B",
+            "text": "Customers who recently bought office equipment"
+          },
+          {
+            "id": "C",
+            "text": "Vendors who deliver training materials"
+          },
+          {
+            "id": "D",
+            "text": "Applicants for entry-level accounting jobs"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に employees who recently began supervising a team or are expected to do so within the next year とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "audience",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-034-03",
+        "prompt": "What must managers do before a seat can be reserved?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Approve each nomination"
+          },
+          {
+            "id": "B",
+            "text": "Pay a registration fee"
+          },
+          {
+            "id": "C",
+            "text": "Send a room diagram"
+          },
+          {
+            "id": "D",
+            "text": "Cancel a staff meeting"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Managers must approve each nomination before the training office can reserve a seat とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-034-04",
+        "prompt": "Why might some nominees be placed on a waiting list?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The room holds only twenty participants"
+          },
+          {
+            "id": "B",
+            "text": "The workshop starts before September 9"
+          },
+          {
+            "id": "C",
+            "text": "Managers cannot nominate employees"
+          },
+          {
+            "id": "D",
+            "text": "Confirmation notices have already been sent"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Because the room holds only twenty participants, additional nominees will be placed on a waiting list とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "reason",
+          "staff-training"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "staff-training"
+    ],
+    "reviewed": true
   }
 ]

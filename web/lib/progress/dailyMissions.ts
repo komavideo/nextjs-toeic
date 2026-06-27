@@ -29,9 +29,9 @@ const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
 // ホームのクライアントバンドルへ問題本文・解説を取り込まないよう、
 // 未回答数は Part 別の軽量な総設問数だけで判定する。
 export const questionCountsByPart: Record<ToeicReadingPart, number> = {
-  part5: 230,
-  part6: 62,
-  part7: 72,
+  part5: 250,
+  part6: 78,
+  part7: 96,
 };
 
 // "part5" → "Part 5" のように表示用ラベルへ整形する。
