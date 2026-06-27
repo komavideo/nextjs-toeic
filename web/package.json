@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "pnpm validate:data && pnpm validate:review && next build",
-    "test": "node --no-warnings --test --experimental-strip-types components/shared/modalFocus.test.ts lib/badges/definitions.test.ts lib/badges/evaluate.test.ts lib/badges/metrics.test.ts lib/badges/unlock.test.ts lib/progress/bookmarks.test.ts lib/progress/dailyMissions.test.ts lib/progress/questionNotes.test.ts lib/progress/questionReach.test.ts lib/progress/recordAnswer.test.ts lib/progress/statistics.test.ts lib/progress/tagLinks.test.ts lib/question-bank/grade.test.ts lib/question-bank/sessionQueue.test.ts lib/srs/due.test.ts lib/srs/updateSrs.test.ts lib/storage/progressStorage.test.ts && node scripts/validate-question-data.mjs --self-test && node scripts/validate-review-doc.mjs --self-test",
+    "build": "pnpm check:version && pnpm validate:data && pnpm validate:review && next build",
+    "test": "node --no-warnings --test --experimental-strip-types components/shared/modalFocus.test.ts lib/badges/definitions.test.ts lib/badges/evaluate.test.ts lib/badges/metrics.test.ts lib/badges/unlock.test.ts lib/progress/bookmarks.test.ts lib/progress/dailyMissions.test.ts lib/progress/questionNotes.test.ts lib/progress/questionReach.test.ts lib/progress/recordAnswer.test.ts lib/progress/statistics.test.ts lib/progress/tagLinks.test.ts lib/question-bank/grade.test.ts lib/question-bank/sessionQueue.test.ts lib/srs/due.test.ts lib/srs/updateSrs.test.ts lib/storage/progressStorage.test.ts && node scripts/validate-question-data.mjs --self-test && node scripts/validate-review-doc.mjs --self-test && node scripts/sync-version.mjs --self-test",
+    "sync:version": "node scripts/sync-version.mjs",
+    "check:version": "node scripts/sync-version.mjs --check",
     "validate:data": "node scripts/validate-question-data.mjs",
     "validate:review": "node scripts/validate-review-doc.mjs"
   },
