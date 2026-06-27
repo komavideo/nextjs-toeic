@@ -7038,5 +7038,325 @@
       "collocation"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p5-generated-216",
+    "part": "part5",
+    "sentence": "The updated schedule will be posted _____ the main entrance before the afternoon shift begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "near"
+      },
+      {
+        "id": "B",
+        "text": "nearly"
+      },
+      {
+        "id": "C",
+        "text": "nearby"
+      },
+      {
+        "id": "D",
+        "text": "nearness"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "場所を表して the main entrance を目的語に取る前置詞 near が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "location"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-217",
+    "part": "part5",
+    "sentence": "Employees are encouraged _____ the revised security guidelines before requesting a new access card.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "review"
+      },
+      {
+        "id": "B",
+        "text": "reviewing"
+      },
+      {
+        "id": "C",
+        "text": "to review"
+      },
+      {
+        "id": "D",
+        "text": "reviewed"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "be encouraged to do の形なので to review が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-218",
+    "part": "part5",
+    "sentence": "The marketing team needs a more _____ estimate before approving the advertising budget.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "accuracy"
+      },
+      {
+        "id": "B",
+        "text": "accurate"
+      },
+      {
+        "id": "C",
+        "text": "accurately"
+      },
+      {
+        "id": "D",
+        "text": "accuracies"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "名詞 estimate を修飾する形容詞が必要なので accurate が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-219",
+    "part": "part5",
+    "sentence": "Please contact the front desk _____ you need assistance after 6 P.M.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "if"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "although"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "「必要な場合は」という条件を表す接続詞 if が文脈に合います。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "condition"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-220",
+    "part": "part5",
+    "sentence": "The supplier confirmed that the replacement parts would arrive _____ three business days.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "within"
+      },
+      {
+        "id": "B",
+        "text": "among"
+      },
+      {
+        "id": "C",
+        "text": "during"
+      },
+      {
+        "id": "D",
+        "text": "beside"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "期限の範囲を表す within three business days で「3営業日以内に」という意味です。",
+    "difficulty": "medium",
+    "tags": [
+      "preposition",
+      "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-221",
+    "part": "part5",
+    "sentence": "The new software allows staff _____ customer requests more efficiently.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "track"
+      },
+      {
+        "id": "B",
+        "text": "tracking"
+      },
+      {
+        "id": "C",
+        "text": "tracked"
+      },
+      {
+        "id": "D",
+        "text": "to track"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "allow 人 to do の形なので to track が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "verb-pattern"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-222",
+    "part": "part5",
+    "sentence": "The consultant recommended that the proposal _____ before the final meeting.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "revises"
+      },
+      {
+        "id": "B",
+        "text": "revised"
+      },
+      {
+        "id": "C",
+        "text": "be revised"
+      },
+      {
+        "id": "D",
+        "text": "was revising"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "recommend that 主語 + 原形動詞 の構造で、proposal は修正される対象なので be revised が適切です。",
+    "difficulty": "hard",
+    "tags": [
+      "subjunctive",
+      "passive"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-223",
+    "part": "part5",
+    "sentence": "This year's training session is shorter _____ last year's program.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "than"
+      },
+      {
+        "id": "B",
+        "text": "then"
+      },
+      {
+        "id": "C",
+        "text": "as"
+      },
+      {
+        "id": "D",
+        "text": "so"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "比較級 shorter の後には比較対象を示す than が続きます。",
+    "difficulty": "easy",
+    "tags": [
+      "comparison",
+      "conjunction"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-224",
+    "part": "part5",
+    "sentence": "The warehouse team checked the shipment _____ before signing the delivery form.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "care"
+      },
+      {
+        "id": "B",
+        "text": "careful"
+      },
+      {
+        "id": "C",
+        "text": "carefully"
+      },
+      {
+        "id": "D",
+        "text": "carefulness"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "動詞 checked を修飾する副詞 carefully が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-225",
+    "part": "part5",
+    "sentence": "All applicants must submit proof of _____ before the interview date.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "eligible"
+      },
+      {
+        "id": "B",
+        "text": "eligibly"
+      },
+      {
+        "id": "C",
+        "text": "eligibility"
+      },
+      {
+        "id": "D",
+        "text": "eligibilities"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "前置詞 of の後で proof の内容を表す名詞 eligibility が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "noun",
+      "word-form"
+    ],
+    "reviewed": true
   }
 ]

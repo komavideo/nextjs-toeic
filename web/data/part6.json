@@ -1592,5 +1592,765 @@
       "product-displays"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-021",
+    "part": "part6",
+    "title": "Customer Service Desk Move",
+    "passage": "To all employees,\n\nThe customer service desk will move from the first floor to the north side of the lobby on July 8. The new location will give visitors a clearer path from the main entrance and reduce crowding near the elevators. Signs will be placed in the lobby during the first week of the change.\n\nStaff members who regularly meet visitors should review the updated floor map on the company portal before Friday.",
+    "questions": [
+      {
+        "id": "p6-generated-q-021-01",
+        "prompt": "What is the notice mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A change in desk location"
+          },
+          {
+            "id": "B",
+            "text": "A new elevator inspection"
+          },
+          {
+            "id": "C",
+            "text": "A visitor registration fee"
+          },
+          {
+            "id": "D",
+            "text": "A lobby cleaning schedule"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文では customer service desk がロビー北側へ移動すると説明されています。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "purpose",
+          "relocation"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-021-02",
+        "prompt": "What should some staff members do before Friday?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Reserve a meeting room"
+          },
+          {
+            "id": "B",
+            "text": "Review the updated floor map"
+          },
+          {
+            "id": "C",
+            "text": "Remove signs from the lobby"
+          },
+          {
+            "id": "D",
+            "text": "Submit visitor badges"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に review the updated floor map ... before Friday とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "relocation"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "relocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-022",
+    "part": "part6",
+    "title": "Online Order Policy",
+    "passage": "Dear team,\n\nBeginning next Monday, customers who place online orders will receive a confirmation message before their items are prepared. The message will include the pickup time, the order number, and any notes from the store. This step is intended to reduce cancelled orders caused by incorrect pickup dates.\n\nFor orders of more than $100, the usual handling fee will be waived automatically at checkout.",
+    "questions": [
+      {
+        "id": "p6-generated-q-022-01",
+        "prompt": "Why is the confirmation message being added?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To reduce cancelled orders"
+          },
+          {
+            "id": "B",
+            "text": "To advertise new store hours"
+          },
+          {
+            "id": "C",
+            "text": "To collect employee schedules"
+          },
+          {
+            "id": "D",
+            "text": "To replace all phone orders"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に reduce cancelled orders caused by incorrect pickup dates とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "purpose",
+          "online-orders"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-022-02",
+        "prompt": "When will the handling fee be waived?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "When an order is picked up early"
+          },
+          {
+            "id": "B",
+            "text": "When an order is more than $100"
+          },
+          {
+            "id": "C",
+            "text": "When a customer calls the store"
+          },
+          {
+            "id": "D",
+            "text": "When a message is not received"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に For orders of more than $100, the usual handling fee will be waived とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "online-orders"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "online-orders"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-023",
+    "part": "part6",
+    "title": "Maintenance Access Notice",
+    "passage": "To employees in the east wing,\n\nTechnicians will inspect the ventilation system above the workstations on Wednesday morning. To give the technicians enough space, please remove personal items from the top shelves before leaving on Tuesday. Computers and chairs do not need to be moved.\n\nEmployees who need a quiet place during the inspection may use the temporary work area in Training Room B.",
+    "questions": [
+      {
+        "id": "p6-generated-q-023-01",
+        "prompt": "Why are employees asked to clear the top shelves?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To prepare for new computers"
+          },
+          {
+            "id": "B",
+            "text": "To help technicians reach the ventilation system"
+          },
+          {
+            "id": "C",
+            "text": "To make room for training materials"
+          },
+          {
+            "id": "D",
+            "text": "To replace old office chairs"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "換気設備の点検のため、技術者が作業できるスペースを確保する必要があると読み取れます。",
+        "difficulty": "hard",
+        "tags": [
+          "notice",
+          "inference",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-023-02",
+        "prompt": "Where can employees work during the inspection?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "In the main lobby"
+          },
+          {
+            "id": "B",
+            "text": "In Training Room B"
+          },
+          {
+            "id": "C",
+            "text": "In the storage area"
+          },
+          {
+            "id": "D",
+            "text": "In the customer lounge"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に temporary work area in Training Room B とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "notice",
+      "facility-repairs"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-024",
+    "part": "part6",
+    "title": "Training Schedule Update",
+    "passage": "To all branch managers,\n\nThe product knowledge training originally planned for June 12 has been moved to June 19. The change was necessary because the large conference room will be used for a regional sales meeting on the original date. The training agenda and instructor will remain the same.\n\nPlease remind your team members to confirm their attendance through the learning portal by Monday.",
+    "questions": [
+      {
+        "id": "p6-generated-q-024-01",
+        "prompt": "Which session has been moved?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A product knowledge training session"
+          },
+          {
+            "id": "B",
+            "text": "A regional sales meeting"
+          },
+          {
+            "id": "C",
+            "text": "An instructor interview"
+          },
+          {
+            "id": "D",
+            "text": "A branch opening event"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文冒頭に product knowledge training が June 19 に変更されたとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "detail",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-024-02",
+        "prompt": "Why was the date changed?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The instructor is unavailable all month"
+          },
+          {
+            "id": "B",
+            "text": "The learning portal will close"
+          },
+          {
+            "id": "C",
+            "text": "The conference room is needed for another meeting"
+          },
+          {
+            "id": "D",
+            "text": "The agenda has not been approved"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "本文に the large conference room will be used for a regional sales meeting とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "reason",
+          "staff-training"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "staff-training"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-025",
+    "part": "part6",
+    "title": "Invoice Payment Reminder",
+    "passage": "Dear Ms. Ortega,\n\nThis is a reminder that invoice 4587 for the design consultation is due on May 30. The invoice was sent to your accounting department on May 10, along with a copy of the final project summary. Payment can be made by bank transfer or by credit card through the client portal.\n\nIf payment has already been completed, please disregard this message.",
+    "questions": [
+      {
+        "id": "p6-generated-q-025-01",
+        "prompt": "What is the purpose of the message?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To remind a client about a payment"
+          },
+          {
+            "id": "B",
+            "text": "To introduce a new designer"
+          },
+          {
+            "id": "C",
+            "text": "To cancel a project summary"
+          },
+          {
+            "id": "D",
+            "text": "To request bank information"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は支払期限が近い請求書について知らせるリマインダーです。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "purpose",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-025-02",
+        "prompt": "What should Ms. Ortega do if payment has already been made?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Send the project summary again"
+          },
+          {
+            "id": "B",
+            "text": "Disregard the message"
+          },
+          {
+            "id": "C",
+            "text": "Call the design team"
+          },
+          {
+            "id": "D",
+            "text": "Change the due date"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に If payment has already been completed, please disregard this message とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "email",
+          "detail",
+          "billing"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "billing"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-026",
+    "part": "part6",
+    "title": "Employee Referral Program",
+    "passage": "To all staff,\n\nHuman Resources has reopened the employee referral program for the customer support department. Staff members may recommend candidates by submitting the referral form and the candidate's resume through the HR portal. The bonus is available only if the referred candidate is hired and completes the first 90 days of employment.\n\nThe referral form must be submitted before the candidate applies directly on the company Web site.",
+    "questions": [
+      {
+        "id": "p6-generated-q-026-01",
+        "prompt": "What condition must be met for an employee to receive the bonus?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The candidate must complete 90 days of employment"
+          },
+          {
+            "id": "B",
+            "text": "The employee must transfer departments"
+          },
+          {
+            "id": "C",
+            "text": "The resume must be mailed to customers"
+          },
+          {
+            "id": "D",
+            "text": "The job opening must be cancelled"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に hired and completes the first 90 days of employment とあり、採用後90日勤務することが条件です。",
+        "difficulty": "hard",
+        "tags": [
+          "notice",
+          "condition",
+          "human-resources"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-026-02",
+        "prompt": "When must the referral form be submitted?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "After the candidate's first review"
+          },
+          {
+            "id": "B",
+            "text": "Before the candidate applies directly"
+          },
+          {
+            "id": "C",
+            "text": "After the department closes"
+          },
+          {
+            "id": "D",
+            "text": "Before the HR portal opens"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に before the candidate applies directly on the company Web site とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "human-resources"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "notice",
+      "human-resources"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-027",
+    "part": "part6",
+    "title": "Shipping Delay Update",
+    "passage": "Dear customer,\n\nYour order of replacement display panels has been delayed because the shipment is undergoing an additional customs inspection. We now expect the panels to leave the port on Thursday and arrive at our warehouse early next week. You will receive a tracking number as soon as the warehouse team scans the shipment.\n\nIf this delay affects a scheduled installation, contact your account representative to discuss a temporary rental option.",
+    "questions": [
+      {
+        "id": "p6-generated-q-027-01",
+        "prompt": "Why has the shipment been delayed?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It is being inspected by customs"
+          },
+          {
+            "id": "B",
+            "text": "It was sent to the wrong customer"
+          },
+          {
+            "id": "C",
+            "text": "It includes damaged warehouse equipment"
+          },
+          {
+            "id": "D",
+            "text": "It has not been ordered yet"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に undergoing an additional customs inspection とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "reason",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-027-02",
+        "prompt": "What can the customer discuss if the delay affects an installation?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A larger warehouse space"
+          },
+          {
+            "id": "B",
+            "text": "A different customs document"
+          },
+          {
+            "id": "C",
+            "text": "A temporary rental option"
+          },
+          {
+            "id": "D",
+            "text": "A new product catalog"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "本文末に contact your account representative to discuss a temporary rental option とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "detail",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "email",
+      "delivery-planning"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-028",
+    "part": "part6",
+    "title": "Meeting Room Booking",
+    "passage": "To all employees,\n\nThe booking process for conference rooms has been updated. Starting July 1, employees must reserve rooms through the calendar tool instead of sending requests to the reception desk. Reservations made before July 1 will remain valid and do not need to be entered again.\n\nPlease cancel any room you no longer need so that other teams can use the space.",
+    "questions": [
+      {
+        "id": "p6-generated-q-028-01",
+        "prompt": "What will employees use to reserve conference rooms?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The calendar tool"
+          },
+          {
+            "id": "B",
+            "text": "A printed visitor form"
+          },
+          {
+            "id": "C",
+            "text": "A customer survey"
+          },
+          {
+            "id": "D",
+            "text": "The warehouse desk"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に reserve rooms through the calendar tool とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "detail",
+          "meeting-rooms"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-028-02",
+        "prompt": "What is stated about reservations made before July 1?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "They must be paid for in advance"
+          },
+          {
+            "id": "B",
+            "text": "They will remain valid"
+          },
+          {
+            "id": "C",
+            "text": "They will be cancelled automatically"
+          },
+          {
+            "id": "D",
+            "text": "They must be approved by reception"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に Reservations made before July 1 will remain valid とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "meeting-rooms"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "meeting-rooms"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-029",
+    "part": "part6",
+    "title": "Supplier Survey Request",
+    "passage": "Dear purchasing team,\n\nPlease complete the supplier evaluation survey by the end of the month. The survey asks about delivery accuracy, product quality, response time, and billing clarity. Your answers will help the purchasing department decide which suppliers should be invited to next quarter's contract discussions.\n\nIf you worked with more than one supplier this month, submit a separate survey for each one.",
+    "questions": [
+      {
+        "id": "p6-generated-q-029-01",
+        "prompt": "What is one topic included in the survey?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Delivery accuracy"
+          },
+          {
+            "id": "B",
+            "text": "Employee vacation plans"
+          },
+          {
+            "id": "C",
+            "text": "Office seating charts"
+          },
+          {
+            "id": "D",
+            "text": "Advertising slogans"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に delivery accuracy が調査項目の一つとして挙げられています。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-029-02",
+        "prompt": "Why will the purchasing department use the survey answers?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To choose suppliers for contract discussions"
+          },
+          {
+            "id": "B",
+            "text": "To schedule employee training"
+          },
+          {
+            "id": "C",
+            "text": "To redesign the company portal"
+          },
+          {
+            "id": "D",
+            "text": "To arrange a customer event"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に decide which suppliers should be invited to next quarter's contract discussions とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "purpose",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "vendor-meetings"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-030",
+    "part": "part6",
+    "title": "Cafeteria Menu Trial",
+    "passage": "To building tenants,\n\nThe cafeteria will test a new lunch menu during the first two weeks of August. The trial menu will include several vegetarian dishes and a smaller set of daily specials. Prices will remain the same during the trial period.\n\nComment cards will be available near the cashier, and feedback collected during the trial will be reviewed before the final menu is selected.",
+    "questions": [
+      {
+        "id": "p6-generated-q-030-01",
+        "prompt": "What will the cafeteria test in August?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A new lunch menu"
+          },
+          {
+            "id": "B",
+            "text": "A new parking system"
+          },
+          {
+            "id": "C",
+            "text": "A tenant directory"
+          },
+          {
+            "id": "D",
+            "text": "A meeting room layout"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文冒頭に test a new lunch menu とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "detail",
+          "cafeteria"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-030-02",
+        "prompt": "How can tenants provide feedback?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By calling the building owner"
+          },
+          {
+            "id": "B",
+            "text": "By using comment cards"
+          },
+          {
+            "id": "C",
+            "text": "By attending a training session"
+          },
+          {
+            "id": "D",
+            "text": "By sending invoices"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に Comment cards will be available near the cashier とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "cafeteria"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "cafeteria"
+    ],
+    "reviewed": true
   }
 ]
