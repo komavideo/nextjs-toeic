@@ -11,7 +11,7 @@ import {
 import { createBookmarkSessionQueue } from "@/lib/question-bank/sessionQueue";
 import { loadProgressState } from "@/lib/storage/progressStorage";
 import type { FlatQuestion } from "@/lib/question-bank/flatten";
-import type { AnswerResult } from "@/types/progress";
+import type { AnswerResult, ProgressState } from "@/types/progress";
 import { BookmarkReviewList } from "./BookmarkReviewList";
 import { ReviewEmptyState } from "./ReviewEmptyState";
 import { ReviewList } from "./ReviewList";
@@ -31,6 +31,9 @@ export function ReviewClient() {
   const [dueDateGroups, setDueDateGroups] =
     useState<SrsDueDateGroups>(emptyDueDateGroups);
   const [answers, setAnswers] = useState<AnswerResult[]>([]);
+  const [questionNotes, setQuestionNotes] = useState<
+    ProgressState["questionNotes"]
+  >({});
   const [bookmarkedQuestions, setBookmarkedQuestions] = useState<FlatQuestion[]>(
     [],
   );
@@ -49,6 +52,7 @@ export function ReviewClient() {
 
     setDueDateGroups(getSrsDueDateGroups(result.state.srs));
     setAnswers(result.state.answers);
+    setQuestionNotes(result.state.questionNotes);
     setBookmarkedQuestions(createBookmarkSessionQueue(result.state));
     setLoadError(null);
   }, []);
@@ -64,6 +68,7 @@ export function ReviewClient() {
         onInitialized={() => {
           setDueDateGroups(emptyDueDateGroups);
           setAnswers([]);
+          setQuestionNotes({});
           setBookmarkedQuestions([]);
           setLoadError(null);
         }}
@@ -91,7 +96,11 @@ export function ReviewClient() {
           <>
             {dueDateSummary.hasScheduledItems ? (
               <>
-                <ReviewList answers={answers} dueDateGroups={dueDateGroups} />
+                <ReviewList
+                  answers={answers}
+                  dueDateGroups={dueDateGroups}
+                  questionNotes={questionNotes}
+                />
                 {dueDateSummary.hasDueItems ? (
                   <Button className="w-full" href="/practice?mode=review">
                     復習を開始
@@ -103,6 +112,7 @@ export function ReviewClient() {
               <>
                 <BookmarkReviewList
                   answers={answers}
+                  questionNotes={questionNotes}
                   questions={bookmarkedQuestions}
                 />
                 <Button className="w-full" href="/practice?mode=bookmark">

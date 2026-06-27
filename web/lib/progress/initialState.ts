@@ -9,5 +9,6 @@ export function createInitialProgressState(): ProgressState {
     answers: [],
     srs: {},
     bookmarkedQuestionIds: [],
+    questionNotes: {},
   };
 }

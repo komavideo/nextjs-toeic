@@ -47,7 +47,7 @@ export function SettingsClient() {
         </Panel>
         <Panel title="進捗データ">
           <p className="text-base leading-[26px] text-[var(--text-secondary)]">
-            進捗データはこの端末内の localStorage に保存されます。ログインやクラウド同期は行いません。
+            回答履歴、復習予定、ブックマーク、学習メモはこの端末内の localStorage に保存されます。ログインやクラウド同期は行いません。
           </p>
           {resetError ? (
             <p className="mt-3 text-sm font-semibold text-[var(--danger)]">
@@ -69,7 +69,7 @@ export function SettingsClient() {
         </Panel>
       </div>
       <Modal
-        description="端末内に保存された回答履歴、復習予定、ブックマークを削除します。この操作は元に戻せません。"
+        description="端末内に保存された回答履歴、復習予定、ブックマーク、学習メモを削除します。この操作は元に戻せません。"
         onClose={() => setResetOpen(false)}
         onPrimary={executeReset}
         onSecondary={() => setResetOpen(false)}

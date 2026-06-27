@@ -1,4 +1,5 @@
 import { createInitialProgressState } from "@/lib/progress/initialState";
+import { questionNoteMaxLength } from "@/lib/progress/questionNotes";
 import type {
   AnswerResult,
   LegacyProgressStorageKey,
@@ -7,6 +8,10 @@ import type {
   ProgressStorageKey,
   SrsState,
 } from "@/types/progress";
+
+type StoredProgressStateV2 = Omit<ProgressState, "questionNotes"> & {
+  questionNotes?: unknown;
+};
 
 export const progressStorageKey: ProgressStorageKey = "toeicReadingProgress:v2";
 export const legacyProgressStorageKey: LegacyProgressStorageKey =
@@ -42,6 +47,20 @@ function getLocalStorage(): Storage | undefined {
 
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
+}
+
+function isQuestionNotesRecord(value: unknown): value is Record<string, string> {
+  if (!isRecord(value)) {
+    return false;
+  }
+
+  return Object.entries(value).every(
+    ([questionId, note]) =>
+      questionId.length > 0 &&
+      typeof note === "string" &&
+      note.trim().length > 0 &&
+      note.length <= questionNoteMaxLength,
+  );
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -137,7 +156,9 @@ function isProgressStateV1(value: unknown): value is ProgressStateV1 {
   return isRecord(value) && value.version === 1 && hasValidProgressBase(value);
 }
 
-function isProgressState(value: unknown): value is ProgressState {
+function isStoredProgressStateV2(
+  value: unknown,
+): value is StoredProgressStateV2 {
   const bookmarkedQuestionIds = isRecord(value)
     ? (value as { bookmarkedQuestionIds?: unknown }).bookmarkedQuestionIds
     : undefined;
@@ -150,6 +171,22 @@ function isProgressState(value: unknown): value is ProgressState {
   );
 }
 
+function normalizeProgressState(value: unknown): ProgressState | undefined {
+  if (!isStoredProgressStateV2(value)) {
+    return undefined;
+  }
+
+  if (value.questionNotes === undefined) {
+    return { ...value, questionNotes: {} };
+  }
+
+  if (!isQuestionNotesRecord(value.questionNotes)) {
+    return undefined;
+  }
+
+  return { ...value, questionNotes: value.questionNotes };
+}
+
 function migrateProgressStateV1(state: ProgressStateV1): ProgressState {
   return {
     version: 2,
@@ -160,18 +197,22 @@ function migrateProgressStateV1(state: ProgressStateV1): ProgressState {
     answers: state.answers,
     srs: state.srs,
     bookmarkedQuestionIds: [],
+    questionNotes: {},
   };
 }
 
-function saveMigratedProgressState(
+function saveLoadedProgressState(
   storage: Storage,
   state: ProgressState,
+  removeLegacy: boolean,
 ): void {
   try {
     storage.setItem(progressStorageKey, JSON.stringify(state));
-    storage.removeItem(legacyProgressStorageKey);
+    if (removeLegacy) {
+      storage.removeItem(legacyProgressStorageKey);
+    }
   } catch {
-    // 移行保存に失敗しても、読み込めた進捗は画面上で利用できるようにする。
+    // 補完・移行保存に失敗しても、読み込めた進捗は画面上で利用できるようにする。
   }
 }
 
@@ -193,12 +234,20 @@ export function loadProgressState(): LoadProgressResult {
   if (rawValue !== null) {
     try {
       const parsedValue: unknown = JSON.parse(rawValue);
+      const normalizedState = normalizeProgressState(parsedValue);
 
-      if (!isProgressState(parsedValue)) {
+      if (!normalizedState) {
         return { ok: false, reason: "version-mismatch" };
       }
 
-      return { ok: true, state: parsedValue, source: "storage" };
+      if (
+        isRecord(parsedValue) &&
+        (parsedValue as { questionNotes?: unknown }).questionNotes === undefined
+      ) {
+        saveLoadedProgressState(storage, normalizedState, false);
+      }
+
+      return { ok: true, state: normalizedState, source: "storage" };
     } catch {
       return { ok: false, reason: "parse-error" };
     }
@@ -224,7 +273,7 @@ export function loadProgressState(): LoadProgressResult {
     }
 
     const migratedState = migrateProgressStateV1(parsedValue);
-    saveMigratedProgressState(storage, migratedState);
+    saveLoadedProgressState(storage, migratedState, true);
 
     return { ok: true, state: migratedState, source: "migration" };
   } catch {

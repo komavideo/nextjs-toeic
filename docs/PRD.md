@@ -296,6 +296,7 @@ type ProgressState = {
   answers: AnswerResult[];
   srs: Record<string, SrsState>;
   bookmarkedQuestionIds: string[];
+  questionNotes: Record<string, string>;
 };
 ```
 

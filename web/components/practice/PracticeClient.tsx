@@ -7,6 +7,10 @@ import {
   bookmarkSaveErrorMessage,
   toggleBookmarkedQuestionId,
 } from "@/lib/progress/bookmarks";
+import {
+  questionNoteSaveErrorMessage,
+  saveQuestionNote,
+} from "@/lib/progress/questionNotes";
 import { recordAnswer } from "@/lib/progress/recordAnswer";
 import { gradeQuestion } from "@/lib/question-bank/grade";
 import {
@@ -68,6 +72,12 @@ function bookmarkedQuestionIdsFromProgressResult(
   progressResult?: LoadProgressResult,
 ): string[] {
   return progressResult?.ok ? progressResult.state.bookmarkedQuestionIds : [];
+}
+
+function questionNotesFromProgressResult(
+  progressResult?: LoadProgressResult,
+): Record<string, string> {
+  return progressResult?.ok ? progressResult.state.questionNotes : {};
 }
 
 function loadProgressResultForPracticeMode(
@@ -430,7 +440,12 @@ export function PracticeClient() {
   const [bookmarkedQuestionIds, setBookmarkedQuestionIds] = useState<string[]>(
     [],
   );
+  const [questionNotes, setQuestionNotes] = useState<Record<string, string>>({});
   const [bookmarkError, setBookmarkError] = useState<string | null>(null);
+  const [questionNoteError, setQuestionNoteError] = useState<string | null>(null);
+  const [questionNoteFeedback, setQuestionNoteFeedback] = useState<string | null>(
+    null,
+  );
   const [pendingNavigationHref, setPendingNavigationHref] = useState<string | null>(
     null,
   );
@@ -448,8 +463,11 @@ export function PracticeClient() {
     setBookmarkedQuestionIds(
       bookmarkedQuestionIdsFromProgressResult(progressResult),
     );
-    // 新しいセッションへ遷移したら、前セッションのブックマーク保存エラーは持ち越さない。
+    setQuestionNotes(questionNotesFromProgressResult(progressResult));
+    // 新しいセッションへ遷移したら、前セッションの保存エラーは持ち越さない。
     setBookmarkError(null);
+    setQuestionNoteError(null);
+    setQuestionNoteFeedback(null);
   }, [searchParamKey]);
 
   useEffect(() => {
@@ -528,6 +546,50 @@ export function PracticeClient() {
     setBookmarkError(null);
   }
 
+  function saveCurrentQuestionNote(questionId: string, note: string) {
+    const loadResult = loadProgressState();
+
+    if (!loadResult.ok) {
+      setQuestionNoteError(
+        questionNoteSaveErrorMessage(
+          "load",
+          loadResult.reason === "unavailable",
+        ),
+      );
+      setQuestionNoteFeedback(null);
+      return;
+    }
+
+    const noteResult = saveQuestionNote(loadResult.state, questionId, note);
+
+    if (!noteResult.ok) {
+      setQuestionNoteError("学習メモは200文字以内で入力してください。");
+      setQuestionNoteFeedback(null);
+      return;
+    }
+
+    const saveResult = saveProgressState(noteResult.state);
+
+    if (!saveResult.ok) {
+      setQuestionNoteError(
+        questionNoteSaveErrorMessage(
+          "save",
+          saveResult.reason === "unavailable",
+        ),
+      );
+      setQuestionNoteFeedback(null);
+      return;
+    }
+
+    setQuestionNotes(noteResult.state.questionNotes);
+    setQuestionNoteError(null);
+    setQuestionNoteFeedback(
+      noteResult.note === null
+        ? "学習メモを削除しました。"
+        : "学習メモを保存しました。",
+    );
+  }
+
   function submitCurrentAnswer(session: ActivePracticeSession) {
     const currentQuestion = session.queue[session.currentIndex];
 
@@ -557,8 +619,10 @@ export function PracticeClient() {
       answeredAt,
     });
 
-    // 新しい解説画面へ入る前に、別問題のブックマーク保存エラーを持ち越さない。
+    // 新しい解説画面へ入る前に、別問題の保存エラーを持ち越さない。
     setBookmarkError(null);
+    setQuestionNoteError(null);
+    setQuestionNoteFeedback(null);
     setState({
       screen: "explain",
       session: {
@@ -644,6 +708,7 @@ export function PracticeClient() {
     }
 
     setBookmarkedQuestionIds(nextProgress.bookmarkedQuestionIds);
+    setQuestionNotes(nextProgress.questionNotes);
     setState({
       screen: "result",
       session,
@@ -658,6 +723,8 @@ export function PracticeClient() {
     // 解説画面を離れる時点で、この問題のブックマーク保存エラーをクリアし、
     // 次の問題の解説画面や結果画面へ持ち越さない。
     setBookmarkError(null);
+    setQuestionNoteError(null);
+    setQuestionNoteFeedback(null);
     const nextIndex = session.currentIndex + 1;
 
     if (nextIndex < session.queue.length) {
@@ -746,7 +813,10 @@ export function PracticeClient() {
         message={state.message}
         onInitialized={() => {
           setBookmarkedQuestionIds([]);
+          setQuestionNotes({});
           setBookmarkError(null);
+          setQuestionNoteError(null);
+          setQuestionNoteFeedback(null);
           setState({ screen: "select" });
         }}
         onRetry={() => {
@@ -767,7 +837,10 @@ export function PracticeClient() {
           setBookmarkedQuestionIds(
             bookmarkedQuestionIdsFromProgressResult(progressResult),
           );
+          setQuestionNotes(questionNotesFromProgressResult(progressResult));
           setBookmarkError(null);
+          setQuestionNoteError(null);
+          setQuestionNoteFeedback(null);
         }}
         preserveSession={Boolean(state.session)}
         storageUnavailable={state.storageUnavailable}
@@ -788,7 +861,13 @@ export function PracticeClient() {
           answer={state.answer}
           bookmarkError={bookmarkError}
           bookmarked={bookmarkedQuestionIds.includes(currentQuestion.questionId)}
+          note={questionNotes[currentQuestion.questionId] ?? ""}
+          noteError={questionNoteError}
+          noteFeedback={questionNoteFeedback}
           onNext={() => moveNextFromExplanation(state.session)}
+          onSaveNote={(note) =>
+            saveCurrentQuestionNote(currentQuestion.questionId, note)
+          }
           onToggleBookmark={() => toggleBookmark(currentQuestion.questionId)}
           question={currentQuestion}
           srsPreview={state.srsPreview}
@@ -809,6 +888,7 @@ export function PracticeClient() {
           setState(createRestartedSessionState(state.session.condition))
         }
         onToggleBookmark={toggleBookmark}
+        questionNotes={questionNotes}
         reviewScheduledCount={state.reviewScheduledCount}
         totalAnswered={state.totalAnswered}
         totalCorrect={state.totalCorrect}
@@ -839,7 +919,10 @@ export function PracticeClient() {
           setBookmarkedQuestionIds(
             bookmarkedQuestionIdsFromProgressResult(progressResult),
           );
+          setQuestionNotes(questionNotesFromProgressResult(progressResult));
           setBookmarkError(null);
+          setQuestionNoteError(null);
+          setQuestionNoteFeedback(null);
           setState(
             createRunnableSessionState(
               createPartSession(
