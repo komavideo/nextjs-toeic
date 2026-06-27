@@ -92,6 +92,23 @@ test("前後の空白を取り除いて学習メモを保存する", () => {
   assert.equal(result.note, "語順に注意する。");
 });
 
+test("200文字ちょうどの学習メモは保存できる", () => {
+  const exactNote = "a".repeat(questionNoteMaxLength);
+  const result = saveQuestionNote(
+    createInitialProgressState(),
+    "question-001",
+    exactNote,
+  );
+
+  assert.equal(result.ok, true);
+  if (!result.ok) {
+    return;
+  }
+
+  assert.equal(result.note, exactNote);
+  assert.equal(result.note?.length, questionNoteMaxLength);
+});
+
 test("200文字を超える学習メモは保存しない", () => {
   const result = saveQuestionNote(
     createInitialProgressState(),
@@ -100,6 +117,13 @@ test("200文字を超える学習メモは保存しない", () => {
   );
 
   assert.deepEqual(result, { ok: false, reason: "too-long" });
+});
+
+test("学習メモが存在しない問題IDでは空文字を返す", () => {
+  assert.equal(
+    getQuestionNote(createInitialProgressState(), "question-unknown"),
+    "",
+  );
 });
 
 test("学習メモ保存エラーのメッセージを状況別に生成する", () => {

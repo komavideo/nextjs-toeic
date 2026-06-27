@@ -134,7 +134,16 @@ export function ExplanationView({
               </span>
             ) : null}
           </div>
-          <Button className="mt-3" onClick={() => onSaveNote(noteDraft)}>
+          <Button
+            className="mt-3"
+            onClick={() => {
+              // 保存時にドラフトを保存値（trim 済み）へ同期し、
+              // 末尾空白のみの差分で「未保存」表示が残らないようにする
+              const trimmedNote = noteDraft.trim();
+              setNoteDraft(trimmedNote);
+              onSaveNote(trimmedNote);
+            }}
+          >
             メモを保存
           </Button>
           {noteFeedback && !hasUnsavedNote ? (
