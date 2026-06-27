@@ -85,22 +85,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the inventory procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
+          },
+          {
+            "id": "C",
+            "text": "A change to the inventory procedure"
           },
           {
             "id": "D",
             "text": "A cancelled product launch"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文は inventory 手順の更新について説明しています。",
         "difficulty": "easy",
         "tags": [
@@ -120,18 +120,18 @@
           },
           {
             "id": "B",
-            "text": "By Friday afternoon"
+            "text": "After the next quarter begins"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "By Friday afternoon"
           },
           {
             "id": "D",
             "text": "Only after the session ends"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "C",
         "explanation": "本文末に by Friday afternoon と明記されています。",
         "difficulty": "medium",
         "tags": [
@@ -161,22 +161,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the customer service procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "A cancelled product launch"
+          },
+          {
+            "id": "D",
+            "text": "A change to the customer service procedure"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文は customer service 手順の更新について説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -237,22 +237,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the staff training procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "A cancelled product launch"
+          },
+          {
+            "id": "D",
+            "text": "A change to the staff training procedure"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文は staff training 手順の更新について説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -389,22 +389,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the store layout procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "A cancelled product launch"
+          },
+          {
+            "id": "D",
+            "text": "A change to the store layout procedure"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文は store layout 手順の更新について説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -652,18 +652,18 @@
           },
           {
             "id": "B",
-            "text": "By Friday afternoon"
-          },
-          {
-            "id": "C",
             "text": "After the next quarter begins"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "Only after the session ends"
+          },
+          {
+            "id": "D",
+            "text": "By Friday afternoon"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "D",
         "explanation": "本文末に by Friday afternoon と明記されています。",
         "difficulty": "medium",
         "tags": [
@@ -693,22 +693,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the vendor meetings procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
+          },
+          {
+            "id": "C",
+            "text": "A change to the vendor meetings procedure"
           },
           {
             "id": "D",
             "text": "A cancelled product launch"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文は vendor meetings 手順の更新について説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -769,22 +769,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the product displays procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
+          },
+          {
+            "id": "C",
+            "text": "A change to the product displays procedure"
           },
           {
             "id": "D",
             "text": "A cancelled product launch"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文は product displays 手順の更新について説明しています。",
         "difficulty": "easy",
         "tags": [
@@ -804,18 +804,18 @@
           },
           {
             "id": "B",
-            "text": "By Friday afternoon"
+            "text": "After the next quarter begins"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "By Friday afternoon"
           },
           {
             "id": "D",
             "text": "Only after the session ends"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "C",
         "explanation": "本文末に by Friday afternoon と明記されています。",
         "difficulty": "medium",
         "tags": [
@@ -845,22 +845,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the inventory procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
+          },
+          {
+            "id": "C",
+            "text": "A change to the inventory procedure"
           },
           {
             "id": "D",
             "text": "A cancelled product launch"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文は inventory 手順の更新について説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -880,18 +880,18 @@
           },
           {
             "id": "B",
-            "text": "By Friday afternoon"
+            "text": "After the next quarter begins"
           },
           {
             "id": "C",
-            "text": "After the next quarter begins"
+            "text": "By Friday afternoon"
           },
           {
             "id": "D",
             "text": "Only after the session ends"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "C",
         "explanation": "本文末に by Friday afternoon と明記されています。",
         "difficulty": "medium",
         "tags": [
@@ -921,22 +921,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the customer service procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "A cancelled product launch"
+          },
+          {
+            "id": "D",
+            "text": "A change to the customer service procedure"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文は customer service 手順の更新について説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -1149,22 +1149,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the store layout procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "A cancelled product launch"
+          },
+          {
+            "id": "D",
+            "text": "A change to the store layout procedure"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文は store layout 手順の更新について説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -1301,22 +1301,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the facility repairs procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "A cancelled product launch"
+          },
+          {
+            "id": "D",
+            "text": "A change to the facility repairs procedure"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文は facility repairs 手順の更新について説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -1377,22 +1377,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the monthly reporting procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
+          },
+          {
+            "id": "C",
+            "text": "A change to the monthly reporting procedure"
           },
           {
             "id": "D",
             "text": "A cancelled product launch"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文は monthly reporting 手順の更新について説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -1453,22 +1453,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the vendor meetings procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
+          },
+          {
+            "id": "C",
+            "text": "A change to the vendor meetings procedure"
           },
           {
             "id": "D",
             "text": "A cancelled product launch"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文は vendor meetings 手順の更新について説明しています。",
         "difficulty": "easy",
         "tags": [
@@ -1529,22 +1529,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A change to the product displays procedure"
-          },
-          {
-            "id": "B",
             "text": "A request for annual leave"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A change in building ownership"
+          },
+          {
+            "id": "C",
+            "text": "A change to the product displays procedure"
           },
           {
             "id": "D",
             "text": "A cancelled product launch"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文は product displays 手順の更新について説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -1640,18 +1640,18 @@
           },
           {
             "id": "B",
-            "text": "Review the updated floor map"
-          },
-          {
-            "id": "C",
             "text": "Remove signs from the lobby"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "Submit visitor badges"
+          },
+          {
+            "id": "D",
+            "text": "Review the updated floor map"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "D",
         "explanation": "本文末に review the updated floor map ... before Friday とあります。",
         "difficulty": "medium",
         "tags": [
@@ -1681,22 +1681,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "To reduce cancelled orders"
-          },
-          {
-            "id": "B",
             "text": "To advertise new store hours"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "To collect employee schedules"
+          },
+          {
+            "id": "C",
+            "text": "To reduce cancelled orders"
           },
           {
             "id": "D",
             "text": "To replace all phone orders"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文に reduce cancelled orders caused by incorrect pickup dates とあります。",
         "difficulty": "medium",
         "tags": [
@@ -1833,22 +1833,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A product knowledge training session"
-          },
-          {
-            "id": "B",
             "text": "A regional sales meeting"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "An instructor interview"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "A branch opening event"
+          },
+          {
+            "id": "D",
+            "text": "A product knowledge training session"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文冒頭に product knowledge training が June 19 に変更されたとあります。",
         "difficulty": "easy",
         "tags": [
@@ -1944,18 +1944,18 @@
           },
           {
             "id": "B",
-            "text": "Disregard the message"
-          },
-          {
-            "id": "C",
             "text": "Call the design team"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "Change the due date"
+          },
+          {
+            "id": "D",
+            "text": "Disregard the message"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "D",
         "explanation": "本文末に If payment has already been completed, please disregard this message とあります。",
         "difficulty": "easy",
         "tags": [
@@ -1985,22 +1985,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "The candidate must complete 90 days of employment"
-          },
-          {
-            "id": "B",
             "text": "The employee must transfer departments"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "The resume must be mailed to customers"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "The job opening must be cancelled"
+          },
+          {
+            "id": "D",
+            "text": "The candidate must complete 90 days of employment"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に hired and completes the first 90 days of employment とあり、採用後90日勤務することが条件です。",
         "difficulty": "hard",
         "tags": [
@@ -2061,22 +2061,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "It is being inspected by customs"
-          },
-          {
-            "id": "B",
             "text": "It was sent to the wrong customer"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "It includes damaged warehouse equipment"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "It has not been ordered yet"
+          },
+          {
+            "id": "D",
+            "text": "It is being inspected by customs"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に undergoing an additional customs inspection とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2289,22 +2289,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A new lunch menu"
-          },
-          {
-            "id": "B",
             "text": "A new parking system"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A tenant directory"
+          },
+          {
+            "id": "C",
+            "text": "A new lunch menu"
           },
           {
             "id": "D",
             "text": "A meeting room layout"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文冒頭に test a new lunch menu とあります。",
         "difficulty": "easy",
         "tags": [
@@ -2324,18 +2324,18 @@
           },
           {
             "id": "B",
-            "text": "By using comment cards"
+            "text": "By attending a training session"
           },
           {
             "id": "C",
-            "text": "By attending a training session"
+            "text": "By using comment cards"
           },
           {
             "id": "D",
             "text": "By sending invoices"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "C",
         "explanation": "本文に Comment cards will be available near the cashier とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2503,22 +2503,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Weekday phone coverage will be extended"
-          },
-          {
-            "id": "B",
             "text": "The billing department will close"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "The ordering portal will be removed"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "Weekend shifts will be canceled"
+          },
+          {
+            "id": "D",
+            "text": "Weekday phone coverage will be extended"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に Customer Support will extend its weekday phone coverage とあります。",
         "difficulty": "easy",
         "tags": [
@@ -2534,22 +2534,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "For six weeks after the launch"
-          },
-          {
-            "id": "B",
             "text": "Until this Friday"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "For one weekend"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "Until the end of the year"
+          },
+          {
+            "id": "D",
+            "text": "For six weeks after the launch"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に for six weeks after the launch of the new ordering portal とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2565,22 +2565,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Employees who need to trade an evening shift"
-          },
-          {
-            "id": "B",
             "text": "Customers who cannot use the portal"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Vendors delivering new phones"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "Managers requesting a budget report"
+          },
+          {
+            "id": "D",
+            "text": "Employees who need to trade an evening shift"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に Anyone who needs to trade an assigned evening shift should contact his or her supervisor by Friday とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2596,22 +2596,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "It will usually be considered final"
-          },
-          {
-            "id": "B",
             "text": "It will be posted for the first time"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "It will include weekend shifts"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "It will be managed by customers"
+          },
+          {
+            "id": "D",
+            "text": "It will usually be considered final"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "next Monday に final となり、その後の変更は緊急時を除いて受け付けないため、通常は確定扱いになると推測できます。",
         "difficulty": "hard",
         "tags": [
@@ -2672,22 +2672,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "So they can be tested with standard inserts"
-          },
-          {
-            "id": "B",
             "text": "So the supplier can repair a warehouse door"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "So customers can receive free mixers"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "So a catalog can be mailed to stores"
+          },
+          {
+            "id": "D",
+            "text": "So they can be tested with standard inserts"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に Please test the samples with your standard inserts とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2703,22 +2703,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "By May 22"
-          },
-          {
-            "id": "B",
             "text": "This Thursday"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "In late June"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "In eighteen days"
+          },
+          {
+            "id": "D",
+            "text": "By May 22"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に let us know by May 22 whether you would like a price quote とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2779,22 +2779,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Registration for a leadership workshop"
-          },
-          {
-            "id": "B",
             "text": "A change in office seating"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A new payroll system"
+          },
+          {
+            "id": "C",
+            "text": "Registration for a leadership workshop"
           },
           {
             "id": "D",
             "text": "The cancellation of manager meetings"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文冒頭に Registration for the Practical Leadership Workshop closes とあります。",
         "difficulty": "easy",
         "tags": [
@@ -2810,22 +2810,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Employees who supervise or may soon supervise a team"
-          },
-          {
-            "id": "B",
             "text": "Customers who recently bought office equipment"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Vendors who deliver training materials"
+          },
+          {
+            "id": "C",
+            "text": "Employees who supervise or may soon supervise a team"
           },
           {
             "id": "D",
             "text": "Applicants for entry-level accounting jobs"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文に employees who recently began supervising a team or are expected to do so within the next year とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2841,22 +2841,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Approve each nomination"
-          },
-          {
-            "id": "B",
             "text": "Pay a registration fee"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Send a room diagram"
+          },
+          {
+            "id": "C",
+            "text": "Approve each nomination"
           },
           {
             "id": "D",
             "text": "Cancel a staff meeting"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文に Managers must approve each nomination before the training office can reserve a seat とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2872,22 +2872,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "The room holds only twenty participants"
-          },
-          {
-            "id": "B",
             "text": "The workshop starts before September 9"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Managers cannot nominate employees"
+          },
+          {
+            "id": "C",
+            "text": "The room holds only twenty participants"
           },
           {
             "id": "D",
             "text": "Confirmation notices have already been sent"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文に Because the room holds only twenty participants, additional nominees will be placed on a waiting list とあります。",
         "difficulty": "easy",
         "tags": [
@@ -2902,6 +2902,696 @@
     "tags": [
       "memo",
       "staff-training"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-035",
+    "part": "part6",
+    "title": "Invoice Submission Procedure",
+    "passage": "To all department assistants,\n\nBeginning August 1, all vendor invoices must be sent to accounting@northbridge.example. Please include the purchase order number in the subject line. Invoices that arrive without this information may be [1] until the department confirms the order.\n\nIf a supplier asks about payment status, direct the supplier to the accounting portal rather than replying from a personal mailbox. This procedure is intended to [2] duplicate inquiries and keep payment records in one place. Department assistants should also upload any signed delivery receipts, [3] accounting staff can match them with the invoice.\n\nThe finance office will review the first month of submissions and [4] minor adjustments if needed.",
+    "questions": [
+      {
+        "id": "p6-generated-q-035-01",
+        "prompt": "Which word best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "delayed"
+          },
+          {
+            "id": "B",
+            "text": "delay"
+          },
+          {
+            "id": "C",
+            "text": "delaying"
+          },
+          {
+            "id": "D",
+            "text": "delays"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "Invoices are delayed という受け身の形になるため、過去分詞 delayed が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "passive-voice",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-035-02",
+        "prompt": "Which word best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "reduce"
+          },
+          {
+            "id": "B",
+            "text": "reduces"
+          },
+          {
+            "id": "C",
+            "text": "reduced"
+          },
+          {
+            "id": "D",
+            "text": "reduction"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "is intended to の後には動詞の原形が続くため reduce が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "infinitive",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-035-03",
+        "prompt": "Which phrase best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "so that"
+          },
+          {
+            "id": "B",
+            "text": "even though"
+          },
+          {
+            "id": "C",
+            "text": "instead of"
+          },
+          {
+            "id": "D",
+            "text": "as soon"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "領収書をアップロードする目的を表すため so that が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "conjunction",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-035-04",
+        "prompt": "Which word best completes blank [4]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "make"
+          },
+          {
+            "id": "B",
+            "text": "making"
+          },
+          {
+            "id": "C",
+            "text": "made"
+          },
+          {
+            "id": "D",
+            "text": "makes"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "will review and make の並列になるため、動詞の原形 make が適切です。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "parallel-structure",
+          "billing"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "billing"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-036",
+    "part": "part6",
+    "title": "Delivery Window Notice",
+    "passage": "Notice to shipping partners,\n\nThe loading area behind Building C will be [1] closed on July 6 while the pavement is repaired. Drivers should use Gate 2 for all morning deliveries. The usual entrance will reopen at noon [2] the repair crew expects the work to take only four hours.\n\nExtra carts will be [3] near Gate 2 to help drivers move packages to the receiving desk. Please remind drivers to check in with security before unloading any items.\n\n[4]",
+    "questions": [
+      {
+        "id": "p6-generated-q-036-01",
+        "prompt": "Which word best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "temporary"
+          },
+          {
+            "id": "B",
+            "text": "temporarily"
+          },
+          {
+            "id": "C",
+            "text": "temporariness"
+          },
+          {
+            "id": "D",
+            "text": "temperate"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "closed を修飾する副詞が必要なため temporarily が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "adverb",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-036-02",
+        "prompt": "Which word best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "because"
+          },
+          {
+            "id": "B",
+            "text": "unless"
+          },
+          {
+            "id": "C",
+            "text": "although"
+          },
+          {
+            "id": "D",
+            "text": "whereas"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "正午に再開できる理由を説明しているため because が適切です。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "conjunction",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-036-03",
+        "prompt": "Which word best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "availability"
+          },
+          {
+            "id": "B",
+            "text": "available"
+          },
+          {
+            "id": "C",
+            "text": "availably"
+          },
+          {
+            "id": "D",
+            "text": "avail"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "Extra carts will be available で「追加の台車が利用可能になる」という意味になるため available が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "adjective",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-036-04",
+        "prompt": "Which sentence best completes blank [4]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Thank you for adjusting your delivery route during the repair."
+          },
+          {
+            "id": "B",
+            "text": "The accounting office will issue refunds next week."
+          },
+          {
+            "id": "C",
+            "text": "All product labels must be redesigned by July 6."
+          },
+          {
+            "id": "D",
+            "text": "The morning deliveries have been permanently canceled."
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文は配送経路の一時変更を知らせる通知なので、協力への謝意を示す文が締めとして自然です。",
+        "difficulty": "hard",
+        "tags": [
+          "notice",
+          "sentence-insertion",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "delivery-planning"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-037",
+    "part": "part6",
+    "title": "Remote Work Request Policy",
+    "passage": "To all employees,\n\nEmployees who have completed three months of service are [1] to request a remote work arrangement for up to two days per week. Each request requires manager [2] and must include a brief explanation of how customer service coverage will be maintained.\n\nRequests should be submitted at least two weeks in advance [3] an emergency makes advance notice impossible. After the first month of remote work, Human Resources recommends that a revised schedule [4] if team coverage needs to be adjusted.",
+    "questions": [
+      {
+        "id": "p6-generated-q-037-01",
+        "prompt": "Which word best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "eligibility"
+          },
+          {
+            "id": "B",
+            "text": "eligibly"
+          },
+          {
+            "id": "C",
+            "text": "enabled"
+          },
+          {
+            "id": "D",
+            "text": "eligible"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "are eligible to request で「申請する資格がある」という意味になるため eligible が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "adjective",
+          "policy"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-037-02",
+        "prompt": "Which word best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "approve"
+          },
+          {
+            "id": "B",
+            "text": "approved"
+          },
+          {
+            "id": "C",
+            "text": "approval"
+          },
+          {
+            "id": "D",
+            "text": "approving"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "requires の目的語になる名詞が必要なため approval が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "word-form",
+          "policy"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-037-03",
+        "prompt": "Which word best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "despite"
+          },
+          {
+            "id": "B",
+            "text": "therefore"
+          },
+          {
+            "id": "C",
+            "text": "whether"
+          },
+          {
+            "id": "D",
+            "text": "unless"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "緊急時を例外として示しているため unless が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "condition",
+          "policy"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-037-04",
+        "prompt": "Which phrase best completes blank [4]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "submitting"
+          },
+          {
+            "id": "B",
+            "text": "is submitted"
+          },
+          {
+            "id": "C",
+            "text": "be submitted"
+          },
+          {
+            "id": "D",
+            "text": "to submit"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "recommends that ... の後では原形を使う仮定法現在になり、schedule は提出される側なので be submitted が適切です。",
+        "difficulty": "hard",
+        "tags": [
+          "memo",
+          "subjunctive",
+          "policy"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "policy"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-038",
+    "part": "part6",
+    "title": "Conference Room Booking Update",
+    "passage": "To: All staff\nFrom: Office Services\n\nThe conference room booking calendar has been moved to the staff portal. The old spreadsheet will remain [1] through Friday, but new reservations should be entered only in the portal. Please check room capacity [2] sending a meeting invitation, especially for client visits.\n\nThe portal blocks double bookings automatically [3] scheduling conflicts. Users will receive a confirmation email after a request is approved.\n\n[4]",
+    "questions": [
+      {
+        "id": "p6-generated-q-038-01",
+        "prompt": "Which word best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "availability"
+          },
+          {
+            "id": "B",
+            "text": "availably"
+          },
+          {
+            "id": "C",
+            "text": "avail"
+          },
+          {
+            "id": "D",
+            "text": "available"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "remain の補語として状態を表す形容詞 available が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "adjective",
+          "meeting-rooms"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-038-02",
+        "prompt": "Which word best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "beside"
+          },
+          {
+            "id": "B",
+            "text": "beyond"
+          },
+          {
+            "id": "C",
+            "text": "below"
+          },
+          {
+            "id": "D",
+            "text": "before"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "会議招待を送る前に定員を確認するという時間関係を表すため before が適切です。",
+        "difficulty": "easy",
+        "tags": [
+          "email",
+          "conjunction",
+          "meeting-rooms"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-038-03",
+        "prompt": "Which phrase best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "prevented"
+          },
+          {
+            "id": "B",
+            "text": "prevention"
+          },
+          {
+            "id": "C",
+            "text": "preventing"
+          },
+          {
+            "id": "D",
+            "text": "to prevent"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "二重予約をブロックする目的を表すため to prevent が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "infinitive",
+          "meeting-rooms"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-038-04",
+        "prompt": "Which sentence best completes blank [4]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The cafeteria menu will be changed next month."
+          },
+          {
+            "id": "B",
+            "text": "All client visits have been canceled permanently."
+          },
+          {
+            "id": "C",
+            "text": "The old spreadsheet will accept new reservations indefinitely."
+          },
+          {
+            "id": "D",
+            "text": "Contact Office Services if a room does not appear in the portal."
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "本文は予約システム移行の案内なので、ポータル上の表示不備に関する問い合わせ先を示す文が自然です。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "sentence-insertion",
+          "meeting-rooms"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "meeting-rooms"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-039",
+    "part": "part6",
+    "title": "Packaging Update for Retailers",
+    "passage": "Dear retail partners,\n\nWe are introducing new packaging for the Hillcrest Tea Sampler, [1] with shipments leaving our warehouse on October 3. The updated box is designed [2] paper use while keeping the same product quantity.\n\n[3] the package size is smaller, the barcode and product code will remain unchanged. Additional shelf labels [4] in the first shipment so that store teams can update displays quickly.\n\nPlease contact your account representative if you need images of the new package for your online catalog.",
+    "questions": [
+      {
+        "id": "p6-generated-q-039-01",
+        "prompt": "Which word best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "effectively"
+          },
+          {
+            "id": "B",
+            "text": "effectiveness"
+          },
+          {
+            "id": "C",
+            "text": "effective"
+          },
+          {
+            "id": "D",
+            "text": "effect"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "effective with shipments ... で「出荷分から有効」という意味になるため effective が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "adjective",
+          "packaging"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-039-02",
+        "prompt": "Which phrase best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "reduced"
+          },
+          {
+            "id": "B",
+            "text": "reduction"
+          },
+          {
+            "id": "C",
+            "text": "to reduce"
+          },
+          {
+            "id": "D",
+            "text": "reducing"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "箱の設計目的を表すため to reduce が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "infinitive",
+          "packaging"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-039-03",
+        "prompt": "Which word best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Because"
+          },
+          {
+            "id": "B",
+            "text": "Until"
+          },
+          {
+            "id": "C",
+            "text": "Although"
+          },
+          {
+            "id": "D",
+            "text": "Unless"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "箱のサイズは小さくなるがバーコードは変わらない、という対比を表すため Although が適切です。",
+        "difficulty": "easy",
+        "tags": [
+          "email",
+          "contrast",
+          "packaging"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-039-04",
+        "prompt": "Which phrase best completes blank [4]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "will include"
+          },
+          {
+            "id": "B",
+            "text": "will be included"
+          },
+          {
+            "id": "C",
+            "text": "including"
+          },
+          {
+            "id": "D",
+            "text": "to be including"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "Additional shelf labels は同梱される側なので、受け身の will be included が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "passive-voice",
+          "packaging"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "packaging"
     ],
     "reviewed": true
   }

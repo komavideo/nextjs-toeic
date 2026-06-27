@@ -33,6 +33,10 @@ function validateQuestionItem(
   const questionId =
     typeof item.id === "string" ? item.id : context.questionId ?? "unknown";
   const nextContext = { ...context, questionId };
+  const hasValidCorrectChoiceId =
+    typeof item.correctChoiceId === "string" &&
+    validChoiceIds.includes(item.correctChoiceId as ChoiceId);
+  let correctChoiceIndex: number | undefined;
 
   if (typeof item.id !== "string" || item.id.length === 0) {
     addError(errors, "設問 ID が空または文字列ではありません。", context);
@@ -40,6 +44,10 @@ function validateQuestionItem(
 
   if (typeof item.prompt !== "string" || item.prompt.length === 0) {
     addError(errors, "設問文が空または文字列ではありません。", nextContext);
+  }
+
+  if (!hasValidCorrectChoiceId) {
+    addError(errors, "correctChoiceId が A-D ではありません。", nextContext);
   }
 
   if (!Array.isArray(choices) || choices.length !== 4) {
@@ -53,6 +61,14 @@ function validateQuestionItem(
       .filter(isRecord)
       .map((choice) => choice.text)
       .filter((text): text is string => typeof text === "string");
+
+    if (
+      choices.some(
+        (choice, index) => !isRecord(choice) || choice.id !== validChoiceIds[index],
+      )
+    ) {
+      addError(errors, "choices 配列の選択肢 ID 順が A-D ではありません。", nextContext);
+    }
 
     if (new Set(choiceTexts).size !== choiceTexts.length) {
       addError(errors, "選択肢本文が重複しています。", nextContext);
@@ -79,8 +95,40 @@ function validateQuestionItem(
       }
     }
 
-    if (!choiceIds.includes(item.correctChoiceId as ChoiceId)) {
-      addError(errors, "correctChoiceId が存在する選択肢を参照していません。", nextContext);
+    if (hasValidCorrectChoiceId) {
+      const correctChoiceIndexes = choices
+        .map((choice, index) =>
+          isRecord(choice) && choice.id === item.correctChoiceId ? index : -1,
+        )
+        .filter((index) => index >= 0);
+
+      if (correctChoiceIndexes.length === 0) {
+        addError(errors, "correctChoiceId が存在する選択肢を参照していません。", nextContext);
+      } else if (correctChoiceIndexes.length > 1) {
+        addError(
+          errors,
+          "correctChoiceId が choices 配列内の選択肢を一意に参照していません。",
+          nextContext,
+        );
+      } else {
+        correctChoiceIndex = correctChoiceIndexes[0];
+      }
+    }
+  }
+
+  if (Object.prototype.hasOwnProperty.call(item, "answer")) {
+    if (
+      !Number.isInteger(item.answer) ||
+      (item.answer as number) < 0 ||
+      (item.answer as number) >= validChoiceIds.length
+    ) {
+      addError(errors, "answer が 0-3 の整数ではありません。", nextContext);
+    } else if (correctChoiceIndex !== undefined && item.answer !== correctChoiceIndex) {
+      addError(
+        errors,
+        "answer が正解の choices 配列インデックスと一致していません。",
+        nextContext,
+      );
     }
   }
 
