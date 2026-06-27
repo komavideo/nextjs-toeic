@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { AppShell } from "@/components/shared/AppShell";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "5分リーディングドリル",
   description: "短時間で Reading の弱点を継続的に潰す学習アプリ",
+};
+
+// アドレスバーなどのテーマカラー（ブランドの青緑）
+export const viewport: Viewport = {
+  themeColor: "#176B87",
 };
 
 export default function RootLayout({
