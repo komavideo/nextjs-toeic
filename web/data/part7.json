@@ -1592,5 +1592,1145 @@
       "product-displays"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-021",
+    "part": "part7",
+    "title": "Museum Cafe Opening",
+    "passage": "The Riverside Museum will open its new garden cafe on September 3. The cafe will serve sandwiches, seasonal soup, and locally roasted coffee from 10:00 A.M. to 5:00 P.M. daily. Museum members will receive a 10 percent discount during the first month.\n\nGroups of eight or more should request seating at least three days in advance. Reservation requests can be sent to cafe@riverside.example with the preferred date, time, and number of guests.",
+    "questions": [
+      {
+        "id": "p7-generated-q-021-01",
+        "prompt": "What is being announced?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The opening of a cafe"
+          },
+          {
+            "id": "B",
+            "text": "The closing of a museum"
+          },
+          {
+            "id": "C",
+            "text": "A new ticket price"
+          },
+          {
+            "id": "D",
+            "text": "A volunteer orientation"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文冒頭に will open its new garden cafe とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "purpose",
+          "facility"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-021-02",
+        "prompt": "What information should groups include in a reservation request?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Their membership numbers only"
+          },
+          {
+            "id": "B",
+            "text": "The preferred date, time, and number of guests"
+          },
+          {
+            "id": "C",
+            "text": "A list of museum exhibits"
+          },
+          {
+            "id": "D",
+            "text": "The name of a coffee supplier"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に preferred date, time, and number of guests を送るよう記載されています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "reservation"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "facility"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-022",
+    "part": "part7",
+    "title": "Delivery Service Email",
+    "passage": "Dear Mr. Chen,\n\nThank you for choosing GreenBox Delivery for your office supply order. Due to heavy rain expected tomorrow afternoon, your delivery window has been moved from 3:00 P.M.-5:00 P.M. to 10:00 A.M.-12:00 P.M. The driver will call the phone number on the order form before arriving.\n\nIf the new time is not convenient, reply to this message by 6:00 P.M. today and we will arrange delivery for the following morning at no additional charge.",
+    "questions": [
+      {
+        "id": "p7-generated-q-022-01",
+        "prompt": "Why was the delivery window changed?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The customer ordered more supplies"
+          },
+          {
+            "id": "B",
+            "text": "Heavy rain is expected"
+          },
+          {
+            "id": "C",
+            "text": "The driver lost the order form"
+          },
+          {
+            "id": "D",
+            "text": "The office will be closed all day"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に Due to heavy rain expected tomorrow afternoon とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "reason",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-022-02",
+        "prompt": "What should Mr. Chen do if the new time is inconvenient?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Call the driver after arrival"
+          },
+          {
+            "id": "B",
+            "text": "Reply by 6:00 P.M. today"
+          },
+          {
+            "id": "C",
+            "text": "Submit a new order form"
+          },
+          {
+            "id": "D",
+            "text": "Pay an additional delivery charge"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末に reply to this message by 6:00 P.M. today とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "delivery-planning"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-023",
+    "part": "part7",
+    "title": "Warranty Claim Response",
+    "passage": "Dear Ms. Laurent,\n\nWe have reviewed your warranty claim for the Model K desk lamp. Our inspection shows that the power cord was replaced with a part that was not supplied by our company. Because the warranty does not cover products that have been modified with third-party components, we cannot approve the free replacement request.\n\nHowever, we can repair the lamp for a reduced service fee of $18 if you send it to our service center by August 20.",
+    "questions": [
+      {
+        "id": "p7-generated-q-023-01",
+        "prompt": "Why was the free replacement request not approved?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The lamp was purchased after August 20"
+          },
+          {
+            "id": "B",
+            "text": "The model is no longer produced"
+          },
+          {
+            "id": "C",
+            "text": "The product had been modified with another company's part"
+          },
+          {
+            "id": "D",
+            "text": "The customer did not include a service fee"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "第三者製の部品で改造された製品は保証対象外と記載されています。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "inference",
+          "warranty"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-023-02",
+        "prompt": "What does the company offer to do?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Repair the lamp for a reduced fee"
+          },
+          {
+            "id": "B",
+            "text": "Refund the full purchase price"
+          },
+          {
+            "id": "C",
+            "text": "Send a third-party power cord"
+          },
+          {
+            "id": "D",
+            "text": "Extend the warranty for one year"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文末に repair the lamp for a reduced service fee of $18 とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "warranty"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "email",
+      "warranty"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-024",
+    "part": "part7",
+    "title": "Hotel Shuttle Notice",
+    "passage": "The Parkview Hotel offers a complimentary shuttle to the Central Convention Hall every weekday morning. The shuttle departs from the side entrance at 7:30 A.M. and 8:15 A.M. Guests should show their room key to the driver before boarding.\n\nReturn service from the convention hall is available at 5:45 P.M. only. Guests who need transportation at other times may ask the front desk to arrange a taxi.",
+    "questions": [
+      {
+        "id": "p7-generated-q-024-01",
+        "prompt": "Where does the morning shuttle depart from?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The side entrance"
+          },
+          {
+            "id": "B",
+            "text": "The convention hall lobby"
+          },
+          {
+            "id": "C",
+            "text": "The parking garage"
+          },
+          {
+            "id": "D",
+            "text": "The hotel restaurant"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に departs from the side entrance とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "location",
+          "transportation"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-024-02",
+        "prompt": "What should guests show before boarding?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A taxi receipt"
+          },
+          {
+            "id": "B",
+            "text": "A convention badge"
+          },
+          {
+            "id": "C",
+            "text": "Their room key"
+          },
+          {
+            "id": "D",
+            "text": "A printed schedule"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "本文に show their room key to the driver とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "transportation"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "transportation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-025",
+    "part": "part7",
+    "title": "Job Fair Announcement",
+    "passage": "The Harbor Career Center will host a job fair for recent graduates on October 6. Representatives from local technology, retail, and hospitality companies will conduct short interviews and answer questions about entry-level positions. Participants should bring at least five copies of their resume.\n\nBecause interview spaces are limited, advance registration is required by September 28. Registered participants will receive a schedule of company sessions two days before the event.",
+    "questions": [
+      {
+        "id": "p7-generated-q-025-01",
+        "prompt": "Who is the job fair intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Recent graduates"
+          },
+          {
+            "id": "B",
+            "text": "Hotel guests"
+          },
+          {
+            "id": "C",
+            "text": "Technology investors"
+          },
+          {
+            "id": "D",
+            "text": "Retired teachers"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文冒頭に for recent graduates とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "announcement",
+          "audience",
+          "human-resources"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-025-02",
+        "prompt": "Why is advance registration required?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Resume printing is not available"
+          },
+          {
+            "id": "B",
+            "text": "Interview spaces are limited"
+          },
+          {
+            "id": "C",
+            "text": "The career center is moving"
+          },
+          {
+            "id": "D",
+            "text": "Companies need hotel rooms"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に Because interview spaces are limited, advance registration is required とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "announcement",
+          "reason",
+          "human-resources"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "announcement",
+      "human-resources"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-026",
+    "part": "part7",
+    "title": "Community Class Listing",
+    "passage": "Beginning July 11, the Lakeside Community Center will offer a four-week beginner photography class on Thursday evenings. The class will cover camera settings, lighting, and simple editing techniques. Participants may use either a digital camera or a smartphone.\n\nThe class fee is $35 and includes access to editing software during class hours. Registration closes when the class reaches 18 participants.",
+    "questions": [
+      {
+        "id": "p7-generated-q-026-01",
+        "prompt": "What is the class about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Beginner photography"
+          },
+          {
+            "id": "B",
+            "text": "Basic accounting"
+          },
+          {
+            "id": "C",
+            "text": "Community gardening"
+          },
+          {
+            "id": "D",
+            "text": "Smartphone repair"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に beginner photography class とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "listing",
+          "topic",
+          "class"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-026-02",
+        "prompt": "What is included in the class fee?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A new digital camera"
+          },
+          {
+            "id": "B",
+            "text": "Access to editing software during class hours"
+          },
+          {
+            "id": "C",
+            "text": "Transportation to the center"
+          },
+          {
+            "id": "D",
+            "text": "A printed photography magazine"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に includes access to editing software during class hours とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "listing",
+          "detail",
+          "class"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "listing",
+      "class"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-027",
+    "part": "part7",
+    "title": "Product Safety Notice",
+    "passage": "Notice to customers:\n\nA small number of BrightWay portable heaters sold between March 1 and April 15 may overheat when used for more than four consecutive hours. Customers with units marked BW-240 on the bottom label should stop using the product and contact BrightWay Customer Support for a free inspection.\n\nThe notice does not apply to wall-mounted heaters or to portable heaters purchased after April 15.",
+    "questions": [
+      {
+        "id": "p7-generated-q-027-01",
+        "prompt": "What should owners of affected heaters do?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Use the heaters only at night"
+          },
+          {
+            "id": "B",
+            "text": "Stop using them and contact customer support"
+          },
+          {
+            "id": "C",
+            "text": "Return them to any furniture store"
+          },
+          {
+            "id": "D",
+            "text": "Replace the bottom label"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "対象製品の所有者は stop using the product and contact BrightWay Customer Support と案内されています。",
+        "difficulty": "hard",
+        "tags": [
+          "notice",
+          "instruction",
+          "product-safety"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-027-02",
+        "prompt": "Which products are affected by the notice?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Wall-mounted heaters purchased in May"
+          },
+          {
+            "id": "B",
+            "text": "Portable heaters marked BW-240 sold between March 1 and April 15"
+          },
+          {
+            "id": "C",
+            "text": "All BrightWay kitchen appliances"
+          },
+          {
+            "id": "D",
+            "text": "Portable heaters purchased after April 15"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文は3月1日から4月15日に販売され、底面ラベルが BW-240 の携帯ヒーターを対象にしています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "product-safety"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "notice",
+      "product-safety"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-028",
+    "part": "part7",
+    "title": "Restaurant Group Booking",
+    "passage": "Thank you for your interest in booking a private dinner at Olive Square. For groups of 12 or more, we require a deposit of $60 to hold the reservation. The deposit will be applied to the final bill on the day of the event.\n\nCancellations made at least 48 hours before the reservation time will receive a full deposit refund. Cancellations after that time will be charged the deposit because ingredients are ordered in advance.",
+    "questions": [
+      {
+        "id": "p7-generated-q-028-01",
+        "prompt": "What is required for groups of 12 or more?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A $60 deposit"
+          },
+          {
+            "id": "B",
+            "text": "A signed employment form"
+          },
+          {
+            "id": "C",
+            "text": "A separate room fee"
+          },
+          {
+            "id": "D",
+            "text": "A membership card"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に For groups of 12 or more, we require a deposit of $60 とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "booking",
+          "detail",
+          "restaurant"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-028-02",
+        "prompt": "Why are late cancellations charged the deposit?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The restaurant orders ingredients in advance"
+          },
+          {
+            "id": "B",
+            "text": "The group receives a membership discount"
+          },
+          {
+            "id": "C",
+            "text": "The final bill has already been paid"
+          },
+          {
+            "id": "D",
+            "text": "The restaurant closes within 48 hours"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文末に because ingredients are ordered in advance とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "booking",
+          "reason",
+          "restaurant"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "booking",
+      "restaurant"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-029",
+    "part": "part7",
+    "title": "Library Room Policy",
+    "passage": "The Westbrook Library has updated its study room policy. Library members may reserve a room for up to two hours per day. Rooms are intended for study, tutoring, and small community meetings, and they may not be used for sales presentations.\n\nReservations can be made online up to seven days in advance. If a group is more than 15 minutes late, the room may be released to another member.",
+    "questions": [
+      {
+        "id": "p7-generated-q-029-01",
+        "prompt": "Who may reserve a study room?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Library members"
+          },
+          {
+            "id": "B",
+            "text": "Only library employees"
+          },
+          {
+            "id": "C",
+            "text": "Restaurant customers"
+          },
+          {
+            "id": "D",
+            "text": "All city contractors"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Library members may reserve a room とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "policy",
+          "audience",
+          "library"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-029-02",
+        "prompt": "What may happen if a group is more than 15 minutes late?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The room may be released to another member"
+          },
+          {
+            "id": "B",
+            "text": "The reservation will be extended"
+          },
+          {
+            "id": "C",
+            "text": "The library will close for the day"
+          },
+          {
+            "id": "D",
+            "text": "A sales presentation will begin"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文末に the room may be released to another member とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "policy",
+          "condition",
+          "library"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "policy",
+      "library"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-030",
+    "part": "part7",
+    "title": "Travel Agency Itinerary Update",
+    "passage": "Dear tour participant,\n\nWe have adjusted the second day of your coastal tour because the Harbor Lighthouse will be closed for maintenance on June 18. The group will visit the Maritime History Center in the morning instead, and the lighthouse visit has been moved to the final afternoon of the tour.\n\nNo additional payment is required. Updated itinerary cards will be distributed when participants check in at the hotel.",
+    "questions": [
+      {
+        "id": "p7-generated-q-030-01",
+        "prompt": "Why was the itinerary adjusted?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A lighthouse will be closed for maintenance"
+          },
+          {
+            "id": "B",
+            "text": "Participants requested a cheaper hotel"
+          },
+          {
+            "id": "C",
+            "text": "The travel agency lost the itinerary cards"
+          },
+          {
+            "id": "D",
+            "text": "The Maritime History Center closed permanently"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Harbor Lighthouse will be closed for maintenance とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "reason",
+          "travel"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-030-02",
+        "prompt": "What can be inferred about the lighthouse visit?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It has been removed from the tour"
+          },
+          {
+            "id": "B",
+            "text": "It will take place later than originally planned"
+          },
+          {
+            "id": "C",
+            "text": "It requires an additional payment"
+          },
+          {
+            "id": "D",
+            "text": "It will be replaced by hotel check-in"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "lighthouse visit は final afternoon に移動されたため、当初より後で実施されると分かります。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "inference",
+          "travel"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "email",
+      "travel"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-031",
+    "part": "part7",
+    "title": "Parking Permit Renewal",
+    "passage": "Employees who park in the South Garage must renew their parking permits by July 25. Renewal forms are available on the facilities page of the company intranet. After completing the form, employees should bring it to the security office with their current permit.\n\nNew permits will be valid from August 1 through January 31. Vehicles without a valid permit may be directed to the visitor lot.",
+    "questions": [
+      {
+        "id": "p7-generated-q-031-01",
+        "prompt": "What must employees renew?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Parking permits"
+          },
+          {
+            "id": "B",
+            "text": "Visitor badges"
+          },
+          {
+            "id": "C",
+            "text": "Training certificates"
+          },
+          {
+            "id": "D",
+            "text": "Library cards"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文冒頭に renew their parking permits とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "topic",
+          "parking"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-031-02",
+        "prompt": "Where should employees take the completed renewal form?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The visitor lot"
+          },
+          {
+            "id": "B",
+            "text": "The security office"
+          },
+          {
+            "id": "C",
+            "text": "The South Garage entrance"
+          },
+          {
+            "id": "D",
+            "text": "The facilities page"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に bring it to the security office とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "parking"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "parking"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-032",
+    "part": "part7",
+    "title": "Customer Review Response",
+    "passage": "Dear Ms. Singh,\n\nThank you for your comments about your recent stay at the Maple Street Inn. We are sorry that the breakfast area was crowded during your visit. A youth sports tournament was taking place nearby, and many teams stayed at the inn that weekend.\n\nTo improve service during busy periods, we have added a second coffee station and will open the meeting room as extra seating when occupancy is high. We hope to welcome you again soon.",
+    "questions": [
+      {
+        "id": "p7-generated-q-032-01",
+        "prompt": "What problem did Ms. Singh most likely mention?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The breakfast area was too crowded"
+          },
+          {
+            "id": "B",
+            "text": "The inn did not accept teams"
+          },
+          {
+            "id": "C",
+            "text": "The meeting room was closed for repairs"
+          },
+          {
+            "id": "D",
+            "text": "The coffee station was removed"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "返信内で breakfast area was crowded と謝罪しているため、この点を指摘したと推測できます。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "inference",
+          "customer-service"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-032-02",
+        "prompt": "What change has the inn made?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It has added a second coffee station"
+          },
+          {
+            "id": "B",
+            "text": "It has stopped hosting sports teams"
+          },
+          {
+            "id": "C",
+            "text": "It has closed the breakfast area"
+          },
+          {
+            "id": "D",
+            "text": "It has reduced weekend occupancy"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に we have added a second coffee station とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "customer-service"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "email",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-033",
+    "part": "part7",
+    "title": "Volunteer Orientation",
+    "passage": "All volunteers for the Spring Market should attend an orientation session on March 5 at the community hall. The session will explain booth assignments, safety procedures, and the schedule for setting up tables. Volunteers should bring a photo ID so that badges can be prepared.\n\nAnyone unable to attend should contact the event coordinator by March 2 to arrange a brief online meeting.",
+    "questions": [
+      {
+        "id": "p7-generated-q-033-01",
+        "prompt": "What will the orientation explain?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Booth assignments and safety procedures"
+          },
+          {
+            "id": "B",
+            "text": "Membership discount rules"
+          },
+          {
+            "id": "C",
+            "text": "Hotel shuttle times"
+          },
+          {
+            "id": "D",
+            "text": "A photography contest"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に booth assignments, safety procedures, and the schedule とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "detail",
+          "volunteer"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-033-02",
+        "prompt": "What should volunteers bring?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A photo ID"
+          },
+          {
+            "id": "B",
+            "text": "A folding table"
+          },
+          {
+            "id": "C",
+            "text": "A market permit"
+          },
+          {
+            "id": "D",
+            "text": "A printed advertisement"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に bring a photo ID とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "volunteer"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "volunteer"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-034",
+    "part": "part7",
+    "title": "Lease Renewal Email",
+    "passage": "Dear Mr. Alvarez,\n\nYour current office lease for Suite 410 ends on November 30. We are pleased to offer a one-year renewal at the same monthly rate if the renewal agreement is signed by October 15. After that date, the office will be listed as available for new tenants.\n\nIf you would like to discuss adding storage space on the same floor, please contact our leasing office before submitting the renewal agreement.",
+    "questions": [
+      {
+        "id": "p7-generated-q-034-01",
+        "prompt": "What is being offered to Mr. Alvarez?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A one-year lease renewal at the same monthly rate"
+          },
+          {
+            "id": "B",
+            "text": "A move to a different building"
+          },
+          {
+            "id": "C",
+            "text": "A free parking permit"
+          },
+          {
+            "id": "D",
+            "text": "A temporary meeting room"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に one-year renewal at the same monthly rate とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "lease"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-034-02",
+        "prompt": "What will likely happen if the agreement is not signed by October 15?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The office may be offered to other tenants"
+          },
+          {
+            "id": "B",
+            "text": "The lease will automatically renew"
+          },
+          {
+            "id": "C",
+            "text": "The monthly rate will be refunded"
+          },
+          {
+            "id": "D",
+            "text": "Storage space will be added for free"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "10月15日後は office will be listed as available for new tenants とあるため、他の借主向けに出される可能性があります。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "inference",
+          "lease"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "email",
+      "lease"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-035",
+    "part": "part7",
+    "title": "Webinar Invitation",
+    "passage": "Northstar Accounting will host a free webinar titled Preparing Small Businesses for Year-End Reporting on December 4. The webinar is designed for owners and office managers who handle basic bookkeeping but do not have a full-time accounting department.\n\nThe presentation will begin at 2:00 P.M. and will be followed by a 20-minute question period. A recording link will be sent to registered participants the next day.",
+    "questions": [
+      {
+        "id": "p7-generated-q-035-01",
+        "prompt": "Who is the webinar designed for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Owners and office managers"
+          },
+          {
+            "id": "B",
+            "text": "Full-time accounting professors"
+          },
+          {
+            "id": "C",
+            "text": "Restaurant servers"
+          },
+          {
+            "id": "D",
+            "text": "Building maintenance workers"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に designed for owners and office managers とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "invitation",
+          "audience",
+          "webinar"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-035-02",
+        "prompt": "What will registered participants receive the next day?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A recording link"
+          },
+          {
+            "id": "B",
+            "text": "A printed accounting textbook"
+          },
+          {
+            "id": "C",
+            "text": "A full-time job offer"
+          },
+          {
+            "id": "D",
+            "text": "A list of office leases"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文末に A recording link will be sent to registered participants the next day とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "invitation",
+          "detail",
+          "webinar"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "invitation",
+      "webinar"
+    ],
+    "reviewed": true
   }
 ]
