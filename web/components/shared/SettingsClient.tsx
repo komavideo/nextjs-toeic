@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { APP_VERSION } from "@/lib/appVersion";
 import { clearProgressState } from "@/lib/storage/progressStorage";
 import { Button } from "./Button";
 import { Modal } from "./Modal";
@@ -37,7 +38,7 @@ export function SettingsClient() {
           <dl className="grid gap-3 text-sm leading-5">
             <div className="flex justify-between gap-4">
               <dt className="font-semibold">バージョン</dt>
-              <dd>0.1.0</dd>
+              <dd>{APP_VERSION}</dd>
             </div>
             <div className="flex justify-between gap-4">
               <dt className="font-semibold">表示言語</dt>
