@@ -45,6 +45,21 @@ export function SettingsClient() {
             </div>
           </dl>
         </Panel>
+        <Panel title="フィードバック">
+          <p className="text-base leading-[26px] text-[var(--text-secondary)]">
+            ご意見・不具合報告は X.com からお寄せください。
+          </p>
+          <Button
+            aria-label="X.com（@komavideo）を新しいタブで開く"
+            className="mt-4"
+            href="https://x.com/komavideo"
+            rel="noopener noreferrer"
+            target="_blank"
+            variant="secondary"
+          >
+            X.com（@komavideo）を開く
+          </Button>
+        </Panel>
         <Panel title="進捗データ">
           <p className="text-base leading-[26px] text-[var(--text-secondary)]">
             回答履歴、復習予定、ブックマーク、学習メモ、獲得バッジはこの端末内の localStorage に保存されます。ログインやクラウド同期は行いません。
