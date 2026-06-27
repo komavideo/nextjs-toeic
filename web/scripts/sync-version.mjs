@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { spawn } from "node:child_process";
 import { mkdtemp, readFile, rm, writeFile, mkdir } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
@@ -80,6 +81,29 @@ async function writePackageVersion(paths, version) {
 
 function appVersionFileContent(version) {
   return `// このファイルは scripts/sync-version.mjs により VERSION から同期します。\nexport const APP_VERSION = "${version}";\n`;
+}
+
+function runScriptCli(args) {
+  return new Promise((settle, reject) => {
+    const childProcess = spawn(process.execPath, [fileURLToPath(import.meta.url), ...args], {
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    let stdout = "";
+    let stderr = "";
+
+    childProcess.stdout.setEncoding("utf8");
+    childProcess.stderr.setEncoding("utf8");
+    childProcess.stdout.on("data", (chunk) => {
+      stdout += chunk;
+    });
+    childProcess.stderr.on("data", (chunk) => {
+      stderr += chunk;
+    });
+    childProcess.on("error", reject);
+    childProcess.on("close", (code, signal) => {
+      settle({ code, signal, stderr, stdout });
+    });
+  });
 }
 
 async function readAppVersion(paths) {
@@ -227,6 +251,12 @@ async function runSelfTest() {
       webVersion: "0.2.0",
     });
     assert.equal(await checkVersion(webRootPaths), "0.2.0");
+
+    const invalidCliResult = await runScriptCli(["--unsupported"]);
+    assert.equal(invalidCliResult.code, 1);
+    assert.equal(invalidCliResult.signal, null);
+    assert.match(invalidCliResult.stderr, /未対応の引数です/);
+    assert.equal(invalidCliResult.stdout, "");
   } finally {
     await rm(tempRoot, { force: true, recursive: true });
   }
