@@ -6,6 +6,7 @@ import {
   persistQuestionNote,
   questionNoteMaxLength,
   questionNoteSaveErrorMessage,
+  saveQuestionNoteForView,
   saveQuestionNote,
 } from "./questionNotes.ts";
 
@@ -251,5 +252,55 @@ test("学習メモ保存フローは保存失敗時にエラーを返す", () =>
   assert.deepEqual(result, {
     ok: false,
     error: "学習メモの保存に失敗しました。",
+  });
+});
+
+test("学習メモ保存の表示状態は現在の問題IDと成功表示を返す", () => {
+  let savedState: ReturnType<typeof createInitialProgressState> | undefined;
+  const result = saveQuestionNoteForView({
+    questionId: "question-002",
+    note: "  関係詞の先行詞を確認する。  ",
+    loadProgressState: () => ({
+      ok: true,
+      state: {
+        ...createInitialProgressState(),
+        questionNotes: {
+          "question-001": "語法を確認する。",
+        },
+      },
+    }),
+    saveProgressState: (state) => {
+      savedState = state;
+      return { ok: true };
+    },
+  });
+
+  assert.equal(result.ok, true);
+  assert.ok(savedState);
+  if (!result.ok) {
+    return;
+  }
+
+  assert.deepEqual(savedState.questionNotes, {
+    "question-001": "語法を確認する。",
+    "question-002": "関係詞の先行詞を確認する。",
+  });
+  assert.deepEqual(result.questionNotes, savedState.questionNotes);
+  assert.equal(result.noteError, null);
+  assert.equal(result.noteFeedback, "学習メモを保存しました。");
+});
+
+test("学習メモ保存の表示状態は失敗時にエラーだけを返す", () => {
+  const result = saveQuestionNoteForView({
+    questionId: "question-001",
+    note: "語法を確認する。",
+    loadProgressState: () => ({ ok: false, reason: "version-mismatch" }),
+    saveProgressState: () => ({ ok: true }),
+  });
+
+  assert.deepEqual(result, {
+    ok: false,
+    noteError: "進捗データを読み込めないため、学習メモを保存できませんでした。",
+    noteFeedback: null,
   });
 });

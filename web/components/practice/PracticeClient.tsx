@@ -7,7 +7,7 @@ import {
   bookmarkSaveErrorMessage,
   toggleBookmarkedQuestionId,
 } from "@/lib/progress/bookmarks";
-import { persistQuestionNote } from "@/lib/progress/questionNotes";
+import { saveQuestionNoteForView } from "@/lib/progress/questionNotes";
 import { recordAnswer } from "@/lib/progress/recordAnswer";
 import { gradeQuestion } from "@/lib/question-bank/grade";
 import {
@@ -544,7 +544,7 @@ export function PracticeClient() {
   }
 
   function saveCurrentQuestionNote(questionId: string, note: string) {
-    const noteResult = persistQuestionNote({
+    const noteResult = saveQuestionNoteForView({
       questionId,
       note,
       loadProgressState,
@@ -552,14 +552,14 @@ export function PracticeClient() {
     });
 
     if (!noteResult.ok) {
-      setQuestionNoteError(noteResult.error);
-      setQuestionNoteFeedback(null);
+      setQuestionNoteError(noteResult.noteError);
+      setQuestionNoteFeedback(noteResult.noteFeedback);
       return;
     }
 
-    setQuestionNotes(noteResult.state.questionNotes);
-    setQuestionNoteError(null);
-    setQuestionNoteFeedback(noteResult.feedback);
+    setQuestionNotes(noteResult.questionNotes);
+    setQuestionNoteError(noteResult.noteError);
+    setQuestionNoteFeedback(noteResult.noteFeedback);
   }
 
   function submitCurrentAnswer(session: ActivePracticeSession) {

@@ -18,6 +18,26 @@ export type PersistQuestionNoteResult =
   | { ok: true; state: ProgressState; feedback: string }
   | { ok: false; error: string };
 
+type PersistQuestionNoteOptions = {
+  questionId: string;
+  note: string;
+  loadProgressState: () => LoadQuestionNoteProgressResult;
+  saveProgressState: (state: ProgressState) => SaveQuestionNoteProgressResult;
+};
+
+export type QuestionNoteSaveViewResult =
+  | {
+      ok: true;
+      questionNotes: ProgressState["questionNotes"];
+      noteError: null;
+      noteFeedback: string;
+    }
+  | {
+      ok: false;
+      noteError: string;
+      noteFeedback: null;
+    };
+
 export function getQuestionNote(
   state: ProgressState,
   questionId: string,
@@ -77,12 +97,7 @@ export function persistQuestionNote({
   note,
   loadProgressState,
   saveProgressState,
-}: {
-  questionId: string;
-  note: string;
-  loadProgressState: () => LoadQuestionNoteProgressResult;
-  saveProgressState: (state: ProgressState) => SaveQuestionNoteProgressResult;
-}): PersistQuestionNoteResult {
+}: PersistQuestionNoteOptions): PersistQuestionNoteResult {
   const loadResult = loadProgressState();
 
   if (!loadResult.ok) {
@@ -123,5 +138,26 @@ export function persistQuestionNote({
       noteResult.note === null
         ? "学習メモを削除しました。"
         : "学習メモを保存しました。",
+  };
+}
+
+export function saveQuestionNoteForView(
+  options: PersistQuestionNoteOptions,
+): QuestionNoteSaveViewResult {
+  const result = persistQuestionNote(options);
+
+  if (!result.ok) {
+    return {
+      ok: false,
+      noteError: result.error,
+      noteFeedback: null,
+    };
+  }
+
+  return {
+    ok: true,
+    questionNotes: result.state.questionNotes,
+    noteError: null,
+    noteFeedback: result.feedback,
   };
 }
