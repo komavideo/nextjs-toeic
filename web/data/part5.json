@@ -239,14 +239,14 @@
       },
       {
         "id": "C",
-        "text": "it"
+        "text": "itself"
       },
       {
         "id": "D",
-        "text": "itself"
+        "text": "it"
       }
     ],
-    "correctChoiceId": "C",
+    "correctChoiceId": "D",
     "explanation": "単数名詞を受ける目的格代名詞として it が適切です。",
     "difficulty": "easy",
     "tags": [
@@ -559,14 +559,14 @@
       },
       {
         "id": "C",
-        "text": "reliable"
+        "text": "rely"
       },
       {
         "id": "D",
-        "text": "rely"
+        "text": "reliable"
       }
     ],
-    "correctChoiceId": "C",
+    "correctChoiceId": "D",
     "explanation": "名詞 vendor を修飾する形容詞が必要なので reliable が適切です。",
     "difficulty": "easy",
     "tags": [
@@ -615,22 +615,22 @@
     "choices": [
       {
         "id": "A",
-        "text": "for"
-      },
-      {
-        "id": "B",
         "text": "to"
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "with"
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "D",
     "explanation": "be responsible for doing の形なので for が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -743,22 +743,22 @@
     "choices": [
       {
         "id": "A",
-        "text": "missing"
-      },
-      {
-        "id": "B",
         "text": "miss"
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "missed"
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "misses"
+      },
+      {
+        "id": "D",
+        "text": "missing"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "D",
     "explanation": "詳細が欠けている状態を表す形容詞的な語として missing が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -815,14 +815,14 @@
       },
       {
         "id": "C",
-        "text": "analysis"
+        "text": "analytical"
       },
       {
         "id": "D",
-        "text": "analytical"
+        "text": "analysis"
       }
     ],
-    "correctChoiceId": "C",
+    "correctChoiceId": "D",
     "explanation": "a detailed の後には名詞が必要なので analysis が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -1071,14 +1071,14 @@
       },
       {
         "id": "C",
-        "text": "receives"
+        "text": "received"
       },
       {
         "id": "D",
-        "text": "received"
+        "text": "receives"
       }
     ],
-    "correctChoiceId": "C",
+    "correctChoiceId": "D",
     "explanation": "Each of ... は単数扱いなので、三人称単数現在の receives が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -1423,14 +1423,14 @@
       },
       {
         "id": "C",
-        "text": "for"
+        "text": "at"
       },
       {
         "id": "D",
-        "text": "at"
+        "text": "for"
       }
     ],
-    "correctChoiceId": "C",
+    "correctChoiceId": "D",
     "explanation": "be responsible for doing の形なので for が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -1551,14 +1551,14 @@
       },
       {
         "id": "C",
-        "text": "missing"
+        "text": "misses"
       },
       {
         "id": "D",
-        "text": "misses"
+        "text": "missing"
       }
     ],
-    "correctChoiceId": "C",
+    "correctChoiceId": "D",
     "explanation": "詳細が欠けている状態を表す形容詞的な語として missing が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -2087,22 +2087,22 @@
     "choices": [
       {
         "id": "A",
-        "text": "by"
-      },
-      {
-        "id": "B",
         "text": "for"
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "during"
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "among"
+      },
+      {
+        "id": "D",
+        "text": "by"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "D",
     "explanation": "Monday afternoon までの期限を表すため、前置詞 by が適切です。",
     "difficulty": "easy",
     "tags": [
@@ -2215,22 +2215,22 @@
     "choices": [
       {
         "id": "A",
-        "text": "for"
-      },
-      {
-        "id": "B",
         "text": "to"
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "with"
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "at"
+      },
+      {
+        "id": "D",
+        "text": "for"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "D",
     "explanation": "be responsible for doing の形なので for が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -2343,22 +2343,22 @@
     "choices": [
       {
         "id": "A",
-        "text": "missing"
-      },
-      {
-        "id": "B",
         "text": "miss"
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "missed"
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "misses"
+      },
+      {
+        "id": "D",
+        "text": "missing"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "D",
     "explanation": "詳細が欠けている状態を表す形容詞的な語として missing が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -2471,22 +2471,22 @@
     "choices": [
       {
         "id": "A",
-        "text": "enough"
-      },
-      {
-        "id": "B",
         "text": "many"
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "each"
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "another"
+      },
+      {
+        "id": "D",
+        "text": "enough"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "D",
     "explanation": "不可算名詞 time の量が十分であることを表すため enough が適切です。",
     "difficulty": "easy",
     "tags": [
@@ -4071,11 +4071,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "enough"
+        "text": "many"
       },
       {
         "id": "B",
-        "text": "many"
+        "text": "enough"
       },
       {
         "id": "C",
@@ -4086,7 +4086,7 @@
         "text": "another"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "B",
     "explanation": "不可算名詞 time の量が十分であることを表すため enough が適切です。",
     "difficulty": "easy",
     "tags": [
@@ -4199,11 +4199,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "ready"
+        "text": "readily"
       },
       {
         "id": "B",
-        "text": "readily"
+        "text": "ready"
       },
       {
         "id": "C",
@@ -4214,7 +4214,7 @@
         "text": "read"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "B",
     "explanation": "be ready to do の形で「〜する準備ができている」を表します。",
     "difficulty": "easy",
     "tags": [
@@ -4679,22 +4679,22 @@
     "choices": [
       {
         "id": "A",
-        "text": "it"
-      },
-      {
-        "id": "B",
         "text": "them"
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "those"
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "itself"
+      },
+      {
+        "id": "D",
+        "text": "it"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "D",
     "explanation": "単数名詞 client file for Branch 231 を受ける目的格代名詞として it が適切です。",
     "difficulty": "easy",
     "tags": [
@@ -4807,22 +4807,22 @@
     "choices": [
       {
         "id": "A",
-        "text": "analysis"
-      },
-      {
-        "id": "B",
         "text": "analyze"
       },
       {
-        "id": "C",
+        "id": "B",
         "text": "analyzed"
       },
       {
-        "id": "D",
+        "id": "C",
         "text": "analytical"
+      },
+      {
+        "id": "D",
+        "text": "analysis"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "D",
     "explanation": "a detailed の後には名詞が必要なので analysis が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -4935,11 +4935,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "clear"
+        "text": "clearly"
       },
       {
         "id": "B",
-        "text": "clearly"
+        "text": "clear"
       },
       {
         "id": "C",
@@ -4950,7 +4950,7 @@
         "text": "clearing"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "B",
     "explanation": "名詞 instructions を修飾する形容詞が必要なので clear が適切です。",
     "difficulty": "easy",
     "tags": [
@@ -5063,11 +5063,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "receives"
+        "text": "receive"
       },
       {
         "id": "B",
-        "text": "receive"
+        "text": "receives"
       },
       {
         "id": "C",
@@ -5078,7 +5078,7 @@
         "text": "received"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "B",
     "explanation": "Each of ... は単数扱いなので、三人称単数現在の receives が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -5191,11 +5191,11 @@
     "choices": [
       {
         "id": "A",
-        "text": "sooner"
+        "text": "soon"
       },
       {
         "id": "B",
-        "text": "soon"
+        "text": "sooner"
       },
       {
         "id": "C",
@@ -5206,7 +5206,7 @@
         "text": "soonness"
       }
     ],
-    "correctChoiceId": "A",
+    "correctChoiceId": "B",
     "explanation": "than expected がある比較表現なので sooner が適切です。",
     "difficulty": "medium",
     "tags": [
@@ -7996,6 +7996,646 @@
     "tags": [
       "comparison",
       "time"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-246",
+    "part": "part5",
+    "sentence": "The customer service desk will remain open _____ the renovation, but visitors should use the side entrance.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "during"
+      },
+      {
+        "id": "B",
+        "text": "among"
+      },
+      {
+        "id": "C",
+        "text": "across"
+      },
+      {
+        "id": "D",
+        "text": "onto"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "renovation の期間中を表すため、期間を示す during が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "facility"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-247",
+    "part": "part5",
+    "sentence": "Employees must submit travel receipts within five business days to receive _____ for approved expenses.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "reimbursed"
+      },
+      {
+        "id": "B",
+        "text": "reimbursement"
+      },
+      {
+        "id": "C",
+        "text": "reimburse"
+      },
+      {
+        "id": "D",
+        "text": "reimbursing"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "receive の目的語になる名詞が必要なため reimbursement が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "word-form",
+      "expense"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-248",
+    "part": "part5",
+    "sentence": "The warehouse manager asked the carrier to notify us _____ the shipment is delayed again.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "otherwise"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "if"
+      },
+      {
+        "id": "D",
+        "text": "despite"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "「再び遅れた場合は通知する」という条件を表すため if が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "delivery"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-249",
+    "part": "part5",
+    "sentence": "Because several figures were missing, the analyst prepared a _____ version of the sales forecast.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "revise"
+      },
+      {
+        "id": "B",
+        "text": "revision"
+      },
+      {
+        "id": "C",
+        "text": "revised"
+      },
+      {
+        "id": "D",
+        "text": "revising"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "version を修飾し「修正された版」を表す過去分詞 revised が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "reporting"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-250",
+    "part": "part5",
+    "sentence": "The new scheduling tool allows supervisors _____ shifts between departments more efficiently.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "transfer"
+      },
+      {
+        "id": "B",
+        "text": "transferring"
+      },
+      {
+        "id": "C",
+        "text": "to transfer"
+      },
+      {
+        "id": "D",
+        "text": "transferred"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "allow + 人 + to do の形なので to transfer が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "infinitive",
+      "scheduling"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-251",
+    "part": "part5",
+    "sentence": "Please confirm your attendance _____ Friday so we can finalize the seating chart.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "by"
+      },
+      {
+        "id": "B",
+        "text": "with"
+      },
+      {
+        "id": "C",
+        "text": "between"
+      },
+      {
+        "id": "D",
+        "text": "over"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "締切を表す場合は by を使います。by Friday で「金曜日までに」という意味です。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "deadline"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-252",
+    "part": "part5",
+    "sentence": "The printer should be cleaned regularly to keep it operating _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "smoothly"
+      },
+      {
+        "id": "B",
+        "text": "smooth"
+      },
+      {
+        "id": "C",
+        "text": "smoothness"
+      },
+      {
+        "id": "D",
+        "text": "smoothing"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "operating を修飾する副詞が必要なため smoothly が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adverb",
+      "maintenance"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-253",
+    "part": "part5",
+    "sentence": "Applicants _____ portfolios include design work will be contacted for an interview.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "who"
+      },
+      {
+        "id": "B",
+        "text": "whose"
+      },
+      {
+        "id": "C",
+        "text": "whom"
+      },
+      {
+        "id": "D",
+        "text": "which"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "Applicants と portfolios の所有関係を表す関係代名詞 whose が適切です。",
+    "difficulty": "hard",
+    "tags": [
+      "relative-pronoun",
+      "hiring"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-254",
+    "part": "part5",
+    "sentence": "The finance director recommended that the payment _____ before the end of the quarter.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "is processed"
+      },
+      {
+        "id": "B",
+        "text": "processes"
+      },
+      {
+        "id": "C",
+        "text": "be processed"
+      },
+      {
+        "id": "D",
+        "text": "processing"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "recommend that ... の後では原形を使う仮定法現在になり、payment は処理される側なので be processed が適切です。",
+    "difficulty": "hard",
+    "tags": [
+      "subjunctive",
+      "passive-voice"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-255",
+    "part": "part5",
+    "sentence": "The contract will take effect only after both parties have _____ the final document.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "signed"
+      },
+      {
+        "id": "B",
+        "text": "signing"
+      },
+      {
+        "id": "C",
+        "text": "sign"
+      },
+      {
+        "id": "D",
+        "text": "signature"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "have の後に過去分詞を置く現在完了形なので signed が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "verb-tense",
+      "contract"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-256",
+    "part": "part5",
+    "sentence": "The product page was updated to provide customers with more _____ information about delivery times.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "accuracy"
+      },
+      {
+        "id": "B",
+        "text": "accurately"
+      },
+      {
+        "id": "C",
+        "text": "accurate"
+      },
+      {
+        "id": "D",
+        "text": "accurateness"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "information を修飾する形容詞が必要なため accurate が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-257",
+    "part": "part5",
+    "sentence": "No refunds will be issued _____ the request is received within 14 days of purchase.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "although"
+      },
+      {
+        "id": "B",
+        "text": "unless"
+      },
+      {
+        "id": "C",
+        "text": "while"
+      },
+      {
+        "id": "D",
+        "text": "so that"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "「14日以内に申請を受け取らない限り返金されない」という条件になるため unless が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "conjunction",
+      "condition"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-258",
+    "part": "part5",
+    "sentence": "The training materials are available in several formats, _____ printed booklets and downloadable files.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "include"
+      },
+      {
+        "id": "B",
+        "text": "included"
+      },
+      {
+        "id": "C",
+        "text": "including"
+      },
+      {
+        "id": "D",
+        "text": "includes"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "例示を導く前置詞的な including が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "participle",
+      "staff-training"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-259",
+    "part": "part5",
+    "sentence": "To reduce energy use, the facilities team installed sensors that turn lights off _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "automation"
+      },
+      {
+        "id": "B",
+        "text": "automatically"
+      },
+      {
+        "id": "C",
+        "text": "automatic"
+      },
+      {
+        "id": "D",
+        "text": "automate"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "turn lights off を修飾する副詞が必要なため automatically が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adverb",
+      "facility"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-260",
+    "part": "part5",
+    "sentence": "The legal department will review the agreement _____ it is sent to the vendor.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "before"
+      },
+      {
+        "id": "B",
+        "text": "beside"
+      },
+      {
+        "id": "C",
+        "text": "beneath"
+      },
+      {
+        "id": "D",
+        "text": "beyond"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "契約書を送る前に確認するという時間関係を表すため before が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "conjunction",
+      "contract"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-261",
+    "part": "part5",
+    "sentence": "The committee selected the proposal because it offered the most _____ solution to the storage problem.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "practice"
+      },
+      {
+        "id": "B",
+        "text": "practiced"
+      },
+      {
+        "id": "C",
+        "text": "practical"
+      },
+      {
+        "id": "D",
+        "text": "practically"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "solution を修飾する形容詞が必要なため practical が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adjective",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-262",
+    "part": "part5",
+    "sentence": "New employees can register _____ for parking permits through the staff portal.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "themselves"
+      },
+      {
+        "id": "B",
+        "text": "theirs"
+      },
+      {
+        "id": "C",
+        "text": "them"
+      },
+      {
+        "id": "D",
+        "text": "they"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "主語 New employees と同じ人を目的語として指すため、再帰代名詞 themselves が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "pronoun",
+      "staff-portal"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-263",
+    "part": "part5",
+    "sentence": "The vendor's estimate was _____ higher than the amount approved in the budget.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "significant"
+      },
+      {
+        "id": "B",
+        "text": "significance"
+      },
+      {
+        "id": "C",
+        "text": "significantly"
+      },
+      {
+        "id": "D",
+        "text": "signify"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "higher を修飾する副詞が必要なため significantly が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "adverb",
+      "budget"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-264",
+    "part": "part5",
+    "sentence": "Visitors must request parking passes at least two days _____.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "lately"
+      },
+      {
+        "id": "B",
+        "text": "ahead"
+      },
+      {
+        "id": "C",
+        "text": "advance"
+      },
+      {
+        "id": "D",
+        "text": "in advance"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "「少なくとも2日前に」は at least two days in advance と表すため、in advance が適切です。",
+    "difficulty": "hard",
+    "tags": [
+      "collocation",
+      "deadline"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-265",
+    "part": "part5",
+    "sentence": "Had the inventory report been updated sooner, the purchasing team _____ fewer replacement parts.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "ordered"
+      },
+      {
+        "id": "B",
+        "text": "would have ordered"
+      },
+      {
+        "id": "C",
+        "text": "orders"
+      },
+      {
+        "id": "D",
+        "text": "will order"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "Had ... been updated sooner は過去の仮定を表す倒置で、主節は would have + 過去分詞になるため would have ordered が適切です。",
+    "difficulty": "hard",
+    "tags": [
+      "conditional",
+      "inventory"
     ],
     "reviewed": true
   }

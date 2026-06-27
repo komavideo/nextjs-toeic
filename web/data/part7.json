@@ -420,22 +420,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Store layout"
-          },
-          {
-            "id": "B",
             "text": "Online payments"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Vendor meetings"
+          },
+          {
+            "id": "C",
+            "text": "Store layout"
           },
           {
             "id": "D",
             "text": "Monthly reporting"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文冒頭に a practical session about store layout とあります。",
         "difficulty": "medium",
         "tags": [
@@ -1028,11 +1028,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Simple ways to communicate changes to staff"
+            "text": "The cost of adding expensive systems"
           },
           {
             "id": "B",
-            "text": "The cost of adding expensive systems"
+            "text": "Simple ways to communicate changes to staff"
           },
           {
             "id": "C",
@@ -1043,7 +1043,7 @@
             "text": "The results of a staff survey"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "本文に discuss simple ways to communicate changes to staff とあります。",
         "difficulty": "medium",
         "tags": [
@@ -1180,22 +1180,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "By sending their name and business name by e-mail"
-          },
-          {
-            "id": "B",
             "text": "By calling the room coordinator"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "By bringing a completed form to Room 114"
+          },
+          {
+            "id": "C",
+            "text": "By sending their name and business name by e-mail"
           },
           {
             "id": "D",
             "text": "By paying a fee at the business center"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文に To register, send your name and business name to events@example.local とあります。",
         "difficulty": "hard",
         "tags": [
@@ -1377,22 +1377,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Sample checklists"
-          },
-          {
-            "id": "B",
             "text": "Tax receipts"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Room reservation records"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "Customer complaint letters"
+          },
+          {
+            "id": "D",
+            "text": "Sample checklists"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に Participants will review sample checklists とあります。",
         "difficulty": "medium",
         "tags": [
@@ -1788,11 +1788,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Repair the lamp for a reduced fee"
+            "text": "Refund the full purchase price"
           },
           {
             "id": "B",
-            "text": "Refund the full purchase price"
+            "text": "Repair the lamp for a reduced fee"
           },
           {
             "id": "C",
@@ -1803,7 +1803,7 @@
             "text": "Extend the warranty for one year"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "本文末に repair the lamp for a reduced service fee of $18 とあります。",
         "difficulty": "medium",
         "tags": [
@@ -1833,22 +1833,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "The side entrance"
-          },
-          {
-            "id": "B",
             "text": "The convention hall lobby"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "The parking garage"
+          },
+          {
+            "id": "C",
+            "text": "The side entrance"
           },
           {
             "id": "D",
             "text": "The hotel restaurant"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文に departs from the side entrance とあります。",
         "difficulty": "easy",
         "tags": [
@@ -2213,11 +2213,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Library members"
+            "text": "Only library employees"
           },
           {
             "id": "B",
-            "text": "Only library employees"
+            "text": "Library members"
           },
           {
             "id": "C",
@@ -2228,7 +2228,7 @@
             "text": "All city contractors"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "本文に Library members may reserve a room とあります。",
         "difficulty": "easy",
         "tags": [
@@ -2244,11 +2244,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "The room may be released to another member"
+            "text": "The reservation will be extended"
           },
           {
             "id": "B",
-            "text": "The reservation will be extended"
+            "text": "The room may be released to another member"
           },
           {
             "id": "C",
@@ -2259,7 +2259,7 @@
             "text": "A sales presentation will begin"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "本文末に the room may be released to another member とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2289,11 +2289,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "A lighthouse will be closed for maintenance"
+            "text": "Participants requested a cheaper hotel"
           },
           {
             "id": "B",
-            "text": "Participants requested a cheaper hotel"
+            "text": "A lighthouse will be closed for maintenance"
           },
           {
             "id": "C",
@@ -2304,7 +2304,7 @@
             "text": "The Maritime History Center closed permanently"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "本文に Harbor Lighthouse will be closed for maintenance とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2441,22 +2441,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "The breakfast area was too crowded"
-          },
-          {
-            "id": "B",
             "text": "The inn did not accept teams"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "The meeting room was closed for repairs"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "The coffee station was removed"
+          },
+          {
+            "id": "D",
+            "text": "The breakfast area was too crowded"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "返信内で breakfast area was crowded と謝罪しているため、この点を指摘したと推測できます。",
         "difficulty": "hard",
         "tags": [
@@ -2472,22 +2472,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "It has added a second coffee station"
-          },
-          {
-            "id": "B",
             "text": "It has stopped hosting sports teams"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "It has closed the breakfast area"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "It has reduced weekend occupancy"
+          },
+          {
+            "id": "D",
+            "text": "It has added a second coffee station"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に we have added a second coffee station とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2593,22 +2593,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "A one-year lease renewal at the same monthly rate"
-          },
-          {
-            "id": "B",
             "text": "A move to a different building"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A free parking permit"
+          },
+          {
+            "id": "C",
+            "text": "A one-year lease renewal at the same monthly rate"
           },
           {
             "id": "D",
             "text": "A temporary meeting room"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文に one-year renewal at the same monthly rate とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2624,22 +2624,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "The office may be offered to other tenants"
-          },
-          {
-            "id": "B",
             "text": "The lease will automatically renew"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "The monthly rate will be refunded"
+          },
+          {
+            "id": "C",
+            "text": "The office may be offered to other tenants"
           },
           {
             "id": "D",
             "text": "Storage space will be added for free"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "10月15日後は office will be listed as available for new tenants とあるため、他の借主向けに出される可能性があります。",
         "difficulty": "hard",
         "tags": [
@@ -2883,22 +2883,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "The effect of a pickup service on sales"
-          },
-          {
-            "id": "B",
             "text": "The closing of several retail stores"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A new supplier for home goods"
+          },
+          {
+            "id": "C",
+            "text": "The effect of a pickup service on sales"
           },
           {
             "id": "D",
             "text": "A change in store opening hours"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "本文はオンライン売上増加と、その要因としての pickup service を中心に説明しています。",
         "difficulty": "medium",
         "tags": [
@@ -2914,22 +2914,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Reserve items online and collect them in stores"
-          },
-          {
-            "id": "B",
             "text": "Return items without receipts"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Schedule home repairs"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "Join staff training sessions"
+          },
+          {
+            "id": "D",
+            "text": "Reserve items online and collect them in stores"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に reserve items online and collect them from a dedicated counter とあります。",
         "difficulty": "easy",
         "tags": [
@@ -2945,22 +2945,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Attend a session on inventory checks and notifications"
-          },
-          {
-            "id": "B",
             "text": "Build new pickup counters in every department"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Prepare a report on quarterly rent"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "Deliver online orders to customers' homes"
+          },
+          {
+            "id": "D",
+            "text": "Attend a session on inventory checks and notifications"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文末に staff members ... will attend a half-day session on inventory checks and customer notifications とあります。",
         "difficulty": "medium",
         "tags": [
@@ -2976,22 +2976,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "They buy extra items when they come to the store"
-          },
-          {
-            "id": "B",
             "text": "They avoid entering the store completely"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "They must attend a half-day training session"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "They receive a 14 percent discount"
+          },
+          {
+            "id": "D",
+            "text": "They buy extra items when they come to the store"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "customers ... often add small household items to their orders after arriving とあるため、来店時に追加購入する客がいると推測できます。",
         "difficulty": "hard",
         "tags": [
@@ -3021,11 +3021,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Administrative coordinator"
+            "text": "Interior designer"
           },
           {
             "id": "B",
-            "text": "Interior designer"
+            "text": "Administrative coordinator"
           },
           {
             "id": "C",
@@ -3036,7 +3036,7 @@
             "text": "Accounting director"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "見出しと本文に administrative coordinator とあります。",
         "difficulty": "easy",
         "tags": [
@@ -3083,11 +3083,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Schedule client consultations"
+            "text": "Design downtown apartments"
           },
           {
             "id": "B",
-            "text": "Design downtown apartments"
+            "text": "Schedule client consultations"
           },
           {
             "id": "C",
@@ -3098,7 +3098,7 @@
             "text": "Lead interviews with suppliers"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "本文に will schedule client consultations とあります。",
         "difficulty": "medium",
         "tags": [
@@ -3114,22 +3114,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "By sending a resume and cover letter by October 3"
-          },
-          {
-            "id": "B",
             "text": "By visiting the office in early November"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "By calling suppliers during interviews"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "By submitting design samples next week"
+          },
+          {
+            "id": "D",
+            "text": "By sending a resume and cover letter by October 3"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "本文に send a resume and a brief cover letter ... by October 3 とあります。",
         "difficulty": "medium",
         "tags": [
@@ -3297,22 +3297,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Increasing the order to 72 lunches"
-          },
-          {
-            "id": "B",
             "text": "Moving the training session to another day"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Canceling all vegetarian lunches"
+          },
+          {
+            "id": "C",
+            "text": "Increasing the order to 72 lunches"
           },
           {
             "id": "D",
             "text": "Delivering lunch to a different building"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "E-mail 1 に 72 participants instead of 60 とあり、昼食注文を72個に増やす依頼です。",
         "difficulty": "medium",
         "tags": [
@@ -3328,22 +3328,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "$936"
-          },
-          {
-            "id": "B",
             "text": "$900"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "$72"
+          },
+          {
+            "id": "C",
+            "text": "$936"
           },
           {
             "id": "D",
             "text": "$13"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "E-mail 2 に The updated total is $936 とあります。Order Summary の 72 boxed lunches at $13 each とも一致します。",
         "difficulty": "medium",
         "tags": [
@@ -3359,22 +3359,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "The new total is above $900"
-          },
-          {
-            "id": "B",
             "text": "The order includes vegetarian lunches"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "The delivery is after 4:00 P.M."
+          },
+          {
+            "id": "C",
+            "text": "The new total is above $900"
           },
           {
             "id": "D",
             "text": "The conference area is on the fourth floor"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "E-mail 2 に Because the new total is above $900, the delivery fee will be waived とあります。",
         "difficulty": "hard",
         "tags": [
@@ -3390,22 +3390,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "To the fourth-floor conference area"
-          },
-          {
-            "id": "B",
             "text": "To Fresh Table Catering"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "To the building lobby"
+          },
+          {
+            "id": "C",
+            "text": "To the fourth-floor conference area"
           },
           {
             "id": "D",
             "text": "To a morning delivery office"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "E-mail 1 と Order Summary の両方に fourth-floor conference area とあります。",
         "difficulty": "medium",
         "tags": [
@@ -3435,22 +3435,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "The training room lights have flickered"
-          },
-          {
-            "id": "B",
             "text": "The wiring panel was destroyed"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "A workshop was canceled"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "A quote was sent to the wrong branch"
+          },
+          {
+            "id": "D",
+            "text": "The training room lights have flickered"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "メモ冒頭に The training room lights have flickered とあります。",
         "difficulty": "easy",
         "tags": [
@@ -3466,22 +3466,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Replacing two motion sensors"
-          },
-          {
-            "id": "B",
             "text": "Rewiring the lighting panel"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Canceling the June 18 workshop"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "Requesting another inspection"
+          },
+          {
+            "id": "D",
+            "text": "Replacing two motion sensors"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "メモで Option A を受け入れることを推奨しており、見積では Option A が Replace two motion sensors です。",
         "difficulty": "easy",
         "tags": [
@@ -3497,22 +3497,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "The wiring panel is not damaged"
-          },
-          {
-            "id": "B",
             "text": "The technician is not available in June"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "The training room has no lighting problem"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "The workshop will be held in another room"
+          },
+          {
+            "id": "D",
+            "text": "The wiring panel is not damaged"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "メモに the wiring panel is not damaged とあるため、配線盤をやり直す Option B は不要と考えられます。",
         "difficulty": "medium",
         "tags": [
@@ -3528,22 +3528,22 @@
         "choices": [
           {
             "id": "A",
-            "text": "Another workshop is scheduled for June 18"
-          },
-          {
-            "id": "B",
             "text": "The quote expires on June 15"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "The technician is moving to another branch"
           },
           {
-            "id": "D",
+            "id": "C",
             "text": "The branch manager requested new furniture"
+          },
+          {
+            "id": "D",
+            "text": "Another workshop is scheduled for June 18"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "メモに another workshop is scheduled for June 18 とあり、その前に部屋を使える状態にする必要があります。",
         "difficulty": "medium",
         "tags": [
@@ -3558,6 +3558,696 @@
     "tags": [
       "memo",
       "maintenance"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-042",
+    "part": "part7",
+    "title": "Invoice Follow-up",
+    "passage": "Email\nFrom: Mara Chen, Billing Coordinator\nTo: Oakview Dental Office\nSubject: Invoice 8841\n\nOur records show that Invoice 8841 for workstation repair service has not yet been paid. The service was completed on June 28, and payment was due on July 12. If payment has already been sent, please reply with the transaction reference number so we can update our records.\n\nInvoice Details\nInvoice number: 8841\nService date: June 28\nService: Repair of reception desk workstation\nAmount: $680\nPayment terms: Due within 14 days of service\nNote: The rush-service fee was waived because the technician arrived later than scheduled.",
+    "questions": [
+      {
+        "id": "p7-generated-q-042-01",
+        "prompt": "Why did Mara Chen send the email?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To cancel a repair appointment"
+          },
+          {
+            "id": "B",
+            "text": "To announce a new billing system"
+          },
+          {
+            "id": "C",
+            "text": "To request a workstation replacement"
+          },
+          {
+            "id": "D",
+            "text": "To follow up on an unpaid invoice"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "メール冒頭に Invoice 8841 がまだ支払われていないとあり、未払い請求の確認が目的です。",
+        "difficulty": "easy",
+        "tags": [
+          "email",
+          "purpose",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-042-02",
+        "prompt": "When was payment due?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "June 28"
+          },
+          {
+            "id": "B",
+            "text": "July 12"
+          },
+          {
+            "id": "C",
+            "text": "July 14"
+          },
+          {
+            "id": "D",
+            "text": "August 1"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に payment was due on July 12 と明記されています。",
+        "difficulty": "easy",
+        "tags": [
+          "email",
+          "detail",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-042-03",
+        "prompt": "Why was one fee not charged?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The office paid before the service date"
+          },
+          {
+            "id": "B",
+            "text": "The workstation did not need repairs"
+          },
+          {
+            "id": "C",
+            "text": "The invoice number was incorrect"
+          },
+          {
+            "id": "D",
+            "text": "The technician arrived later than scheduled"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "請求詳細の Note に、技術者の到着が予定より遅れたため rush-service fee が免除されたとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "reason",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-042-04",
+        "prompt": "What should Oakview Dental Office do if it has already paid?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Schedule another repair visit"
+          },
+          {
+            "id": "B",
+            "text": "Return the workstation"
+          },
+          {
+            "id": "C",
+            "text": "Request a new invoice number"
+          },
+          {
+            "id": "D",
+            "text": "Send the transaction reference number"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "本文に If payment has already been sent, please reply with the transaction reference number とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "billing"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "billing"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-043",
+    "part": "part7",
+    "title": "Shipping Delay Notice",
+    "passage": "Notice from Harbor Lane Supply\n\nDue to a temporary shortage of packing materials, some large furniture orders scheduled for shipment this week will leave our warehouse two business days later than planned. Small accessory orders are not affected. Customers will receive revised tracking links after the carrier scans each shipment.\n\nOrder Summary\nCustomer: Brighton Coworking\nOrder number: 5527\nItems: 18 conference chairs, 4 whiteboards\nOriginal ship date: March 11\nRevised ship date: March 13\nDelivery contact: Nina Patel\nSpecial instruction: Call the delivery contact 30 minutes before arrival.",
+    "questions": [
+      {
+        "id": "p7-generated-q-043-01",
+        "prompt": "What caused the shipping delay?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A mistake in the delivery address"
+          },
+          {
+            "id": "B",
+            "text": "A request to add more chairs"
+          },
+          {
+            "id": "C",
+            "text": "A shortage of packing materials"
+          },
+          {
+            "id": "D",
+            "text": "A carrier strike at the warehouse"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "通知冒頭に temporary shortage of packing materials とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "reason",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-043-02",
+        "prompt": "Which items are included in Brighton Coworking's order?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Desks and filing cabinets"
+          },
+          {
+            "id": "B",
+            "text": "Packing materials and labels"
+          },
+          {
+            "id": "C",
+            "text": "Conference chairs and whiteboards"
+          },
+          {
+            "id": "D",
+            "text": "Small accessories only"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Order Summary の Items に 18 conference chairs, 4 whiteboards とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "detail",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-043-03",
+        "prompt": "When is Order 5527 now scheduled to ship?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "March 9"
+          },
+          {
+            "id": "B",
+            "text": "March 11"
+          },
+          {
+            "id": "C",
+            "text": "March 13"
+          },
+          {
+            "id": "D",
+            "text": "March 30"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Order Summary に Revised ship date: March 13 と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-043-04",
+        "prompt": "What should the delivery driver do before arriving?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Scan each shipment twice"
+          },
+          {
+            "id": "B",
+            "text": "Remove the whiteboards from the order"
+          },
+          {
+            "id": "C",
+            "text": "Call Nina Patel"
+          },
+          {
+            "id": "D",
+            "text": "Collect payment for packing materials"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Special instruction に Call the delivery contact 30 minutes before arrival とあり、delivery contact は Nina Patel です。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "reference",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "delivery-planning"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-044",
+    "part": "part7",
+    "title": "Job Posting and Application",
+    "passage": "Job Posting\nRiverside Arts Center is hiring a Visitor Services Assistant for a six-month contract. Responsibilities include greeting guests, selling tickets, preparing daily attendance reports, and answering basic questions about exhibits. Applicants must be available on at least one weekend day. Experience with ticketing software is preferred but not required.\n\nApplication Email\nTo: hiring@riversidearts.example\nFrom: Elena Ruiz\n\nI would like to apply for the Visitor Services Assistant position. In my current role at a community theater, I sell tickets, answer visitor questions, and prepare a brief sales report after each performance. I am available on Saturdays and Sundays, and I can start on May 6 if selected. My resume is attached.",
+    "questions": [
+      {
+        "id": "p7-generated-q-044-01",
+        "prompt": "What is one responsibility of the advertised position?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Preparing daily attendance reports"
+          },
+          {
+            "id": "B",
+            "text": "Designing new exhibit spaces"
+          },
+          {
+            "id": "C",
+            "text": "Training theater performers"
+          },
+          {
+            "id": "D",
+            "text": "Repairing ticketing software"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "Job Posting の Responsibilities に preparing daily attendance reports とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "job-posting",
+          "detail",
+          "hiring"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-044-02",
+        "prompt": "What is required of applicants?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Availability on at least one weekend day"
+          },
+          {
+            "id": "B",
+            "text": "A degree in art history"
+          },
+          {
+            "id": "C",
+            "text": "Experience with ticketing software"
+          },
+          {
+            "id": "D",
+            "text": "The ability to start immediately"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "Job Posting に Applicants must be available on at least one weekend day とあります。ソフトウェア経験は preferred but not required です。",
+        "difficulty": "medium",
+        "tags": [
+          "job-posting",
+          "detail",
+          "hiring"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-044-03",
+        "prompt": "Why does Elena Ruiz mention her current role?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To show that she has relevant visitor-service experience"
+          },
+          {
+            "id": "B",
+            "text": "To ask for a transfer to the theater"
+          },
+          {
+            "id": "C",
+            "text": "To request a longer contract period"
+          },
+          {
+            "id": "D",
+            "text": "To explain why she cannot work weekends"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "現在の仕事でチケット販売、来客対応、報告書作成をしており、募集職務と関連する経験を示しています。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "purpose",
+          "hiring"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-044-04",
+        "prompt": "Which statement is true about Elena Ruiz?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "She is available on both Saturday and Sunday"
+          },
+          {
+            "id": "B",
+            "text": "She cannot begin until June"
+          },
+          {
+            "id": "C",
+            "text": "She currently works at Riverside Arts Center"
+          },
+          {
+            "id": "D",
+            "text": "She did not attach a resume"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "応募メールに I am available on Saturdays and Sundays とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "hiring"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "job-posting",
+      "hiring"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-045",
+    "part": "part7",
+    "title": "Inventory App Update",
+    "passage": "Product Update\nVersion 3.2 of the StockPath inventory app will be released on Monday evening. The update adds a low-stock alert that can be sent to up to three managers at the same time. It also lets users export monthly item counts as spreadsheet files. The mobile scanner screen has been simplified, but the barcode format remains unchanged.\n\nCustomer Email\nFrom: Graham Foods\nTo: StockPath Support\n\nWe use handheld scanners in three storage rooms. Before we install Version 3.2, could you confirm whether our current barcode labels will still work? We are interested in the new low-stock alert, but replacing labels across all storage rooms would take several days.",
+    "questions": [
+      {
+        "id": "p7-generated-q-045-01",
+        "prompt": "What new feature is added in Version 3.2?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A redesigned barcode format"
+          },
+          {
+            "id": "B",
+            "text": "A room reservation calendar"
+          },
+          {
+            "id": "C",
+            "text": "A low-stock alert"
+          },
+          {
+            "id": "D",
+            "text": "A payment reminder tool"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Product Update に The update adds a low-stock alert とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "product-update",
+          "detail",
+          "software"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-045-02",
+        "prompt": "What can users export after the update?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Employee schedules"
+          },
+          {
+            "id": "B",
+            "text": "Delivery invoices"
+          },
+          {
+            "id": "C",
+            "text": "Training videos"
+          },
+          {
+            "id": "D",
+            "text": "Monthly item counts"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "本文に export monthly item counts as spreadsheet files とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "product-update",
+          "detail",
+          "software"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-045-03",
+        "prompt": "What is Graham Foods concerned about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Whether monthly reports will be discontinued"
+          },
+          {
+            "id": "B",
+            "text": "Whether the update will remove manager alerts"
+          },
+          {
+            "id": "C",
+            "text": "Whether scanners are allowed in storage rooms"
+          },
+          {
+            "id": "D",
+            "text": "Whether its current barcode labels will still work"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "Customer Email で current barcode labels will still work か確認したいと述べています。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "purpose",
+          "software"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-045-04",
+        "prompt": "What can be inferred from the product update?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Version 3.2 can notify only one manager at a time"
+          },
+          {
+            "id": "B",
+            "text": "The update is available only on handheld scanners"
+          },
+          {
+            "id": "C",
+            "text": "Graham Foods probably will not need to replace its barcode labels"
+          },
+          {
+            "id": "D",
+            "text": "Spreadsheet exports will be removed on Monday"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Product Update に the barcode format remains unchanged とあるため、既存ラベルはそのまま使える可能性が高いと推測できます。",
+        "difficulty": "hard",
+        "tags": [
+          "product-update",
+          "inference",
+          "software"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "product-update",
+      "software"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-046",
+    "part": "part7",
+    "title": "Reservation Change Messages",
+    "passage": "Message from Parkside Training Center\n\nThank you for reserving Room B on April 18 from 9:00 A.M. to 12:00 P.M. for your customer-service workshop. Because the building's main elevator will be inspected that morning, we can move your group to Room D on the first floor at no additional charge. Room D seats 24 people and includes a projector.\n\nReply from Jordan Lee\n\nPlease move our reservation to Room D. We expect 22 participants, so the capacity should be fine. Could you also extend the reservation until 12:30 P.M.? We plan to add a short question period after the workshop.",
+    "questions": [
+      {
+        "id": "p7-generated-q-046-01",
+        "prompt": "Why did Parkside Training Center suggest moving the reservation?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Room B does not have enough chairs"
+          },
+          {
+            "id": "B",
+            "text": "The workshop topic has changed"
+          },
+          {
+            "id": "C",
+            "text": "Jordan Lee requested a projector"
+          },
+          {
+            "id": "D",
+            "text": "The main elevator will be inspected"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "Parkside のメッセージに the building's main elevator will be inspected that morning とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "message",
+          "reason",
+          "booking"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-046-02",
+        "prompt": "What is true about Room D?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It seats exactly 22 people"
+          },
+          {
+            "id": "B",
+            "text": "It does not include a projector"
+          },
+          {
+            "id": "C",
+            "text": "It costs extra to reserve"
+          },
+          {
+            "id": "D",
+            "text": "It is on the first floor"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "Room D is on the first floor と明記されています。定員は24人で、追加料金なしです。",
+        "difficulty": "medium",
+        "tags": [
+          "message",
+          "detail",
+          "booking"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-046-03",
+        "prompt": "How many participants does Jordan Lee expect?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "18"
+          },
+          {
+            "id": "B",
+            "text": "22"
+          },
+          {
+            "id": "C",
+            "text": "24"
+          },
+          {
+            "id": "D",
+            "text": "30"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "Jordan Lee の返信に We expect 22 participants とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "message",
+          "detail",
+          "booking"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-046-04",
+        "prompt": "What additional request does Jordan Lee make?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To move the workshop to April 19"
+          },
+          {
+            "id": "B",
+            "text": "To remove the projector from the room"
+          },
+          {
+            "id": "C",
+            "text": "To reduce the number of participants"
+          },
+          {
+            "id": "D",
+            "text": "To extend the reservation until 12:30 P.M."
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "返信で Could you also extend the reservation until 12:30 P.M.? と追加依頼しています。",
+        "difficulty": "medium",
+        "tags": [
+          "message",
+          "request",
+          "booking"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "message",
+      "booking"
     ],
     "reviewed": true
   }

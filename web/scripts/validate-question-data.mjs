@@ -24,11 +24,43 @@ function addError(errors, filePath, entryId, questionId, reason) {
   errors.push({ filePath, entryId, questionId, reason });
 }
 
+function createChoiceIndexCounts() {
+  return Array.from({ length: validChoiceIds.length }, () => 0);
+}
+
+function mergeChoiceIndexCounts(target, source) {
+  for (let index = 0; index < validChoiceIds.length; index += 1) {
+    target[index] += source[index];
+  }
+}
+
+function validateChoiceIndexDistribution(errors, filePath, counts) {
+  const total = counts.reduce((sum, count) => sum + count, 0);
+
+  if (total === 0) {
+    return;
+  }
+
+  const min = Math.min(...counts);
+  const max = Math.max(...counts);
+
+  if (max - min > 1) {
+    addError(
+      errors,
+      filePath,
+      undefined,
+      undefined,
+      `正解位置の分布が偏っています（choices インデックス 0-3: ${counts.join("/")}）。`,
+    );
+  }
+}
+
 function validateQuestionItem(item, errors, filePath, entryId, questionId) {
   const id = typeof item.id === "string" ? item.id : questionId;
   const choices = item.choices;
   const hasValidCorrectChoiceId =
     typeof item.correctChoiceId === "string" && validChoiceIds.includes(item.correctChoiceId);
+  let correctChoiceIndex;
 
   if (!isNonEmptyString(item.id)) {
     addError(errors, filePath, entryId, questionId, "設問 ID が空または文字列ではありません。");
@@ -55,6 +87,14 @@ function validateQuestionItem(item, errors, filePath, entryId, questionId) {
       .filter((text) => typeof text === "string");
     const normalizedChoiceTexts = choiceTexts.map((text) => text.trim());
 
+    if (
+      choices.some(
+        (choice, index) => !isRecord(choice) || choice.id !== validChoiceIds[index],
+      )
+    ) {
+      addError(errors, filePath, entryId, id, "choices 配列の選択肢 ID 順が A-D ではありません。");
+    }
+
     if (new Set(normalizedChoiceTexts).size !== normalizedChoiceTexts.length) {
       addError(errors, filePath, entryId, id, "選択肢本文が重複しています。");
     }
@@ -80,8 +120,28 @@ function validateQuestionItem(item, errors, filePath, entryId, questionId) {
       }
     }
 
-    if (hasValidCorrectChoiceId && !choiceIds.includes(item.correctChoiceId)) {
-      addError(errors, filePath, entryId, id, "correctChoiceId が存在する選択肢を参照していません。");
+    if (hasValidCorrectChoiceId) {
+      const correctChoiceIndexes = choices
+        .map((choice, index) =>
+          isRecord(choice) && choice.id === item.correctChoiceId ? index : -1,
+        )
+        .filter((index) => index >= 0);
+
+      if (correctChoiceIndexes.length === 0) {
+        addError(errors, filePath, entryId, id, "correctChoiceId が存在する選択肢を参照していません。");
+      } else if (correctChoiceIndexes.length > 1) {
+        addError(errors, filePath, entryId, id, "correctChoiceId が choices 配列内の選択肢を一意に参照していません。");
+      } else {
+        correctChoiceIndex = correctChoiceIndexes[0];
+      }
+    }
+  }
+
+  if (Object.hasOwn(item, "answer")) {
+    if (!Number.isInteger(item.answer) || item.answer < 0 || item.answer >= validChoiceIds.length) {
+      addError(errors, filePath, entryId, id, "answer が 0-3 の整数ではありません。");
+    } else if (correctChoiceIndex !== undefined && item.answer !== correctChoiceIndex) {
+      addError(errors, filePath, entryId, id, "answer が正解の choices 配列インデックスと一致していません。");
     }
   }
 
@@ -106,15 +166,18 @@ function validateQuestionItem(item, errors, filePath, entryId, questionId) {
   } else if (!item.reviewed) {
     addError(errors, filePath, entryId, id, "reviewed が true ではありません。");
   }
+
+  return correctChoiceIndex;
 }
 
 function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenPart5Content) {
   const errors = [];
   let flatQuestionCount = 0;
+  const correctChoiceIndexCounts = createChoiceIndexCounts();
 
   if (!Array.isArray(entries)) {
     addError(errors, filePath, undefined, undefined, "JSON ルートが配列ではありません。");
-    return { errors, flatQuestionCount };
+    return { errors, flatQuestionCount, correctChoiceIndexCounts };
   }
 
   for (const entry of entries) {
@@ -140,7 +203,11 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenP
 
     if (entry.part === "part5") {
       flatQuestionCount += 1;
-      validateQuestionItem(entry, errors, filePath, entryId, entryId);
+      const correctChoiceIndex = validateQuestionItem(entry, errors, filePath, entryId, entryId);
+
+      if (correctChoiceIndex !== undefined) {
+        correctChoiceIndexCounts[correctChoiceIndex] += 1;
+      }
 
       if (!isNonEmptyString(entry.sentence)) {
         addError(errors, filePath, entryId, entryId, "Part 5 の sentence が空または文字列ではありません。");
@@ -213,7 +280,11 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenP
       }
 
       const questionId = typeof question.id === "string" ? question.id : "unknown";
-      validateQuestionItem(question, errors, filePath, entryId, questionId);
+      const correctChoiceIndex = validateQuestionItem(question, errors, filePath, entryId, questionId);
+
+      if (correctChoiceIndex !== undefined) {
+        correctChoiceIndexCounts[correctChoiceIndex] += 1;
+      }
 
       if (seenQuestionIds.has(questionId)) {
         addError(errors, filePath, entryId, questionId, "設問 ID が重複しています。");
@@ -223,7 +294,7 @@ function validateEntries(entries, filePath, seenEntryIds, seenQuestionIds, seenP
     }
   }
 
-  return { errors, flatQuestionCount };
+  return { errors, flatQuestionCount, correctChoiceIndexCounts };
 }
 
 function createValidPart5Question(overrides = {}) {
@@ -325,9 +396,42 @@ function runSelfTests() {
     "選択肢本文が重複しています。",
   );
 
+  assertHasError(
+    validateFixture([
+      createValidPart5Question({
+        choices: [
+          { id: "A", text: "before" },
+          { id: "B", text: "beneath" },
+          { id: "C", text: "beside" },
+          { id: "A", text: "between" },
+        ],
+      }),
+    ]),
+    "correctChoiceId が choices 配列内の選択肢を一意に参照していません。",
+  );
+
+  assertHasError(
+    validateFixture([createValidPart5Question({ answer: 2 })]),
+    "answer が正解の choices 配列インデックスと一致していません。",
+  );
+
+  assertHasError(
+    validateFixture([createValidPart5Question({ answer: 4 })]),
+    "answer が 0-3 の整数ではありません。",
+  );
+
+  {
+    const errors = [];
+    validateChoiceIndexDistribution(errors, "fixture.json", [3, 0, 0, 0]);
+    assertHasError(
+      errors,
+      "正解位置の分布が偏っています（choices インデックス 0-3: 3/0/0/0）。",
+    );
+  }
+
   // 正常系: 妥当なフィクスチャはエラー 0 件であること（検査の過検出による退行を防ぐ）。
   assert.deepEqual(
-    validateFixture([createValidPart5Question()]),
+    validateFixture([createValidPart5Question({ answer: 0 })]),
     [],
     "正常系フィクスチャでエラーが発生しました。",
   );
@@ -341,12 +445,15 @@ async function runValidation() {
   const seenQuestionIds = new Set();
   const seenPart5Content = new Map();
   let totalFlatQuestionCount = 0;
+  const totalCorrectChoiceIndexCounts = createChoiceIndexCounts();
 
   for (const filePath of files) {
     try {
       const json = JSON.parse(await readFile(new URL(`../${filePath}`, import.meta.url), "utf8"));
       const result = validateEntries(json, filePath, seenEntryIds, seenQuestionIds, seenPart5Content);
       allErrors.push(...result.errors);
+      validateChoiceIndexDistribution(allErrors, filePath, result.correctChoiceIndexCounts);
+      mergeChoiceIndexCounts(totalCorrectChoiceIndexCounts, result.correctChoiceIndexCounts);
       totalFlatQuestionCount += result.flatQuestionCount;
     } catch (error) {
       allErrors.push({
@@ -362,6 +469,8 @@ async function runValidation() {
       reason: `フラット化後の設問数が ${minimumFlatQuestionCount} 問未満です。`,
     });
   }
+
+  validateChoiceIndexDistribution(allErrors, "data/*.json", totalCorrectChoiceIndexCounts);
 
   if (allErrors.length > 0) {
     for (const error of allErrors) {
