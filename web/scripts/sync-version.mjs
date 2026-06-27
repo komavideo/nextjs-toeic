@@ -123,6 +123,16 @@ async function checkVersion(paths = createPaths()) {
     required: true,
   });
   const expectedVersion = rootVersion ?? webVersion;
+
+  // ルート VERSION を参照できない環境（Vercel の Root Directory=web 等）では
+  // web/VERSION が基準になる。ルート VERSION の更新を web 配下へ同期し忘れても
+  // 検出できない可能性があるため、基準が web/VERSION であることをログに明示する。
+  if (rootVersion === null) {
+    console.warn(
+      "ルート VERSION を参照できないため web/VERSION を基準に確認します。ルート VERSION 更新後は pnpm sync:version で web 配下も同期・コミットしてください。",
+    );
+  }
+
   const packageVersion = await readPackageVersion(paths);
   const appVersion = await readAppVersion(paths);
   const actualVersions = [
@@ -163,7 +173,18 @@ async function writeFixture(
   await writeFile(paths.webVersionPath, `${webVersion}\n`);
   await writeFile(
     paths.packageJsonPath,
-    `${JSON.stringify({ name: "web", version: packageVersion, private: true }, null, 2)}\n`,
+    // version 以外のフィールド（scripts / dependencies）も含め、同期で保持されることを検証できるようにする。
+    `${JSON.stringify(
+      {
+        name: "web",
+        version: packageVersion,
+        private: true,
+        scripts: { build: "next build" },
+        dependencies: { next: "16.2.9" },
+      },
+      null,
+      2,
+    )}\n`,
   );
   await writeFile(paths.appVersionPath, appVersionFileContent(appVersion));
 }
@@ -176,7 +197,11 @@ async function runSelfTest() {
     await writeFixture(syncPaths, { rootVersion: "0.1.1" });
     assert.equal(await syncVersion(syncPaths), "0.1.1");
     assert.equal(await checkVersion(syncPaths), "0.1.1");
-    assert.equal((await readPackageJson(syncPaths)).version, "0.1.1");
+    const syncedPackageJson = await readPackageJson(syncPaths);
+    assert.equal(syncedPackageJson.version, "0.1.1");
+    // version 以外のフィールド（scripts / dependencies）が同期後も欠落しないことを確認する。
+    assert.equal(syncedPackageJson.scripts.build, "next build");
+    assert.equal(syncedPackageJson.dependencies.next, "16.2.9");
     assert.equal(await readAppVersion(syncPaths), "0.1.1");
 
     const invalidPaths = createPaths(join(tempRoot, "invalid", "web"));
