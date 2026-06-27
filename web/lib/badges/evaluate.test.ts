@@ -86,13 +86,13 @@ test("連続学習日数のしきい値ちょうどで解除する", () => {
 
 test("全問制覇は到達数が総数に達して初めて解除する", () => {
   assert.equal(
-    evaluateUnlockedBadgeIds(makeMetrics({ distinctAnswered: 363 })).has(
+    evaluateUnlockedBadgeIds(makeMetrics({ distinctAnswered: 423 })).has(
       "reach-all",
     ),
     false,
   );
   assert.equal(
-    evaluateUnlockedBadgeIds(makeMetrics({ distinctAnswered: 364 })).has(
+    evaluateUnlockedBadgeIds(makeMetrics({ distinctAnswered: 424 })).has(
       "reach-all",
     ),
     true,

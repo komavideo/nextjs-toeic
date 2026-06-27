@@ -2732,5 +2732,833 @@
       "webinar"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-036",
+    "part": "part7",
+    "title": "Warehouse Access Notice",
+    "passage": "Notice to Delivery Partners\n\nFrom August 3 through August 14, the east loading entrance at Harbor Point Warehouse will be closed while the security gate is replaced. Drivers should use the south entrance on Mill Street between 7:00 A.M. and 3:30 P.M. A temporary guard station will be set up beside the entrance.\n\nAll drivers must present a delivery number and a photo ID before entering. Shipments arriving after 3:30 P.M. will be held outside the gate until the next business day unless the warehouse supervisor has approved an exception in advance.",
+    "questions": [
+      {
+        "id": "p7-generated-q-036-01",
+        "prompt": "Who is the notice intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Delivery drivers"
+          },
+          {
+            "id": "B",
+            "text": "Warehouse customers"
+          },
+          {
+            "id": "C",
+            "text": "Security equipment vendors"
+          },
+          {
+            "id": "D",
+            "text": "New office employees"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "見出しに Delivery Partners とあり、本文でも Drivers should use とあるため、配送ドライバー向けの案内です。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "audience",
+          "warehouse"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-036-02",
+        "prompt": "What will happen to the east loading entrance?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It will be closed temporarily"
+          },
+          {
+            "id": "B",
+            "text": "It will open earlier each morning"
+          },
+          {
+            "id": "C",
+            "text": "It will be used for visitor parking"
+          },
+          {
+            "id": "D",
+            "text": "It will become a customer counter"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に the east loading entrance ... will be closed とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "warehouse"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-036-03",
+        "prompt": "What must drivers show before entering?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A delivery number and a photo ID"
+          },
+          {
+            "id": "B",
+            "text": "A parking receipt and an invoice"
+          },
+          {
+            "id": "C",
+            "text": "A gate repair form"
+          },
+          {
+            "id": "D",
+            "text": "A supervisor's business card"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に present a delivery number and a photo ID とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "warehouse"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-036-04",
+        "prompt": "What will probably happen to a shipment that arrives at 4:00 P.M. without prior approval?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It will wait outside until the next business day"
+          },
+          {
+            "id": "B",
+            "text": "It will be unloaded at the east entrance"
+          },
+          {
+            "id": "C",
+            "text": "It will be accepted at the temporary guard station"
+          },
+          {
+            "id": "D",
+            "text": "It will be sent to the office lobby"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "3:30 P.M. 後に到着し、事前承認がない荷物は held outside the gate until the next business day とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "notice",
+          "inference",
+          "warehouse"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "warehouse"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-037",
+    "part": "part7",
+    "title": "Retail Pickup Service Report",
+    "passage": "Riverton Home Goods reported a 14 percent increase in online sales during the spring quarter. The company credits the growth to a pickup service that lets customers reserve items online and collect them from a dedicated counter inside each store. According to operations director Lena Morales, customers who use the pickup service often add small household items to their orders after arriving.\n\nThe retailer will expand the service to six additional stores in September. Before the expansion, staff members at those locations will attend a half-day session on inventory checks and customer notifications.",
+    "questions": [
+      {
+        "id": "p7-generated-q-037-01",
+        "prompt": "What is the report mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The effect of a pickup service on sales"
+          },
+          {
+            "id": "B",
+            "text": "The closing of several retail stores"
+          },
+          {
+            "id": "C",
+            "text": "A new supplier for home goods"
+          },
+          {
+            "id": "D",
+            "text": "A change in store opening hours"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文はオンライン売上増加と、その要因としての pickup service を中心に説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "article",
+          "topic",
+          "retail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-037-02",
+        "prompt": "What can customers do with the pickup service?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Reserve items online and collect them in stores"
+          },
+          {
+            "id": "B",
+            "text": "Return items without receipts"
+          },
+          {
+            "id": "C",
+            "text": "Schedule home repairs"
+          },
+          {
+            "id": "D",
+            "text": "Join staff training sessions"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に reserve items online and collect them from a dedicated counter とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "article",
+          "detail",
+          "retail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-037-03",
+        "prompt": "What will staff members at the additional stores do before September?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Attend a session on inventory checks and notifications"
+          },
+          {
+            "id": "B",
+            "text": "Build new pickup counters in every department"
+          },
+          {
+            "id": "C",
+            "text": "Prepare a report on quarterly rent"
+          },
+          {
+            "id": "D",
+            "text": "Deliver online orders to customers' homes"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文末に staff members ... will attend a half-day session on inventory checks and customer notifications とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "article",
+          "detail",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-037-04",
+        "prompt": "What can be inferred about some customers who use the pickup service?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "They buy extra items when they come to the store"
+          },
+          {
+            "id": "B",
+            "text": "They avoid entering the store completely"
+          },
+          {
+            "id": "C",
+            "text": "They must attend a half-day training session"
+          },
+          {
+            "id": "D",
+            "text": "They receive a 14 percent discount"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "customers ... often add small household items to their orders after arriving とあるため、来店時に追加購入する客がいると推測できます。",
+        "difficulty": "hard",
+        "tags": [
+          "article",
+          "inference",
+          "retail"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "article",
+      "retail"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-038",
+    "part": "part7",
+    "title": "Administrative Coordinator Posting",
+    "passage": "Administrative Coordinator\n\nBaystone Design Studio is seeking an administrative coordinator for its downtown office. The coordinator will schedule client consultations, prepare basic invoices, and contact suppliers about material deliveries. Applicants should have at least two years of office experience and strong spreadsheet skills.\n\nThe position is full time and begins in early November. To apply, send a resume and a brief cover letter to hiring@baystone.example by October 3. Interviews will be held during the following week.",
+    "questions": [
+      {
+        "id": "p7-generated-q-038-01",
+        "prompt": "What position is being advertised?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Administrative coordinator"
+          },
+          {
+            "id": "B",
+            "text": "Interior designer"
+          },
+          {
+            "id": "C",
+            "text": "Delivery driver"
+          },
+          {
+            "id": "D",
+            "text": "Accounting director"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "見出しと本文に administrative coordinator とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "job-posting",
+          "detail",
+          "hiring"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-038-02",
+        "prompt": "Which skill is required for applicants?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Strong spreadsheet skills"
+          },
+          {
+            "id": "B",
+            "text": "Advanced video editing"
+          },
+          {
+            "id": "C",
+            "text": "Commercial driving"
+          },
+          {
+            "id": "D",
+            "text": "Building inspection certification"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に strong spreadsheet skills とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "job-posting",
+          "detail",
+          "hiring"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-038-03",
+        "prompt": "What will the coordinator do?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Schedule client consultations"
+          },
+          {
+            "id": "B",
+            "text": "Design downtown apartments"
+          },
+          {
+            "id": "C",
+            "text": "Repair delivery vehicles"
+          },
+          {
+            "id": "D",
+            "text": "Lead interviews with suppliers"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に will schedule client consultations とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "job-posting",
+          "detail",
+          "hiring"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-038-04",
+        "prompt": "How should applicants apply?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By sending a resume and cover letter by October 3"
+          },
+          {
+            "id": "B",
+            "text": "By visiting the office in early November"
+          },
+          {
+            "id": "C",
+            "text": "By calling suppliers during interviews"
+          },
+          {
+            "id": "D",
+            "text": "By submitting design samples next week"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に send a resume and a brief cover letter ... by October 3 とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "job-posting",
+          "deadline",
+          "hiring"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "job-posting",
+      "hiring"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-039",
+    "part": "part7",
+    "title": "Regional Facilities Forum",
+    "passage": "Regional Facilities Forum - October 6\n\n8:30 A.M. Registration and coffee\n9:00 A.M. Opening remarks by forum chair Mina Okafor\n9:30 A.M. Energy Savings in Older Office Buildings, presented by engineer Paul Lin\n10:45 A.M. Vendor Panel: Comparing Cleaning Services\n12:00 P.M. Lunch in the Garden Room\n1:00 P.M. Workshop A: Creating Maintenance Checklists\n1:00 P.M. Workshop B: Planning Office Moves\n\nAttendees should choose one afternoon workshop when checking in. Questions about the schedule may be directed to forumdesk@northhall.example.",
+    "questions": [
+      {
+        "id": "p7-generated-q-039-01",
+        "prompt": "Who will present the session on energy savings?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Paul Lin"
+          },
+          {
+            "id": "B",
+            "text": "Mina Okafor"
+          },
+          {
+            "id": "C",
+            "text": "A cleaning service vendor"
+          },
+          {
+            "id": "D",
+            "text": "A workshop participant"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "9:30 A.M. の項目に presented by engineer Paul Lin とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "schedule",
+          "detail",
+          "event"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-039-02",
+        "prompt": "When is the vendor panel scheduled?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "10:45 A.M."
+          },
+          {
+            "id": "B",
+            "text": "8:30 A.M."
+          },
+          {
+            "id": "C",
+            "text": "12:00 P.M."
+          },
+          {
+            "id": "D",
+            "text": "1:00 P.M."
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "Vendor Panel は 10:45 A.M. に予定されています。",
+        "difficulty": "medium",
+        "tags": [
+          "schedule",
+          "time",
+          "event"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-039-03",
+        "prompt": "When should attendees choose an afternoon workshop?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "When checking in"
+          },
+          {
+            "id": "B",
+            "text": "During lunch"
+          },
+          {
+            "id": "C",
+            "text": "After the vendor panel"
+          },
+          {
+            "id": "D",
+            "text": "By sending an e-mail next week"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文末に choose one afternoon workshop when checking in とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "schedule",
+          "detail",
+          "event"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-039-04",
+        "prompt": "What can be inferred about Workshop A and Workshop B?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Attendees cannot participate in both"
+          },
+          {
+            "id": "B",
+            "text": "They are held before lunch"
+          },
+          {
+            "id": "C",
+            "text": "They are led by the same engineer"
+          },
+          {
+            "id": "D",
+            "text": "They require separate registration fees"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "両方とも 1:00 P.M. に始まり、one afternoon workshop を選ぶとあるため、両方には参加できないと推測できます。",
+        "difficulty": "hard",
+        "tags": [
+          "schedule",
+          "inference",
+          "event"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "schedule",
+      "event"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-040",
+    "part": "part7",
+    "title": "Catering Order Emails",
+    "passage": "E-mail 1\nFrom: Marisa Chen, Office Manager\nTo: Fresh Table Catering\nSubject: Lunch order update\n\nOur training session on June 12 now has 72 participants instead of 60. Please update our boxed lunch order and make sure that 12 of the lunches are vegetarian. Delivery should be made to the fourth-floor conference area at 11:15 A.M. If the larger order changes the delivery fee, please call me before processing the payment.\n\nE-mail 2\nFrom: Fresh Table Catering\nTo: Marisa Chen\nSubject: Re: Lunch order update\n\nWe can update the order as requested. Because the new total is above $900, the delivery fee will be waived. The updated total is $936, and drinks are included. Please confirm by 4:00 P.M. today so we can reserve enough staff for the morning delivery.\n\nOrder Summary\n72 boxed lunches at $13 each\n12 vegetarian lunches included\nDelivery: fourth-floor conference area, 11:15 A.M.",
+    "questions": [
+      {
+        "id": "p7-generated-q-040-01",
+        "prompt": "What change did Marisa Chen request?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Increasing the order to 72 lunches"
+          },
+          {
+            "id": "B",
+            "text": "Moving the training session to another day"
+          },
+          {
+            "id": "C",
+            "text": "Canceling all vegetarian lunches"
+          },
+          {
+            "id": "D",
+            "text": "Delivering lunch to a different building"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "E-mail 1 に 72 participants instead of 60 とあり、昼食注文を72個に増やす依頼です。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "catering"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-040-02",
+        "prompt": "What is the updated total for the order?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "$936"
+          },
+          {
+            "id": "B",
+            "text": "$900"
+          },
+          {
+            "id": "C",
+            "text": "$72"
+          },
+          {
+            "id": "D",
+            "text": "$13"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "E-mail 2 に The updated total is $936 とあります。Order Summary の 72 boxed lunches at $13 each とも一致します。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "catering"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-040-03",
+        "prompt": "Why will the delivery fee be waived?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The new total is above $900"
+          },
+          {
+            "id": "B",
+            "text": "The order includes vegetarian lunches"
+          },
+          {
+            "id": "C",
+            "text": "The delivery is after 4:00 P.M."
+          },
+          {
+            "id": "D",
+            "text": "The conference area is on the fourth floor"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "E-mail 2 に Because the new total is above $900, the delivery fee will be waived とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "reason",
+          "catering"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-040-04",
+        "prompt": "Where should the lunches be delivered?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To the fourth-floor conference area"
+          },
+          {
+            "id": "B",
+            "text": "To Fresh Table Catering"
+          },
+          {
+            "id": "C",
+            "text": "To the building lobby"
+          },
+          {
+            "id": "D",
+            "text": "To a morning delivery office"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "E-mail 1 と Order Summary の両方に fourth-floor conference area とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "catering"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "email",
+      "catering"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-041",
+    "part": "part7",
+    "title": "Maintenance Quote and Memo",
+    "passage": "Memo\nFrom: Luis Romero, Facilities Coordinator\nTo: Branch Manager\n\nThe training room lights have flickered during two recent workshops. I asked Greenway Electrical to inspect the room because another workshop is scheduled for June 18. The technician found that two motion sensors are failing, but the wiring panel is not damaged. I recommend accepting Option A from the attached quote so the room can be ready before the workshop.\n\nQuote from Greenway Electrical\nOption A: Replace two motion sensors, $420, work completed in one morning\nOption B: Rewire the lighting panel, $1,250, work completed over two business days\nTechnician available: June 14 or June 15",
+    "questions": [
+      {
+        "id": "p7-generated-q-041-01",
+        "prompt": "What problem is described in the memo?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The training room lights have flickered"
+          },
+          {
+            "id": "B",
+            "text": "The wiring panel was destroyed"
+          },
+          {
+            "id": "C",
+            "text": "A workshop was canceled"
+          },
+          {
+            "id": "D",
+            "text": "A quote was sent to the wrong branch"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "メモ冒頭に The training room lights have flickered とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "detail",
+          "maintenance"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-041-02",
+        "prompt": "Which option does Luis Romero recommend?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Replacing two motion sensors"
+          },
+          {
+            "id": "B",
+            "text": "Rewiring the lighting panel"
+          },
+          {
+            "id": "C",
+            "text": "Canceling the June 18 workshop"
+          },
+          {
+            "id": "D",
+            "text": "Requesting another inspection"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "メモで Option A を受け入れることを推奨しており、見積では Option A が Replace two motion sensors です。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "reference",
+          "maintenance"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-041-03",
+        "prompt": "Why is Option B probably unnecessary?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The wiring panel is not damaged"
+          },
+          {
+            "id": "B",
+            "text": "The technician is not available in June"
+          },
+          {
+            "id": "C",
+            "text": "The training room has no lighting problem"
+          },
+          {
+            "id": "D",
+            "text": "The workshop will be held in another room"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "メモに the wiring panel is not damaged とあるため、配線盤をやり直す Option B は不要と考えられます。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "reason",
+          "maintenance"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-041-04",
+        "prompt": "Why does the work need to be completed soon?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Another workshop is scheduled for June 18"
+          },
+          {
+            "id": "B",
+            "text": "The quote expires on June 15"
+          },
+          {
+            "id": "C",
+            "text": "The technician is moving to another branch"
+          },
+          {
+            "id": "D",
+            "text": "The branch manager requested new furniture"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "メモに another workshop is scheduled for June 18 とあり、その前に部屋を使える状態にする必要があります。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "reason",
+          "maintenance"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "maintenance"
+    ],
+    "reviewed": true
   }
 ]
