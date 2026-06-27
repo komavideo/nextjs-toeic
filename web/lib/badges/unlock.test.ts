@@ -21,9 +21,8 @@ export async function resolve(specifier, context, nextResolve) {
 `;
 register(`data:text/javascript,${encodeURIComponent(aliasLoaderCode)}`, import.meta.url);
 
-const { reconcileBadges, applySessionBadgeUnlocks } = await import(
-  "./unlock.ts"
-);
+const { reconcileBadges, applySessionBadgeUnlocks, reconcileAndPersistBadges } =
+  await import("./unlock.ts");
 const { recordAnswer } = await import("@/lib/progress/recordAnswer");
 
 const now = new Date("2026-06-27T00:00:00.000Z");
@@ -136,4 +135,36 @@ test("回答記録後のセッション完了で新規バッジを保存し結�
   assert.deepEqual(celebratedIds, ["perfect-1", "special-first"]);
   assert.equal(result.state.unlockedBadges["perfect-1"], nowIso);
   assert.equal(result.state.unlockedBadges["special-first"], nowIso);
+});
+
+test("遡及記録があれば永続化し、遡及後の状態を返す", () => {
+  const state = createState({ currentStreakDays: 7 });
+  const persisted: ProgressState[] = [];
+
+  const result = reconcileAndPersistBadges(
+    state,
+    (next) => persisted.push(next),
+    now,
+  );
+
+  assert.equal(persisted.length, 1);
+  assert.equal(result.unlockedBadges["streak-7"], nowIso);
+  assert.equal(persisted[0], result);
+});
+
+test("遡及記録がなければ永続化せず、元の状態をそのまま返す", () => {
+  const state = createState({
+    currentStreakDays: 7,
+    unlockedBadges: { "streak-3": nowIso, "streak-7": nowIso },
+  });
+  const persisted: ProgressState[] = [];
+
+  const result = reconcileAndPersistBadges(
+    state,
+    (next) => persisted.push(next),
+    now,
+  );
+
+  assert.equal(persisted.length, 0);
+  assert.equal(result, state);
 });

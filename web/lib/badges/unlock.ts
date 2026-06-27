@@ -100,3 +100,22 @@ export function applySessionBadgeUnlocks(
 
   return { state, celebrated: definitionsForIds(celebratedIds) };
 }
+
+/**
+ * 進捗読み込み時に達成済みバッジを静かに遡及記録し、追加があれば永続化する。
+ * 保存処理は呼び出し側から注入し（storage 層へ依存しない）、遡及後の状態を返す。
+ * 進捗・バッジ画面の読み込み導線で共通利用する（お祝い演出はしない）。
+ */
+export function reconcileAndPersistBadges(
+  state: ProgressState,
+  persist: (state: ProgressState) => void,
+  now: Date = new Date(),
+): ProgressState {
+  const reconciled = reconcileBadges(state, now);
+
+  if (reconciled.changed) {
+    persist(reconciled.state);
+  }
+
+  return reconciled.state;
+}

@@ -9,7 +9,7 @@ import {
   badgeCategoryOrder,
 } from "@/lib/badges/definitions";
 import { buildBadgeViews, countUnlockedBadges } from "@/lib/badges/evaluate";
-import { reconcileBadges } from "@/lib/badges/unlock";
+import { reconcileAndPersistBadges } from "@/lib/badges/unlock";
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import {
   loadProgressState,
@@ -32,13 +32,9 @@ export function BadgesClient() {
 
     if (result.ok) {
       // 既に達成済みのバッジを静かに遡及解除し、追加があれば保存する（お祝いはしない）。
-      const reconciled = reconcileBadges(result.state);
-
-      if (reconciled.changed) {
-        saveProgressState(reconciled.state);
-      }
-
-      setProgressState(reconciled.state);
+      setProgressState(
+        reconcileAndPersistBadges(result.state, saveProgressState),
+      );
       setLoadError(null);
       return;
     }

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/shared/Button";
 import { ErrorState } from "@/components/shared/ErrorState";
 import { Panel } from "@/components/shared/Panel";
-import { reconcileBadges } from "@/lib/badges/unlock";
+import { reconcileAndPersistBadges } from "@/lib/badges/unlock";
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import {
   calculateQuestionReach,
@@ -46,13 +46,9 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
 
     if (result.ok) {
       // 既に達成済みのバッジを静かに遡及解除し、追加があれば保存する（お祝いはしない）。
-      const reconciled = reconcileBadges(result.state);
-
-      if (reconciled.changed) {
-        saveProgressState(reconciled.state);
-      }
-
-      setProgressState(reconciled.state);
+      setProgressState(
+        reconcileAndPersistBadges(result.state, saveProgressState),
+      );
       setLoadError(null);
       return;
     }
