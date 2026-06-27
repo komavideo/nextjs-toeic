@@ -1,6 +1,7 @@
 import type { ChoiceId, ToeicReadingPart } from "./question";
 
-export type ProgressStorageKey = "toeicReadingProgress:v2";
+export type ProgressStorageKey = "toeicReadingProgress:v3";
+export type ProgressStorageKeyV2 = "toeicReadingProgress:v2";
 export type LegacyProgressStorageKey = "toeicReadingProgress:v1";
 
 export type AnswerResult = {
@@ -21,6 +22,9 @@ export type SrsState = {
   lastAnsweredAt: string;
 };
 
+// バッジ ID → 解除日時(ISO8601)。定義はコード側に集約し、進捗には解除済みのみ記録する。
+export type UnlockedBadges = Record<string, string>;
+
 export type ProgressStateV1 = {
   version: 1;
   totalAnswered: number;
@@ -31,7 +35,7 @@ export type ProgressStateV1 = {
   srs: Record<string, SrsState>;
 };
 
-export type ProgressState = {
+export type ProgressStateV2 = {
   version: 2;
   totalAnswered: number;
   totalCorrect: number;
@@ -41,4 +45,17 @@ export type ProgressState = {
   srs: Record<string, SrsState>;
   bookmarkedQuestionIds: string[];
   questionNotes: Record<string, string>;
+};
+
+export type ProgressState = {
+  version: 3;
+  totalAnswered: number;
+  totalCorrect: number;
+  currentStreakDays: number;
+  lastStudiedDate?: string;
+  answers: AnswerResult[];
+  srs: Record<string, SrsState>;
+  bookmarkedQuestionIds: string[];
+  questionNotes: Record<string, string>;
+  unlockedBadges: UnlockedBadges;
 };
