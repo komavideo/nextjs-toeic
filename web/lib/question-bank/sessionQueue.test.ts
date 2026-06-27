@@ -155,7 +155,7 @@ function createProgressState(
   srs: ProgressState["srs"] = {},
 ): ProgressState {
   return {
-    version: 2,
+    version: 3,
     totalAnswered: answers.length,
     totalCorrect: answers.filter((answer) => answer.correct).length,
     currentStreakDays: 1,
@@ -164,6 +164,7 @@ function createProgressState(
     srs,
     bookmarkedQuestionIds: [],
     questionNotes: {},
+    unlockedBadges: {},
   };
 }
 

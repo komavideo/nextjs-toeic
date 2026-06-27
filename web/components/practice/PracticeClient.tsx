@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Modal } from "@/components/shared/Modal";
+import { applySessionBadgeUnlocks } from "@/lib/badges/unlock";
 import {
   bookmarkSaveErrorMessage,
   toggleBookmarkedQuestionId,
@@ -575,12 +576,15 @@ export function PracticeClient() {
         new Date(session.questionStartedAt).getTime(),
       0,
     );
-    const answer = gradeQuestion(
-      currentQuestion,
-      session.selectedChoiceId,
-      elapsedMs,
-      answeredAt,
-    );
+    const answer = {
+      ...gradeQuestion(
+        currentQuestion,
+        session.selectedChoiceId,
+        elapsedMs,
+        answeredAt,
+      ),
+      sessionId: session.id,
+    };
     const progressResult = loadProgressState();
     const srsPreview = updateSrsState({
       questionId: answer.questionId,
@@ -664,6 +668,14 @@ export function PracticeClient() {
       }
     }
 
+    // セッション前後で新たに解除されたバッジを算出し、進捗へ反映する。
+    const badgeResult = applySessionBadgeUnlocks(
+      loadResult.state,
+      nextProgress,
+      new Date(),
+    );
+    nextProgress = badgeResult.state;
+
     const saveResult = saveProgressState(nextProgress);
 
     if (!saveResult.ok) {
@@ -688,6 +700,7 @@ export function PracticeClient() {
       totalCorrect,
       elapsedMs,
       reviewScheduledCount,
+      unlockedBadges: badgeResult.celebrated,
     });
   }
 
@@ -864,6 +877,7 @@ export function PracticeClient() {
         reviewScheduledCount={state.reviewScheduledCount}
         totalAnswered={state.totalAnswered}
         totalCorrect={state.totalCorrect}
+        unlockedBadges={state.unlockedBadges}
       />
     );
   }

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/shared/Button";
 import { ErrorState } from "@/components/shared/ErrorState";
 import { Panel } from "@/components/shared/Panel";
+import { reconcileAndPersistBadges } from "@/lib/badges/unlock";
 import { createInitialProgressState } from "@/lib/progress/initialState";
 import {
   calculateQuestionReach,
@@ -16,8 +17,12 @@ import {
 } from "@/lib/progress/statistics";
 import { buildProgressTagDetailHref } from "@/lib/progress/tagLinks";
 import { getDueSrsItems } from "@/lib/srs/due";
-import { loadProgressState } from "@/lib/storage/progressStorage";
+import {
+  loadProgressState,
+  saveProgressState,
+} from "@/lib/storage/progressStorage";
 import type { ProgressState } from "@/types/progress";
+import { BadgeSummaryPanel } from "./BadgeSummaryPanel";
 import { LearningCalendar } from "./LearningCalendar";
 import { PartPerformance } from "./PartPerformance";
 import { QuestionReachMeter } from "./QuestionReachMeter";
@@ -40,7 +45,10 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
     const result = loadProgressState();
 
     if (result.ok) {
-      setProgressState(result.state);
+      // 既に達成済みのバッジを静かに遡及解除し、追加があれば保存する（お祝いはしない）。
+      setProgressState(
+        reconcileAndPersistBadges(result.state, saveProgressState),
+      );
       setLoadError(null);
       return;
     }
@@ -141,6 +149,7 @@ export function ProgressClient({ questionRefs }: ProgressClientProps) {
           </p>
         </Panel>
       </div>
+      <BadgeSummaryPanel className="mt-4" state={state} />
     </section>
   );
 }

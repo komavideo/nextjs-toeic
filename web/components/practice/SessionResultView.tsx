@@ -2,7 +2,9 @@
 
 import { Button } from "@/components/shared/Button";
 import { Panel } from "@/components/shared/Panel";
+import type { BadgeDefinition } from "@/lib/badges/types";
 import type { AnswerResult } from "@/types/progress";
+import { SessionResultBadges } from "./SessionResultBadges";
 
 type SessionResultViewProps = {
   answers: AnswerResult[];
@@ -12,6 +14,7 @@ type SessionResultViewProps = {
   reviewScheduledCount: number;
   bookmarkedQuestionIds: string[];
   questionNotes: Record<string, string>;
+  unlockedBadges: BadgeDefinition[];
   bookmarkError?: string | null;
   onRestart: () => void;
   onToggleBookmark: (questionId: string) => void;
@@ -32,6 +35,7 @@ export function SessionResultView({
   reviewScheduledCount,
   bookmarkedQuestionIds,
   questionNotes,
+  unlockedBadges,
   bookmarkError,
   onRestart,
   onToggleBookmark,
@@ -62,6 +66,8 @@ export function SessionResultView({
           <div className="mt-1 text-sm text-[var(--text-secondary)]">所要時間</div>
         </Panel>
       </div>
+
+      <SessionResultBadges badges={unlockedBadges} />
 
       <Panel className="mt-4" title="誤答一覧">
         {wrongAnswers.length > 0 ? (

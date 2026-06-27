@@ -1,3 +1,4 @@
+import type { BadgeDefinition } from "@/lib/badges/types";
 import type { FlatQuestion } from "@/lib/question-bank/flatten";
 import type { GradeQuestionResult } from "@/lib/question-bank/grade";
 import type { SessionQuestionCount } from "@/lib/question-bank/sessionQueue";
@@ -59,6 +60,7 @@ export type ResultPracticeState = {
   totalAnswered: number;
   elapsedMs: number;
   reviewScheduledCount: number;
+  unlockedBadges: BadgeDefinition[];
 };
 
 export type ErrorPracticeState = {
