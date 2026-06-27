@@ -223,6 +223,23 @@ test("前半の正答率が5割以上なら克服済みと判定しない", () =
   assert.equal(metrics.overcameWeakTag, false);
 });
 
+test("前半が苦手でも直近の連続正解が崩れていれば克服済みと判定しない", () => {
+  const base = new Date("2026-06-25T10:00:00.000Z").getTime();
+  // 前半は 0/4 で苦手だが、直近 5 問(index 3-7)に誤答(index 7)が混じる。
+  const pattern = [false, false, false, false, true, true, true, false];
+  const answers = pattern.map((correct, index) =>
+    createAnswer({
+      questionId: `part5-${index}`,
+      correct,
+      tags: ["preposition"],
+      answeredAt: new Date(base + index * 1000).toISOString(),
+    }),
+  );
+  const metrics = deriveBadgeMetrics(createState(answers));
+
+  assert.equal(metrics.overcameWeakTag, false);
+});
+
 test("早朝・深夜の回答有無を時間帯で判定する", () => {
   const earlyState = createState([
     createAnswer({ answeredAt: isoAtLocalHour(6) }),

@@ -4,7 +4,7 @@
 
 この文書は、Phase 1 の実装者向けにアプリ画面の遷移、画面内イベント、状態更新、例外処理を定義するワイヤーフローである。全体像は Mermaid 図、実装契約は表で示す。視覚仕様は `docs/UI-DESIGN.md`、画面見本は `docs/VISUAL-COMPANION.html`、プロダクト要件とデータ方針は `docs/PRD.md` を正とする。
 
-対象は Phase 1 の拡張画面を含む13画面のみとする。Listening、ログイン、クラウド同期、多言語、Phase 2 の300問以上投入は扱わない。
+対象は Phase 1 の拡張画面を含む14画面のみとする。Listening、ログイン、クラウド同期、多言語、Phase 2 の300問以上投入は扱わない。
 
 ## 2. 画面対応表
 
@@ -20,6 +20,7 @@
 | `screen-review` | 復習画面 | `/review` | Client Component | `VISUAL-COMPANION.html` |
 | `screen-progress` | 進捗分析画面 | `/progress` | RSC + Client summary | `VISUAL-COMPANION.html` |
 | `screen-progress-tag` | 苦手タグ詳細画面 | `/progress/tag?tag=...` | RSC + Client detail | `NEW_FEATURES.md` |
+| `screen-badges` | バッジ一覧画面 | `/progress/badges` | RSC + Client list | `types/progress.ts`（`unlockedBadges`） |
 | `screen-settings` | 設定 / データ管理画面 | `/settings` | Client Component | `VISUAL-COMPANION.html` |
 | `screen-empty` | 初回利用 / 空状態 | `/` | Client conditional state | `VISUAL-COMPANION.html` |
 | `screen-error` | エラー / 保存失敗状態 | current route | Client error state | `VISUAL-COMPANION.html` |
@@ -254,8 +255,10 @@ flowchart TD
 | `screen-progress-tag` | `進捗へ戻る` | `screen-progress` | なし |
 | `screen-progress` | `弱点を練習` | `screen-quick` | Part / タグ別正答率の最低候補から出題キューを作成 |
 | `screen-progress` | `未回答を演習`（問題到達率メーター） | `screen-quick` | 選択 Part の未回答を優先（`mode=part&unanswered=1`）して出題キューを作成 |
+| `screen-progress` | `バッジ一覧を見る` | `screen-badges` | 獲得バッジ一覧を表示。読み込み時に達成済みバッジを静かに遡及記録する（お祝い演出はしない） |
+| `screen-badges` | `進捗へ戻る` | `screen-progress` | なし |
 | `screen-settings` | `データリセット` | 確認モーダル | まだ削除しない |
-| `screen-settings` | `リセット実行` | `screen-empty` | `toeicReadingProgress:v2` と旧 `toeicReadingProgress:v1` を削除 |
+| `screen-settings` | `リセット実行` | `screen-empty` | `toeicReadingProgress:v3` と旧 `toeicReadingProgress:v2` / `toeicReadingProgress:v1` を削除 |
 | `screen-error` | `再試行` | 元画面 or `screen-home` | 失敗した保存/読み込み処理を再実行 |
 | `screen-error` | `初期化` | `screen-empty` | 保存キー削除を試行 |
 
@@ -272,11 +275,13 @@ flowchart TD
 | 学習メモ保存 | `questionNotes` | `localStorage` へ即時保存 | 画面上に保存エラーを表示 |
 | 次問へ進む | `currentIndex` | メモリのみ | なし |
 | セッション完了 | 集計、SRS、連続学習日数 | `localStorage` へ保存 | `screen-error` |
+| セッション完了（バッジ） | `unlockedBadges`（今回新規達成分をお祝い、既獲得は再お祝いしない） | `localStorage` へ保存 | 保存失敗でもメモリ保持 |
+| 進捗/バッジ画面 読み込み | `unlockedBadges`（達成済みを静かに遡及記録、お祝いなし） | 追加があれば `localStorage` へ保存 | 保存失敗でも表示は継続 |
 | 復習回答で正解 | `intervalDays`, `dueDate`, `correctStreak` | セッション完了時に保存 | `screen-error` |
 | 復習回答で不正解 | `intervalDays = 1`, 翌日 `dueDate` | セッション完了時に保存 | `screen-error` |
 | データリセット | 保存キー削除 | `localStorage.removeItem` | `screen-error` |
 
-永続化キーは PRD の `toeicReadingProgress:v2` を使う。旧 `toeicReadingProgress:v1` は初回読み込み時に v2 へ移行する。保存データの `version` が未対応の場合は破損扱いにし、`screen-error` で初期化導線を出す。
+永続化キーは PRD の `toeicReadingProgress:v3` を使う。旧 `toeicReadingProgress:v1` / `toeicReadingProgress:v2` は初回読み込み時に v3 へ移行する（移行元キーは削除）。保存データの `version` が未対応の場合は破損扱いにし、`screen-error` で初期化導線を出す。
 
 ## 9. 実装メモ
 

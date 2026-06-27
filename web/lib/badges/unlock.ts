@@ -62,7 +62,8 @@ export function reconcileBadges(
 /**
  * セッション完了時に、今回新たに解除されたバッジを算出する。
  * - 解除済み記録は after.unlockedBadges へ静かに反映する（遡及分も含む）。
- * - お祝い対象（celebrated）は「セッション前は満たさず、セッション後に満たした」分のみ。
+ * - お祝い対象（celebrated）は「セッション前は満たさず、今回新たに記録された」分のみ
+ *   （過去に獲得済みのバッジは再びお祝いしない）。
  */
 export function applySessionBadgeUnlocks(
   before: ProgressState,
@@ -71,14 +72,17 @@ export function applySessionBadgeUnlocks(
 ): { state: ProgressState; celebrated: BadgeDefinition[] } {
   const beforeIds = evaluateUnlockedBadgeIds(deriveBadgeMetrics(before));
   const afterIds = evaluateUnlockedBadgeIds(deriveBadgeMetrics(after));
-  const { unlockedBadges } = recordUnlockedBadges(
+  const { unlockedBadges, addedIds } = recordUnlockedBadges(
     after.unlockedBadges,
     afterIds,
     now.toISOString(),
   );
   const celebratedIds = new Set<string>();
 
-  for (const id of afterIds) {
+  // お祝い対象は「今回新たに記録された（＝過去に未記録の）」かつ
+  // 「セッション前は満たしていなかった」分のみ。これにより、連続日数・正答率など
+  // 非単調な指標で一度獲得済みのバッジが再達成時に再びお祝いされるのを防ぐ。
+  for (const id of addedIds) {
     if (!beforeIds.has(id)) {
       celebratedIds.add(id);
     }

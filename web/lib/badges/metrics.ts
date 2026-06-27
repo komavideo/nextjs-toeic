@@ -21,13 +21,19 @@ function toCumulativeAccuracy(correct: number, answered: number): number {
   return answered === 0 ? 0 : Math.round((correct / answered) * 100);
 }
 
+// answeredAt は toISOString() 由来の UTC 固定書式のため、辞書順比較が時系列順と一致する。
+// Intl コレーションを伴う localeCompare より軽い単純比較で昇順ソートする。
+function compareIsoAsc(left: string, right: string): number {
+  return left < right ? -1 : left > right ? 1 : 0;
+}
+
 // 回答履歴を回答時刻の昇順で、空き時間が gapMs を超える箇所で区切ってセッション近似に分割する。
 export function groupAnswersIntoSessions(
   answers: AnswerResult[],
   gapMs: number = sessionGapMs,
 ): AnswerResult[][] {
   const sorted = [...answers].sort((left, right) =>
-    left.answeredAt.localeCompare(right.answeredAt),
+    compareIsoAsc(left.answeredAt, right.answeredAt),
   );
   const groups: AnswerResult[][] = [];
   let currentGroup: AnswerResult[] = [];
@@ -80,7 +86,7 @@ function hasOvercomeWeakTag(answers: AnswerResult[]): boolean {
     }
 
     const sorted = [...tagAnswers].sort((left, right) =>
-      left.answeredAt.localeCompare(right.answeredAt),
+      compareIsoAsc(left.answeredAt, right.answeredAt),
     );
     const firstHalf = sorted.slice(0, Math.floor(sorted.length / 2));
     const firstHalfCorrect = firstHalf.filter(

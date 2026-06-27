@@ -1,3 +1,6 @@
+"use client";
+
+import { useMemo } from "react";
 import { Button } from "@/components/shared/Button";
 import { Panel } from "@/components/shared/Panel";
 import { buildBadgeViews, countUnlockedBadges } from "@/lib/badges/evaluate";
@@ -13,14 +16,26 @@ type BadgeSummaryPanelProps = {
 };
 
 export function BadgeSummaryPanel({ state, className }: BadgeSummaryPanelProps) {
-  const views = buildBadgeViews(state);
-  const { unlocked, total } = countUnlockedBadges(state);
-  const recentViews = views
-    .filter((view) => view.unlocked && view.unlockedAt)
-    .sort((left, right) =>
-      (right.unlockedAt ?? "").localeCompare(left.unlockedAt ?? ""),
-    )
-    .slice(0, recentBadgeLimit);
+  // buildBadgeViews / countUnlockedBadges は回答履歴をフルスキャンするため、
+  // state が変わらない再レンダーでは再計算しない。
+  const views = useMemo(() => buildBadgeViews(state), [state]);
+  const { unlocked, total } = useMemo(
+    () => countUnlockedBadges(state),
+    [state],
+  );
+  const recentViews = useMemo(
+    () =>
+      views
+        .filter((view) => view.unlocked && view.unlockedAt)
+        // unlockedAt（ISO 固定書式）の降順で直近獲得を先頭にする。
+        .sort((left, right) => {
+          const leftAt = left.unlockedAt ?? "";
+          const rightAt = right.unlockedAt ?? "";
+          return leftAt < rightAt ? 1 : leftAt > rightAt ? -1 : 0;
+        })
+        .slice(0, recentBadgeLimit),
+    [views],
+  );
 
   return (
     <div className={className}>

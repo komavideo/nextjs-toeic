@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/shared/Button";
 import { ErrorState } from "@/components/shared/ErrorState";
 import { Panel } from "@/components/shared/Panel";
@@ -53,6 +53,16 @@ export function BadgesClient() {
     loadProgress();
   }, [loadProgress]);
 
+  const state = progressState ?? createInitialProgressState();
+  // buildBadgeViews / countUnlockedBadges は回答履歴をフルスキャンするため、
+  // state が変わらない再レンダーでは再計算しない。
+  // フックは早期 return より前で無条件に呼ぶ（Rules of Hooks）。
+  const views = useMemo(() => buildBadgeViews(state), [state]);
+  const { unlocked, total } = useMemo(
+    () => countUnlockedBadges(state),
+    [state],
+  );
+
   if (loadError) {
     return (
       <ErrorState
@@ -67,10 +77,6 @@ export function BadgesClient() {
       />
     );
   }
-
-  const state = progressState ?? createInitialProgressState();
-  const views = buildBadgeViews(state);
-  const { unlocked, total } = countUnlockedBadges(state);
 
   return (
     <section className="mx-auto max-w-[1120px]">
