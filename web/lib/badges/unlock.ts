@@ -70,7 +70,6 @@ export function applySessionBadgeUnlocks(
   after: ProgressState,
   now: Date = new Date(),
 ): { state: ProgressState; celebrated: BadgeDefinition[] } {
-  const beforeIds = evaluateUnlockedBadgeIds(deriveBadgeMetrics(before));
   const afterIds = evaluateUnlockedBadgeIds(deriveBadgeMetrics(after));
   const { unlockedBadges, addedIds } = recordUnlockedBadges(
     after.unlockedBadges,
@@ -78,6 +77,12 @@ export function applySessionBadgeUnlocks(
     now.toISOString(),
   );
   const celebratedIds = new Set<string>();
+
+  if (addedIds.size === 0) {
+    return { state: after, celebrated: [] };
+  }
+
+  const beforeIds = evaluateUnlockedBadgeIds(deriveBadgeMetrics(before));
 
   // お祝い対象は「今回新たに記録された（＝過去に未記録の）」かつ
   // 「セッション前は満たしていなかった」分のみ。これにより、連続日数・正答率など

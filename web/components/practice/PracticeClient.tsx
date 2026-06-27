@@ -576,12 +576,15 @@ export function PracticeClient() {
         new Date(session.questionStartedAt).getTime(),
       0,
     );
-    const answer = gradeQuestion(
-      currentQuestion,
-      session.selectedChoiceId,
-      elapsedMs,
-      answeredAt,
-    );
+    const answer = {
+      ...gradeQuestion(
+        currentQuestion,
+        session.selectedChoiceId,
+        elapsedMs,
+        answeredAt,
+      ),
+      sessionId: session.id,
+    };
     const progressResult = loadProgressState();
     const srsPreview = updateSrsState({
       questionId: answer.questionId,

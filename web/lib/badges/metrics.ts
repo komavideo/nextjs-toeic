@@ -4,8 +4,7 @@ import type { BadgeMetrics } from "./types.ts";
 
 const readingParts: ToeicReadingPart[] = ["part5", "part6", "part7"];
 
-// セッション境界（sessionId）は保存していないため、回答間の空き時間で近似分割する。
-// 既定 30 分以上空いたら別セッションとみなす。
+// sessionId がない旧回答は、30 分超の空き時間でセッション近似に分割する。
 export const sessionGapMs = 30 * 60 * 1000;
 // パーフェクト判定の最小設問数（既定の1セッション出題数に合わせる）。
 export const minPerfectSessionSize = 5;
@@ -18,7 +17,7 @@ type DeriveBadgeMetricsOptions = {
 };
 
 function toCumulativeAccuracy(correct: number, answered: number): number {
-  return answered === 0 ? 0 : Math.round((correct / answered) * 100);
+  return answered === 0 ? 0 : Math.floor((correct / answered) * 100);
 }
 
 // answeredAt は toISOString() 由来の UTC 固定書式のため、辞書順比較が時系列順と一致する。
@@ -27,14 +26,32 @@ function compareIsoAsc(left: string, right: string): number {
   return left < right ? -1 : left > right ? 1 : 0;
 }
 
-// 回答履歴を回答時刻の昇順で、空き時間が gapMs を超える箇所で区切ってセッション近似に分割する。
-export function groupAnswersIntoSessions(
+function isSortedByAnsweredAt(answers: AnswerResult[]): boolean {
+  for (let index = 1; index < answers.length; index += 1) {
+    if (
+      compareIsoAsc(answers[index - 1].answeredAt, answers[index].answeredAt) > 0
+    ) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function answersInTimeOrder(answers: AnswerResult[]): AnswerResult[] {
+  return isSortedByAnsweredAt(answers)
+    ? answers
+    : [...answers].sort((left, right) =>
+        compareIsoAsc(left.answeredAt, right.answeredAt),
+      );
+}
+
+// sessionId がない旧データを、回答間の空き時間で近似分割する。
+function groupAnswersByTimeGap(
   answers: AnswerResult[],
   gapMs: number = sessionGapMs,
 ): AnswerResult[][] {
-  const sorted = [...answers].sort((left, right) =>
-    compareIsoAsc(left.answeredAt, right.answeredAt),
-  );
+  const sorted = answersInTimeOrder(answers);
   const groups: AnswerResult[][] = [];
   let currentGroup: AnswerResult[] = [];
   let previousTime: number | null = null;
@@ -56,6 +73,30 @@ export function groupAnswersIntoSessions(
   }
 
   return groups;
+}
+
+// 新規データは sessionId で実セッション単位に分割し、旧データのみ時間差近似に戻す。
+export function groupAnswersIntoSessions(
+  answers: AnswerResult[],
+  gapMs: number = sessionGapMs,
+): AnswerResult[][] {
+  const groupsBySessionId = new Map<string, AnswerResult[]>();
+  const legacyAnswers: AnswerResult[] = [];
+
+  for (const answer of answers) {
+    if (answer.sessionId) {
+      const group = groupsBySessionId.get(answer.sessionId) ?? [];
+      group.push(answer);
+      groupsBySessionId.set(answer.sessionId, group);
+    } else {
+      legacyAnswers.push(answer);
+    }
+  }
+
+  return [
+    ...groupsBySessionId.values(),
+    ...groupAnswersByTimeGap(legacyAnswers, gapMs),
+  ];
 }
 
 // パーフェクト（最小設問数以上かつ全問正解）なセッション近似の回数を数える。
@@ -85,9 +126,7 @@ function hasOvercomeWeakTag(answers: AnswerResult[]): boolean {
       continue;
     }
 
-    const sorted = [...tagAnswers].sort((left, right) =>
-      compareIsoAsc(left.answeredAt, right.answeredAt),
-    );
+    const sorted = answersInTimeOrder(tagAnswers);
     const firstHalf = sorted.slice(0, Math.floor(sorted.length / 2));
     const firstHalfCorrect = firstHalf.filter(
       (answer) => answer.correct,

@@ -12,6 +12,7 @@ export type AnswerResult = {
   answeredAt: string;
   elapsedMs: number;
   tags: string[];
+  sessionId?: string;
 };
 
 export type SrsState = {

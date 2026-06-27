@@ -258,7 +258,7 @@ flowchart TD
 | `screen-progress` | `バッジ一覧を見る` | `screen-badges` | 獲得バッジ一覧を表示。読み込み時に達成済みバッジを静かに遡及記録する（お祝い演出はしない） |
 | `screen-badges` | `進捗へ戻る` | `screen-progress` | なし |
 | `screen-settings` | `データリセット` | 確認モーダル | まだ削除しない |
-| `screen-settings` | `リセット実行` | `screen-empty` | `toeicReadingProgress:v3` と旧 `toeicReadingProgress:v2` / `toeicReadingProgress:v1` を削除 |
+| `screen-settings` | `リセット実行` | `screen-empty` | `toeicReadingProgress:v3` と互換用 `toeicReadingProgress:v2` / 旧 `toeicReadingProgress:v1` を削除 |
 | `screen-error` | `再試行` | 元画面 or `screen-home` | 失敗した保存/読み込み処理を再実行 |
 | `screen-error` | `初期化` | `screen-empty` | 保存キー削除を試行 |
 
@@ -274,14 +274,14 @@ flowchart TD
 | ブックマーク切替 | `bookmarkedQuestionIds` | `localStorage` へ即時保存 | 画面上に保存エラーを表示 |
 | 学習メモ保存 | `questionNotes` | `localStorage` へ即時保存 | 画面上に保存エラーを表示 |
 | 次問へ進む | `currentIndex` | メモリのみ | なし |
-| セッション完了 | 集計、SRS、連続学習日数 | `localStorage` へ保存 | `screen-error` |
+| セッション完了 | 集計、SRS、連続学習日数 | `localStorage` へ保存（v3 と v2 互換スナップショット） | `screen-error` |
 | セッション完了（バッジ） | `unlockedBadges`（今回新規達成分をお祝い、既獲得は再お祝いしない） | `localStorage` へ保存 | 保存失敗でもメモリ保持 |
 | 進捗/バッジ画面 読み込み | `unlockedBadges`（達成済みを静かに遡及記録、お祝いなし） | 追加があれば `localStorage` へ保存 | 保存失敗でも表示は継続 |
 | 復習回答で正解 | `intervalDays`, `dueDate`, `correctStreak` | セッション完了時に保存 | `screen-error` |
 | 復習回答で不正解 | `intervalDays = 1`, 翌日 `dueDate` | セッション完了時に保存 | `screen-error` |
 | データリセット | 保存キー削除 | `localStorage.removeItem` | `screen-error` |
 
-永続化キーは PRD の `toeicReadingProgress:v3` を使う。旧 `toeicReadingProgress:v1` / `toeicReadingProgress:v2` は初回読み込み時に v3 へ移行する（移行元キーは削除）。保存データの `version` が未対応の場合は破損扱いにし、`screen-error` で初期化導線を出す。
+永続化キーは PRD の `toeicReadingProgress:v3` を使う。旧 `toeicReadingProgress:v1` / `toeicReadingProgress:v2` は初回読み込み時に v3 へ移行する。自動移行では旧キーを削除せず、v3 保存時に v2 互換スナップショットを維持する。保存データの `version` が未対応の場合は破損扱いにし、`screen-error` で初期化導線を出す。
 
 ## 9. 実装メモ
 

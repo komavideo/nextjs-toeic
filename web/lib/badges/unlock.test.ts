@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { register } from "node:module";
 import test from "node:test";
-import type { ProgressState } from "@/types/progress";
+import type { AnswerResult, ProgressState } from "@/types/progress";
 
 // node:test で直接実行するため、テスト内で tsconfig の `@/` alias を解決する。
 const webRootUrl = new URL("../../", import.meta.url);
@@ -24,6 +24,7 @@ register(`data:text/javascript,${encodeURIComponent(aliasLoaderCode)}`, import.m
 const { reconcileBadges, applySessionBadgeUnlocks } = await import(
   "./unlock.ts"
 );
+const { recordAnswer } = await import("@/lib/progress/recordAnswer");
 
 const now = new Date("2026-06-27T00:00:00.000Z");
 const nowIso = now.toISOString();
@@ -43,6 +44,21 @@ function createState(params: {
     bookmarkedQuestionIds: [],
     questionNotes: {},
     unlockedBadges: params.unlockedBadges ?? {},
+  };
+}
+
+function createAnswer(index: number): AnswerResult {
+  return {
+    questionId: `part5-${index}`,
+    part: "part5",
+    selectedChoiceId: "A",
+    correct: true,
+    answeredAt: new Date(
+      new Date("2026-06-25T10:00:00.000Z").getTime() + index * 1000,
+    ).toISOString(),
+    elapsedMs: 1000,
+    tags: [],
+    sessionId: "session-1",
   };
 }
 
@@ -106,4 +122,18 @@ test("定義にない孤児IDは保持し、判定では無視する", () => {
     "2026-06-20T00:00:00.000Z",
   );
   assert.equal(result.state.unlockedBadges["streak-7"], nowIso);
+});
+
+test("回答記録後のセッション完了で新規バッジを保存し結果表示対象にする", () => {
+  const before = createState({});
+  const after = Array.from({ length: 5 }, (_, index) =>
+    createAnswer(index),
+  ).reduce(recordAnswer, before);
+
+  const result = applySessionBadgeUnlocks(before, after, now);
+  const celebratedIds = result.celebrated.map((definition) => definition.id);
+
+  assert.deepEqual(celebratedIds, ["perfect-1", "special-first"]);
+  assert.equal(result.state.unlockedBadges["perfect-1"], nowIso);
+  assert.equal(result.state.unlockedBadges["special-first"], nowIso);
 });
