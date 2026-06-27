@@ -296,8 +296,11 @@ type ProgressState = {
   answers: AnswerResult[];
   srs: Record<string, SrsState>;
   bookmarkedQuestionIds: string[];
+  questionNotes: Record<string, string>;
 };
 ```
+
+`questionNotes` は問題 ID をキーにした任意の学習メモで、保存時に前後空白を取り除き、200 文字以内の非空文字列のみ保持する。空文字または空白だけで保存した場合は、その問題 ID のメモを削除する。既存の v2 保存データに `questionNotes` が存在しない場合は `{}` を補完して読み込み、補完後の v2 データを再保存する。`questionNotes` がオブジェクトでない、空文字・空白のみ・200 文字超・文字列以外の値を含む場合は未対応/破損データとして扱う。
 
 ## 9. 非ゴール
 

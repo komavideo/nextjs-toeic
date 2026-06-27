@@ -7,11 +7,13 @@ import type { AnswerResult } from "@/types/progress";
 type BookmarkReviewListProps = {
   questions: FlatQuestion[];
   answers: AnswerResult[];
+  questionNotes: Record<string, string>;
 };
 
 export function BookmarkReviewList({
   questions,
   answers,
+  questionNotes,
 }: BookmarkReviewListProps) {
   const latestAnswerMap = new Map<string, AnswerResult>();
 
@@ -27,6 +29,7 @@ export function BookmarkReviewList({
       <div className="mt-4 grid gap-3">
         {questions.map((question) => {
           const latestAnswer = latestAnswerMap.get(question.questionId);
+          const note = questionNotes[question.questionId];
 
           return (
             <div
@@ -57,6 +60,16 @@ export function BookmarkReviewList({
                     : "不正解"
                   : "なし"}
               </p>
+              {note ? (
+                <div className="mt-3 rounded-[var(--radius-md)] bg-[var(--surface-subtle)] p-3">
+                  <div className="text-xs font-semibold text-[var(--text-muted)]">
+                    学習メモ
+                  </div>
+                  <p className="mt-1 whitespace-pre-wrap break-words text-sm leading-5 text-[var(--text-secondary)]">
+                    {note}
+                  </p>
+                </div>
+              ) : null}
             </div>
           );
         })}

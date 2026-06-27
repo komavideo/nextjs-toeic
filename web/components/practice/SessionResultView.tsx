@@ -11,6 +11,7 @@ type SessionResultViewProps = {
   elapsedMs: number;
   reviewScheduledCount: number;
   bookmarkedQuestionIds: string[];
+  questionNotes: Record<string, string>;
   bookmarkError?: string | null;
   onRestart: () => void;
   onToggleBookmark: (questionId: string) => void;
@@ -30,6 +31,7 @@ export function SessionResultView({
   elapsedMs,
   reviewScheduledCount,
   bookmarkedQuestionIds,
+  questionNotes,
   bookmarkError,
   onRestart,
   onToggleBookmark,
@@ -85,6 +87,7 @@ export function SessionResultView({
         <ul className="grid gap-3">
           {answers.map((answer) => {
             const bookmarked = bookmarkedQuestionIdSet.has(answer.questionId);
+            const note = questionNotes[answer.questionId];
 
             return (
               <li
@@ -108,6 +111,16 @@ export function SessionResultView({
                     {bookmarked ? "ブックマーク解除" : "ブックマークする"}
                   </Button>
                 </div>
+                {note ? (
+                  <div className="mt-3 rounded-[var(--radius-md)] bg-[var(--surface-subtle)] p-3">
+                    <div className="text-xs font-semibold text-[var(--text-muted)]">
+                      学習メモ
+                    </div>
+                    <p className="mt-1 whitespace-pre-wrap break-words text-sm leading-5 text-[var(--text-secondary)]">
+                      {note}
+                    </p>
+                  </div>
+                ) : null}
               </li>
             );
           })}

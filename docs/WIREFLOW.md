@@ -269,6 +269,7 @@ flowchart TD
 | 回答確定 | `AnswerResult`, 正誤, 経過時間 | 可能なら即時保存を試行 | 失敗してもメモリ保持し `screen-error` で再試行 |
 | 解説表示 | SRS 更新予定の表示 | まだ確定保存しなくてよい | なし |
 | ブックマーク切替 | `bookmarkedQuestionIds` | `localStorage` へ即時保存 | 画面上に保存エラーを表示 |
+| 学習メモ保存 | `questionNotes` | `localStorage` へ即時保存 | 画面上に保存エラーを表示 |
 | 次問へ進む | `currentIndex` | メモリのみ | なし |
 | セッション完了 | 集計、SRS、連続学習日数 | `localStorage` へ保存 | `screen-error` |
 | 復習回答で正解 | `intervalDays`, `dueDate`, `correctStreak` | セッション完了時に保存 | `screen-error` |

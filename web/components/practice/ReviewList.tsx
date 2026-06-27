@@ -10,6 +10,7 @@ import type { AnswerResult, SrsState } from "@/types/progress";
 type ReviewListProps = {
   dueDateGroups: SrsDueDateGroups;
   answers: AnswerResult[];
+  questionNotes: Record<string, string>;
 };
 
 type ReviewSection = {
@@ -19,7 +20,11 @@ type ReviewSection = {
   items: SrsState[];
 };
 
-export function ReviewList({ dueDateGroups, answers }: ReviewListProps) {
+export function ReviewList({
+  dueDateGroups,
+  answers,
+  questionNotes,
+}: ReviewListProps) {
   const questionMap = useMemo(
     () =>
       new Map(
@@ -95,6 +100,7 @@ export function ReviewList({ dueDateGroups, answers }: ReviewListProps) {
                 {section.items.map((item) => {
                   const question = questionMap.get(item.questionId);
                   const latestAnswer = latestAnswerMap.get(item.questionId);
+                  const note = questionNotes[item.questionId];
 
                   return (
                     <div
@@ -125,6 +131,16 @@ export function ReviewList({ dueDateGroups, answers }: ReviewListProps) {
                             : "不正解"
                           : "なし"}
                       </p>
+                      {note ? (
+                        <div className="mt-3 rounded-[var(--radius-md)] bg-[var(--surface-subtle)] p-3">
+                          <div className="text-xs font-semibold text-[var(--text-muted)]">
+                            学習メモ
+                          </div>
+                          <p className="mt-1 whitespace-pre-wrap break-words text-sm leading-5 text-[var(--text-secondary)]">
+                            {note}
+                          </p>
+                        </div>
+                      ) : null}
                     </div>
                   );
                 })}

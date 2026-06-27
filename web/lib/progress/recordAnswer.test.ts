@@ -87,3 +87,20 @@ test("回答記録後もブックマーク済み問題IDを保持する", () => 
 
   assert.deepEqual(nextState.bookmarkedQuestionIds, ["q-001"]);
 });
+
+test("回答記録後も学習メモを保持する", () => {
+  const state = {
+    ...createInitialProgressState(),
+    questionNotes: {
+      "q-001": "時制の根拠を確認する。",
+    },
+  };
+  const nextState = recordAnswer(
+    state,
+    createAnswer(new Date(2026, 5, 24, 10, 0).toISOString()),
+  );
+
+  assert.deepEqual(nextState.questionNotes, {
+    "q-001": "時制の根拠を確認する。",
+  });
+});

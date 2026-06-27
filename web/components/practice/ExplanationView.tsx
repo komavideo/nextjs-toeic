@@ -1,9 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Button } from "@/components/shared/Button";
 import { Panel } from "@/components/shared/Panel";
 import type { GradeQuestionResult } from "@/lib/question-bank/grade";
 import type { FlatQuestion } from "@/lib/question-bank/flatten";
+import { questionNoteMaxLength } from "@/lib/progress/questionNotes";
 import type { UpdateSrsResult } from "@/lib/srs/updateSrs";
 import { ChoiceList } from "./ChoiceList";
 
@@ -12,7 +14,11 @@ type ExplanationViewProps = {
   answer: GradeQuestionResult;
   srsPreview: UpdateSrsResult;
   bookmarked: boolean;
+  note: string;
   bookmarkError?: string | null;
+  noteError?: string | null;
+  noteFeedback?: string | null;
+  onSaveNote: (note: string) => void;
   onToggleBookmark: () => void;
   onNext: () => void;
 };
@@ -22,10 +28,23 @@ export function ExplanationView({
   answer,
   srsPreview,
   bookmarked,
+  note,
   bookmarkError,
+  noteError,
+  noteFeedback,
+  onSaveNote,
   onToggleBookmark,
   onNext,
 }: ExplanationViewProps) {
+  const [noteDraft, setNoteDraft] = useState(note);
+  const noteInputId = `question-note-${question.questionId}`;
+  const noteStatusId = `${noteInputId}-status`;
+  const hasUnsavedNote = noteDraft !== note;
+
+  useEffect(() => {
+    setNoteDraft(note);
+  }, [note, question.questionId]);
+
   return (
     <section className="mx-auto max-w-[720px]">
       <p className="mb-2 text-sm font-semibold text-[var(--primary)]">
@@ -88,6 +107,62 @@ export function ExplanationView({
             ? "この問題は定着済みとして扱われます。"
             : `復習予定: ${srsPreview.state.dueDate}`}
         </p>
+
+        <div className="mt-5 rounded-[var(--radius-md)] border border-[var(--border)] p-4">
+          <label className="text-sm font-bold" htmlFor={noteInputId}>
+            学習メモ
+          </label>
+          <p className="mt-1 text-sm leading-5 text-[var(--text-secondary)]">
+            誤答理由や覚え方を短く残せます。空のまま保存すると削除します。
+          </p>
+          <textarea
+            aria-describedby={noteStatusId}
+            className="mt-3 min-h-28 w-full resize-y rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-sm leading-6 outline-none focus:border-[var(--primary)]"
+            id={noteInputId}
+            maxLength={questionNoteMaxLength}
+            onChange={(event) => setNoteDraft(event.target.value)}
+            value={noteDraft}
+          />
+          <div
+            className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-[var(--text-muted)]"
+            id={noteStatusId}
+          >
+            <span>{noteDraft.length}/{questionNoteMaxLength}文字</span>
+            {hasUnsavedNote ? (
+              <span className="font-semibold text-[var(--warning)]">
+                未保存の変更があります。
+              </span>
+            ) : null}
+          </div>
+          <Button
+            className="mt-3"
+            onClick={() => {
+              // 保存時にドラフトを保存値（trim 済み）へ同期し、
+              // 末尾空白のみの差分で「未保存」表示が残らないようにする
+              const trimmedNote = noteDraft.trim();
+              setNoteDraft(trimmedNote);
+              onSaveNote(trimmedNote);
+            }}
+          >
+            メモを保存
+          </Button>
+          {noteFeedback && !hasUnsavedNote ? (
+            <p
+              className="mt-3 text-sm font-semibold text-[var(--success)]"
+              role="status"
+            >
+              {noteFeedback}
+            </p>
+          ) : null}
+          {noteError ? (
+            <p
+              className="mt-3 text-sm font-semibold text-[var(--danger)]"
+              role="alert"
+            >
+              {noteError}
+            </p>
+          ) : null}
+        </div>
 
         <div className="mt-5 rounded-[var(--radius-md)] border border-[var(--border)] p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">

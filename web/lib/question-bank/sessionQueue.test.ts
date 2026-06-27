@@ -163,6 +163,7 @@ function createProgressState(
     answers,
     srs,
     bookmarkedQuestionIds: [],
+    questionNotes: {},
   };
 }
 
