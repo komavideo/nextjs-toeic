@@ -4250,5 +4250,700 @@
       "booking"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-047",
+    "part": "part7",
+    "title": "Payment Schedule Adjustment",
+    "passage": "Email\nFrom: Noriko Tan, Account Manager\nTo: Morgan Hale, Facilities Supervisor\nSubject: Invoice 4387\n\nThank you for ordering reception furniture from Suncrest Office Furnishings. The twelve reception chairs and four adjustable desks were delivered to Pine Ridge Health Clinic on May 6. Invoice 4387 lists a total of $4,860, due May 28. Because your team requested installation over two mornings, labor is shown separately from product costs. If you need to divide the payment between the clinic budget and the foundation grant, please reply by Friday.\n\nInvoice 4387\nReception chairs: 12 at $180 each - $2,160\nAdjustable desks: 4 at $520 each - $2,080\nInstallation labor - $620\nTotal due - $4,860\nPayment due date - May 28\nNote: A 2 percent service charge will be added to any unpaid balance after June 4.\n\nReply from Morgan Hale\n\nThank you for clarifying the invoice. We will pay for the reception chairs and installation labor with the clinic card this week. The foundation grant will cover the desks, and that transfer is scheduled for June 3. Please let me know if the June 3 transfer will avoid the service charge.",
+    "questions": [
+      {
+        "id": "p7-generated-q-047-01",
+        "prompt": "What is the main purpose of Noriko Tan's email?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To explain an invoice and a payment option"
+          },
+          {
+            "id": "B",
+            "text": "To cancel a furniture delivery"
+          },
+          {
+            "id": "C",
+            "text": "To ask for a grant application"
+          },
+          {
+            "id": "D",
+            "text": "To announce a new product line"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "Noriko は請求内容、支払期限、予算と助成金で支払いを分ける方法について説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "purpose",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-047-02",
+        "prompt": "Why is installation labor listed separately?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The desks were delivered late"
+          },
+          {
+            "id": "B",
+            "text": "Installation was requested over two mornings"
+          },
+          {
+            "id": "C",
+            "text": "The clinic ordered extra chairs"
+          },
+          {
+            "id": "D",
+            "text": "The foundation grant rejected the invoice"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "メールに、設置作業を2つの午前に分けて依頼したため、作業費を商品代と分けて表示したとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-047-03",
+        "prompt": "How much does the invoice list for the adjustable desks?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "$620"
+          },
+          {
+            "id": "B",
+            "text": "$2,160"
+          },
+          {
+            "id": "C",
+            "text": "$2,080"
+          },
+          {
+            "id": "D",
+            "text": "$4,860"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "請求書に Adjustable desks: 4 at $520 each - $2,080 と記載されています。",
+        "difficulty": "medium",
+        "tags": [
+          "invoice",
+          "detail",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-047-04",
+        "prompt": "What can be inferred about the foundation grant transfer?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It will pay for the reception chairs"
+          },
+          {
+            "id": "B",
+            "text": "It has already been sent"
+          },
+          {
+            "id": "C",
+            "text": "It will include the installation labor"
+          },
+          {
+            "id": "D",
+            "text": "It should avoid the service charge if received as scheduled"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "未払い残高への手数料は6月4日後に加算されます。助成金の送金予定は6月3日のため、予定通りなら手数料を避けられると推測できます。",
+        "difficulty": "hard",
+        "tags": [
+          "invoice",
+          "inference",
+          "cross-document"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "invoice",
+      "billing"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-048",
+    "part": "part7",
+    "title": "Warehouse Delivery Change",
+    "passage": "Team Chat\nLuis: Coastal Packaging just called about order CP-7712. The delivery of padded mailers and label rolls will not arrive Thursday from 2:00 P.M. to 4:00 P.M. because the truck needs an inspection.\nTara: Friday morning is possible, but we have a safety drill at the loading dock at 9:30. It should take about 20 minutes.\nLuis: The supplier can come at 10:30 on Friday and bring a revised packing slip.\nTara: Good. If the driver arrives after 9:25, ask him to use the north entrance. All cartons should be marked for Marketing.\n\nDelivery Notice\nOrder number: CP-7712\nItems: 40 cartons of padded mailers, 12 cases of label rolls\nScheduled arrival: Friday, 10:30 A.M.-11:00 A.M.\nDelivery entrance: North entrance\nSignature required: Warehouse staff\nIf the dock is closed, call Luis at extension 418.",
+    "questions": [
+      {
+        "id": "p7-generated-q-048-01",
+        "prompt": "Why was the delivery changed from Thursday?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The marketing team changed the order"
+          },
+          {
+            "id": "B",
+            "text": "The delivery truck needed an inspection"
+          },
+          {
+            "id": "C",
+            "text": "The loading dock was closed all day"
+          },
+          {
+            "id": "D",
+            "text": "The packing slip had the wrong address"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "チャットで、トラックの点検が必要なため木曜の配送ができないと説明されています。",
+        "difficulty": "medium",
+        "tags": [
+          "chat",
+          "reason",
+          "delivery"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-048-02",
+        "prompt": "Which entrance should the driver use?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The main lobby"
+          },
+          {
+            "id": "B",
+            "text": "The employee entrance"
+          },
+          {
+            "id": "C",
+            "text": "The north entrance"
+          },
+          {
+            "id": "D",
+            "text": "The visitor parking entrance"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "チャットと配送通知の両方で、north entrance を使うよう示されています。",
+        "difficulty": "medium",
+        "tags": [
+          "delivery",
+          "detail",
+          "cross-document"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-048-03",
+        "prompt": "What is included in order CP-7712?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Printer toner and copy paper"
+          },
+          {
+            "id": "B",
+            "text": "Storage bins and envelopes"
+          },
+          {
+            "id": "C",
+            "text": "Safety signs and floor tape"
+          },
+          {
+            "id": "D",
+            "text": "Padded mailers and label rolls"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "配送通知に 40 cartons of padded mailers, 12 cases of label rolls とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "delivery",
+          "detail",
+          "inventory"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-048-04",
+        "prompt": "Who is expected to sign for the delivery?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Warehouse staff"
+          },
+          {
+            "id": "B",
+            "text": "Marketing staff"
+          },
+          {
+            "id": "C",
+            "text": "The safety drill instructor"
+          },
+          {
+            "id": "D",
+            "text": "A Coastal Packaging manager"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "配送通知の Signature required に Warehouse staff と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "delivery",
+          "detail",
+          "warehouse"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "chat",
+      "delivery",
+      "warehouse"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-049",
+    "part": "part7",
+    "title": "Office Coordinator Application",
+    "passage": "Job Posting\nOffice Coordinator\nEastview Medical Group is seeking an office coordinator for its downtown clinic. Duties include managing appointment reminders, ordering exam-room supplies, and preparing weekly insurance claim summaries. Applicants must have at least two years of administrative experience. Experience with medical billing software is preferred. The position is Monday through Friday, 8:00 A.M. to 4:00 P.M. Interviews will be held during the week of September 16. Please send a resume and a short writing sample by September 6.\n\nApplication Email\nFrom: Priya Shah\nTo: Hiring Office, Eastview Medical Group\n\nI am applying for the office coordinator position. For the past three years, I have worked as a front desk assistant at Hillcrest Dental Clinic, where I schedule patient visits and use ClinicClaim Desk billing software daily. I have attached my resume and a writing sample. My current contract ends September 27, so I would be able to start on October 1. During the week of September 16, I am training a new receptionist each morning. If possible, I would appreciate an interview time after 3:00 P.M.",
+    "questions": [
+      {
+        "id": "p7-generated-q-049-01",
+        "prompt": "What is one responsibility of the office coordinator?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Designing clinic advertisements"
+          },
+          {
+            "id": "B",
+            "text": "Training dental assistants"
+          },
+          {
+            "id": "C",
+            "text": "Preparing weekly insurance claim summaries"
+          },
+          {
+            "id": "D",
+            "text": "Inspecting medical equipment"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "求人に preparing weekly insurance claim summaries が職務の一つとして挙げられています。",
+        "difficulty": "medium",
+        "tags": [
+          "job-posting",
+          "detail",
+          "hiring"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-049-02",
+        "prompt": "By when should application materials be sent?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "September 1"
+          },
+          {
+            "id": "B",
+            "text": "September 16"
+          },
+          {
+            "id": "C",
+            "text": "September 27"
+          },
+          {
+            "id": "D",
+            "text": "September 6"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "求人に send a resume and a short writing sample by September 6 とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "job-posting",
+          "detail",
+          "deadline"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-049-03",
+        "prompt": "Why does Priya Shah mention ClinicClaim Desk?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To show that she has experience with billing software"
+          },
+          {
+            "id": "B",
+            "text": "To request training on a new appointment system"
+          },
+          {
+            "id": "C",
+            "text": "To explain why her contract was extended"
+          },
+          {
+            "id": "D",
+            "text": "To ask which software Eastview Medical Group uses"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "求人では医療請求ソフトの経験が望ましいとされており、Priya は自分が ClinicClaim Desk を日常的に使っていることを示しています。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "intent",
+          "cross-document"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-049-04",
+        "prompt": "What potential scheduling issue does Priya mention?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "She cannot work on Fridays"
+          },
+          {
+            "id": "B",
+            "text": "Her mornings are occupied during the interview week"
+          },
+          {
+            "id": "C",
+            "text": "She must start before September 16"
+          },
+          {
+            "id": "D",
+            "text": "Her writing sample will arrive late"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "Priya は9月16日の週の各午前に新しい受付担当者を研修すると述べ、午後3時以降の面接を希望しています。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "inference",
+          "hiring"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "job-posting",
+      "email",
+      "hiring"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-050",
+    "part": "part7",
+    "title": "Software Access Update",
+    "passage": "Internal IT Notice\n\nStarting August 12, employees who use the client-record database must log in through the HarborKey portal. User names will remain the same, but each user will be asked to create a new password during the first login. Shortcuts in the old desktop launcher will stop working on August 19.\n\nIT staff will hold drop-in help sessions on August 13 and August 15 in Training Room 2. Managers should submit a list of contractors who still need temporary access by August 9. Contractors who are not on a submitted list will lose access when the portal change begins.\n\nThe new portal supports exports of monthly activity logs. It does not support custom color themes. If your account becomes locked, call the help desk instead of sending an email request.",
+    "questions": [
+      {
+        "id": "p7-generated-q-050-01",
+        "prompt": "What is the main purpose of the notice?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To introduce a new employee training program"
+          },
+          {
+            "id": "B",
+            "text": "To announce a database shutdown"
+          },
+          {
+            "id": "C",
+            "text": "To request feedback about color themes"
+          },
+          {
+            "id": "D",
+            "text": "To explain a new login process"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "通知は、client-record database へのログイン方法が HarborKey portal に変わることを案内しています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "purpose",
+          "software"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-050-02",
+        "prompt": "What should managers do by August 9?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Submit a list of contractors needing access"
+          },
+          {
+            "id": "B",
+            "text": "Install the old desktop launcher"
+          },
+          {
+            "id": "C",
+            "text": "Attend a help session in Training Room 2"
+          },
+          {
+            "id": "D",
+            "text": "Export monthly activity logs"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Managers should submit a list of contractors who still need temporary access by August 9 とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "access-control"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-050-03",
+        "prompt": "What will happen on August 19?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The first help session will be held"
+          },
+          {
+            "id": "B",
+            "text": "Old desktop launcher shortcuts will stop working"
+          },
+          {
+            "id": "C",
+            "text": "Managers will receive new user names"
+          },
+          {
+            "id": "D",
+            "text": "Contractor lists will be due"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "Shortcuts in the old desktop launcher will stop working on August 19 と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "software"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-050-04",
+        "prompt": "What should users do if their account becomes locked?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Create a new user name"
+          },
+          {
+            "id": "B",
+            "text": "Send an email request"
+          },
+          {
+            "id": "C",
+            "text": "Call the help desk"
+          },
+          {
+            "id": "D",
+            "text": "Wait until August 19"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "本文末尾に、アカウントがロックされた場合はメールではなく help desk に電話するよう書かれています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "software"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "software",
+      "access-control"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-051",
+    "part": "part7",
+    "title": "Room Booking Revision",
+    "passage": "Message from Bayfront Conference Suites\n\nDear Ms. Gomez,\n\nWe received your request to revise the booking for the Lakeside Room on November 7. The morning training block from 8:30 A.M. to 11:30 A.M. remains confirmed. Unfortunately, the larger Harbor Room is not available because a board meeting is scheduled there that morning.\n\nWe can add 12 portable chairs to the Lakeside Room, increasing the capacity to 42 people. However, the buffet table would need to be moved to the hallway. The updated catering deadline is October 31 for vegetarian lunches and coffee service.\n\nIf the revised seating plan is acceptable, please confirm by October 24. Otherwise, we will keep the original layout at no additional charge.",
+    "questions": [
+      {
+        "id": "p7-generated-q-051-01",
+        "prompt": "What did Ms. Gomez request?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A revision to a room booking"
+          },
+          {
+            "id": "B",
+            "text": "A refund for a canceled event"
+          },
+          {
+            "id": "C",
+            "text": "A later catering deadline"
+          },
+          {
+            "id": "D",
+            "text": "A copy of a board meeting agenda"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "冒頭で、Ms. Gomez が Lakeside Room の予約変更を依頼したことが説明されています。",
+        "difficulty": "medium",
+        "tags": [
+          "message",
+          "purpose",
+          "booking"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-051-02",
+        "prompt": "Why is the Harbor Room unavailable?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It is being cleaned"
+          },
+          {
+            "id": "B",
+            "text": "A board meeting is scheduled there"
+          },
+          {
+            "id": "C",
+            "text": "Its chairs have been removed"
+          },
+          {
+            "id": "D",
+            "text": "It has no coffee service"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に、Harbor Room はその朝に board meeting が予定されているため利用できないとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "message",
+          "reason",
+          "booking"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-051-03",
+        "prompt": "What would happen if 12 portable chairs are added?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The training would start at 11:30 A.M."
+          },
+          {
+            "id": "B",
+            "text": "The Harbor Room would become available"
+          },
+          {
+            "id": "C",
+            "text": "The buffet table would be moved to the hallway"
+          },
+          {
+            "id": "D",
+            "text": "Coffee service would be canceled"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "12脚を追加すると定員は42人になりますが、buffet table を hallway に移す必要があると説明されています。",
+        "difficulty": "medium",
+        "tags": [
+          "message",
+          "detail",
+          "booking"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-051-04",
+        "prompt": "By when should Ms. Gomez confirm the revised seating plan?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "October 7"
+          },
+          {
+            "id": "B",
+            "text": "October 31"
+          },
+          {
+            "id": "C",
+            "text": "November 7"
+          },
+          {
+            "id": "D",
+            "text": "October 24"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "本文末尾に、変更後の座席計画を受け入れる場合は October 24 までに確認するよう書かれています。",
+        "difficulty": "medium",
+        "tags": [
+          "message",
+          "detail",
+          "deadline"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "message",
+      "booking",
+      "client-service"
+    ],
+    "reviewed": true
   }
 ]
