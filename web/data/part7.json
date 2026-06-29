@@ -4533,7 +4533,7 @@
     "id": "p7-generated-set-049",
     "part": "part7",
     "title": "Office Coordinator Application",
-    "passage": "Job Posting\nOffice Coordinator\nEastview Medical Group is seeking an office coordinator for its downtown clinic. Duties include managing appointment reminders, ordering exam-room supplies, and preparing weekly insurance claim summaries. Applicants must have at least two years of administrative experience. Experience with medical billing software is preferred. The position is Monday through Friday, 8:00 A.M. to 4:00 P.M. Interviews will be held during the week of September 16. Please send a resume and a short writing sample by September 6.\n\nApplication Email\nFrom: Priya Shah\nTo: Hiring Office, Eastview Medical Group\n\nI am applying for the office coordinator position. For the past three years, I have worked as a front desk assistant at Hillcrest Dental Clinic, where I schedule patient visits and use MediTrack billing software daily. I have attached my resume and a writing sample. My current contract ends September 27, so I would be able to start on October 1. During the week of September 16, I am training a new receptionist each morning. If possible, I would appreciate an interview time after 3:00 P.M.",
+    "passage": "Job Posting\nOffice Coordinator\nEastview Medical Group is seeking an office coordinator for its downtown clinic. Duties include managing appointment reminders, ordering exam-room supplies, and preparing weekly insurance claim summaries. Applicants must have at least two years of administrative experience. Experience with medical billing software is preferred. The position is Monday through Friday, 8:00 A.M. to 4:00 P.M. Interviews will be held during the week of September 16. Please send a resume and a short writing sample by September 6.\n\nApplication Email\nFrom: Priya Shah\nTo: Hiring Office, Eastview Medical Group\n\nI am applying for the office coordinator position. For the past three years, I have worked as a front desk assistant at Hillcrest Dental Clinic, where I schedule patient visits and use ClinicClaim Desk billing software daily. I have attached my resume and a writing sample. My current contract ends September 27, so I would be able to start on October 1. During the week of September 16, I am training a new receptionist each morning. If possible, I would appreciate an interview time after 3:00 P.M.",
     "questions": [
       {
         "id": "p7-generated-q-049-01",
@@ -4599,7 +4599,7 @@
       },
       {
         "id": "p7-generated-q-049-03",
-        "prompt": "Why does Priya Shah mention MediTrack?",
+        "prompt": "Why does Priya Shah mention ClinicClaim Desk?",
         "choices": [
           {
             "id": "A",
@@ -4619,7 +4619,7 @@
           }
         ],
         "correctChoiceId": "A",
-        "explanation": "求人では医療請求ソフトの経験が望ましいとされており、Priya は自分が MediTrack を日常的に使っていることを示しています。",
+        "explanation": "求人では医療請求ソフトの経験が望ましいとされており、Priya は自分が ClinicClaim Desk を日常的に使っていることを示しています。",
         "difficulty": "medium",
         "tags": [
           "email",
@@ -4672,7 +4672,7 @@
     "id": "p7-generated-set-050",
     "part": "part7",
     "title": "Software Access Update",
-    "passage": "Internal IT Notice\n\nStarting August 12, employees who use the client-record database must log in through the SecureGate portal. User names will remain the same, but each user will be asked to create a new password during the first login. Shortcuts in the old desktop launcher will stop working on August 19.\n\nIT staff will hold drop-in help sessions on August 13 and August 15 in Training Room 2. Managers should submit a list of contractors who still need temporary access by August 9. Contractors who are not on a submitted list will lose access when the portal change begins.\n\nThe new portal supports exports of monthly activity logs. It does not support custom color themes. If your account becomes locked, call the help desk instead of sending an email request.",
+    "passage": "Internal IT Notice\n\nStarting August 12, employees who use the client-record database must log in through the HarborKey portal. User names will remain the same, but each user will be asked to create a new password during the first login. Shortcuts in the old desktop launcher will stop working on August 19.\n\nIT staff will hold drop-in help sessions on August 13 and August 15 in Training Room 2. Managers should submit a list of contractors who still need temporary access by August 9. Contractors who are not on a submitted list will lose access when the portal change begins.\n\nThe new portal supports exports of monthly activity logs. It does not support custom color themes. If your account becomes locked, call the help desk instead of sending an email request.",
     "questions": [
       {
         "id": "p7-generated-q-050-01",
@@ -4696,7 +4696,7 @@
           }
         ],
         "correctChoiceId": "D",
-        "explanation": "通知は、client-record database へのログイン方法が SecureGate portal に変わることを案内しています。",
+        "explanation": "通知は、client-record database へのログイン方法が HarborKey portal に変わることを案内しています。",
         "difficulty": "medium",
         "tags": [
           "notice",
