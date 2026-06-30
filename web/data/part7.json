@@ -10195,6 +10195,7 @@
         "explanation": "Ravi が a blender purchased online last week を返品したい顧客について話しています。",
         "difficulty": "easy",
         "tags": [
+          "single-document",
           "chat",
           "retail",
           "detail"
@@ -10226,6 +10227,7 @@
         "explanation": "Mina は product is unused and the barcode label is still on the box であれば返品できると述べています。",
         "difficulty": "medium",
         "tags": [
+          "single-document",
           "chat",
           "retail",
           "condition"
@@ -10257,6 +10259,7 @@
         "explanation": "Mina は online orders の返金は original payment method に戻すと説明しています。",
         "difficulty": "medium",
         "tags": [
+          "single-document",
           "chat",
           "retail",
           "refund"
@@ -10288,6 +10291,7 @@
         "explanation": "replacement filters は separate purchase として処理するよう指示されています。",
         "difficulty": "medium",
         "tags": [
+          "single-document",
           "chat",
           "retail",
           "procedure"
@@ -10297,6 +10301,7 @@
     ],
     "difficulty": "medium",
     "tags": [
+      "single-document",
       "chat",
       "retail",
       "refund"
@@ -10612,6 +10617,7 @@
         "explanation": "hold time が eight minutes を超える見込みのときに callback を提案するとあります。",
         "difficulty": "easy",
         "tags": [
+          "single-document",
           "memo",
           "policy",
           "detail"
@@ -10643,6 +10649,7 @@
         "explanation": "preferred callback number を service log に記録し、case を pending return call として扱う必要があります。",
         "difficulty": "medium",
         "tags": [
+          "single-document",
           "memo",
           "policy",
           "procedure"
@@ -10674,6 +10681,7 @@
         "explanation": "The quality assurance team will review call records とあります。",
         "difficulty": "medium",
         "tags": [
+          "single-document",
           "memo",
           "policy",
           "detail"
@@ -10705,6 +10713,7 @@
         "explanation": "The policy does not apply to billing disputes と明記されています。",
         "difficulty": "medium",
         "tags": [
+          "single-document",
           "memo",
           "policy",
           "exception"
@@ -10714,6 +10723,7 @@
     ],
     "difficulty": "medium",
     "tags": [
+      "single-document",
       "memo",
       "policy",
       "customer-service"
