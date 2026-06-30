@@ -10024,5 +10024,1117 @@
       "quote"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-093",
+    "part": "part7",
+    "title": "Training Room Reservation Update",
+    "passage": "From: Elena Cruz, Facilities Coordinator\nTo: Department Assistants\nSubject: Training room reservations\n\nStarting July 15, reservations for Training Room B must be made through the shared calendar rather than by email. The room has been upgraded with a ceiling projector and movable tables, so it is expected to be used more often for client demonstrations. To prevent scheduling conflicts, assistants should include the meeting purpose and the expected number of attendees when creating a reservation.\n\nRequests already submitted for July will remain valid, but any change to the time or number of attendees should be entered in the calendar by July 10. Questions about room equipment should be sent to facilities@harborline.example.",
+    "questions": [
+      {
+        "id": "p7-generated-q-093-01",
+        "prompt": "What change is announced in the email?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Reservations for a training room must be made through a shared calendar"
+          },
+          {
+            "id": "B",
+            "text": "Training Room B will be closed for July"
+          },
+          {
+            "id": "C",
+            "text": "Client demonstrations will be moved to another building"
+          },
+          {
+            "id": "D",
+            "text": "Department assistants must stop reserving meeting spaces"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文冒頭に、Training Room B の予約はメールではなく shared calendar で行うとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "single-document",
+          "email",
+          "purpose"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-093-02",
+        "prompt": "Why is the room expected to be used more often?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It is located near the reception desk"
+          },
+          {
+            "id": "B",
+            "text": "It has new presentation equipment and movable tables"
+          },
+          {
+            "id": "C",
+            "text": "It can now be reserved without approval"
+          },
+          {
+            "id": "D",
+            "text": "It will host weekly staff orientations"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "ceiling projector と movable tables が追加されたため、client demonstrations でより使われる見込みです。",
+        "difficulty": "medium",
+        "tags": [
+          "single-document",
+          "email",
+          "reason"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-093-03",
+        "prompt": "What should assistants include when creating a reservation?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A list of equipment suppliers"
+          },
+          {
+            "id": "B",
+            "text": "The names of all department managers"
+          },
+          {
+            "id": "C",
+            "text": "The meeting purpose and expected number of attendees"
+          },
+          {
+            "id": "D",
+            "text": "A copy of the client demonstration slides"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "予約時には meeting purpose と expected number of attendees を含めるよう指示されています。",
+        "difficulty": "medium",
+        "tags": [
+          "single-document",
+          "email",
+          "detail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-093-04",
+        "prompt": "What should be done if a July reservation needs a time change?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Send a new request by email after July 15"
+          },
+          {
+            "id": "B",
+            "text": "Cancel the original reservation immediately"
+          },
+          {
+            "id": "C",
+            "text": "Contact the client demonstration team"
+          },
+          {
+            "id": "D",
+            "text": "Enter the change in the calendar by July 10"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "July の既存予約で時間や人数に変更がある場合は、July 10 までに calendar へ入力する必要があります。",
+        "difficulty": "hard",
+        "tags": [
+          "single-document",
+          "email",
+          "schedule"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "single-document",
+      "email",
+      "facility"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-094",
+    "part": "part7",
+    "title": "Return Procedure Chat",
+    "passage": "Ravi: The customer at counter 3 wants to return a blender purchased online last week. The receipt shows the online order number, but not our store number.\nMina: Online orders can be returned here if the product is unused and the barcode label is still on the box.\nRavi: The box is unopened. Should I issue store credit?\nMina: No, refunds for online orders go back to the original payment method. Ask the customer to insert the card used for the purchase.\nRavi: The card is available, but the customer also bought replacement filters in the store today.\nMina: Process those as a separate purchase so the refund receipt stays clear.",
+    "questions": [
+      {
+        "id": "p7-generated-q-094-01",
+        "prompt": "What does the customer want to return?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Replacement filters"
+          },
+          {
+            "id": "B",
+            "text": "A blender bought online"
+          },
+          {
+            "id": "C",
+            "text": "A store receipt"
+          },
+          {
+            "id": "D",
+            "text": "A payment card"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "Ravi が a blender purchased online last week を返品したい顧客について話しています。",
+        "difficulty": "easy",
+        "tags": [
+          "chat",
+          "retail",
+          "detail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-094-02",
+        "prompt": "What condition is mentioned for accepting the online return?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The receipt must show the store number"
+          },
+          {
+            "id": "B",
+            "text": "The purchase must have been made today"
+          },
+          {
+            "id": "C",
+            "text": "The barcode label must still be on the box"
+          },
+          {
+            "id": "D",
+            "text": "The customer must buy replacement filters"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Mina は product is unused and the barcode label is still on the box であれば返品できると述べています。",
+        "difficulty": "medium",
+        "tags": [
+          "chat",
+          "retail",
+          "condition"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-094-03",
+        "prompt": "How should the refund be issued?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "As store credit"
+          },
+          {
+            "id": "B",
+            "text": "In cash from counter 3"
+          },
+          {
+            "id": "C",
+            "text": "As a discount on the filters"
+          },
+          {
+            "id": "D",
+            "text": "To the original payment method"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "Mina は online orders の返金は original payment method に戻すと説明しています。",
+        "difficulty": "medium",
+        "tags": [
+          "chat",
+          "retail",
+          "refund"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-094-04",
+        "prompt": "What does Mina tell Ravi to do with the replacement filters?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Process them as a separate purchase"
+          },
+          {
+            "id": "B",
+            "text": "Include them on the refund receipt"
+          },
+          {
+            "id": "C",
+            "text": "Return them to the online warehouse"
+          },
+          {
+            "id": "D",
+            "text": "Hold them at counter 3"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "replacement filters は separate purchase として処理するよう指示されています。",
+        "difficulty": "medium",
+        "tags": [
+          "chat",
+          "retail",
+          "procedure"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "chat",
+      "retail",
+      "refund"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-095",
+    "part": "part7",
+    "title": "Catering Invoice and Payment Email",
+    "passage": "Invoice\nBrightLeaf Catering\nOrder: Lunch service for 45 people\nDelivery date: September 8\nBase meal package: $675\nVegetarian meal upgrade: $60\nReusable serving trays deposit: $80\nTotal due by August 30: $815\n\nEmail\nFrom: Hana Moore\nTo: Accounts Payable\n\nPlease process the BrightLeaf invoice for the September 8 client workshop. The tray deposit should be recorded separately because it will be refunded after the trays are returned. The catering manager confirmed that delivery is included in the base package, so no delivery charge should be added. If payment is sent this week, BrightLeaf will reserve the 12:15 P.M. delivery window.",
+    "questions": [
+      {
+        "id": "p7-generated-q-095-01",
+        "prompt": "How much is the total due?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "$60"
+          },
+          {
+            "id": "B",
+            "text": "$675"
+          },
+          {
+            "id": "C",
+            "text": "$815"
+          },
+          {
+            "id": "D",
+            "text": "$80"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Invoice に Total due by August 30: $815 と記載されています。",
+        "difficulty": "easy",
+        "tags": [
+          "multiple-documents",
+          "invoice",
+          "detail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-095-02",
+        "prompt": "Why should the tray deposit be recorded separately?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It was charged by mistake"
+          },
+          {
+            "id": "B",
+            "text": "It replaces the vegetarian meal upgrade"
+          },
+          {
+            "id": "C",
+            "text": "It must be paid after the workshop"
+          },
+          {
+            "id": "D",
+            "text": "It will be refunded after the trays are returned"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "メールに tray deposit は trays が返却された後に refunded されるため別記録にするとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "invoice",
+          "reason"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-095-03",
+        "prompt": "What should not be added to the invoice?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A delivery charge"
+          },
+          {
+            "id": "B",
+            "text": "A tray deposit"
+          },
+          {
+            "id": "C",
+            "text": "A vegetarian meal upgrade"
+          },
+          {
+            "id": "D",
+            "text": "A base meal package"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "delivery is included in the base package とあるため、delivery charge を追加してはいけません。",
+        "difficulty": "hard",
+        "tags": [
+          "multiple-documents",
+          "invoice",
+          "inference"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-095-04",
+        "prompt": "What will BrightLeaf do if payment is sent this week?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Reduce the vegetarian meal charge"
+          },
+          {
+            "id": "B",
+            "text": "Reserve the 12:15 P.M. delivery window"
+          },
+          {
+            "id": "C",
+            "text": "Deliver reusable trays before September 8"
+          },
+          {
+            "id": "D",
+            "text": "Send a new invoice by August 30"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "payment が今週送られれば 12:15 P.M. delivery window を予約するとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "invoice",
+          "schedule"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "multiple-documents",
+      "invoice",
+      "catering"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-096",
+    "part": "part7",
+    "title": "Design Center Tour Notice",
+    "passage": "Notice to visitors\nThe Westbridge Design Center will adjust public tour hours during lobby renovations. From October 2 through October 13, weekday tours will begin at 11:00 A.M. instead of 9:30 A.M. Weekend tours will not change. Visitors who booked a weekday morning tour before September 20 may keep their reservation, but they should enter through the north entrance near Pine Street.\n\nThe gift shop will open at its regular time during the renovation. The cafe will be closed on weekdays until the lobby work is complete, although bottled drinks will be available at the reception desk. Group tour organizers should call 555-0148 if they need bus parking.",
+    "questions": [
+      {
+        "id": "p7-generated-q-096-01",
+        "prompt": "What is the main purpose of the notice?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To announce a new cafe menu"
+          },
+          {
+            "id": "B",
+            "text": "To invite visitors to a weekend event"
+          },
+          {
+            "id": "C",
+            "text": "To describe a new gift shop location"
+          },
+          {
+            "id": "D",
+            "text": "To explain temporary tour changes during renovations"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "ロビー改修中の tour hours や入口、施設利用について知らせる通知です。",
+        "difficulty": "easy",
+        "tags": [
+          "single-document",
+          "notice",
+          "purpose"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-096-02",
+        "prompt": "Which tours will not change?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Weekend tours"
+          },
+          {
+            "id": "B",
+            "text": "Weekday morning tours"
+          },
+          {
+            "id": "C",
+            "text": "Group tours needing bus parking"
+          },
+          {
+            "id": "D",
+            "text": "Tours booked after September 20"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に Weekend tours will not change と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "single-document",
+          "notice",
+          "schedule"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-096-03",
+        "prompt": "Where should certain visitors enter during the renovation?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Through the gift shop"
+          },
+          {
+            "id": "B",
+            "text": "Through the north entrance near Pine Street"
+          },
+          {
+            "id": "C",
+            "text": "Through the cafe entrance"
+          },
+          {
+            "id": "D",
+            "text": "Through the bus parking area"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "September 20 より前に平日午前ツアーを予約した訪問者は north entrance near Pine Street から入るよう説明されています。",
+        "difficulty": "medium",
+        "tags": [
+          "single-document",
+          "notice",
+          "facility"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-096-04",
+        "prompt": "What service will be closed on weekdays?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The gift shop"
+          },
+          {
+            "id": "B",
+            "text": "Bus parking"
+          },
+          {
+            "id": "C",
+            "text": "The cafe"
+          },
+          {
+            "id": "D",
+            "text": "The reception desk"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "The cafe will be closed on weekdays とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "single-document",
+          "notice",
+          "detail"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "single-document",
+      "notice",
+      "schedule"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-097",
+    "part": "part7",
+    "title": "Updated Callback Policy",
+    "passage": "Memo\nTo: Customer Support Staff\nFrom: Operations Manager\nSubject: Updated callback policy\n\nBeginning next Monday, support agents should offer a callback when the estimated hold time is longer than eight minutes. The callback option should be explained after the customer's account has been verified, not before. Agents must record the preferred callback number in the service log and mark the case as \"pending return call.\"\n\nThe quality assurance team will review call records for two weeks to confirm that the new option is being offered consistently. Team leads will receive a short summary every Friday afternoon. The policy does not apply to billing disputes, which must remain in the live queue.",
+    "questions": [
+      {
+        "id": "p7-generated-q-097-01",
+        "prompt": "When should agents offer a callback?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "When the estimated hold time is longer than eight minutes"
+          },
+          {
+            "id": "B",
+            "text": "Before verifying the customer's account"
+          },
+          {
+            "id": "C",
+            "text": "After every billing dispute is resolved"
+          },
+          {
+            "id": "D",
+            "text": "Only on Friday afternoons"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "hold time が eight minutes を超える見込みのときに callback を提案するとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "policy",
+          "detail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-097-02",
+        "prompt": "What must agents record in the service log?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The customer's billing dispute number"
+          },
+          {
+            "id": "B",
+            "text": "The preferred callback number"
+          },
+          {
+            "id": "C",
+            "text": "The team lead's weekly summary"
+          },
+          {
+            "id": "D",
+            "text": "The exact length of every call"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "preferred callback number を service log に記録し、case を pending return call として扱う必要があります。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "policy",
+          "procedure"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-097-03",
+        "prompt": "Who will review call records?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The billing department"
+          },
+          {
+            "id": "B",
+            "text": "Department assistants"
+          },
+          {
+            "id": "C",
+            "text": "The quality assurance team"
+          },
+          {
+            "id": "D",
+            "text": "Customer account managers"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "The quality assurance team will review call records とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "policy",
+          "detail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-097-04",
+        "prompt": "Which cases are excluded from the policy?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Cases marked as pending return call"
+          },
+          {
+            "id": "B",
+            "text": "Cases reviewed on Friday"
+          },
+          {
+            "id": "C",
+            "text": "Cases with verified accounts"
+          },
+          {
+            "id": "D",
+            "text": "Billing disputes"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "The policy does not apply to billing disputes と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "policy",
+          "exception"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "policy",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-098",
+    "part": "part7",
+    "title": "Fitness Center Pool Notice and Member Email",
+    "passage": "Service Notice\nBayview Fitness Center\nThe pool will be closed from April 6 to April 9 while the ventilation system above the pool deck is replaced. Members may use the Oak Street branch pool during this period by showing their Bayview membership card. Morning swim classes will resume on April 10.\n\nEmail\nFrom: Daniel Reed\nTo: Member Services\n\nI am enrolled in the Tuesday and Thursday morning swim classes. Since the pool work overlaps with both classes next week, please confirm whether my class credits will be extended. I can visit the Oak Street branch for independent swimming, but I cannot attend classes there because they are held in the evening.",
+    "questions": [
+      {
+        "id": "p7-generated-q-098-01",
+        "prompt": "What work will be performed at Bayview Fitness Center?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Replacing pool lane markers"
+          },
+          {
+            "id": "B",
+            "text": "Replacing the ventilation system above the pool deck"
+          },
+          {
+            "id": "C",
+            "text": "Installing evening class equipment"
+          },
+          {
+            "id": "D",
+            "text": "Moving the membership desk"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "pool deck の上の ventilation system を交換する間、pool が閉鎖されるとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "multiple-documents",
+          "service-notice",
+          "detail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-098-02",
+        "prompt": "What can members use during the pool closure?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Evening swim classes at Bayview"
+          },
+          {
+            "id": "B",
+            "text": "The Bayview pool deck"
+          },
+          {
+            "id": "C",
+            "text": "The Oak Street branch pool"
+          },
+          {
+            "id": "D",
+            "text": "A temporary outdoor pool"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "閉鎖期間中、Bayview membership card を見せれば Oak Street branch pool を使えます。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "service-notice",
+          "detail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-098-03",
+        "prompt": "Why can Daniel not attend classes at the Oak Street branch?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "He does not have a Bayview membership card"
+          },
+          {
+            "id": "B",
+            "text": "The Oak Street branch pool is also closed"
+          },
+          {
+            "id": "C",
+            "text": "His class credits have already expired"
+          },
+          {
+            "id": "D",
+            "text": "The classes there are held in the evening"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "Daniel は Oak Street branch の classes は evening に行われるため参加できないと述べています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "email",
+          "reason"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-098-04",
+        "prompt": "What is Daniel asking Member Services to confirm?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Whether his class credits will be extended"
+          },
+          {
+            "id": "B",
+            "text": "Whether the pool will reopen before April 9"
+          },
+          {
+            "id": "C",
+            "text": "Whether evening classes can be moved to the morning"
+          },
+          {
+            "id": "D",
+            "text": "Whether he can cancel his membership card"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "Daniel は class credits will be extended かどうか確認を求めています。",
+        "difficulty": "hard",
+        "tags": [
+          "multiple-documents",
+          "email",
+          "request"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "multiple-documents",
+      "service-notice",
+      "email"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-099",
+    "part": "part7",
+    "title": "Inventory Assistant Posting and Manager Message",
+    "passage": "Job Posting\nPart-time Inventory Assistant\nCedar Home Goods is looking for a part-time inventory assistant for its downtown store. Duties include counting returned items, updating shelf labels, and preparing transfer boxes for the warehouse. Applicants must be available on Tuesday and Friday mornings. Experience with inventory software is preferred but not required.\n\nManager's Message\nMaya,\n\nPlease share the posting with the community college career office. The warehouse team needs transfer boxes ready before noon on Fridays, so availability on Friday mornings is the most important requirement. We can train the new assistant on our inventory software during the first week. If we receive applications by May 12, I would like to schedule interviews on May 15.",
+    "questions": [
+      {
+        "id": "p7-generated-q-099-01",
+        "prompt": "Which duty is listed in the job posting?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Designing new product displays"
+          },
+          {
+            "id": "B",
+            "text": "Delivering items to customers"
+          },
+          {
+            "id": "C",
+            "text": "Preparing transfer boxes for the warehouse"
+          },
+          {
+            "id": "D",
+            "text": "Interviewing store applicants"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Duties include ... preparing transfer boxes for the warehouse とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "multiple-documents",
+          "job-posting",
+          "detail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-099-02",
+        "prompt": "Which availability is most important?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Tuesday afternoons"
+          },
+          {
+            "id": "B",
+            "text": "Wednesday mornings"
+          },
+          {
+            "id": "C",
+            "text": "Friday afternoons"
+          },
+          {
+            "id": "D",
+            "text": "Friday mornings"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "メッセージで Friday mornings の availability が most important requirement とされています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "job-posting",
+          "schedule"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-099-03",
+        "prompt": "What is not required for applicants?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Experience with inventory software"
+          },
+          {
+            "id": "B",
+            "text": "Availability on Friday mornings"
+          },
+          {
+            "id": "C",
+            "text": "Availability on Tuesday mornings"
+          },
+          {
+            "id": "D",
+            "text": "The ability to prepare transfer boxes"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "inventory software の経験は preferred but not required とあり、入社後に training できると補足されています。",
+        "difficulty": "hard",
+        "tags": [
+          "multiple-documents",
+          "job-posting",
+          "inference"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-099-04",
+        "prompt": "When would interviews be scheduled if applications are received by May 12?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "May 12"
+          },
+          {
+            "id": "B",
+            "text": "May 15"
+          },
+          {
+            "id": "C",
+            "text": "The first week of training"
+          },
+          {
+            "id": "D",
+            "text": "The following Friday morning"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "applications が May 12 までに届けば interviews を May 15 に予定したいとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "job-posting",
+          "schedule"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "multiple-documents",
+      "job-posting",
+      "inventory"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-100",
+    "part": "part7",
+    "title": "Kitchenware Display Plan and Chat",
+    "passage": "Display Plan\nSpring Kitchenware Feature\nLocation: Front aisle table\nProducts: compact mixers, silicone spatula sets, and measuring bowls\nSetup deadline: March 4, before opening\nSignage: Use the green seasonal price cards\nNote: Keep one side of the table open for weekend tasting samples\n\nChat\nLeo: The compact mixers arrived, but the green seasonal price cards are still in storage.\nNora: Please get the cards from the supply room before setting up the table. The manager wants the display finished before the store opens tomorrow.\nLeo: Should I place the measuring bowls on both sides of the table?\nNora: No. Leave the right side open for the tasting samples, and put the bowls behind the spatula sets.",
+    "questions": [
+      {
+        "id": "p7-generated-q-100-01",
+        "prompt": "Which products have arrived?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Silicone spatula sets"
+          },
+          {
+            "id": "B",
+            "text": "Measuring bowls"
+          },
+          {
+            "id": "C",
+            "text": "Seasonal price cards"
+          },
+          {
+            "id": "D",
+            "text": "Compact mixers"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "Leo が The compact mixers arrived と述べています。",
+        "difficulty": "easy",
+        "tags": [
+          "multiple-documents",
+          "chat",
+          "detail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-100-02",
+        "prompt": "What should Leo get from the supply room?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Green seasonal price cards"
+          },
+          {
+            "id": "B",
+            "text": "Weekend tasting samples"
+          },
+          {
+            "id": "C",
+            "text": "Compact mixer manuals"
+          },
+          {
+            "id": "D",
+            "text": "Additional measuring bowls"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "Nora は green seasonal price cards を supply room から取ってくるよう指示しています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "chat",
+          "detail"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-100-03",
+        "prompt": "Why should one side of the table remain open?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To make space for a second display table"
+          },
+          {
+            "id": "B",
+            "text": "To provide room for weekend tasting samples"
+          },
+          {
+            "id": "C",
+            "text": "To store extra seasonal price cards"
+          },
+          {
+            "id": "D",
+            "text": "To keep returned products separate"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "Display Plan と Nora の発言の両方で、tasting samples のため片側を空けると示されています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "chat",
+          "reason"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-100-04",
+        "prompt": "Where should the measuring bowls be placed?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "On both sides of the table"
+          },
+          {
+            "id": "B",
+            "text": "In the supply room"
+          },
+          {
+            "id": "C",
+            "text": "Behind the spatula sets"
+          },
+          {
+            "id": "D",
+            "text": "Next to the tasting samples"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Nora が put the bowls behind the spatula sets と指示しています。",
+        "difficulty": "hard",
+        "tags": [
+          "multiple-documents",
+          "chat",
+          "product-displays"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "multiple-documents",
+      "chat",
+      "product-displays"
+    ],
+    "reviewed": true
   }
 ]

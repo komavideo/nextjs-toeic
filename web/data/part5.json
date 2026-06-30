@@ -8638,5 +8638,517 @@
       "inventory"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p5-generated-266",
+    "part": "part5",
+    "sentence": "Each of the branch managers _____ required to submit a weekly staffing update.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "is"
+      },
+      {
+        "id": "B",
+        "text": "are"
+      },
+      {
+        "id": "C",
+        "text": "be"
+      },
+      {
+        "id": "D",
+        "text": "being"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "Each of ... は単数扱いになるため、単数動詞 is が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "subject-verb-agreement",
+      "office"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-267",
+    "part": "part5",
+    "sentence": "The customer service director asked team leaders to send _____ revised schedules by noon.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "they"
+      },
+      {
+        "id": "B",
+        "text": "their"
+      },
+      {
+        "id": "C",
+        "text": "them"
+      },
+      {
+        "id": "D",
+        "text": "themselves"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "名詞 schedules を修飾する所有格が必要なので their が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "pronoun",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-268",
+    "part": "part5",
+    "sentence": "Only a few _____ remain available for Friday's product demonstration.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "seat"
+      },
+      {
+        "id": "B",
+        "text": "seating"
+      },
+      {
+        "id": "C",
+        "text": "seats"
+      },
+      {
+        "id": "D",
+        "text": "seated"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "a few の後には可算名詞の複数形が続くため seats が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "quantifier",
+      "event"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-269",
+    "part": "part5",
+    "sentence": "Had the maintenance team received the parts earlier, the elevators _____ by Monday.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "repaired"
+      },
+      {
+        "id": "B",
+        "text": "were repairing"
+      },
+      {
+        "id": "C",
+        "text": "will repair"
+      },
+      {
+        "id": "D",
+        "text": "would have been repaired"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "Had ... received は過去の仮定を表す倒置です。elevators は修理される側なので would have been repaired が適切です。",
+    "difficulty": "hard",
+    "tags": [
+      "conditional",
+      "passive"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-270",
+    "part": "part5",
+    "sentence": "All expense reports must _____ by the department supervisor before payment is processed.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "be approved"
+      },
+      {
+        "id": "B",
+        "text": "approve"
+      },
+      {
+        "id": "C",
+        "text": "approving"
+      },
+      {
+        "id": "D",
+        "text": "approved"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "reports は承認される側なので、助動詞 must の後は受け身の原形 be approved が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "passive",
+      "billing"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-271",
+    "part": "part5",
+    "sentence": "The training coordinator reminded employees _____ the safety checklist before entering the lab.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "complete"
+      },
+      {
+        "id": "B",
+        "text": "to complete"
+      },
+      {
+        "id": "C",
+        "text": "completing"
+      },
+      {
+        "id": "D",
+        "text": "completed"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "remind 人 to do の形で「人に〜するよう念を押す」を表すため to complete が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "verb-pattern",
+      "staff-training"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-272",
+    "part": "part5",
+    "sentence": "The software update is intended to _____ minor errors in the scheduling tool.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "collect"
+      },
+      {
+        "id": "B",
+        "text": "connect"
+      },
+      {
+        "id": "C",
+        "text": "correct"
+      },
+      {
+        "id": "D",
+        "text": "conduct"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "errors と自然に結びつく動詞は correct で、「誤りを修正する」という意味です。",
+    "difficulty": "medium",
+    "tags": [
+      "word-choice",
+      "software"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-273",
+    "part": "part5",
+    "sentence": "The reception desk is located _____ the main entrance and the elevator lobby.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "at"
+      },
+      {
+        "id": "B",
+        "text": "among"
+      },
+      {
+        "id": "C",
+        "text": "during"
+      },
+      {
+        "id": "D",
+        "text": "between"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "2つの場所の間を表す場合は between A and B を使います。",
+    "difficulty": "easy",
+    "tags": [
+      "preposition",
+      "facility"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-274",
+    "part": "part5",
+    "sentence": "The committee will make a final _____ after reviewing the supplier proposals.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "decision"
+      },
+      {
+        "id": "B",
+        "text": "decide"
+      },
+      {
+        "id": "C",
+        "text": "decisive"
+      },
+      {
+        "id": "D",
+        "text": "decisively"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "冠詞 a と形容詞 final の後には名詞が必要なので decision が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "noun",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-275",
+    "part": "part5",
+    "sentence": "The consultant recommended that the contract _____ before the launch campaign begins.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "revises"
+      },
+      {
+        "id": "B",
+        "text": "be revised"
+      },
+      {
+        "id": "C",
+        "text": "revising"
+      },
+      {
+        "id": "D",
+        "text": "was revised"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "recommend that ... の後では原形を使い、contract は修正される側なので be revised が適切です。",
+    "difficulty": "hard",
+    "tags": [
+      "subjunctive",
+      "passive"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-276",
+    "part": "part5",
+    "sentence": "Please review the installation guide _____ before assembling the display stand.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "careful"
+      },
+      {
+        "id": "B",
+        "text": "care"
+      },
+      {
+        "id": "C",
+        "text": "carefully"
+      },
+      {
+        "id": "D",
+        "text": "carefulness"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "動詞 review を修飾する副詞が必要なので carefully が適切です。",
+    "difficulty": "easy",
+    "tags": [
+      "adverb",
+      "word-form"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-277",
+    "part": "part5",
+    "sentence": "The shipment may be delayed _____ the warehouse receives the missing customs form today.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "so that"
+      },
+      {
+        "id": "B",
+        "text": "because"
+      },
+      {
+        "id": "C",
+        "text": "although"
+      },
+      {
+        "id": "D",
+        "text": "unless"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "「今日不足書類を受け取らなければ遅れる可能性がある」という条件なので unless が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "condition",
+      "delivery"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-278",
+    "part": "part5",
+    "sentence": "The new checkout system is _____ with several mobile payment services.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "compatible"
+      },
+      {
+        "id": "B",
+        "text": "compatibility"
+      },
+      {
+        "id": "C",
+        "text": "compatibly"
+      },
+      {
+        "id": "D",
+        "text": "compete"
+      }
+    ],
+    "correctChoiceId": "A",
+    "explanation": "be compatible with で「〜に対応している、互換性がある」を表します。",
+    "difficulty": "medium",
+    "tags": [
+      "adjective",
+      "collocation"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-279",
+    "part": "part5",
+    "sentence": "The figures _____ in the quarterly summary exclude refunds issued after March 31.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "inclusion"
+      },
+      {
+        "id": "B",
+        "text": "included"
+      },
+      {
+        "id": "C",
+        "text": "including"
+      },
+      {
+        "id": "D",
+        "text": "include"
+      }
+    ],
+    "correctChoiceId": "B",
+    "explanation": "figures を後ろから修飾し「含まれている数値」を表す過去分詞 included が適切です。",
+    "difficulty": "hard",
+    "tags": [
+      "participle",
+      "billing"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-280",
+    "part": "part5",
+    "sentence": "The employee _____ badge was found in the cafeteria should contact security.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "who"
+      },
+      {
+        "id": "B",
+        "text": "what"
+      },
+      {
+        "id": "C",
+        "text": "whose"
+      },
+      {
+        "id": "D",
+        "text": "which"
+      }
+    ],
+    "correctChoiceId": "C",
+    "explanation": "badge との所有関係を表す関係詞が必要なので whose が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "relative-pronoun",
+      "security"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p5-generated-281",
+    "part": "part5",
+    "sentence": "Registration for the workshop will close _____ the room reaches capacity.",
+    "prompt": "空所に入る最も適切な語句を選んでください。",
+    "choices": [
+      {
+        "id": "A",
+        "text": "while"
+      },
+      {
+        "id": "B",
+        "text": "despite"
+      },
+      {
+        "id": "C",
+        "text": "unless"
+      },
+      {
+        "id": "D",
+        "text": "once"
+      }
+    ],
+    "correctChoiceId": "D",
+    "explanation": "定員に達した時点で締め切るという意味なので once が適切です。",
+    "difficulty": "medium",
+    "tags": [
+      "conjunction",
+      "registration"
+    ],
+    "reviewed": true
   }
 ]
