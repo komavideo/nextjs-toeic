@@ -31,7 +31,7 @@ const partOrder: ToeicReadingPart[] = ["part5", "part6", "part7"];
 export const questionCountsByPart: Record<ToeicReadingPart, number> = {
   part5: 270,
   part6: 98,
-  part7: 136,
+  part7: 196,
 };
 
 // "part5" → "Part 5" のように表示用ラベルへ整形する。

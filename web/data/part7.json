@@ -6354,7 +6354,7 @@
     "id": "p7-generated-set-065",
     "part": "part7",
     "title": "Job Posting and Applicant Email",
-    "passage": "Job posting\n\nPosition: Assistant Event Coordinator\nMaple Hall Events is seeking an assistant event coordinator for weekend conferences and community programs. Applicants should have at least one year of customer service experience and be available two Saturdays per month. Knowledge of basic spreadsheet software is preferred.\n\nEmail from applicant\n\nDear Hiring Team,\n\nI would like to apply for the assistant event coordinator position. I have worked at the East Pier Visitor Desk for two years, where I answer visitor questions and update daily attendance logs in a spreadsheet. I am available every Saturday except the first Saturday of each month.\n\nSincerely,\nAiko Tanaka",
+    "passage": "Job posting\n\nPosition: Assistant Event Coordinator\nMaple Hall Events is seeking an assistant event coordinator for weekend conferences and community programs. Applicants should have at least one year of customer service experience and be available two Saturdays per month, including the first Saturday of each month. Knowledge of basic spreadsheet software is preferred.\n\nEmail from applicant\n\nDear Hiring Team,\n\nI would like to apply for the assistant event coordinator position. I have worked at the East Pier Visitor Desk for two years, where I answer visitor questions and update daily attendance logs in a spreadsheet. I am available every Saturday except the first Saturday of each month.\n\nSincerely,\nAiko Tanaka",
     "questions": [
       {
         "id": "p7-generated-q-065-01",
@@ -6440,7 +6440,7 @@
           }
         ],
         "correctChoiceId": "B",
-        "explanation": "募集では月2回土曜勤務が必要ですが、応募者は毎月第1土曜以外なら勤務可能と述べています。",
+        "explanation": "募集では第1土曜を含む月2回の土曜勤務が必要ですが、応募者は毎月第1土曜以外なら勤務可能と述べています。",
         "difficulty": "hard",
         "tags": [
           "multiple-documents",
