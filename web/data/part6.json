@@ -4146,5 +4146,419 @@
       "billing"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-044",
+    "part": "part6",
+    "title": "Remote Work Policy Update",
+    "passage": "To all staff,\n\nBeginning August 3, employees who work remotely more than two days per week must submit an updated work-location form. The form [1] managers confirm emergency contact information and equipment needs. It should be completed by July 24, [2] employees have recently submitted a similar request. Department directors will review the forms and notify staff if additional documentation [3].\n\n[4]",
+    "questions": [
+      {
+        "id": "p6-generated-q-044-01",
+        "prompt": "Which word best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "helps"
+          },
+          {
+            "id": "B",
+            "text": "helping"
+          },
+          {
+            "id": "C",
+            "text": "helpful"
+          },
+          {
+            "id": "D",
+            "text": "helped"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "The form が主語で、後ろに managers confirm ... が続くため、help + 目的語 + 動詞原形の形になる helps が適切です。",
+        "difficulty": "easy",
+        "tags": [
+          "policy-update",
+          "verb-form",
+          "remote-work"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-044-02",
+        "prompt": "Which phrase best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "because"
+          },
+          {
+            "id": "B",
+            "text": "even if"
+          },
+          {
+            "id": "C",
+            "text": "so that"
+          },
+          {
+            "id": "D",
+            "text": "instead of"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "同様の申請を最近出していても提出が必要、という譲歩条件なので even if が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "policy-update",
+          "conjunction",
+          "remote-work"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-044-03",
+        "prompt": "Which phrase best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "requiring"
+          },
+          {
+            "id": "B",
+            "text": "requires"
+          },
+          {
+            "id": "C",
+            "text": "is required"
+          },
+          {
+            "id": "D",
+            "text": "require"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "documentation は求められる側なので、受け身の is required が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "policy-update",
+          "passive-voice",
+          "remote-work"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-044-04",
+        "prompt": "Which sentence best completes the text?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The cafeteria will introduce a new breakfast menu next month."
+          },
+          {
+            "id": "B",
+            "text": "All visitor badges should be returned to the front desk."
+          },
+          {
+            "id": "C",
+            "text": "The marketing team will present its annual budget on Friday."
+          },
+          {
+            "id": "D",
+            "text": "Questions about the form should be sent to workplacepolicy@harborline.example."
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "リモート勤務フォームの案内文なので、フォームに関する問い合わせ先を示す文が自然です。",
+        "difficulty": "medium",
+        "tags": [
+          "policy-update",
+          "sentence-insertion",
+          "remote-work"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "policy-update",
+      "remote-work"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-045",
+    "part": "part6",
+    "title": "Supplier Delivery Notice",
+    "passage": "Hello team,\n\nOur main packaging supplier has informed us that Thursday's paperboard delivery will arrive in two shipments. The first truck is scheduled for 8:30 A.M., but the remaining cartons [1] until early afternoon because of a loading delay. Please use the stock currently stored near Line 2 [2] opening the emergency reserve pallets. The production schedule can remain unchanged if each shift records the quantity [3] before leaving the floor.\n\n[4]",
+    "questions": [
+      {
+        "id": "p6-generated-q-045-01",
+        "prompt": "Which phrase best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "have not arrived"
+          },
+          {
+            "id": "B",
+            "text": "not arriving"
+          },
+          {
+            "id": "C",
+            "text": "were not arrived"
+          },
+          {
+            "id": "D",
+            "text": "will not arrive"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "Thursday の今後の予定について述べているため、未来を表す will not arrive が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "delivery-planning",
+          "verb-form",
+          "supplier"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-045-02",
+        "prompt": "Which word best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "among"
+          },
+          {
+            "id": "B",
+            "text": "despite"
+          },
+          {
+            "id": "C",
+            "text": "before"
+          },
+          {
+            "id": "D",
+            "text": "besides"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "緊急用の在庫を開ける前に Line 2 近くの在庫を使うという順序なので before が適切です。",
+        "difficulty": "hard",
+        "tags": [
+          "delivery-planning",
+          "preposition",
+          "supplier"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-045-03",
+        "prompt": "Which word best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "use"
+          },
+          {
+            "id": "B",
+            "text": "used"
+          },
+          {
+            "id": "C",
+            "text": "using"
+          },
+          {
+            "id": "D",
+            "text": "uses"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "the quantity used で「使用された数量」を表すため、過去分詞 used が適切です。",
+        "difficulty": "easy",
+        "tags": [
+          "delivery-planning",
+          "participle",
+          "inventory"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-045-04",
+        "prompt": "Which sentence best completes the text?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Please update the shared inventory sheet after each shipment is received."
+          },
+          {
+            "id": "B",
+            "text": "The visitor entrance will close at 4:00 P.M. today."
+          },
+          {
+            "id": "C",
+            "text": "A new employee orientation session will begin next Monday."
+          },
+          {
+            "id": "D",
+            "text": "All travel receipts should be attached to the expense report."
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "納品が2回に分かれる通知なので、各納品後の在庫表更新を促す文が自然です。",
+        "difficulty": "medium",
+        "tags": [
+          "delivery-planning",
+          "sentence-insertion",
+          "inventory"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "delivery-planning",
+      "supplier"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-046",
+    "part": "part6",
+    "title": "Expense Report Reminder",
+    "passage": "To supervisors,\n\nThe finance office has updated the monthly expense report checklist. Receipts must be attached in the same order as they appear on the summary sheet, and any missing receipt should be explained in the comments field. Reports [1] after the fifth business day will be processed in the following month. The new checklist is shorter than the previous version, [2] it still requires project codes for all client meals. Supervisors are asked [3] reports before forwarding them to finance.\n\n[4]",
+    "questions": [
+      {
+        "id": "p6-generated-q-046-01",
+        "prompt": "Which word best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "submit"
+          },
+          {
+            "id": "B",
+            "text": "submitting"
+          },
+          {
+            "id": "C",
+            "text": "submitted"
+          },
+          {
+            "id": "D",
+            "text": "to submit"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Reports を後ろから修飾し「提出された報告書」を表す過去分詞 submitted が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "expense-report",
+          "participle",
+          "finance"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-046-02",
+        "prompt": "Which word best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "so"
+          },
+          {
+            "id": "B",
+            "text": "unless"
+          },
+          {
+            "id": "C",
+            "text": "because"
+          },
+          {
+            "id": "D",
+            "text": "but"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "短くなった一方で、なお project codes が必要という対比なので but が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "expense-report",
+          "contrast",
+          "finance"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-046-03",
+        "prompt": "Which phrase best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "to review"
+          },
+          {
+            "id": "B",
+            "text": "reviewing"
+          },
+          {
+            "id": "C",
+            "text": "reviewed"
+          },
+          {
+            "id": "D",
+            "text": "reviews"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "be asked to do の形で「〜するよう求められる」を表すため to review が適切です。",
+        "difficulty": "hard",
+        "tags": [
+          "expense-report",
+          "infinitive",
+          "finance"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-046-04",
+        "prompt": "Which sentence best completes the text?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The warehouse will test a new barcode scanner next week."
+          },
+          {
+            "id": "B",
+            "text": "The revised checklist is available on the finance portal."
+          },
+          {
+            "id": "C",
+            "text": "All building visitors must sign in at the front desk."
+          },
+          {
+            "id": "D",
+            "text": "The client workshop will begin at 9:00 A.M. in Room 4."
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "経費精算チェックリストの更新案内なので、改訂版の入手場所を示す文が自然です。",
+        "difficulty": "easy",
+        "tags": [
+          "expense-report",
+          "sentence-insertion",
+          "finance"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "expense-report",
+      "finance"
+    ],
+    "reviewed": true
   }
 ]
