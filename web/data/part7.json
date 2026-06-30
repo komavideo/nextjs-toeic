@@ -4945,5 +4945,2165 @@
       "client-service"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-052",
+    "part": "part7",
+    "title": "Certification Center Check-In Notice",
+    "passage": "Notice to test candidates\n\nThe Northbridge Assessment Center will begin using a revised check-in process on August 3. Candidates should arrive 30 minutes before the scheduled start time and bring one valid photo ID. Digital copies shown on a phone will not be accepted.\n\nAfter entering the lobby, candidates will receive a numbered card and wait until their number is called. Personal items must be placed in the storage area before entering the testing room. Lockers are limited, so candidates are asked to bring only essential items.\n\nAnyone who arrives after the doors close will need to contact the registration office to schedule another session.",
+    "questions": [
+      {
+        "id": "p7-generated-q-052-01",
+        "prompt": "What is the notice mainly about?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A revised check-in process"
+          },
+          {
+            "id": "B",
+            "text": "A new online practice course"
+          },
+          {
+            "id": "C",
+            "text": "A change in test scoring"
+          },
+          {
+            "id": "D",
+            "text": "A refund policy for absent candidates"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "冒頭で、Northbridge Assessment Center が8月3日から変更後の受付手順を使うと案内しています。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "purpose",
+          "check-in"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-052-02",
+        "prompt": "What should candidates bring?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A printed admission ticket"
+          },
+          {
+            "id": "B",
+            "text": "A valid photo ID"
+          },
+          {
+            "id": "C",
+            "text": "A numbered card"
+          },
+          {
+            "id": "D",
+            "text": "A locker key"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文に bring one valid photo ID とあり、有効な写真付き身分証明書が必要です。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "identification"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-052-03",
+        "prompt": "What is implied about candidates who bring many personal items?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "They will be given extra time to prepare"
+          },
+          {
+            "id": "B",
+            "text": "They can keep the items at their seats"
+          },
+          {
+            "id": "C",
+            "text": "They may have difficulty finding locker space"
+          },
+          {
+            "id": "D",
+            "text": "They must contact the registration office"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "本文ではロッカー数が限られているため、必要最小限の持ち物だけを持参するよう求めています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "inference",
+          "facility"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "check-in",
+      "assessment"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-053",
+    "part": "part7",
+    "title": "Registration Deadline Reminder",
+    "passage": "From: Harbor Learning Services\nTo: Registered candidates\nSubject: September assessment registration\n\nThis is a reminder that registration for the September 14 Business Communication Assessment closes at 3:00 P.M. on August 26. Candidates who have started an application but have not completed payment should finish the process before the deadline.\n\nA limited number of seats are still available at the East Market Center. The West River Center is already full, but candidates may join a waiting list by selecting the \"notify me\" option in their account.\n\nPlease note that session changes cannot be made by phone. All changes must be completed through the candidate portal.",
+    "questions": [
+      {
+        "id": "p7-generated-q-053-01",
+        "prompt": "What is the main purpose of the email?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To announce a new assessment format"
+          },
+          {
+            "id": "B",
+            "text": "To cancel a testing session"
+          },
+          {
+            "id": "C",
+            "text": "To request feedback on a portal"
+          },
+          {
+            "id": "D",
+            "text": "To remind candidates of a registration deadline"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "件名と本文冒頭で、9月14日の試験申込が8月26日15時に締め切られることを知らせています。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "purpose",
+          "registration"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-053-02",
+        "prompt": "Which location still has some seats available?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "East Market Center"
+          },
+          {
+            "id": "B",
+            "text": "West River Center"
+          },
+          {
+            "id": "C",
+            "text": "Harbor Learning Services"
+          },
+          {
+            "id": "D",
+            "text": "The candidate portal"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文に A limited number of seats are still available at the East Market Center とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "email",
+          "detail",
+          "location"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-053-03",
+        "prompt": "How can candidates change their session?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By visiting the West River Center"
+          },
+          {
+            "id": "B",
+            "text": "Through the candidate portal"
+          },
+          {
+            "id": "C",
+            "text": "By calling Harbor Learning Services"
+          },
+          {
+            "id": "D",
+            "text": "By joining a waiting list"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文末尾に、変更は電話ではなく candidate portal で完了する必要があると書かれています。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "registration"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "registration",
+      "assessment"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-054",
+    "part": "part7",
+    "title": "Digital Results Notice",
+    "passage": "Digital results update\n\nStarting with sessions held after October 1, Ridgeview Testing Services will release digital result reports seven business days after each assessment. Candidates will receive an email when their report is ready to view.\n\nPrinted certificates can still be requested during registration. Candidates who choose this option should allow an additional five business days for mailing. The printed version will have a new layout, but the candidate name, test date, and score summary will remain in the same sections.\n\nIf a candidate needs to correct the spelling of a name, the request must be submitted before the result report is issued.",
+    "questions": [
+      {
+        "id": "p7-generated-q-054-01",
+        "prompt": "When will digital result reports be released?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Five business days before mailing"
+          },
+          {
+            "id": "B",
+            "text": "On the day of each assessment"
+          },
+          {
+            "id": "C",
+            "text": "Seven business days after each assessment"
+          },
+          {
+            "id": "D",
+            "text": "After printed certificates are delivered"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "本文に release digital result reports seven business days after each assessment と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "results"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-054-02",
+        "prompt": "What will change about the printed certificate?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The score summary will be removed"
+          },
+          {
+            "id": "B",
+            "text": "The mailing option will end"
+          },
+          {
+            "id": "C",
+            "text": "The test date will appear in a different section"
+          },
+          {
+            "id": "D",
+            "text": "It will have a new layout"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "printed version will have a new layout とあります。一方で氏名、試験日、スコア概要の欄は維持されます。",
+        "difficulty": "hard",
+        "tags": [
+          "notice",
+          "detail",
+          "certificate"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-054-03",
+        "prompt": "What must candidates do to correct the spelling of a name?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Submit the request before the result report is issued"
+          },
+          {
+            "id": "B",
+            "text": "Wait until the printed certificate arrives"
+          },
+          {
+            "id": "C",
+            "text": "Register for another assessment"
+          },
+          {
+            "id": "D",
+            "text": "Send the original certificate back"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "氏名のスペル修正は、result report が発行される前に依頼する必要があると説明されています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "results"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "results",
+      "certificate"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-055",
+    "part": "part7",
+    "title": "Saturday Venue Update",
+    "passage": "Venue update for Saturday sessions\n\nDue to construction near Central Station, the main entrance of the Milltown Learning Hall will be closed on September 5. Candidates attending Saturday assessment sessions should use the north entrance on Lake Street.\n\nStaff members will place signs from the station exit to the north entrance beginning at 7:15 A.M. The reception desk will open at 7:40 A.M. for the morning session and at 12:40 P.M. for the afternoon session.\n\nThe testing rooms have not changed. Candidates should not go to the neighboring library, which is hosting a separate public lecture on the same day.",
+    "questions": [
+      {
+        "id": "p7-generated-q-055-01",
+        "prompt": "Why will candidates need to use the north entrance?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The testing rooms have changed"
+          },
+          {
+            "id": "B",
+            "text": "The main entrance will be closed"
+          },
+          {
+            "id": "C",
+            "text": "The library entrance is reserved"
+          },
+          {
+            "id": "D",
+            "text": "The reception desk moved permanently"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "本文冒頭に、工事のため main entrance が閉鎖されるので north entrance を使うよう書かれています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "reason",
+          "venue"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-055-02",
+        "prompt": "When will staff begin placing signs?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "At 7:40 A.M."
+          },
+          {
+            "id": "B",
+            "text": "At 12:40 P.M."
+          },
+          {
+            "id": "C",
+            "text": "At 7:15 A.M."
+          },
+          {
+            "id": "D",
+            "text": "On the day before the sessions"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "本文に signs from the station exit to the north entrance beginning at 7:15 A.M. とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "detail",
+          "time"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-055-03",
+        "prompt": "What is suggested about the neighboring library?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It is part of the assessment venue"
+          },
+          {
+            "id": "B",
+            "text": "It will be closed for construction"
+          },
+          {
+            "id": "C",
+            "text": "It will open after the afternoon session"
+          },
+          {
+            "id": "D",
+            "text": "It may be confused with the correct destination"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "図書館では別の講演があるため、受験者に行かないよう注意しています。会場と間違える可能性が示唆されています。",
+        "difficulty": "hard",
+        "tags": [
+          "notice",
+          "inference",
+          "venue"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "venue",
+      "assessment"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-056",
+    "part": "part7",
+    "title": "Staff Training Schedule",
+    "passage": "Memo to customer service staff\n\nThe October product-support training will be held in Room 4B on October 12. The session begins at 9:00 A.M. and will cover the new return authorization process, warranty categories, and the updated script for damaged-item calls.\n\nEmployees who joined the department after July 1 must attend the full session. Other employees may attend only the second half, which begins at 10:30 A.M., if they completed the online module last month.\n\nSupervisors should send the names of employees who will attend by October 5 so that printed reference sheets can be prepared.",
+    "questions": [
+      {
+        "id": "p7-generated-q-056-01",
+        "prompt": "Where will the training be held?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "In Room 4B"
+          },
+          {
+            "id": "B",
+            "text": "In the warranty department"
+          },
+          {
+            "id": "C",
+            "text": "At the return counter"
+          },
+          {
+            "id": "D",
+            "text": "At an online meeting site"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "本文冒頭に、研修は Room 4B で10月12日に行われるとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "detail",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-056-02",
+        "prompt": "Who must attend the full session?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "All supervisors"
+          },
+          {
+            "id": "B",
+            "text": "Employees who joined after July 1"
+          },
+          {
+            "id": "C",
+            "text": "Employees who completed the module"
+          },
+          {
+            "id": "D",
+            "text": "Staff members from Room 4B"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "Employees who joined the department after July 1 must attend the full session と明記されています。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-056-03",
+        "prompt": "Why should supervisors send names by October 5?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To arrange warranty repairs"
+          },
+          {
+            "id": "B",
+            "text": "To update the call script"
+          },
+          {
+            "id": "C",
+            "text": "To allow reference sheets to be prepared"
+          },
+          {
+            "id": "D",
+            "text": "To confirm completion of the online module"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "出席者名を送る目的は、printed reference sheets を準備するためです。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "reason",
+          "staff-training"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "staff-training",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-057",
+    "part": "part7",
+    "title": "Maintenance Notice",
+    "passage": "Building maintenance notice\n\nOn Thursday, the air-conditioning system on floors 6 through 8 will be inspected between 8:00 A.M. and noon. During this time, the temperature in those areas may be warmer than usual.\n\nEmployees assigned to those floors may work from the third-floor training room if they need a cooler workspace. The room has 24 desks, so department managers should coordinate seating within their teams.\n\nThe inspection will not affect the elevators or the cafeteria. If the work finishes early, the facilities team will send a building-wide message.",
+    "questions": [
+      {
+        "id": "p7-generated-q-057-01",
+        "prompt": "What will happen on Thursday morning?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The cafeteria will be closed"
+          },
+          {
+            "id": "B",
+            "text": "The elevators will be inspected"
+          },
+          {
+            "id": "C",
+            "text": "Department managers will move desks"
+          },
+          {
+            "id": "D",
+            "text": "The air-conditioning system will be inspected"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "本文冒頭で、木曜午前に6階から8階の空調システムを点検すると案内されています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-057-02",
+        "prompt": "Where may affected employees work?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "In the third-floor training room"
+          },
+          {
+            "id": "B",
+            "text": "In the cafeteria"
+          },
+          {
+            "id": "C",
+            "text": "On floors 6 through 8"
+          },
+          {
+            "id": "D",
+            "text": "In the facilities office"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "該当フロアの従業員は、必要に応じて3階の training room で作業できるとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "workspace"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-057-03",
+        "prompt": "What is implied about the third-floor training room?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It is normally used by the facilities team"
+          },
+          {
+            "id": "B",
+            "text": "It may not have enough desks for everyone"
+          },
+          {
+            "id": "C",
+            "text": "It will be warmer than floors 6 through 8"
+          },
+          {
+            "id": "D",
+            "text": "It is closed until noon"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "24台の机しかないため、部門マネージャーが座席を調整するよう求められています。",
+        "difficulty": "hard",
+        "tags": [
+          "notice",
+          "inference",
+          "workspace"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "facility-repairs",
+      "workspace"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-058",
+    "part": "part7",
+    "title": "Product Recall Memo",
+    "passage": "Memo from the Quality Department\n\nA small batch of Merton desk lamps shipped between June 10 and June 18 may contain an incorrect power adapter. The affected units have serial numbers beginning with ML-46.\n\nRetail partners should stop selling these units immediately and place them in a clearly marked box. A courier will collect the lamps next week. Replacement adapters will be shipped to stores by July 3, along with updated instruction cards.\n\nCustomers who already purchased an affected lamp should be offered a free adapter replacement, not a refund, unless the lamp itself is damaged.",
+    "questions": [
+      {
+        "id": "p7-generated-q-058-01",
+        "prompt": "Which products are affected?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "All Merton desk lamps shipped in July"
+          },
+          {
+            "id": "B",
+            "text": "Instruction cards printed after July 3"
+          },
+          {
+            "id": "C",
+            "text": "Units with serial numbers beginning with ML-46"
+          },
+          {
+            "id": "D",
+            "text": "Power adapters sold by retail partners"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "対象は、シリアル番号が ML-46 で始まる Merton desk lamps です。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "product-recall"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-058-02",
+        "prompt": "What should retail partners do first?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Ship replacement adapters to customers"
+          },
+          {
+            "id": "B",
+            "text": "Print new instruction cards"
+          },
+          {
+            "id": "C",
+            "text": "Offer refunds for all lamps"
+          },
+          {
+            "id": "D",
+            "text": "Stop selling the affected units"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "本文では、retail partners should stop selling these units immediately と最初の対応が示されています。",
+        "difficulty": "easy",
+        "tags": [
+          "memo",
+          "detail",
+          "product-recall"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-058-03",
+        "prompt": "When will replacement adapters be shipped to stores?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By July 3"
+          },
+          {
+            "id": "B",
+            "text": "Between June 10 and June 18"
+          },
+          {
+            "id": "C",
+            "text": "Next month"
+          },
+          {
+            "id": "D",
+            "text": "After damaged lamps are returned"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "Replacement adapters will be shipped to stores by July 3 とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "memo",
+          "detail",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "memo",
+      "product-recall",
+      "retail"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-059",
+    "part": "part7",
+    "title": "Customer Loyalty Program",
+    "passage": "Oakline Cafe loyalty program update\n\nBeginning Monday, customers who use the Oakline mobile app will earn one point for every dollar spent on food and beverages. Points can be exchanged for drinks, bakery items, or seasonal merchandise.\n\nCustomers with paper stamp cards may continue using them until September 30. After that date, unused stamps can be transferred to the app at any Oakline Cafe location, but only if the customer brings the original card.\n\nTo encourage app registration, Oakline will offer a free small coffee to customers who create an account before August 15.",
+    "questions": [
+      {
+        "id": "p7-generated-q-059-01",
+        "prompt": "How can customers earn points in the updated program?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "By buying seasonal merchandise only"
+          },
+          {
+            "id": "B",
+            "text": "By using the Oakline mobile app"
+          },
+          {
+            "id": "C",
+            "text": "By bringing a paper stamp card"
+          },
+          {
+            "id": "D",
+            "text": "By registering after September 30"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "アプリ利用者は、飲食物の支払い1ドルごとに1ポイント獲得できると説明されています。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "loyalty-program"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-059-02",
+        "prompt": "What must customers bring to transfer unused stamps?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A receipt from Monday"
+          },
+          {
+            "id": "B",
+            "text": "A seasonal merchandise coupon"
+          },
+          {
+            "id": "C",
+            "text": "The original paper card"
+          },
+          {
+            "id": "D",
+            "text": "A small coffee voucher"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "未使用スタンプをアプリに移すには、original card を持参する必要があります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "customer-service"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-059-03",
+        "prompt": "Why is Oakline offering a free small coffee?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To sell more seasonal merchandise"
+          },
+          {
+            "id": "B",
+            "text": "To replace paper stamp cards automatically"
+          },
+          {
+            "id": "C",
+            "text": "To compensate customers for unused stamps"
+          },
+          {
+            "id": "D",
+            "text": "To encourage customers to register for the app"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "本文末尾に、アプリ登録を促すため無料の小サイズコーヒーを提供するとあります。",
+        "difficulty": "hard",
+        "tags": [
+          "notice",
+          "reason",
+          "loyalty-program"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "loyalty-program",
+      "customer-service"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-060",
+    "part": "part7",
+    "title": "Warehouse Shift Notice",
+    "passage": "Notice for warehouse employees\n\nBeginning November 2, the evening packing shift will start at 3:30 P.M. instead of 4:00 P.M. The change is being made because the last daily pickup from the regional carrier has moved to 7:15 P.M.\n\nEmployees assigned to the evening shift should take their meal break between 5:30 P.M. and 6:00 P.M. so that all urgent orders can be sealed before the pickup truck arrives.\n\nThe receiving team schedule will not change. Questions about the new shift time should be sent to the warehouse coordinator by October 20.",
+    "questions": [
+      {
+        "id": "p7-generated-q-060-01",
+        "prompt": "When will the evening packing shift start beginning November 2?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "At 3:30 P.M."
+          },
+          {
+            "id": "B",
+            "text": "At 4:00 P.M."
+          },
+          {
+            "id": "C",
+            "text": "At 5:30 P.M."
+          },
+          {
+            "id": "D",
+            "text": "At 7:15 P.M."
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "11月2日から evening packing shift は午後3時30分開始になるとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "detail",
+          "schedule"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-060-02",
+        "prompt": "Why is the shift time changing?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The receiving team requested a longer break"
+          },
+          {
+            "id": "B",
+            "text": "The carrier's last pickup is earlier"
+          },
+          {
+            "id": "C",
+            "text": "The warehouse coordinator is unavailable"
+          },
+          {
+            "id": "D",
+            "text": "Urgent orders have been canceled"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "地域配送業者の最終集荷が午後7時15分に変わったため、シフト開始時刻も早まります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "reason",
+          "warehouse"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-060-03",
+        "prompt": "Which team will not have a schedule change?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The evening packing team"
+          },
+          {
+            "id": "B",
+            "text": "The regional carrier team"
+          },
+          {
+            "id": "C",
+            "text": "The receiving team"
+          },
+          {
+            "id": "D",
+            "text": "The urgent order team"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "本文末尾に The receiving team schedule will not change とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "detail",
+          "warehouse"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "warehouse",
+      "schedule"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-061",
+    "part": "part7",
+    "title": "Vendor Demonstration Invitation",
+    "passage": "From: Procurement Office\nSubject: Demonstration of inventory scanners\n\nRepresentatives from Kado Systems will demonstrate three models of handheld inventory scanners next Tuesday in Conference Room C. The demonstration will begin at 2:00 P.M. and should last about 45 minutes.\n\nStore managers who use barcode scanners daily are encouraged to attend and provide feedback. The purchasing decision will be made after the trial period in two stores, not immediately after the demonstration.\n\nPlease notify the Procurement Office by Friday if you plan to attend, as the vendor will bring sample units based on the expected number of participants.",
+    "questions": [
+      {
+        "id": "p7-generated-q-061-01",
+        "prompt": "What will Kado Systems demonstrate?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Conference room equipment"
+          },
+          {
+            "id": "B",
+            "text": "A new purchasing form"
+          },
+          {
+            "id": "C",
+            "text": "Store display materials"
+          },
+          {
+            "id": "D",
+            "text": "Handheld inventory scanners"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "件名と本文で、Kado Systems が handheld inventory scanners を実演すると説明されています。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "detail",
+          "inventory"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-061-02",
+        "prompt": "Who is encouraged to attend?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Store managers who use barcode scanners daily"
+          },
+          {
+            "id": "B",
+            "text": "All Kado Systems representatives"
+          },
+          {
+            "id": "C",
+            "text": "Customers from two trial stores"
+          },
+          {
+            "id": "D",
+            "text": "Employees from Conference Room C"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "Store managers who use barcode scanners daily are encouraged to attend とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "audience",
+          "inventory"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-061-03",
+        "prompt": "Why should attendees notify the Procurement Office by Friday?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To receive a purchasing decision"
+          },
+          {
+            "id": "B",
+            "text": "So the vendor can bring enough sample units"
+          },
+          {
+            "id": "C",
+            "text": "To reserve two trial stores"
+          },
+          {
+            "id": "D",
+            "text": "So the demonstration can be shortened"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "参加予定人数に基づいて vendor が sample units を持参するため、金曜までの連絡が必要です。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "reason",
+          "vendor-meetings"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "inventory",
+      "vendor-meetings"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-062",
+    "part": "part7",
+    "title": "Travel Expense Policy",
+    "passage": "Travel expense policy update\n\nStarting January 1, employees must submit travel expense reports within ten business days of returning from a trip. Reports submitted after that period will require approval from a division director.\n\nReceipts are required for hotel stays, train tickets, and meals over $25. Taxi receipts are no longer required for trips between a company office and a local train station, but employees must still list the route and date.\n\nThe Finance Department will hold a short online briefing on December 18 to explain the new form.",
+    "questions": [
+      {
+        "id": "p7-generated-q-062-01",
+        "prompt": "What is the new deadline for submitting travel expense reports?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Within ten calendar days of booking a trip"
+          },
+          {
+            "id": "B",
+            "text": "Before January 1"
+          },
+          {
+            "id": "C",
+            "text": "Within ten business days of returning"
+          },
+          {
+            "id": "D",
+            "text": "Immediately after director approval"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "出張から戻ってから10営業日以内に経費精算書を提出する必要があります。",
+        "difficulty": "medium",
+        "tags": [
+          "policy",
+          "detail",
+          "expense"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-062-02",
+        "prompt": "For which item is a receipt no longer required?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Taxi trips between an office and a local train station"
+          },
+          {
+            "id": "B",
+            "text": "Hotel stays during business trips"
+          },
+          {
+            "id": "C",
+            "text": "Train tickets for intercity travel"
+          },
+          {
+            "id": "D",
+            "text": "Meals over $25"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "会社オフィスと近隣駅の間のタクシー利用については、領収書が不要になったとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "policy",
+          "detail",
+          "expense"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-062-03",
+        "prompt": "What will happen on December 18?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The policy will begin"
+          },
+          {
+            "id": "B",
+            "text": "Late reports will be rejected"
+          },
+          {
+            "id": "C",
+            "text": "Division directors will review reports"
+          },
+          {
+            "id": "D",
+            "text": "The Finance Department will hold an online briefing"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "Finance Department が12月18日に新しいフォームを説明する短いオンライン説明会を開きます。",
+        "difficulty": "medium",
+        "tags": [
+          "policy",
+          "detail",
+          "briefing"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "policy",
+      "expense",
+      "briefing"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-063",
+    "part": "part7",
+    "title": "Community Workshop Announcement",
+    "passage": "Community Workshop: Preparing Small Shops for Winter\n\nThe Greenford Business Association will host a free workshop for small shop owners on November 6 at the Civic Annex. The session will focus on storefront safety, winter product displays, and ways to maintain foot traffic during colder months.\n\nParticipants are asked to bring one photo of their current storefront. During the final 20 minutes, two volunteer consultants will review several storefront photos and offer suggestions.\n\nSpace is limited to 35 participants. To reserve a seat, send your name and business name to workshops@greenford.example by October 28.",
+    "questions": [
+      {
+        "id": "p7-generated-q-063-01",
+        "prompt": "Who is the workshop intended for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Volunteer consultants"
+          },
+          {
+            "id": "B",
+            "text": "Small shop owners"
+          },
+          {
+            "id": "C",
+            "text": "Civic Annex employees"
+          },
+          {
+            "id": "D",
+            "text": "Winter product suppliers"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "冒頭で、small shop owners 向けの無料ワークショップだと説明されています。",
+        "difficulty": "medium",
+        "tags": [
+          "announcement",
+          "audience",
+          "event"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-063-02",
+        "prompt": "What are participants asked to bring?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A product catalog"
+          },
+          {
+            "id": "B",
+            "text": "A list of winter suppliers"
+          },
+          {
+            "id": "C",
+            "text": "A photo of their current storefront"
+          },
+          {
+            "id": "D",
+            "text": "A completed safety checklist"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Participants are asked to bring one photo of their current storefront とあります。",
+        "difficulty": "medium",
+        "tags": [
+          "announcement",
+          "detail",
+          "event"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-063-03",
+        "prompt": "Why might some participants not receive individual suggestions?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Only winter product displays will be discussed"
+          },
+          {
+            "id": "B",
+            "text": "Reservations close before the workshop"
+          },
+          {
+            "id": "C",
+            "text": "The workshop is limited to shop owners"
+          },
+          {
+            "id": "D",
+            "text": "The consultants will review only several photos"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "最後の20分で consultants が several storefront photos をレビューするとあり、全員分ではない可能性があります。",
+        "difficulty": "hard",
+        "tags": [
+          "announcement",
+          "inference",
+          "event"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "announcement",
+      "event",
+      "small-business"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-064",
+    "part": "part7",
+    "title": "Hotel Reservation and Itinerary",
+    "passage": "Email from Lakeview Inn\n\nDear Mr. Patel,\n\nYour reservation for two standard rooms from May 11 to May 13 is confirmed. Breakfast is included for all four guests. Because the hotel parking area is being resurfaced that week, guests may park at the municipal garage across Cedar Street. Please show your room confirmation at the garage office to receive a parking voucher.\n\nItinerary note from Mr. Patel\n\nMay 11: Arrive by train at 6:20 P.M.\nMay 12: Client meeting at 9:00 A.M.; dinner with sales team at 7:00 P.M.\nMay 13: Check out before visiting the warehouse at 10:30 A.M.",
+    "questions": [
+      {
+        "id": "p7-generated-q-064-01",
+        "prompt": "How many guests are included in the reservation?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Four"
+          },
+          {
+            "id": "B",
+            "text": "Two"
+          },
+          {
+            "id": "C",
+            "text": "Six"
+          },
+          {
+            "id": "D",
+            "text": "Thirteen"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "朝食が all four guests に含まれるとあり、宿泊者は4名です。",
+        "difficulty": "easy",
+        "tags": [
+          "email",
+          "detail",
+          "booking"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-064-02",
+        "prompt": "Why will guests use the municipal garage?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The hotel has no confirmation system"
+          },
+          {
+            "id": "B",
+            "text": "The hotel parking area is being resurfaced"
+          },
+          {
+            "id": "C",
+            "text": "The train station is closed"
+          },
+          {
+            "id": "D",
+            "text": "The warehouse meeting was moved"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "ホテル駐車場がその週に再舗装されるため、Cedar Street 向かいの municipal garage を使います。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "reason",
+          "parking"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-064-03",
+        "prompt": "What will Mr. Patel most likely do before visiting the warehouse?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Attend a sales dinner"
+          },
+          {
+            "id": "B",
+            "text": "Arrive by train"
+          },
+          {
+            "id": "C",
+            "text": "Check out of the hotel"
+          },
+          {
+            "id": "D",
+            "text": "Pick up parking vouchers"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "旅程メモの5月13日に、warehouse 訪問前に check out するとあります。",
+        "difficulty": "hard",
+        "tags": [
+          "multiple-documents",
+          "inference",
+          "itinerary"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "multiple-documents",
+      "booking",
+      "itinerary"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-065",
+    "part": "part7",
+    "title": "Job Posting and Applicant Email",
+    "passage": "Job posting\n\nPosition: Assistant Event Coordinator\nMaple Hall Events is seeking an assistant event coordinator for weekend conferences and community programs. Applicants should have at least one year of customer service experience and be available two Saturdays per month, including the first Saturday of each month. Knowledge of basic spreadsheet software is preferred.\n\nEmail from applicant\n\nDear Hiring Team,\n\nI would like to apply for the assistant event coordinator position. I have worked at the East Pier Visitor Desk for two years, where I answer visitor questions and update daily attendance logs in a spreadsheet. I am available every Saturday except the first Saturday of each month.\n\nSincerely,\nAiko Tanaka",
+    "questions": [
+      {
+        "id": "p7-generated-q-065-01",
+        "prompt": "What job is Ms. Tanaka applying for?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Visitor Desk Manager"
+          },
+          {
+            "id": "B",
+            "text": "Spreadsheet Software Trainer"
+          },
+          {
+            "id": "C",
+            "text": "Community Program Director"
+          },
+          {
+            "id": "D",
+            "text": "Assistant Event Coordinator"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "応募メールで assistant event coordinator position に応募したいと述べています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "hiring"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-065-02",
+        "prompt": "Which requirement does Ms. Tanaka clearly meet?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Having at least one year of customer service experience"
+          },
+          {
+            "id": "B",
+            "text": "Being available on the first Saturday of every month"
+          },
+          {
+            "id": "C",
+            "text": "Managing weekend conferences for Maple Hall"
+          },
+          {
+            "id": "D",
+            "text": "Training staff on advanced software"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "募集要件は1年以上の接客経験で、応募者は Visitor Desk で2年間働いています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "inference",
+          "hiring"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-065-03",
+        "prompt": "What possible scheduling issue is suggested?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Ms. Tanaka cannot work on weekdays"
+          },
+          {
+            "id": "B",
+            "text": "Ms. Tanaka is unavailable on the first Saturday of each month"
+          },
+          {
+            "id": "C",
+            "text": "Maple Hall has no weekend conferences"
+          },
+          {
+            "id": "D",
+            "text": "The position requires daily attendance logs"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "募集では第1土曜を含む月2回の土曜勤務が必要ですが、応募者は毎月第1土曜以外なら勤務可能と述べています。",
+        "difficulty": "hard",
+        "tags": [
+          "multiple-documents",
+          "inference",
+          "schedule"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "multiple-documents",
+      "hiring",
+      "schedule"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-066",
+    "part": "part7",
+    "title": "Shipping Notice and Customer Reply",
+    "passage": "Shipping notice\n\nOrder 8842 for 18 adjustable desk stands was shipped on March 4 by Ralston Freight. Delivery to the Fairview Office Center is expected on March 8 between 10:00 A.M. and 2:00 P.M. The shipment includes three cartons and requires a signature at the loading dock.\n\nCustomer reply\n\nThank you for the update. Our loading dock is closed for repairs on March 8, but the front reception area can accept small deliveries. Since three cartons may be too large for that area, please ask Ralston Freight to deliver on March 9 instead. A facilities assistant will be available at the dock that morning.",
+    "questions": [
+      {
+        "id": "p7-generated-q-066-01",
+        "prompt": "What was ordered?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Three loading dock signs"
+          },
+          {
+            "id": "B",
+            "text": "Office reception furniture"
+          },
+          {
+            "id": "C",
+            "text": "Adjustable desk stands"
+          },
+          {
+            "id": "D",
+            "text": "Repair equipment"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Shipping notice に、18台の adjustable desk stands が発送されたとあります。",
+        "difficulty": "easy",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-066-02",
+        "prompt": "Why does the customer request delivery on March 9?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The loading dock will be closed on March 8"
+          },
+          {
+            "id": "B",
+            "text": "Ralston Freight cannot deliver before 2:00 P.M."
+          },
+          {
+            "id": "C",
+            "text": "The order was shipped to the wrong office"
+          },
+          {
+            "id": "D",
+            "text": "A signature is no longer required"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "返信では、3月8日は loading dock が修理で閉まっているため3月9日の配送を依頼しています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "reason",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-066-03",
+        "prompt": "What does the customer suggest about the front reception area?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It can accept all freight shipments"
+          },
+          {
+            "id": "B",
+            "text": "It will be staffed on March 9"
+          },
+          {
+            "id": "C",
+            "text": "It is being repaired"
+          },
+          {
+            "id": "D",
+            "text": "It may not be suitable for three cartons"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "front reception area は小型配送なら受け取れますが、3箱は大きすぎるかもしれないと述べています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "inference",
+          "delivery-planning"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "multiple-documents",
+      "delivery-planning",
+      "facility-repairs"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-067",
+    "part": "part7",
+    "title": "Office Renovation Memo and Floor Note",
+    "passage": "Renovation memo\n\nThe design department renovation will begin on April 6 and continue for approximately three weeks. During this period, employees from the design department will work in the temporary area on the second floor. The print room will remain available, but access will be through the south hallway only.\n\nFloor note posted near the elevators\n\nSecond-floor temporary area: desks 201-218\nQuiet phone room: 219\nShared supply cabinet: next to desk 204\nPlease keep the walkway to the south hallway clear for print room access.",
+    "questions": [
+      {
+        "id": "p7-generated-q-067-01",
+        "prompt": "Which department is being renovated?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The finance department"
+          },
+          {
+            "id": "B",
+            "text": "The design department"
+          },
+          {
+            "id": "C",
+            "text": "The facilities department"
+          },
+          {
+            "id": "D",
+            "text": "The printing department"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "Renovation memo の冒頭で design department renovation と書かれています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "facility-repairs"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-067-02",
+        "prompt": "Where is the shared supply cabinet?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "In the quiet phone room"
+          },
+          {
+            "id": "B",
+            "text": "Near the elevators"
+          },
+          {
+            "id": "C",
+            "text": "Next to desk 204"
+          },
+          {
+            "id": "D",
+            "text": "Inside the print room"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "Floor note に Shared supply cabinet: next to desk 204 とあります。",
+        "difficulty": "hard",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "workspace"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-067-03",
+        "prompt": "Why should the walkway to the south hallway be kept clear?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To move desks 201-218"
+          },
+          {
+            "id": "B",
+            "text": "To reach the quiet phone room"
+          },
+          {
+            "id": "C",
+            "text": "To avoid elevator repairs"
+          },
+          {
+            "id": "D",
+            "text": "To allow access to the print room"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "print room へのアクセスは south hallway 経由のみなので、その通路を空けておく必要があります。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "reason",
+          "workspace"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "multiple-documents",
+      "facility-repairs",
+      "workspace"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-068",
+    "part": "part7",
+    "title": "Supplier Quote and Manager Message",
+    "passage": "Supplier quote from Linton Office Supply\n\nErgonomic chair, model LC-8: $185 each\nDelivery fee: waived for orders of 20 or more chairs\nEstimated delivery: 12 business days after order confirmation\nQuote valid until June 22\n\nMessage from Operations Manager\n\nPlease compare this quote with our remaining furniture budget. We need 18 chairs immediately for the new support team, but if ordering 20 chairs keeps us within budget, choose that option because the delivery fee will be waived. Confirm the order no later than June 20 so the quote does not expire.",
+    "questions": [
+      {
+        "id": "p7-generated-q-068-01",
+        "prompt": "How much does one LC-8 chair cost?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "$185"
+          },
+          {
+            "id": "B",
+            "text": "$220"
+          },
+          {
+            "id": "C",
+            "text": "$18"
+          },
+          {
+            "id": "D",
+            "text": "$20"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "見積書に Ergonomic chair, model LC-8: $185 each とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "vendor"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-068-02",
+        "prompt": "Why might the company order 20 chairs instead of 18?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The support team has 20 members"
+          },
+          {
+            "id": "B",
+            "text": "The delivery fee would be waived"
+          },
+          {
+            "id": "C",
+            "text": "The quote expires on June 20"
+          },
+          {
+            "id": "D",
+            "text": "Delivery would take fewer business days"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "20脚以上の注文では delivery fee が免除されるため、予算内なら20脚を選ぶよう指示されています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "reason",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-068-03",
+        "prompt": "By when should the order be confirmed according to the manager?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Within 12 business days"
+          },
+          {
+            "id": "B",
+            "text": "After the budget is spent"
+          },
+          {
+            "id": "C",
+            "text": "No later than June 20"
+          },
+          {
+            "id": "D",
+            "text": "On June 22"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "マネージャーは quote が失効しないよう、6月20日までに注文を確定するよう求めています。",
+        "difficulty": "hard",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "deadline"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "multiple-documents",
+      "vendor",
+      "billing"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-069",
+    "part": "part7",
+    "title": "Event Flyer and Registration Reply",
+    "passage": "Event flyer\n\nRiverside Design Forum\nDate: August 21\nTime: 1:00 P.M.-5:00 P.M.\nLocation: North Gallery, Carson Art Center\nFee: $40 per person; students with valid ID pay $25\nSessions include package design trends, client presentations, and portfolio reviews. Registration closes August 10.\n\nRegistration reply\n\nDear Mr. Owens,\n\nYour registration for the Riverside Design Forum has been received. We have applied the student rate because you uploaded a valid student ID. Please arrive by 12:40 P.M. if you would like your portfolio reviewed; review slots are assigned before the first session begins.",
+    "questions": [
+      {
+        "id": "p7-generated-q-069-01",
+        "prompt": "How much will Mr. Owens pay?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "$40"
+          },
+          {
+            "id": "B",
+            "text": "$25"
+          },
+          {
+            "id": "C",
+            "text": "$10"
+          },
+          {
+            "id": "D",
+            "text": "$21"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "学生証が有効だったため student rate が適用されます。フライヤーでは学生料金が25ドルです。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "event"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-069-02",
+        "prompt": "Where will the forum be held?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "At Riverside Design School"
+          },
+          {
+            "id": "B",
+            "text": "At Mr. Owens's portfolio studio"
+          },
+          {
+            "id": "C",
+            "text": "At a client presentation room"
+          },
+          {
+            "id": "D",
+            "text": "At the North Gallery of Carson Art Center"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "フライヤーの Location に North Gallery, Carson Art Center とあります。",
+        "difficulty": "easy",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "location"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-069-03",
+        "prompt": "Why should Mr. Owens arrive by 12:40 P.M.?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "To pay the student fee"
+          },
+          {
+            "id": "B",
+            "text": "To upload his student ID"
+          },
+          {
+            "id": "C",
+            "text": "To attend the final session"
+          },
+          {
+            "id": "D",
+            "text": "To receive a portfolio review slot"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "portfolio review を希望する場合、最初のセッション前に枠が割り当てられるため12時40分までの到着が必要です。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "reason",
+          "event"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "multiple-documents",
+      "event",
+      "registration"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-070",
+    "part": "part7",
+    "title": "Software Outage Notice and Support Chat",
+    "passage": "System notice\n\nThe Meridian billing platform will be unavailable from 9:00 P.M. to 11:30 P.M. on July 16 while security updates are installed. Users should download any invoices they need before the maintenance window begins. Automatic payment reminders scheduled for that evening will be sent the following morning.\n\nSupport chat\n\nUser: I need to send a client an invoice at 10:00 P.M. on July 16. Will the system be available?\nSupport: No. Please download the invoice earlier in the day or send it after the platform is back online. Reminder emails will not be lost; they will be delayed until the next morning.",
+    "questions": [
+      {
+        "id": "p7-generated-q-070-01",
+        "prompt": "Why will the billing platform be unavailable?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Invoices are being redesigned"
+          },
+          {
+            "id": "B",
+            "text": "Payment reminders are being canceled"
+          },
+          {
+            "id": "C",
+            "text": "Security updates are being installed"
+          },
+          {
+            "id": "D",
+            "text": "A client account is locked"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "System notice に、security updates のインストール中は利用不可になるとあります。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "reason",
+          "software"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-070-02",
+        "prompt": "What does support recommend the user do?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Cancel the client invoice"
+          },
+          {
+            "id": "B",
+            "text": "Download the invoice earlier in the day"
+          },
+          {
+            "id": "C",
+            "text": "Restart the billing platform at 10:00 P.M."
+          },
+          {
+            "id": "D",
+            "text": "Send a payment reminder manually"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "サポートは、当日早い時間に請求書をダウンロードするか、復旧後に送るよう勧めています。",
+        "difficulty": "hard",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "software"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-070-03",
+        "prompt": "What will happen to automatic payment reminders scheduled for that evening?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "They will be sent the following morning"
+          },
+          {
+            "id": "B",
+            "text": "They will be deleted"
+          },
+          {
+            "id": "C",
+            "text": "They will be sent at 10:00 P.M."
+          },
+          {
+            "id": "D",
+            "text": "They will require manual approval"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "夜に予定されている自動支払いリマインダーは、翌朝送信されると説明されています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "billing"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "multiple-documents",
+      "software",
+      "billing"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p7-generated-set-071",
+    "part": "part7",
+    "title": "Membership Renewal Notice and Receipt",
+    "passage": "Membership renewal notice\n\nMembers of the Hillcrest Fitness Club who renew before December 5 will receive two complimentary guest passes. Renewals completed after that date will be processed at the standard rate and will not include guest passes. Members who update their billing information online will receive an email confirmation within one business day.\n\nReceipt\n\nMember: Lena Ortiz\nRenewal date: December 3\nPlan: Annual individual membership\nAmount paid: $420\nBilling method: Online card payment\nGuest passes: Included; available at front desk after confirmation email is issued",
+    "questions": [
+      {
+        "id": "p7-generated-q-071-01",
+        "prompt": "When did Ms. Ortiz renew her membership?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "December 3"
+          },
+          {
+            "id": "B",
+            "text": "December 5"
+          },
+          {
+            "id": "C",
+            "text": "Within one business day"
+          },
+          {
+            "id": "D",
+            "text": "After receiving guest passes"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "Receipt に Renewal date: December 3 と記載されています。",
+        "difficulty": "easy",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "membership"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-071-02",
+        "prompt": "Why will Ms. Ortiz receive guest passes?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "She paid the standard rate after December 5"
+          },
+          {
+            "id": "B",
+            "text": "She chose a family membership plan"
+          },
+          {
+            "id": "C",
+            "text": "She renewed before December 5"
+          },
+          {
+            "id": "D",
+            "text": "She paid at the front desk"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "12月5日より前に更新した会員には guest passes が付与され、Ms. Ortiz は12月3日に更新しています。",
+        "difficulty": "medium",
+        "tags": [
+          "multiple-documents",
+          "inference",
+          "membership"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p7-generated-q-071-03",
+        "prompt": "When can Ms. Ortiz pick up the guest passes?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Before paying the renewal fee"
+          },
+          {
+            "id": "B",
+            "text": "On December 5 only"
+          },
+          {
+            "id": "C",
+            "text": "After switching to a standard rate"
+          },
+          {
+            "id": "D",
+            "text": "After the confirmation email is issued"
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "Receipt の guest passes 欄に、confirmation email 発行後に front desk で受け取れるとあります。",
+        "difficulty": "hard",
+        "tags": [
+          "multiple-documents",
+          "detail",
+          "membership"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "multiple-documents",
+      "membership",
+      "billing"
+    ],
+    "reviewed": true
   }
 ]
