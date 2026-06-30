@@ -3594,5 +3594,557 @@
       "packaging"
     ],
     "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-040",
+    "part": "part6",
+    "title": "Visitor Badge Procedure",
+    "passage": "To all reception staff,\n\nBeginning July 8, visitors must check in with the tablet at the front desk before receiving a temporary badge. The system will send each host an automatic notification once a guest has arrived. [1] the lobby is busy, please ask visitors to wait near the information counter until their host responds.\n\nBadges should be returned to the reception desk before visitors leave the building. This step is important [2] the security team can keep an accurate record of who is on site. Any badge that is not returned by 6 P.M. [3] in the daily security report.\n\n[4]",
+    "questions": [
+      {
+        "id": "p6-generated-q-040-01",
+        "prompt": "Which word best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "If"
+          },
+          {
+            "id": "B",
+            "text": "Despite"
+          },
+          {
+            "id": "C",
+            "text": "Until"
+          },
+          {
+            "id": "D",
+            "text": "Because of"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "条件を表す節を導くため If が適切です。Despite と Because of は名詞句を続ける表現です。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "condition",
+          "security"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-040-02",
+        "prompt": "Which phrase best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "in case"
+          },
+          {
+            "id": "B",
+            "text": "so that"
+          },
+          {
+            "id": "C",
+            "text": "as long as"
+          },
+          {
+            "id": "D",
+            "text": "even though"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "記録を正確に保つという目的を表すため so that が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "purpose",
+          "security"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-040-03",
+        "prompt": "Which phrase best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "noted"
+          },
+          {
+            "id": "B",
+            "text": "will note"
+          },
+          {
+            "id": "C",
+            "text": "will be noted"
+          },
+          {
+            "id": "D",
+            "text": "noting"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "badge は記録される側なので、受け身の will be noted が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "passive-voice",
+          "security"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-040-04",
+        "prompt": "Which sentence best completes the text?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Please remind hosts that outside guests may enter production areas without approval."
+          },
+          {
+            "id": "B",
+            "text": "The cafeteria menu will also be updated on the company portal."
+          },
+          {
+            "id": "C",
+            "text": "Parking spaces near the lobby are assigned to accounting staff only."
+          },
+          {
+            "id": "D",
+            "text": "For training purposes, the old paper log will remain on the counter for one week."
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "新しい受付手順への移行に関する連絡なので、紙の記録を一時的に残す文が自然につながります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "sentence-insertion",
+          "security"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "security"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-041",
+    "part": "part6",
+    "title": "Printer Maintenance Notice",
+    "passage": "To all employees,\n\nThe color printer on the fourth floor will be unavailable from 1 P.M. to 4 P.M. on Wednesday while a technician replaces several worn parts. Documents that require color printing should be sent to the third-floor printer [1] the maintenance begins.\n\nThe replacement parts are expected to improve print quality and reduce paper jams. Please avoid opening the printer panels during the service period, [2] the technician may need to restart the device several times.\n\nIf your department has an urgent print request, contact the facilities desk. A staff member [3] the file to another printer if needed. [4]",
+    "questions": [
+      {
+        "id": "p6-generated-q-041-01",
+        "prompt": "Which word best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "before"
+          },
+          {
+            "id": "B",
+            "text": "around"
+          },
+          {
+            "id": "C",
+            "text": "beside"
+          },
+          {
+            "id": "D",
+            "text": "throughout"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "メンテナンス開始前に送る必要があるため before が適切です。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "time",
+          "maintenance"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-041-02",
+        "prompt": "Which word best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "unless"
+          },
+          {
+            "id": "B",
+            "text": "because"
+          },
+          {
+            "id": "C",
+            "text": "while"
+          },
+          {
+            "id": "D",
+            "text": "although"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "パネルを開けない理由を説明しているため because が適切です。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "reason",
+          "maintenance"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-041-03",
+        "prompt": "Which phrase best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "would forward"
+          },
+          {
+            "id": "B",
+            "text": "forwarding"
+          },
+          {
+            "id": "C",
+            "text": "will forward"
+          },
+          {
+            "id": "D",
+            "text": "to forward"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "主語 A staff member に続く未来の動作なので will forward が適切です。",
+        "difficulty": "easy",
+        "tags": [
+          "notice",
+          "verb-form",
+          "maintenance"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-041-04",
+        "prompt": "Which sentence best completes the text?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "All employees must submit travel receipts by the end of the month."
+          },
+          {
+            "id": "B",
+            "text": "The marketing team will meet in the large conference room at 9 A.M."
+          },
+          {
+            "id": "C",
+            "text": "A revised lunch menu will be posted near the cafeteria entrance."
+          },
+          {
+            "id": "D",
+            "text": "Normal printing service should resume immediately after the inspection is completed."
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "プリンターの一時停止に関する通知なので、点検後の通常再開を伝える文が最も自然です。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "sentence-insertion",
+          "maintenance"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "notice",
+      "maintenance"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-042",
+    "part": "part6",
+    "title": "Training Enrollment Reminder",
+    "passage": "Dear team leaders,\n\nPlease remind your staff to enroll in the new customer privacy training by August 12. The course is required for employees [1] handle client records or payment information.\n\nThe online module takes about forty minutes to complete. Employees may pause the module and return to it later, but the final quiz must be finished in one sitting. Certificates [2] automatically after the quiz is passed.\n\nManagers will receive a weekly completion report. If a staff member cannot complete the course by the deadline, the manager should submit a short explanation to Human Resources. [3], late enrollments will not be approved without a business reason.\n\n[4]",
+    "questions": [
+      {
+        "id": "p6-generated-q-042-01",
+        "prompt": "Which phrase best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "who"
+          },
+          {
+            "id": "B",
+            "text": "whose"
+          },
+          {
+            "id": "C",
+            "text": "which"
+          },
+          {
+            "id": "D",
+            "text": "whom"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "employees を先行詞とし、後ろの動詞 handle の主語になるため who が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "relative-pronoun",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-042-02",
+        "prompt": "Which phrase best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "issued"
+          },
+          {
+            "id": "B",
+            "text": "will be issued"
+          },
+          {
+            "id": "C",
+            "text": "will issue"
+          },
+          {
+            "id": "D",
+            "text": "issuing"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "Certificates は発行される側なので、未来の受け身 will be issued が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "passive-voice",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-042-03",
+        "prompt": "Which word best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Additionally"
+          },
+          {
+            "id": "B",
+            "text": "Therefore"
+          },
+          {
+            "id": "C",
+            "text": "However"
+          },
+          {
+            "id": "D",
+            "text": "Otherwise"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "例外対応を述べた後で、遅延登録は原則承認しないという対比を示すため However が適切です。",
+        "difficulty": "hard",
+        "tags": [
+          "email",
+          "contrast",
+          "staff-training"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-042-04",
+        "prompt": "Which sentence best completes the text?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The building entrance will be cleaned every Friday evening."
+          },
+          {
+            "id": "B",
+            "text": "A new printer has been installed near the reception desk."
+          },
+          {
+            "id": "C",
+            "text": "Employees may order additional office supplies from the warehouse."
+          },
+          {
+            "id": "D",
+            "text": "Thank you for helping us complete this required training on time."
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "研修受講の依頼メールの締めとして、期限内完了への協力に感謝する文が自然です。",
+        "difficulty": "medium",
+        "tags": [
+          "email",
+          "sentence-insertion",
+          "staff-training"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "medium",
+    "tags": [
+      "email",
+      "staff-training"
+    ],
+    "reviewed": true
+  },
+  {
+    "id": "p6-generated-set-043",
+    "part": "part6",
+    "title": "Supplier Payment Update",
+    "passage": "To all approved vendors,\n\nNorthgate Foods is updating its payment schedule for invoices submitted after September 1. Invoices must include a purchase order number, the delivery date, and the name of the department [1] placed the order. Documents missing this information may be returned for correction.\n\nThe accounting team reviews invoices every Tuesday and Thursday. Payments are usually processed within ten business days, [2] the invoice is complete and matches the purchase order.\n\nVendors who want to receive electronic payment notices should add a billing contact in the supplier portal. The contact information can be changed at any time, but updates [3] by an authorized account manager.\n\n[4]",
+    "questions": [
+      {
+        "id": "p6-generated-q-043-01",
+        "prompt": "Which word best completes blank [1]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "that"
+          },
+          {
+            "id": "B",
+            "text": "where"
+          },
+          {
+            "id": "C",
+            "text": "when"
+          },
+          {
+            "id": "D",
+            "text": "whose"
+          }
+        ],
+        "correctChoiceId": "A",
+        "explanation": "department を先行詞とし、placed the order の主語になる関係代名詞 that が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "relative-pronoun",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-043-02",
+        "prompt": "Which phrase best completes blank [2]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "rather than"
+          },
+          {
+            "id": "B",
+            "text": "as long as"
+          },
+          {
+            "id": "C",
+            "text": "even if"
+          },
+          {
+            "id": "D",
+            "text": "instead of"
+          }
+        ],
+        "correctChoiceId": "B",
+        "explanation": "請求書が完全で発注書と一致しているという条件を表すため as long as が適切です。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "condition",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-043-03",
+        "prompt": "Which phrase best completes blank [3]?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "must approve"
+          },
+          {
+            "id": "B",
+            "text": "approving"
+          },
+          {
+            "id": "C",
+            "text": "must be approved"
+          },
+          {
+            "id": "D",
+            "text": "to approve"
+          }
+        ],
+        "correctChoiceId": "C",
+        "explanation": "updates は承認される側なので、義務を表す受け身 must be approved が適切です。",
+        "difficulty": "hard",
+        "tags": [
+          "notice",
+          "passive-voice",
+          "billing"
+        ],
+        "reviewed": true
+      },
+      {
+        "id": "p6-generated-q-043-04",
+        "prompt": "Which sentence best completes the text?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "All delivery vehicles must use the south gate during morning hours."
+          },
+          {
+            "id": "B",
+            "text": "The cafeteria will offer a revised menu beginning next Monday."
+          },
+          {
+            "id": "C",
+            "text": "Employees should reserve meeting rooms through the internal calendar."
+          },
+          {
+            "id": "D",
+            "text": "Questions about the new schedule should be sent to vendorpayments@northgate.example."
+          }
+        ],
+        "correctChoiceId": "D",
+        "explanation": "支払いスケジュール更新の通知なので、問い合わせ先を示す文が自然に締めになります。",
+        "difficulty": "medium",
+        "tags": [
+          "notice",
+          "sentence-insertion",
+          "billing"
+        ],
+        "reviewed": true
+      }
+    ],
+    "difficulty": "hard",
+    "tags": [
+      "notice",
+      "billing"
+    ],
+    "reviewed": true
   }
 ]
