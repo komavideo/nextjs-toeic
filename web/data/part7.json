@@ -7118,11 +7118,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "A home repair workshop"
+            "text": "A new community center location"
           },
           {
             "id": "B",
-            "text": "A new community center location"
+            "text": "A home repair workshop"
           },
           {
             "id": "C",
@@ -7133,7 +7133,7 @@
             "text": "A volunteer lunch schedule"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "本文冒頭で Practical Home Repairs という1日ワークショップの案内をしています。",
         "difficulty": "easy",
         "tags": [
@@ -7153,7 +7153,7 @@
           },
           {
             "id": "B",
-            "text": "A notebook"
+            "text": "A lunch order form"
           },
           {
             "id": "C",
@@ -7161,10 +7161,10 @@
           },
           {
             "id": "D",
-            "text": "A lunch order form"
+            "text": "A notebook"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "D",
         "explanation": "本文に tools will be provided, but participants are asked to bring a notebook とあります。",
         "difficulty": "easy",
         "tags": [
@@ -7180,7 +7180,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "If they arrive before 9 A.M."
+            "text": "If they cancel by July 12"
           },
           {
             "id": "B",
@@ -7188,14 +7188,14 @@
           },
           {
             "id": "C",
-            "text": "If they cancel by July 12"
+            "text": "If they arrive before 9 A.M."
           },
           {
             "id": "D",
             "text": "If they transfer to another workshop"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "A",
         "explanation": "July 12 までにキャンセルした場合は full refund と明記されています。",
         "difficulty": "medium",
         "tags": [
@@ -7219,14 +7219,14 @@
           },
           {
             "id": "C",
-            "text": "Lunch will no longer be included"
+            "text": "Registration will close early"
           },
           {
             "id": "D",
-            "text": "Registration will close early"
+            "text": "Lunch will no longer be included"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "C",
         "explanation": "registration closes on July 10, or earlier if all 24 seats are filled とあります。",
         "difficulty": "medium",
         "tags": [
@@ -7257,7 +7257,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "The fifth-floor workspace is being improved"
+            "text": "The second-floor equipment room is closing"
           },
           {
             "id": "B",
@@ -7265,14 +7265,14 @@
           },
           {
             "id": "C",
-            "text": "The second-floor equipment room is closing"
+            "text": "The fifth-floor workspace is being improved"
           },
           {
             "id": "D",
             "text": "The company is opening a new branch"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "5階の塗装と照明設置のため一時移動するとあります。",
         "difficulty": "medium",
         "tags": [
@@ -7288,11 +7288,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "By July 29"
+            "text": "By July 31 at 5 P.M."
           },
           {
             "id": "B",
-            "text": "By July 31 at 5 P.M."
+            "text": "By July 29"
           },
           {
             "id": "C",
@@ -7303,7 +7303,7 @@
             "text": "By August 21"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "A",
         "explanation": "personal items は July 31 の5 P.M.までに梱包するよう求められています。",
         "difficulty": "easy",
         "tags": [
@@ -7327,14 +7327,14 @@
           },
           {
             "id": "C",
-            "text": "Disconnecting cables themselves"
+            "text": "Entering the sixth floor"
           },
           {
             "id": "D",
-            "text": "Entering the sixth floor"
+            "text": "Disconnecting cables themselves"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "D",
         "explanation": "Please do not disconnect any cables yourself と明記されています。",
         "difficulty": "medium",
         "tags": [
@@ -7354,7 +7354,7 @@
           },
           {
             "id": "B",
-            "text": "Large-format printers will be removed"
+            "text": "Employees are expected to return to the fifth floor"
           },
           {
             "id": "C",
@@ -7362,10 +7362,10 @@
           },
           {
             "id": "D",
-            "text": "Employees are expected to return to the fifth floor"
+            "text": "Large-format printers will be removed"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "B",
         "explanation": "5階は8月24日に再開予定なので、従業員は戻ると推測できます。",
         "difficulty": "medium",
         "tags": [
@@ -7396,7 +7396,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "A charging cable may be defective"
+            "text": "A retail store sold the wrong model"
           },
           {
             "id": "B",
@@ -7408,10 +7408,10 @@
           },
           {
             "id": "D",
-            "text": "A retail store sold the wrong model"
+            "text": "A charging cable may be defective"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "defective charging cable の可能性があると説明されています。",
         "difficulty": "medium",
         "tags": [
@@ -7431,18 +7431,18 @@
           },
           {
             "id": "B",
-            "text": "The blender serial number"
+            "text": "The customer's membership level"
           },
           {
             "id": "C",
-            "text": "The customer's membership level"
+            "text": "The blender serial number"
           },
           {
             "id": "D",
             "text": "The color of the charging cable"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "C",
         "explanation": "replacement form には blender 底面の serial number が必要です。",
         "difficulty": "medium",
         "tags": [
@@ -7462,19 +7462,19 @@
           },
           {
             "id": "B",
-            "text": "After the blender is returned"
+            "text": "Within five business days after the form is submitted"
           },
           {
             "id": "C",
-            "text": "Within five business days after the form is submitted"
+            "text": "After the blender is returned"
           },
           {
             "id": "D",
             "text": "Between May 2 and May 16"
           }
         ],
-        "correctChoiceId": "C",
-        "explanation": "フォーム送信後 five business days within に発送されるとあります。",
+        "correctChoiceId": "B",
+        "explanation": "フォーム送信後5営業日以内に発送されるとあります。",
         "difficulty": "medium",
         "tags": [
           "single-document",
@@ -7489,7 +7489,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "Stop using the cable"
+            "text": "Return to a retail store"
           },
           {
             "id": "B",
@@ -7501,10 +7501,10 @@
           },
           {
             "id": "D",
-            "text": "Return to a retail store"
+            "text": "Stop using the cable"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "A",
         "explanation": "retail store で購入した人も店舗に戻る必要はないと明記されています。",
         "difficulty": "hard",
         "tags": [
@@ -7535,11 +7535,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "A speaker has been delayed"
+            "text": "A room is being repaired"
           },
           {
             "id": "B",
-            "text": "A room is being repaired"
+            "text": "A speaker has been delayed"
           },
           {
             "id": "C",
@@ -7550,7 +7550,7 @@
             "text": "A mobile app stopped working"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "speaker が天候で遅れているため変更されたとあります。",
         "difficulty": "medium",
         "tags": [
@@ -7566,11 +7566,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "At 2:00 P.M."
+            "text": "At 4:15 P.M."
           },
           {
             "id": "B",
-            "text": "At 4:15 P.M."
+            "text": "At 2:00 P.M."
           },
           {
             "id": "C",
@@ -7581,7 +7581,7 @@
             "text": "The next morning"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "A",
         "explanation": "Online Inventory Trends は4:15 P.M.に変更されています。",
         "difficulty": "easy",
         "tags": [
@@ -7605,14 +7605,14 @@
           },
           {
             "id": "C",
-            "text": "Room A"
+            "text": "The registration desk"
           },
           {
             "id": "D",
-            "text": "The registration desk"
+            "text": "Room A"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "D",
         "explanation": "customer loyalty programs の panel discussion は Room A のままとあります。",
         "difficulty": "medium",
         "tags": [
@@ -7636,14 +7636,14 @@
           },
           {
             "id": "C",
-            "text": "Return printed schedules"
+            "text": "Visit the product display area"
           },
           {
             "id": "D",
-            "text": "Visit the product display area"
+            "text": "Return printed schedules"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "C",
         "explanation": "product display area が6時まで開いているため、最終セッション後に訪問できます。",
         "difficulty": "medium",
         "tags": [
@@ -7674,7 +7674,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "Restaurant server"
+            "text": "Beverage supplier"
           },
           {
             "id": "B",
@@ -7682,14 +7682,14 @@
           },
           {
             "id": "C",
-            "text": "Beverage supplier"
+            "text": "Restaurant server"
           },
           {
             "id": "D",
             "text": "Training coordinator"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "part-time servers を募集している広告です。",
         "difficulty": "medium",
         "tags": [
@@ -7709,7 +7709,7 @@
           },
           {
             "id": "B",
-            "text": "One year of restaurant or cafe experience"
+            "text": "Three years as a chef"
           },
           {
             "id": "C",
@@ -7717,10 +7717,10 @@
           },
           {
             "id": "D",
-            "text": "Three years as a chef"
+            "text": "One year of restaurant or cafe experience"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "D",
         "explanation": "at least one year of restaurant or cafe experience とあります。",
         "difficulty": "medium",
         "tags": [
@@ -7736,7 +7736,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "In early September"
+            "text": "During the last week of August"
           },
           {
             "id": "B",
@@ -7744,14 +7744,14 @@
           },
           {
             "id": "C",
-            "text": "During the last week of August"
+            "text": "In early September"
           },
           {
             "id": "D",
             "text": "After applicants submit references"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "A",
         "explanation": "Training は August の最後の週に行われます。",
         "difficulty": "medium",
         "tags": [
@@ -7771,7 +7771,7 @@
           },
           {
             "id": "B",
-            "text": "A table setup plan"
+            "text": "A resume and two references"
           },
           {
             "id": "C",
@@ -7779,10 +7779,10 @@
           },
           {
             "id": "D",
-            "text": "A resume and two references"
+            "text": "A table setup plan"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "B",
         "explanation": "resume and two references を送るよう求められています。",
         "difficulty": "medium",
         "tags": [
@@ -7813,7 +7813,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "Scheduled platform maintenance"
+            "text": "A staff training session"
           },
           {
             "id": "B",
@@ -7825,10 +7825,10 @@
           },
           {
             "id": "D",
-            "text": "A staff training session"
+            "text": "Scheduled platform maintenance"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "project management platform のメンテナンス予定を知らせています。",
         "difficulty": "medium",
         "tags": [
@@ -7906,7 +7906,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "Print the completion notice"
+            "text": "Upload files needed before Monday"
           },
           {
             "id": "B",
@@ -7918,10 +7918,10 @@
           },
           {
             "id": "D",
-            "text": "Upload files needed before Monday"
+            "text": "Print the completion notice"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "A",
         "explanation": "月曜朝までに共有が必要なファイルは土曜夕方までにアップロードするよう案内されています。",
         "difficulty": "hard",
         "tags": [
@@ -7987,18 +7987,18 @@
           },
           {
             "id": "B",
-            "text": "Aisles 4 through 7"
+            "text": "The loading area only"
           },
           {
             "id": "C",
-            "text": "The loading area only"
+            "text": "Aisles 4 through 7"
           },
           {
             "id": "D",
             "text": "The supervisor office"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "C",
         "explanation": "aisles 4 through 7 に追加されたとあります。",
         "difficulty": "easy",
         "tags": [
@@ -8022,14 +8022,14 @@
           },
           {
             "id": "C",
-            "text": "For two weeks"
+            "text": "Only during the morning briefing"
           },
           {
             "id": "D",
-            "text": "Only during the morning briefing"
+            "text": "For two weeks"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "D",
         "explanation": "Temporary signs は two weeks 残ると明記されています。",
         "difficulty": "medium",
         "tags": [
@@ -8049,7 +8049,7 @@
           },
           {
             "id": "B",
-            "text": "Repair forklifts"
+            "text": "Collect feedback"
           },
           {
             "id": "C",
@@ -8057,10 +8057,10 @@
           },
           {
             "id": "D",
-            "text": "Collect feedback"
+            "text": "Repair forklifts"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "B",
         "explanation": "月末に feedback を集めるとあります。",
         "difficulty": "medium",
         "tags": [
@@ -8091,11 +8091,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Some membership fees"
+            "text": "The museum location"
           },
           {
             "id": "B",
-            "text": "The museum location"
+            "text": "Some membership fees"
           },
           {
             "id": "C",
@@ -8106,7 +8106,7 @@
             "text": "The student membership card design"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "October 1 から individual と family の会費が上がります。",
         "difficulty": "medium",
         "tags": [
@@ -8126,18 +8126,18 @@
           },
           {
             "id": "B",
-            "text": "Student membership"
+            "text": "Family membership"
           },
           {
             "id": "C",
-            "text": "Family membership"
+            "text": "Student membership"
           },
           {
             "id": "D",
             "text": "Printed card processing"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "C",
         "explanation": "student membership fee will not change とあります。",
         "difficulty": "medium",
         "tags": [
@@ -8153,7 +8153,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "A printed card at no charge"
+            "text": "Two complimentary exhibition tickets"
           },
           {
             "id": "B",
@@ -8161,14 +8161,14 @@
           },
           {
             "id": "C",
-            "text": "Two complimentary exhibition tickets"
+            "text": "A printed card at no charge"
           },
           {
             "id": "D",
             "text": "An invitation to a board meeting"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "A",
         "explanation": "9月15日前に更新すると winter photography exhibition の complimentary tickets が2枚もらえます。",
         "difficulty": "medium",
         "tags": [
@@ -8230,7 +8230,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "To announce a delivery policy change"
+            "text": "To request school supply donations"
           },
           {
             "id": "B",
@@ -8238,14 +8238,14 @@
           },
           {
             "id": "C",
-            "text": "To request school supply donations"
+            "text": "To announce a delivery policy change"
           },
           {
             "id": "D",
             "text": "To advertise library membership"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "same-day delivery の条件変更を知らせる通知です。",
         "difficulty": "easy",
         "tags": [
@@ -8300,14 +8300,14 @@
           },
           {
             "id": "C",
-            "text": "To prepare larger orders more accurately"
+            "text": "To reduce the number of tracking messages"
           },
           {
             "id": "D",
-            "text": "To reduce the number of tracking messages"
+            "text": "To prepare larger orders more accurately"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "D",
         "explanation": "school and library orders をより正確に準備するためとあります。",
         "difficulty": "hard",
         "tags": [
@@ -8323,7 +8323,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "The fee will be doubled"
+            "text": "The package may be left at a front desk or returned to the store"
           },
           {
             "id": "B",
@@ -8335,10 +8335,10 @@
           },
           {
             "id": "D",
-            "text": "The package may be left at a front desk or returned to the store"
+            "text": "The fee will be doubled"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "A",
         "explanation": "受取人がいない場合、建物の front desk に置くか店舗に戻すと説明されています。",
         "difficulty": "hard",
         "tags": [
@@ -8369,7 +8369,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "An internal transfer opportunity"
+            "text": "A technical services conference"
           },
           {
             "id": "B",
@@ -8381,10 +8381,10 @@
           },
           {
             "id": "D",
-            "text": "A technical services conference"
+            "text": "An internal transfer opportunity"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "Client Support Team への社内異動応募について案内しています。",
         "difficulty": "easy",
         "tags": [
@@ -8400,11 +8400,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Payroll approvals"
+            "text": "Questions from corporate clients"
           },
           {
             "id": "B",
-            "text": "Questions from corporate clients"
+            "text": "Payroll approvals"
           },
           {
             "id": "C",
@@ -8415,7 +8415,7 @@
             "text": "Conference registration"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "A",
         "explanation": "corporate clients からの質問を扱うとあります。",
         "difficulty": "medium",
         "tags": [
@@ -8435,18 +8435,18 @@
           },
           {
             "id": "B",
-            "text": "A product sample"
+            "text": "Approval"
           },
           {
             "id": "C",
-            "text": "Approval"
+            "text": "A product sample"
           },
           {
             "id": "D",
             "text": "A client list"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "B",
         "explanation": "department manager の approval が必要です。",
         "difficulty": "hard",
         "tags": [
@@ -8470,14 +8470,14 @@
           },
           {
             "id": "C",
-            "text": "July 8"
+            "text": "August 1"
           },
           {
             "id": "D",
-            "text": "August 1"
+            "text": "July 8"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "C",
         "explanation": "選ばれた従業員は August 1 に新チームへ移るとあります。",
         "difficulty": "hard",
         "tags": [
@@ -8543,7 +8543,7 @@
           },
           {
             "id": "B",
-            "text": "4"
+            "text": "35"
           },
           {
             "id": "C",
@@ -8551,10 +8551,10 @@
           },
           {
             "id": "D",
-            "text": "35"
+            "text": "4"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "D",
         "explanation": "注文内容に 4 vegetarian boxed lunches とあります。",
         "difficulty": "medium",
         "tags": [
@@ -8605,7 +8605,7 @@
           },
           {
             "id": "B",
-            "text": "The number of lunches can be reduced"
+            "text": "Additional beverages may be added by phone"
           },
           {
             "id": "C",
@@ -8613,10 +8613,10 @@
           },
           {
             "id": "D",
-            "text": "Additional beverages may be added by phone"
+            "text": "The number of lunches can be reduced"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "B",
         "explanation": "締切後も additional beverages は phone で追加可能です。",
         "difficulty": "hard",
         "tags": [
@@ -8647,11 +8647,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Two"
+            "text": "One"
           },
           {
             "id": "B",
-            "text": "One"
+            "text": "Two"
           },
           {
             "id": "C",
@@ -8662,7 +8662,7 @@
             "text": "Four"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "September 11 and 12 の two nights と確認されています。",
         "difficulty": "medium",
         "tags": [
@@ -8682,7 +8682,7 @@
           },
           {
             "id": "B",
-            "text": "At check-in"
+            "text": "At check-out"
           },
           {
             "id": "C",
@@ -8690,10 +8690,10 @@
           },
           {
             "id": "D",
-            "text": "At check-out"
+            "text": "At check-in"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "D",
         "explanation": "total charge は check-in 時に徴収されるとあります。",
         "difficulty": "medium",
         "tags": [
@@ -8740,7 +8740,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "Wait for the next hourly shuttle"
+            "text": "Use a taxi or rideshare service"
           },
           {
             "id": "B",
@@ -8752,10 +8752,10 @@
           },
           {
             "id": "D",
-            "text": "Use a taxi or rideshare service"
+            "text": "Wait for the next hourly shuttle"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "A",
         "explanation": "10 P.M.以降の到着客は taxi or rideshare を使うよう案内されています。",
         "difficulty": "hard",
         "tags": [
@@ -8786,7 +8786,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "$742"
+            "text": "$8114"
           },
           {
             "id": "B",
@@ -8794,14 +8794,14 @@
           },
           {
             "id": "C",
-            "text": "$8114"
+            "text": "$742"
           },
           {
             "id": "D",
             "text": "$30"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "Invoice の Total 欄に $742 とあります。",
         "difficulty": "easy",
         "tags": [
@@ -8817,11 +8817,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Printer cartridges"
+            "text": "Desk lamps"
           },
           {
             "id": "B",
-            "text": "Desk lamps"
+            "text": "Printer cartridges"
           },
           {
             "id": "C",
@@ -8832,7 +8832,7 @@
             "text": "Purchase orders"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "A",
         "explanation": "desk lamps arrived separately this morning とあります。",
         "difficulty": "medium",
         "tags": [
@@ -8852,18 +8852,18 @@
           },
           {
             "id": "B",
-            "text": "The supplier requested it"
+            "text": "The lamps are included"
           },
           {
             "id": "C",
-            "text": "The lamps are included"
+            "text": "The supplier requested it"
           },
           {
             "id": "D",
             "text": "The binders were damaged"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "B",
         "explanation": "lamps が含まれるため equipment budget code を使うよう指示しています。",
         "difficulty": "hard",
         "tags": [
@@ -8925,7 +8925,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "Tour a ceramics room"
+            "text": "Sell paintings"
           },
           {
             "id": "B",
@@ -8937,10 +8937,10 @@
           },
           {
             "id": "D",
-            "text": "Sell paintings"
+            "text": "Tour a ceramics room"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "new ceramics room を見学できると flyer にあります。",
         "difficulty": "easy",
         "tags": [
@@ -8960,18 +8960,18 @@
           },
           {
             "id": "B",
-            "text": "A discount coupon"
+            "text": "A painting kit"
           },
           {
             "id": "C",
-            "text": "A painting kit"
+            "text": "A discount coupon"
           },
           {
             "id": "D",
             "text": "A youth membership"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "C",
         "explanation": "first 50 visitors は 15 percent off coupon を受け取ります。",
         "difficulty": "medium",
         "tags": [
@@ -8987,7 +8987,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "The open house ends then"
+            "text": "Her daughter cannot arrive before then"
           },
           {
             "id": "B",
@@ -8995,14 +8995,14 @@
           },
           {
             "id": "C",
-            "text": "Her daughter cannot arrive before then"
+            "text": "The open house ends then"
           },
           {
             "id": "D",
             "text": "Coupons become valid then"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "A",
         "explanation": "daughter は about 3 P.M. まで到着できないと書いています。",
         "difficulty": "medium",
         "tags": [
@@ -9022,7 +9022,7 @@
           },
           {
             "id": "B",
-            "text": "Whether they expire before March 14"
+            "text": "Whether they apply to youth classes"
           },
           {
             "id": "C",
@@ -9030,10 +9030,10 @@
           },
           {
             "id": "D",
-            "text": "Whether they apply to youth classes"
+            "text": "Whether they expire before March 14"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "B",
         "explanation": "youth classes に使えるかを尋ねています。",
         "difficulty": "hard",
         "tags": [
@@ -9134,14 +9134,14 @@
           },
           {
             "id": "C",
-            "text": "The office will be closed on Thursday"
+            "text": "The carrier office is too far away"
           },
           {
             "id": "D",
-            "text": "The carrier office is too far away"
+            "text": "The office will be closed on Thursday"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "D",
         "explanation": "Thursday は local holiday で office closed と述べています。",
         "difficulty": "medium",
         "tags": [
@@ -9165,14 +9165,14 @@
           },
           {
             "id": "C",
-            "text": "Remove the signature requirement"
+            "text": "Hold the package for pickup"
           },
           {
             "id": "D",
-            "text": "Hold the package for pickup"
+            "text": "Remove the signature requirement"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "C",
         "explanation": "Friday 配達が無理なら carrier office に保管して pickup にしてほしいと依頼しています。",
         "difficulty": "hard",
         "tags": [
@@ -9203,11 +9203,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Updating account records"
+            "text": "Handling refund requests"
           },
           {
             "id": "B",
-            "text": "Handling refund requests"
+            "text": "Updating account records"
           },
           {
             "id": "C",
@@ -9218,7 +9218,7 @@
             "text": "Practice calls"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "10:30-11:30 は Updating account records です。",
         "difficulty": "easy",
         "tags": [
@@ -9238,18 +9238,18 @@
           },
           {
             "id": "B",
-            "text": "She joined after January"
+            "text": "She leads the training team"
           },
           {
             "id": "C",
-            "text": "She leads the training team"
+            "text": "She joined after January"
           },
           {
             "id": "D",
             "text": "She requested practice calls"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "C",
         "explanation": "1月以降に入社した人は必須で、Mina は3月入社です。",
         "difficulty": "medium",
         "tags": [
@@ -9273,14 +9273,14 @@
           },
           {
             "id": "C",
-            "text": "A client meeting"
+            "text": "An account update"
           },
           {
             "id": "D",
-            "text": "An account update"
+            "text": "A client meeting"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "D",
         "explanation": "1:30 に client meeting があると述べています。",
         "difficulty": "medium",
         "tags": [
@@ -9296,7 +9296,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "Join the Tuesday morning group"
+            "text": "Send a note to Training"
           },
           {
             "id": "B",
@@ -9308,10 +9308,10 @@
           },
           {
             "id": "D",
-            "text": "Send a note to Training"
+            "text": "Join the Tuesday morning group"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "A",
         "explanation": "tomorrow までに Training へ note を送るよう指示されています。",
         "difficulty": "hard",
         "tags": [
@@ -9342,7 +9342,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "Replace lobby light fixtures and repair a door sensor"
+            "text": "Clean tenant offices"
           },
           {
             "id": "B",
@@ -9350,14 +9350,14 @@
           },
           {
             "id": "C",
-            "text": "Clean tenant offices"
+            "text": "Replace lobby light fixtures and repair a door sensor"
           },
           {
             "id": "D",
             "text": "Paint the side entrance"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "estimate に lobby light fixtures replacement と exterior door sensor repair が記載されています。",
         "difficulty": "easy",
         "tags": [
@@ -9377,7 +9377,7 @@
           },
           {
             "id": "B",
-            "text": "June 10 in the morning"
+            "text": "The following Friday"
           },
           {
             "id": "C",
@@ -9385,10 +9385,10 @@
           },
           {
             "id": "D",
-            "text": "The following Friday"
+            "text": "June 10 in the morning"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "D",
         "explanation": "Earliest appointment は Wednesday, June 10, 8 A.M.-12 P.M. です。",
         "difficulty": "medium",
         "tags": [
@@ -9408,18 +9408,18 @@
           },
           {
             "id": "B",
-            "text": "The side entrance has no lights"
+            "text": "The entry system may be tested"
           },
           {
             "id": "C",
-            "text": "The entry system may be tested"
+            "text": "The side entrance has no lights"
           },
           {
             "id": "D",
             "text": "The control panel is being replaced"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "B",
         "explanation": "entry system を数回テストする可能性があるため access card が必要です。",
         "difficulty": "medium",
         "tags": [
@@ -9435,7 +9435,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "Pay part of the estimate"
+            "text": "Use the side entrance briefly"
           },
           {
             "id": "B",
@@ -9447,10 +9447,10 @@
           },
           {
             "id": "D",
-            "text": "Use the side entrance briefly"
+            "text": "Pay part of the estimate"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "A",
         "explanation": "短時間 side entrance を使う必要があるかもしれないとあります。",
         "difficulty": "hard",
         "tags": [
@@ -9481,7 +9481,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "Six weeks"
+            "text": "One year"
           },
           {
             "id": "B",
@@ -9493,10 +9493,10 @@
           },
           {
             "id": "D",
-            "text": "One year"
+            "text": "Six weeks"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "Course Listing に Length: 6 weeks とあります。",
         "difficulty": "medium",
         "tags": [
@@ -9512,11 +9512,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "A live presentation"
+            "text": "A two-page executive summary"
           },
           {
             "id": "B",
-            "text": "A two-page executive summary"
+            "text": "A live presentation"
           },
           {
             "id": "C",
@@ -9527,7 +9527,7 @@
             "text": "A travel schedule"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "A",
         "explanation": "Final project は Two-page executive summary です。",
         "difficulty": "medium",
         "tags": [
@@ -9578,7 +9578,7 @@
           },
           {
             "id": "B",
-            "text": "The course may be canceled"
+            "text": "Attendance may be difficult because of travel"
           },
           {
             "id": "C",
@@ -9586,10 +9586,10 @@
           },
           {
             "id": "D",
-            "text": "Attendance may be difficult because of travel"
+            "text": "The course may be canceled"
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "B",
         "explanation": "travel schedule が出席を難しくする可能性に触れています。",
         "difficulty": "hard",
         "tags": [
@@ -9655,19 +9655,19 @@
           },
           {
             "id": "B",
-            "text": "The price cards are difficult to see"
+            "text": "The storage room is full"
           },
           {
             "id": "C",
-            "text": "The storage room is full"
+            "text": "The price cards are difficult to see"
           },
           {
             "id": "D",
             "text": "The display photo was not received"
           }
         ],
-        "correctChoiceId": "B",
-        "explanation": "price cards が商品 behind で見えにくいと指摘しています。",
+        "correctChoiceId": "C",
+        "explanation": "価格カードが商品の後ろにあり、見えにくいと指摘しています。",
         "difficulty": "medium",
         "tags": [
           "multiple-documents",
@@ -9686,18 +9686,18 @@
           },
           {
             "id": "B",
-            "text": "Tomorrow morning"
+            "text": "Friday"
           },
           {
             "id": "C",
-            "text": "Friday"
+            "text": "Tomorrow morning"
           },
           {
             "id": "D",
             "text": "After the weekend"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "B",
         "explanation": "Extra stock は Friday まで storage room に置く指示です。",
         "difficulty": "medium",
         "tags": [
@@ -9759,11 +9759,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "An annual health screening"
+            "text": "A dental cleaning"
           },
           {
             "id": "B",
-            "text": "A dental cleaning"
+            "text": "An annual health screening"
           },
           {
             "id": "C",
@@ -9774,7 +9774,7 @@
             "text": "A physical therapy session"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "Appointment 欄に Annual health screening とあります。",
         "difficulty": "easy",
         "tags": [
@@ -9790,11 +9790,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "Bring a photo ID"
+            "text": "Eat for eight hours"
           },
           {
             "id": "B",
-            "text": "Eat for eight hours"
+            "text": "Bring a photo ID"
           },
           {
             "id": "C",
@@ -9805,7 +9805,7 @@
             "text": "Work on Sunday"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "A",
         "explanation": "Do not eat for eight hours before the appointment とあります。",
         "difficulty": "medium",
         "tags": [
@@ -9898,7 +9898,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "$90"
+            "text": "$1,330"
           },
           {
             "id": "B",
@@ -9906,14 +9906,14 @@
           },
           {
             "id": "C",
-            "text": "$1,330"
+            "text": "$90"
           },
           {
             "id": "D",
             "text": "$22"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "Vendor Quote に Design adjustment fee: $90 とあります。",
         "difficulty": "easy",
         "tags": [
@@ -9960,7 +9960,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "The quote is valid through May 22"
+            "text": "The installation site is on Mason Street"
           },
           {
             "id": "B",
@@ -9968,14 +9968,14 @@
           },
           {
             "id": "C",
-            "text": "The installation site is on Mason Street"
+            "text": "The quote is valid through May 22"
           },
           {
             "id": "D",
             "text": "The signs are acrylic"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "A",
         "explanation": "downtown delivery が無料で、installation site が Mason Street にあるため有用です。",
         "difficulty": "medium",
         "tags": [

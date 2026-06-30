@@ -3607,11 +3607,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "If"
+            "text": "Despite"
           },
           {
             "id": "B",
-            "text": "Despite"
+            "text": "If"
           },
           {
             "id": "C",
@@ -3622,7 +3622,7 @@
             "text": "Because of"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "条件を表す節を導くため If が適切です。Despite と Because of は名詞句を続ける表現です。",
         "difficulty": "easy",
         "tags": [
@@ -3642,7 +3642,7 @@
           },
           {
             "id": "B",
-            "text": "so that"
+            "text": "even though"
           },
           {
             "id": "C",
@@ -3650,10 +3650,10 @@
           },
           {
             "id": "D",
-            "text": "even though"
+            "text": "so that"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "D",
         "explanation": "記録を正確に保つという目的を表すため so that が適切です。",
         "difficulty": "medium",
         "tags": [
@@ -3669,7 +3669,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "noted"
+            "text": "will be noted"
           },
           {
             "id": "B",
@@ -3677,14 +3677,14 @@
           },
           {
             "id": "C",
-            "text": "will be noted"
+            "text": "noted"
           },
           {
             "id": "D",
             "text": "noting"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "A",
         "explanation": "badge は記録される側なので、受け身の will be noted が適切です。",
         "difficulty": "medium",
         "tags": [
@@ -3708,14 +3708,14 @@
           },
           {
             "id": "C",
-            "text": "Parking spaces near the lobby are assigned to accounting staff only."
+            "text": "For training purposes, the old paper log will remain on the counter for one week."
           },
           {
             "id": "D",
-            "text": "For training purposes, the old paper log will remain on the counter for one week."
+            "text": "Parking spaces near the lobby are assigned to accounting staff only."
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "C",
         "explanation": "新しい受付手順への移行に関する連絡なので、紙の記録を一時的に残す文が自然につながります。",
         "difficulty": "medium",
         "tags": [
@@ -3745,7 +3745,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "before"
+            "text": "beside"
           },
           {
             "id": "B",
@@ -3753,14 +3753,14 @@
           },
           {
             "id": "C",
-            "text": "beside"
+            "text": "before"
           },
           {
             "id": "D",
             "text": "throughout"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "C",
         "explanation": "メンテナンス開始前に送る必要があるため before が適切です。",
         "difficulty": "easy",
         "tags": [
@@ -3776,11 +3776,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "unless"
+            "text": "because"
           },
           {
             "id": "B",
-            "text": "because"
+            "text": "unless"
           },
           {
             "id": "C",
@@ -3791,7 +3791,7 @@
             "text": "although"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "A",
         "explanation": "パネルを開けない理由を説明しているため because が適切です。",
         "difficulty": "easy",
         "tags": [
@@ -3815,14 +3815,14 @@
           },
           {
             "id": "C",
-            "text": "will forward"
+            "text": "to forward"
           },
           {
             "id": "D",
-            "text": "to forward"
+            "text": "will forward"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "D",
         "explanation": "主語 A staff member に続く未来の動作なので will forward が適切です。",
         "difficulty": "easy",
         "tags": [
@@ -3842,7 +3842,7 @@
           },
           {
             "id": "B",
-            "text": "The marketing team will meet in the large conference room at 9 A.M."
+            "text": "Normal printing service should resume immediately after the inspection is completed."
           },
           {
             "id": "C",
@@ -3850,10 +3850,10 @@
           },
           {
             "id": "D",
-            "text": "Normal printing service should resume immediately after the inspection is completed."
+            "text": "The marketing team will meet in the large conference room at 9 A.M."
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "B",
         "explanation": "プリンターの一時停止に関する通知なので、点検後の通常再開を伝える文が最も自然です。",
         "difficulty": "medium",
         "tags": [
@@ -3883,7 +3883,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "who"
+            "text": "whom"
           },
           {
             "id": "B",
@@ -3895,10 +3895,10 @@
           },
           {
             "id": "D",
-            "text": "whom"
+            "text": "who"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "D",
         "explanation": "employees を先行詞とし、後ろの動詞 handle の主語になるため who が適切です。",
         "difficulty": "medium",
         "tags": [
@@ -3918,18 +3918,18 @@
           },
           {
             "id": "B",
-            "text": "will be issued"
+            "text": "will issue"
           },
           {
             "id": "C",
-            "text": "will issue"
+            "text": "will be issued"
           },
           {
             "id": "D",
             "text": "issuing"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "C",
         "explanation": "Certificates は発行される側なので、未来の受け身 will be issued が適切です。",
         "difficulty": "medium",
         "tags": [
@@ -3949,18 +3949,18 @@
           },
           {
             "id": "B",
-            "text": "Therefore"
+            "text": "However"
           },
           {
             "id": "C",
-            "text": "However"
+            "text": "Therefore"
           },
           {
             "id": "D",
             "text": "Otherwise"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "B",
         "explanation": "例外対応を述べた後で、遅延登録は原則承認しないという対比を示すため However が適切です。",
         "difficulty": "hard",
         "tags": [
@@ -3976,7 +3976,7 @@
         "choices": [
           {
             "id": "A",
-            "text": "The building entrance will be cleaned every Friday evening."
+            "text": "Thank you for helping us complete this required training on time."
           },
           {
             "id": "B",
@@ -3988,10 +3988,10 @@
           },
           {
             "id": "D",
-            "text": "Thank you for helping us complete this required training on time."
+            "text": "The building entrance will be cleaned every Friday evening."
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "A",
         "explanation": "研修受講の依頼メールの締めとして、期限内完了への協力に感謝する文が自然です。",
         "difficulty": "medium",
         "tags": [
@@ -4021,11 +4021,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "that"
+            "text": "where"
           },
           {
             "id": "B",
-            "text": "where"
+            "text": "that"
           },
           {
             "id": "C",
@@ -4036,7 +4036,7 @@
             "text": "whose"
           }
         ],
-        "correctChoiceId": "A",
+        "correctChoiceId": "B",
         "explanation": "department を先行詞とし、placed the order の主語になる関係代名詞 that が適切です。",
         "difficulty": "medium",
         "tags": [
@@ -4052,11 +4052,11 @@
         "choices": [
           {
             "id": "A",
-            "text": "rather than"
+            "text": "as long as"
           },
           {
             "id": "B",
-            "text": "as long as"
+            "text": "rather than"
           },
           {
             "id": "C",
@@ -4067,7 +4067,7 @@
             "text": "instead of"
           }
         ],
-        "correctChoiceId": "B",
+        "correctChoiceId": "A",
         "explanation": "請求書が完全で発注書と一致しているという条件を表すため as long as が適切です。",
         "difficulty": "medium",
         "tags": [
@@ -4091,14 +4091,14 @@
           },
           {
             "id": "C",
-            "text": "must be approved"
+            "text": "to approve"
           },
           {
             "id": "D",
-            "text": "to approve"
+            "text": "must be approved"
           }
         ],
-        "correctChoiceId": "C",
+        "correctChoiceId": "D",
         "explanation": "updates は承認される側なので、義務を表す受け身 must be approved が適切です。",
         "difficulty": "hard",
         "tags": [
@@ -4122,14 +4122,14 @@
           },
           {
             "id": "C",
-            "text": "Employees should reserve meeting rooms through the internal calendar."
+            "text": "Questions about the new schedule should be sent to vendorpayments@northgate.example."
           },
           {
             "id": "D",
-            "text": "Questions about the new schedule should be sent to vendorpayments@northgate.example."
+            "text": "Employees should reserve meeting rooms through the internal calendar."
           }
         ],
-        "correctChoiceId": "D",
+        "correctChoiceId": "C",
         "explanation": "支払いスケジュール更新の通知なので、問い合わせ先を示す文が自然に締めになります。",
         "difficulty": "medium",
         "tags": [

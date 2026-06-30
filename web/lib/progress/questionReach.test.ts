@@ -20,6 +20,13 @@ const questionRefs: QuestionReachQuestion[] = flattenQuestionBankEntries([
   questionId: question.questionId,
   part: question.part,
 }));
+const questionCountsByPart = questionRefs.reduce(
+  (counts, question) => ({
+    ...counts,
+    [question.part]: counts[question.part] + 1,
+  }),
+  { part5: 0, part6: 0, part7: 0 } satisfies Record<ToeicReadingPart, number>,
+);
 
 function createAnswer(
   questionId: string,
@@ -48,9 +55,9 @@ function createProgressState(answers: AnswerResult[]): ProgressState {
 test("進捗なし状態では全体到達率を0件として集計する", () => {
   const summary = calculateQuestionReach(createInitialProgressState(), questionRefs);
 
-  assert.equal(summary.total, 564);
+  assert.equal(summary.total, questionRefs.length);
   assert.equal(summary.answered, 0);
-  assert.equal(summary.unanswered, 564);
+  assert.equal(summary.unanswered, questionRefs.length);
   assert.equal(summary.mastered, 0);
   assert.equal(summary.answeredRate, 0);
 });
@@ -111,9 +118,9 @@ test("Part 6とPart 7はパッセージ数ではなく設問数で集計する",
   assert.deepEqual(
     summary.parts.map((part) => [part.part, part.total]),
     [
-      ["part5", 270],
-      ["part6", 98],
-      ["part7", 196],
+      ["part5", questionCountsByPart.part5],
+      ["part6", questionCountsByPart.part6],
+      ["part7", questionCountsByPart.part7],
     ],
   );
 });
@@ -128,9 +135,9 @@ test("問題データ追加時は総数と未回答数が渡された問題参�
     extendedQuestionRefs,
   );
 
-  assert.equal(summary.total, 565);
-  assert.equal(summary.unanswered, 565);
-  assert.equal(summary.parts[0].total, 271);
+  assert.equal(summary.total, questionRefs.length + 1);
+  assert.equal(summary.unanswered, questionRefs.length + 1);
+  assert.equal(summary.parts[0].total, questionCountsByPart.part5 + 1);
 });
 
 test("回答済みでSRS予定がない問題だけを定着済みとして集計する", () => {
